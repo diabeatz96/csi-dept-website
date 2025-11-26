@@ -27,6 +27,13 @@ import { demoIcons } from '@/components/floating-icons';
 import NotchTwo from '@/components/notch-two';
 import ResourcesAccordion from '@/components/resouces-accordion';
 import DegreePathHero2 from './test';
+import AASProgramSection, { AdditionalDegreesPage, BSComputerScienceSection } from '@/components/program-cards';
+import SpecializationsAccordion from '@/components/specializations-accordion';
+import CareerMilestones from '@/components/career-milestones';
+import CareerMilestonesHero from '@/components/career-milestones';
+import MinorsAccordion from '@/components/cs-minors';
+import DoubleCountingPolicy from '@/components/double-counting-policy';
+import ABETAccreditation from '@/components/abet-accreditation';
 // --- Floating Icon Component ---
 // Accepts top/left/right props to position specifically in an arc
 const FloatingIcon = ({ icon: Icon, top, left, right, delay, color }: any) => (
@@ -344,7 +351,15 @@ export default function DegreePathHero() {
                 </div>
             </section>
             <ResourcesAccordion />
-            <DegreePathHero2 />
+            <AASProgramSection />
+            <BSComputerScienceSection />
+            <SpecializationsAccordion />
+            <CareerMilestones />
+            <AdditionalDegreesPage />
+            <MinorsAccordion />
+            <DoubleCountingPolicy />
+            <ABETAccreditation />
+
         </main>
     );
 }

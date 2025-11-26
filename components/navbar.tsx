@@ -4,6 +4,7 @@ import { Search, Menu, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export default function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -27,8 +28,8 @@ export default function Navbar() {
                     <Link href="/" className="flex items-center gap-3 group">
                         {/* Logo - Geometric design */}
                         <div className="relative">
-                            <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-lg flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
-                                <svg
+                            <div className="w-10 h-10 md:w-12 md:h-12  rounded-lg flex items-center justify-center ">
+                                {/* <svg
                                     viewBox="0 0 24 24"
                                     fill="none"
                                     className="w-6 h-6 md:w-7 md:h-7 text-white"
@@ -50,7 +51,8 @@ export default function Navbar() {
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
                                     />
-                                </svg>
+                                </svg> */}
+                                <Image src="/cunycsi.png" alt="Logo" width={40} height={40} />
                             </div>
                         </div>
                         {/* Department Name */}
