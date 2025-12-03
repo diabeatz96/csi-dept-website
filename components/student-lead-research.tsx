@@ -37,7 +37,7 @@ const projects = [
     size: "lg", // Large card
     color: "blue",
     description: "Advanced algorithms for clarifying low-light tunnel imagery for safety systems.",
-    pdfUrl: "https://www.cs.csi.cuny.edu/content/research/optimized-tunnel-image-enhancement.pdf",
+    pdfUrl: "https://www.cs.csi.cuny.edu/poster/Konstantin-Novichenko-CSC-01-Presentation-RESUBMISSION.pdf",
     pdfPreview: "/student-research/optimized-tunnel.png"
   },
   {
@@ -48,7 +48,7 @@ const projects = [
     size: "md",
     color: "slate",
     description: "Implementation of a secure index for encrypted database querying.",
-    pdfUrl: "https://www.cs.csi.cuny.edu/content/research/searchable-encryption.pdf",
+    pdfUrl: "https://www.cs.csi.cuny.edu/poster/Jacob-Chen-CSC-05-Poster.pdf",
     pdfPreview: "/student-research/searchable-symm.png"
   },
   {
@@ -59,7 +59,7 @@ const projects = [
     size: "sm",
     color: "purple",
     description: "Gamifying computer science fundamentals for ed-tech.",
-    pdfUrl: "https://www.cs.csi.cuny.edu/content/research/haunted-decoder.pdf",
+    pdfUrl: "https://www.cs.csi.cuny.edu/poster/Alan-Eappen-CSC-04-Poster.pdf",
     pdfPreview: "/student-research/haunted-decoder.png"
   },
   {
@@ -70,7 +70,7 @@ const projects = [
     size: "md",
     color: "emerald",
     description: "Interactive medical education platform for students.",
-    pdfUrl: "https://www.cs.csi.cuny.edu/content/research/meducation.pdf",
+    pdfUrl: "https://www.cs.csi.cuny.edu/poster/Jasper-Caballero-CSC-03-Presentation.pdf",
     pdfPreview: "/student-research/meducation.png"
   },
   {
@@ -81,7 +81,7 @@ const projects = [
     size: "sm",
     color: "rose",
     description: "Simulation software for pandemic response tracking.",
-    pdfUrl: "https://www.cs.csi.cuny.edu/content/research/covid-19-virtual.pdf",
+    pdfUrl: "https://www.cs.csi.cuny.edu/poster/Victoria-Fischer-CSC-02-Poster.pdf",
     pdfPreview: "/student-research/covid-19-virtual.png"
   },
   {
@@ -92,7 +92,7 @@ const projects = [
     size: "lg",
     color: "indigo",
     description: "Connecting students across borders to ease cultural transition.",
-    pdfUrl: "https://www.cs.csi.cuny.edu/content/research/finter.pdf",
+    pdfUrl: "https://www.cs.csi.cuny.edu/poster/Chukwurado-Umeaka-CSC-06-Poster.pdf",
     pdfPreview: "/student-research/finter.png"
   },
   {
@@ -103,7 +103,7 @@ const projects = [
     size: "md",
     color: "slate",
     description: "Improving privacy protection for mobile users in location-based services.",
-    pdfUrl: "https://www.cs.csi.cuny.edu/content/research/spatial-cloaking.pdf",
+    pdfUrl: "https://www.cs.csi.cuny.edu/poster/poster_IEEE_Sarnoff2016.pdf",
     pdfPreview: "/student-research/user-density.png"
   },
   {
@@ -114,7 +114,7 @@ const projects = [
     size: "md",
     color: "blue",
     description: "Using Rainbow Tables to solve organizational password security issues.",
-    pdfUrl: "https://www.cs.csi.cuny.edu/content/research/network-security.pdf",
+    pdfUrl: "https://www.cs.csi.cuny.edu/poster/McMahon_Rainbow_Tables_Poster.pdf",
     pdfPreview: "/student-research/modern-network.png"
   },
   {
@@ -125,7 +125,7 @@ const projects = [
     size: "sm",
     color: "slate",
     description: "A mutual authentication scheme for secure logins.",
-    pdfUrl: "https://www.cs.csi.cuny.edu/content/research/qr-otp-auth.pdf",
+    pdfUrl: "https://www.cs.csi.cuny.edu/poster/poster_QRCode.pdf",
     pdfPreview: "/student-research/qr-otp-auth.png"
   },
   {
@@ -136,7 +136,7 @@ const projects = [
     size: "md",
     color: "indigo",
     description: "Analysis of radio frequency identification security vulnerabilities.",
-    pdfUrl: "https://www.cs.csi.cuny.edu/content/research/rfid-protocols.pdf",
+    pdfUrl: "https://www.cs.csi.cuny.edu/poster/Sidhartha_Mishra_Poster_CSI_URC17.pdf",
     pdfPreview: "/student-research/a-study-radio-frequency.png"
   },
   {
@@ -147,7 +147,7 @@ const projects = [
     size: "md",
     color: "emerald",
     description: "Designing storage systems that ensure permanent data erasure.",
-    pdfUrl: "https://www.cs.csi.cuny.edu/content/research/secure-deletion.pdf",
+    pdfUrl: "https://www.cs.csi.cuny.edu/poster/poster_ahmed_filesystem.pdf",
     pdfPreview: "/student-research/desiging-a-file-system.png"
   },
   {
@@ -158,7 +158,7 @@ const projects = [
     size: "lg",
     color: "purple",
     description: "Vulnerability assessment of web-based wireless gateway systems.",
-    pdfUrl: "https://www.cs.csi.cuny.edu/content/research/wireless-auth-bypass.pdf",
+    pdfUrl: "https://www.cs.csi.cuny.edu/poster/poster_ahmed_wireless_bypassing.pdf",
     pdfPreview: "/student-research/bypassing-web-based-wireless-auth.png"
   }
 ];

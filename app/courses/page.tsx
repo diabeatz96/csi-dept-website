@@ -379,10 +379,7 @@ function CoursesPageContent() {
                         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
 
                             <div className="flex items-center gap-4">
-                                <div className="hidden md:flex items-center justify-center w-10 h-10 rounded-lg bg-slate-100 text-slate-600">
-                                    <Layers size={20} />
-                                </div>
-
+                        
                                 {/* Main Filter Tabs */}
                                 <div className="flex p-1.5 bg-slate-100 rounded-xl w-fit border border-slate-200">
                                     {['all', 'undergraduate', 'graduate'].map((filter) => (

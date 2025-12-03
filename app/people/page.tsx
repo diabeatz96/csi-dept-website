@@ -150,6 +150,16 @@ const faculty = [
         hasPhoto: false,
         link: "https://www.cs.csi.cuny.edu/~zhangz/"
     }
+    ,
+    {
+        name: "Adam Kostandy",
+        title: "Lecturer",
+        email: "adam.kostandy@csi.cuny.edu",
+        office: "1N-215",
+        phone: "",
+        hasPhoto: false,
+        link: ""
+    }
 ];
 
 // --- Components ---
