@@ -12,168 +12,21 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import DepartmentStaff from '@/components/staff-directory';
-
-// --- Faculty Data (From Image 2) ---
-const faculty = [
-    {
-        name: "Sos Agaian",
-        title: "Distinguished Professor",
-        email: "sos.agaian@csi.cuny.edu",
-        office: "1N-203",
-        phone: "718-982-2843",
-        hasPhoto: false,
-        link: 'https://www.csi.cuny.edu/campus-directory/sos-agaian'
-    },
-    {
-        name: "Tatiana Anderson",
-        title: "Lecturer",
-        email: "tatiana.anderson@csi.cuny.edu",
-        office: "1N-210",
-        phone: "718-982-2850",
-        link: 'https://www.csi.cuny.edu/campus-directory/tatiana-anderson',
-        hasPhoto: false
-    },
-    {
-        name: "Cong Chen",
-        title: "Doctoral Lecturer",
-        email: "cong.chen@csi.cuny.edu",
-        office: "4N-206",
-        phone: "718-982-2975",
-        link: 'https://www.csi.cuny.edu/campus-directory/cong-chen',
-        hasPhoto: false
-    },
-    {
-        name: "Kennedy Edemacu",
-        title: "Assistant Professor",
-        email: "kennedy.edemacu@csi.cuny.edu",
-        office: "1N-208",
-        phone: "718-982-3273",
-        hasPhoto: false,
-        link: '',
-    },
-    {
-        name: "Feng Gu",
-        title: "Professor",
-        email: "feng.gu@csi.cuny.edu",
-        office: "1N-201",
-        phone: "718-982-2847",
-        hasPhoto: false,
-        link: 'https://www.cs.csi.cuny.edu/~gu/'
-    },
-    {
-        name: "Yumei Huo",
-        title: "Professor",
-        email: "yumei.huo@csi.cuny.edu",
-        office: "1N-202",
-        phone: "718-982-2841",
-        hasPhoto: false,
-        link: 'https://www.cs.csi.cuny.edu/~yumei/'
-    },
-    {
-        name: "Ali Mohamed",
-        title: "Lecturer",
-        email: "ali.mohamed@csi.cuny.edu",
-        office: "1N-210",
-        phone: "718-982-2850",
-        hasPhoto: false,
-        link: ''
-    },
-    {
-        name: "Louis Petingi",
-        title: "Professor",
-        email: "louis.petingi@csi.cuny.edu",
-        office: "1N-211",
-        phone: "718-982-2844",
-        hasPhoto: false,
-        link: 'https://www.cs.csi.cuny.edu/~petingi/'
-    },
-    {
-        name: "Jun Rao",
-        title: "Doctoral Lecturer",
-        email: "jun.rao@csi.cuny.edu",
-        office: "5N-220",
-        phone: "718-982-2854",
-        hasPhoto: false,
-        link: ''
-    },
-    {
-        name: "Ping Shi",
-        title: "Lecturer",
-        email: "ping.shi@csi.cuny.edu",
-        office: "1N-210",
-        phone: "718-982-2850",
-        hasPhoto: false,
-        link: 'https://www.csi.cuny.edu/campus-directory/ping-shi'
-    },
-    {
-        name: "Sarah Zelikovitz",
-        title: "Professor",
-        email: "sarah.zelikovitz@csi.cuny.edu",
-        office: "1N-212",
-        phone: "718-982-2849",
-        hasPhoto: false, // Image was a silhouette in source
-        link: "https://www.cs.csi.cuny.edu/~zelikovi/"
-    },
-    {
-        name: "Shuqun Zhang",
-        title: "Professor, Chairperson",
-        email: "shuqun.zhang@csi.cuny.edu",
-        office: "1N-204",
-        phone: "718-982-2852",
-        hasPhoto: false,
-        link: "https://www.cs.csi.cuny.edu/~zhangs/"
-    },
-    {
-        name: "Tianxiao Zhang",
-        title: "Assistant Professor",
-        email: "tianxiao.zhang@csi.cuny.edu",
-        office: "1N-205",
-        phone: "718-982-3288",
-        hasPhoto: false,
-        link: ''
-    },
-    {
-        name: "Xiaowen Zhang",
-        title: "Professor",
-        email: "xiaowen.zhang@csi.cuny.edu",
-        office: "1N-213",
-        phone: "718-982-3262",
-        hasPhoto: false,
-        link: 'https://www.cs.csi.cuny.edu/~zhangx/'
-    },
-    {
-        name: "Zhanyang Zhang",
-        title: "Professor",
-        email: "zhanyang.zhang@csi.cuny.edu",
-        office: "1N-206",
-        phone: "718-982-3175",
-        hasPhoto: false,
-        link: "https://www.cs.csi.cuny.edu/~zhangz/"
-    }
-    ,
-    {
-        name: "Adam Kostandy",
-        title: "Lecturer",
-        email: "adam.kostandy@csi.cuny.edu",
-        office: "1N-215",
-        phone: "",
-        hasPhoto: false,
-        link: ""
-    }
-];
+import { faculty } from '@/data/people';
+import type { FacultyMember } from '@/data/types';
 
 // --- Components ---
 
-const FacultyCard = ({ member, index }: { member: typeof faculty[0], index: number }) => {
-    const hasLink = member.link && member.link.trim() !== '';
+const FacultyCard = ({ member, index }: { member: FacultyMember, index: number }) => {
+    const hasLink = member.website && member.website.trim() !== '';
     const CardContent = (
         <>
             {/* Avatar Section */}
             <div className="relative h-64 overflow-hidden bg-slate-100 border-b border-slate-100">
-                {member.hasPhoto && (member as any).image ? (
+                {member.image ? (
                     <>
                         <img
-                            src={(member as any).image}
+                            src={member.image}
                             alt={member.name}
                             className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                         />
@@ -239,7 +92,7 @@ const FacultyCard = ({ member, index }: { member: typeof faculty[0], index: numb
 
     if (hasLink) {
         return (
-            <Link href={member.link!} target="_blank" rel="noopener noreferrer">
+            <Link href={member.website!} target="_blank" rel="noopener noreferrer">
                 <motion.div
                     layout
                     initial={{ opacity: 0, y: 20 }}

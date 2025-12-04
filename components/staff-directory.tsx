@@ -11,70 +11,12 @@ import {
   Users,
   Award
 } from 'lucide-react';
-
-// --- Data Configuration ---
-
-const emeritusData = [
-  "Emile Chi", "Bernard Domanski", "Natacha Gueorguieva", "Anatoliy Gordonov",
-  "Susan Imberman", "Roberta Klibaner", "Michael Kress", "Herbert Schanker",
-  "Miriam Tausner", "Deborah Sturm"
-];
-
-const adjunctsData = [
-  "Agman, Daniel", "Catalano, Anthony", "Al-Mashhadani, Zaid", "Hayes, Dolores",
-  "Jahaj, Safet", "Hills, Amy", "Iacona, Louis", "Wong, Jonathan",
-  "Kholodovsky, Michael", "Kausar, Fatma", "Weir, Rich", "Michael Deredita",
-  "Lavrov, Roman", "Ciaccio, Philip", "Parziale, Jonathan", "Kapaj, Luigi",
-  "Wang, Zhiqi", "Yuan, Kailie", "Lu, Jia", "Tooker, Joseph"
-];
-
-const officeStaff = [
-  {
-    name: "Joanne Morris",
-    title: "CUNY Administrative Assistant",
-    email: "joanne.morris@csi.cuny.edu",
-    office: "1N-215",
-    phone: "718-982-2850"
-  },
-  {
-    name: "Laurie Guido",
-    title: "College Assistant",
-    email: "laurie.guido@csi.cuny.edu",
-    office: "1N-215",
-    phone: "718-982-2850"
-  },
-  {
-    name: "Kristi Brescia",
-    title: "Academic Advisor",
-    email: "kristi.brescia@csi.cuny.edu",
-    office: "1N-209",
-    phone: "718-982-2842"
-  },
-  {
-    name: "Fred Loweff",
-    title: "CUNY 2X Manager",
-    email: "fred.loweff@csi.cuny.edu",
-    office: "1N-214",
-    phone: "718-982-3178"
-  }
-];
-
-const technicalStaff = [
-  {
-    name: "Chang Guo",
-    title: "Senior College Lab Technician",
-    email: "chang.guo@csi.cuny.edu",
-    office: "1N-219",
-    phone: "718-982-2857"
-  },
-  {
-    name: "Orit D. Gruber",
-    title: "Chief College Lab Technician",
-    email: "orit.gruber@csi.cuny.edu",
-    office: "1N-218",
-    phone: "718-982-3015"
-  }
-];
+import {
+  emeritusFacultyNames,
+  adjunctFacultyNames,
+  officeStaff,
+  technicalStaff,
+} from '@/data/people';
 
 // --- Components ---
 
@@ -174,12 +116,12 @@ export default function DepartmentStaff() {
         <div className="border-b border-slate-100 mb-20">
           <NameListSection
             title="Emeritus Faculty"
-            names={emeritusData}
+            names={emeritusFacultyNames}
             icon={Award}
           />
           <NameListSection
             title="Adjunct Faculty"
-            names={adjunctsData}
+            names={adjunctFacultyNames}
             icon={Users}
           />
         </div>
