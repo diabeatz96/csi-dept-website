@@ -4,98 +4,13 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, Menu, X, ArrowRight, ChevronRight, GraduationCap } from "lucide-react";
+import { Menu, X, ArrowRight, ChevronRight } from "lucide-react";
 import { usePathname } from "next/navigation";
 import TopBanner from "./top-banner";
-
-// --- Data Configuration ---
-const navItems = [
-    {
-        id: "home",
-        label: "Home",
-        href: "/",
-        image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2670&auto=format&fit=crop",
-        description: "Welcome to the Department of Computer Science.",
-        subLinks: []
-    },
-    {
-        id: "undergraduate",
-        label: "Undergraduate",
-        href: "/undergraduate",
-        image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2670&auto=format&fit=crop",
-        description: "Build a strong foundation in theory and practice.",
-        subLinks: [
-            { name: "AAS in Computer Technology", href: "/undergraduate#aas-computer-technology" },
-            { name: "BS in Computer Science", href: "/undergraduate#bs-computer-science" },
-            { name: "BS in CS & Math", href: "/undergraduate#additional-degrees" },
-            { name: "BS in ISI", href: "/undergraduate#bs-information-systems-and-informatics" },
-            { name: "Academic Minors", href: "/undergraduate#minors-certificates" },
-            { name: "Student Research", href: "/research#student-research" },
-        ]
-    },
-    {
-        id: "graduate",
-        label: "Graduate",
-        href: "/graduate",
-        image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2670&auto=format&fit=crop",
-        description: "Advance your career with Master's and PhD programs.",
-        subLinks: [
-            { name: "MS in Computer Science", href: "/graduate#ms-computer-science" },
-            { name: "PhD Program", href: "/graduate#phd-computer-science" },
-            { name: "Admissions", href: "/graduate#phd-computer-science" },
-            { name: "Degree Requirements", href: "/graduate#phd-computer-science" },
-        ]
-    },
-    {
-        id: "courses",
-        label: "Courses",
-        href: "/courses",
-        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2670&auto=format&fit=crop",
-        description: "Explore our comprehensive curriculum.",
-        subLinks: [
-
-        ]
-    },
-    {
-        id: "research",
-        label: "Research",
-        href: "/research",
-        image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2670&auto=format&fit=crop",
-        description: "Discover groundbreaking work by our faculty and students.",
-        subLinks: [
-            { name: "Faculty Research", href: "/research#faculty-research" },
-            { name: "Student Led Research", href: "/research#student-research" },
-        ]
-    },
-    {
-        id: "people",
-        label: "People",
-        href: "/people",
-        image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=2587&auto=format&fit=crop",
-        description: "Meet the faculty and staff driving our mission.",
-        subLinks: [
-            { name: "Faculty Directory", href: "/people#professors" },
-            { name: "Staff & Administration", href: "/people#staff-directory" },
-        ]
-    },
-    {
-        id: "resources",
-        label: "Resources",
-        href: "/resources",
-        image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2670&auto=format&fit=crop",
-        description: "Tools and support for student success.",
-        subLinks: [
-            { name: "Student Spotlights", href: "/resources#student-spotlights" },
-            { name: "Internships & Jobs", href: "/resources#resources-tools" },
-            { name: "Tutoring Services", href: "/resources#resources-tools" },
-            { name: "Scholarships", href: "/resources#resources-tools" },
-            { name: "CUNY 2x Tech", href: "/resources#resources-tools" },
-        ]
-    },
-];
+import { navItems, footerQuickLinks } from "@/data/navigation";
 
 // --- Sub-Component: Background Image Layer ---
-const BackgroundLayer = ({ image, isOpen }: { image: string, isOpen: boolean }) => (
+const BackgroundLayer = ({ image, isOpen }: { image?: string, isOpen: boolean }) => (
     <div className="absolute inset-0 z-0 overflow-hidden bg-slate-900 pointer-events-none">
         <AnimatePresence mode="wait">
             {isOpen && image && (
@@ -325,9 +240,9 @@ export default function NavbarEdu() {
                                             </div>
 
                                             {/* Sublinks Grid */}
-                                            {activeItem.subLinks.length > 0 && (
+                                            {activeItem.subLinks && activeItem.subLinks.length > 0 && (
                                                 <div className="grid grid-cols-2 gap-x-12 gap-y-6">
-                                                    {activeItem.subLinks.map((sub) => (
+                                                    {activeItem.subLinks?.map((sub) => (
                                                         <Link
                                                             key={sub.name}
                                                             href={sub.href}
@@ -382,7 +297,7 @@ export default function NavbarEdu() {
                                                         className="overflow-hidden pb-4 pl-4"
                                                     >
                                                         <div className="flex flex-col gap-3">
-                                                            {item.subLinks.map(sub => (
+                                                            {item.subLinks?.map(sub => (
                                                                 <Link
                                                                     key={sub.name}
                                                                     href={sub.href}
@@ -410,10 +325,16 @@ export default function NavbarEdu() {
 
                             {/* Footer Links */}
                             <div className="mt-auto pt-8 border-t border-white/10 flex flex-wrap gap-x-8 gap-y-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                                <Link href="https://www.cuny.edu/about/administration/offices/cis/cunyfirst/" onClick={() => setIsOpen(false)} className="hover:text-white">CUNY First</Link>
-                                <Link href="https://ssologin.cuny.edu/cuny.html?bmctx=D59E04882DF4F80F0E4A64DD59167034&password=secure_string&contextType=external&OverrideRetryLimit=1&ChallengeRedirectMethod=GET&username=string&challenge_url=https://ssologin.cuny.edu/cuny.html&request_id=-8304344052822269525&authn_try_count=0&locale=en_US&resource_url=%252Fuser%252Floginsso" onClick={() => setIsOpen(false)} className="hover:text-white">Brightspace</Link>
-                                <Link href="https://ssologin.cuny.edu/cuny.html?bmctx=D59E04882DF4F80F0E4A64DD59167034&password=secure_string&contextType=external&OverrideRetryLimit=1&ChallengeRedirectMethod=GET&username=string&challenge_url=https://ssologin.cuny.edu/cuny.html&request_id=3694992306920918914&authn_try_count=0&locale=en_US&resource_url=https%253A%252F%252Flandingpageprod.cuny.edu%252Fland%252Fmain.jsp" onClick={() => setIsOpen(false)} className="hover:text-white">DegreeWorks</Link>
-                                <Link href="https://www.csi.cuny.edu/admissions/applying-csi" onClick={() => setIsOpen(false)} className="hover:text-white ml-auto text-blue-400">Apply Now</Link>
+                                {footerQuickLinks.map((link, idx) => (
+                                    <Link
+                                        key={link.name}
+                                        href={link.href}
+                                        onClick={() => setIsOpen(false)}
+                                        className={`hover:text-white ${link.highlight ? "ml-auto text-blue-400" : ""}`}
+                                    >
+                                        {link.name}
+                                    </Link>
+                                ))}
                             </div>
 
                         </div>

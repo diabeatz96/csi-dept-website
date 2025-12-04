@@ -6,7 +6,7 @@
 // ============================================
 
 export interface SubLink {
-  title: string;
+  name: string;
   href: string;
   description?: string;
 }
