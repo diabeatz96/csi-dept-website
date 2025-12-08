@@ -3,126 +3,13 @@
 import React, { useState, useEffect, useMemo, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSearchParams } from 'next/navigation';
-import { Search, Filter, BookOpen, Hash, X, Layers, Calendar, FileText, ExternalLink, ArrowRight } from 'lucide-react';
+import { Search, Filter, BookOpen, Hash, X, Calendar, FileText, ExternalLink, ArrowRight } from 'lucide-react';
+import { allCourses } from '@/data/courses';
+import type { Course } from '@/data/types';
 
-// --- 1. Complete Data Extraction ---
+// --- Components ---
 
-const coursesDB = [
-    // --- Undergraduate: Level 100 ---
-    { code: "CSC 102", title: "Computers for Today", level: "100", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0626441' },
-    { code: "CSC 115", title: "Introduction to Computer Technology", level: "100", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0626511' },
-    { code: "CSC 117", title: "Computer Technology Lab", level: "100", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/1208961' },
-    { code: "CSC 119", title: "Computer Technology Concepts", level: "100", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/1186771' },
-    { code: "CSC 126", title: "Introduction to Computer Science", level: "100", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0626561' },
-    { code: "CSC 135", title: "Introduction to Information Systems", level: "100", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0621232' },
-    { code: "CSC 140", title: "Computational Problem Solving in Python", level: "100", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/1209211' },
-
-    // --- Undergraduate: Level 200 ---
-    { code: "CSC 211", title: "Intermediate Programming", level: "200", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0626631' },
-    { code: "CSC 215", title: "Assistive Technology for Universal Applications", level: "200", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/1186881' },
-    { code: "CSC 220", title: "Computer Organization", level: "200", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0626651' },
-    { code: "CSC 221", title: "Networking and Security", level: "200", type: "undergraduate", href: "https://csi-undergraduate.catalog.cuny.edu/courses/1545761" },
-    { code: "CSC 223", title: "Cybersecurity Fundamentals", level: "200", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0626661' },
-    { code: "CSC 225", title: "Intro to Web Development and the Internet", level: "200", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0626681' },
-    { code: "CSC 226", title: "Web Database Applications", level: "200", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0626691' },
-    { code: "CSC 227", title: "Introductory Computer Game Programming", level: "200", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0626701' },
-    { code: "CSC 228", title: "Discrete Mathematical Structures for Computer Science", level: "200", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0626711' },
-    { code: "CSC 229", title: "Introduction to High Performance Computing", level: "200", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/1087091' },
-    { code: "CSC 235", title: "Robotic Explorations", level: "200", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/1238371' },
-    { code: "CSC 245", title: "Introduction to Data Science", level: "200", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/1504171' },
-    { code: "CSC 250", title: "Serious Game Development", level: "200", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/1522221' },
-    { code: "CSC 270", title: "Introduction to Scientific Computing", level: "200", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0626781' },
-
-    // --- Undergraduate: Level 300 ---
-    { code: "CSC 305", title: "Operating Systems Programming Laboratory", level: "300", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/1209231' },
-    { code: "CSC 315", title: "Introduction to Database Systems", level: "300", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/1300971' },
-    { code: "CSC 326", title: "Data Structures", level: "300", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0626831' },
-    { code: "CSC 330", title: "Object-Oriented Software Design", level: "300", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0626851' },
-    { code: "CSC 332", title: "Operating Systems I", level: "300", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0626871' },
-    { code: "CSC 346", title: "Digital Systems Design", level: "300", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0626921' },
-    { code: "CSC 347", title: "Digital Systems Design Laboratory", level: "300", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0626931' },
-    { code: "CSC 382", title: "Analysis of Algorithms", level: "300", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0626991' },
-
-    // --- Undergraduate: Level 400 ---
-    { code: "CSC 401", title: "Virtual and Augmented Reality", level: "400", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/1572991' },
-    { code: "CSC 412", title: "Machine Learning and Knowledge Discovery", level: "400", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/1471021' },
-    { code: "CSC 420", title: "Concepts of Programming Languages", level: "400", type: "undergraduate", href: 'http://csicuny.smartcatalogiq.com/current/Undergraduate-Catalog/Courses/CSC-Computer-Science/400/CSC-420' },
-    { code: "CSC 421", title: "Internet Data Communications", level: "400", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0627051' },
-    { code: "CSC 424", title: "Advanced Database Management Systems", level: "400", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0627061' },
-    { code: "CSC 425", title: "Shared Memory Parallel Computing", level: "400", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/1371751' },
-    { code: "CSC 426", title: "Applied Cryptography", level: "400", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/1371611' },
-    { code: "CSC 427", title: "Advanced Computer Game Programming", level: "400", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0627071' },
-    { code: "CSC 429", title: "Advanced High Performance Computing", level: "400", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/1090481' },
-    { code: "CSC 430", title: "Software Engineering", level: "400", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0627081' },
-    { code: "CSC 435", title: "Advanced Data Communications", level: "400", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0627111' },
-    { code: "CSC 436", title: "Modern Web Development", level: "400", type: "undergraduate", href: "https://csi-undergraduate.catalog.cuny.edu/courses/1522231" },
-    { code: "CSC 438", title: "Mobile Application Development", level: "400", type: "undergraduate", href: "https://csi-undergraduate.catalog.cuny.edu/courses/1186111" },
-    { code: "CSC 446", title: "Computer Architecture", level: "400", type: "undergraduate", href: "https://csi-undergraduate.catalog.cuny.edu/courses/0627131" },
-    { code: "CSC 450", title: "Honors Workshop", level: "400", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0627141' },
-    { code: "CSC 455", title: "Neuromorphic Computing", level: "400", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/1553381' },
-    { code: "CSC 462", title: "Microcontrollers", level: "400", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0643652' },
-    { code: "CSC 470", title: "Introductory Computer Graphics", level: "400", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0627181' },
-    { code: "CSC 475", title: "Image Processing in Computer Science", level: "400", type: "undergraduate", href: "https://csi-undergraduate.catalog.cuny.edu/courses/0627191" },
-    { code: "CSC 480", title: "Artificial Intelligence", level: "400", type: "undergraduate", href: "https://csi-undergraduate.catalog.cuny.edu/courses/0627201" },
-    { code: "CSC 482", title: "Discrete Simulation", level: "400", type: "undergraduate", href: "https://csi-undergraduate.catalog.cuny.edu/courses/0627211" },
-    { code: "CSC 484", title: "Theory of Computation", level: "400", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0627221' },
-    { code: "CSC 490", title: "Seminar in Computer Science", level: "400", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/0627231' },
-
-    // --- Undergraduate: ISI (Information Systems) ---
-    { code: "ISI 205", title: "Data Communications and IT Infrastructure", level: "ISI", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/1303251' },
-    { code: "ISI 300", title: "Information Structures for Business", level: "ISI", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/1300991' },
-    { code: "ISI 315", title: "Information Security and Risk Management", level: "ISI", type: "undergraduate", href: "https://csi-undergraduate.catalog.cuny.edu/courses/1303261" },
-    { code: "ISI 334", title: "Business Intelligence and Analytics", level: "ISI", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/1303291' },
-    { code: "ISI 352", title: "Introduction to Systems Analysis", level: "ISI", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/1303271' },
-    { code: "ISI 364", title: "Enterprise Computing Strategies", level: "ISI", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/1300961' },
-    { code: "ISI 374", title: "Information Systems Project Management", level: "ISI", type: "undergraduate", href: "https://csi-undergraduate.catalog.cuny.edu/courses/1301001" },
-    { code: "ISI 490", title: "Project in Information Systems and Informatics", level: "ISI", type: "undergraduate", href: 'https://csi-undergraduate.catalog.cuny.edu/courses/1301011' },
-
-    // --- Graduate: Level 700 ---
-    { code: "CSC 704", title: "Tech-Infused Curriculum Dev (Teachers)", level: "700", type: "graduate", href: 'https://csi-graduate.catalog.cuny.edu/courses/0627711' },
-    { code: "CSC 706", title: "Computer Graphics", level: "700", type: "graduate", href: "https://csi-graduate.catalog.cuny.edu/courses/0627731" },
-    { code: "CSC 710", title: "Software Engineering", level: "700", type: "graduate", href: "https://csi-graduate.catalog.cuny.edu/courses/0627761" },
-    { code: "CSC 711", title: "Computational Thinking for Teachers", level: "700", type: "graduate", href: 'https://csi-graduate.catalog.cuny.edu/courses/1299601' },
-    { code: "CSC 714", title: "Software Systems Analysis Design", level: "700", type: "graduate", href: 'https://csi-graduate.catalog.cuny.edu/courses/1299611' },
-    { code: "CSC 715", title: "Database Theory", level: "700", type: "graduate", href: 'https://csi-graduate.catalog.cuny.edu/courses/0627801' },
-    { code: "CSC 716", title: "Advanced Operating Systems", level: "700", type: "graduate", href: 'https://csi-graduate.catalog.cuny.edu/courses/0627811' },
-    { code: "CSC 724", title: "Formal Language Theory", level: "700", type: "graduate", href: 'https://csi-graduate.catalog.cuny.edu/courses/0627871' },
-    { code: "CSC 725", title: "Computer Vision", level: "700", type: "graduate", href: 'https://csi-graduate.catalog.cuny.edu/courses/1485221' },
-    { code: "CSC 727", title: "Algorithms and Information Structures", level: "700", type: "graduate", href: 'https://csi-graduate.catalog.cuny.edu/courses/0627881' },
-    { code: "CSC 731", title: "Artificial Intelligence and Knowledge Engineering", level: "700", type: "graduate", href: 'https://csi-graduate.catalog.cuny.edu/courses/0627891' },
-    { code: "CSC 732", title: "Pattern Recognition and Neural Networks", level: "700", type: "graduate", href: 'https://csi-graduate.catalog.cuny.edu/courses/0627901' },
-    { code: "CSC 733", title: "Natural Language Processing", level: "700", type: "graduate", href: 'https://csi-graduate.catalog.cuny.edu/courses/0627911' },
-    { code: "CSC 735", title: "Machine Learning and Data Mining", level: "700", type: "graduate", href: 'https://csi-graduate.catalog.cuny.edu/courses/0627921' },
-    { code: "CSC 740", title: "Computer System Design", level: "700", type: "graduate", href: 'https://csi-graduate.catalog.cuny.edu/courses/0627931' },
-    { code: "CSC 741", title: "Digital Image Processing", level: "700", type: "graduate", href: 'https://csi-graduate.catalog.cuny.edu/courses/0627941' },
-    { code: "CSC 747", title: "Digital Signal Processing", level: "700", type: "graduate", href: 'https://csi-graduate.catalog.cuny.edu/courses/0627971' },
-    { code: "CSC 754", title: "Topics in System Simulation", level: "700", type: "graduate", href: 'https://csi-graduate.catalog.cuny.edu/courses/0628011' },
-    { code: "CSC 756", title: "Network Security", level: "700", type: "graduate", href: 'https://csi-graduate.catalog.cuny.edu/courses/0628031' },
-    { code: "CSC 757", title: "Telecommunication Networks", level: "700", type: "graduate", href: 'https://csi-graduate.catalog.cuny.edu/courses/0628041' },
-    { code: "CSC 759", title: "Graduate Research Laboratory", level: "700", type: "graduate", href: 'https://csi-graduate.catalog.cuny.edu/courses/0628061' },
-    { code: "CSC 762", title: "Fundamentals of Wireless Communications", level: "700", type: "graduate", href: 'https://csi-graduate.catalog.cuny.edu/courses/0628081' },
-    { code: "CSC 767", title: "Neural Networks and Deep Learning", level: "700", type: "graduate", href: 'https://csi-graduate.catalog.cuny.edu/courses/1371761' },
-    { code: "CSC 768", title: "Cryptography", level: "700", type: "graduate", href: 'https://csi-graduate.catalog.cuny.edu/courses/1371771' },
-    { code: "CSC 769", title: "Graph-Based Analysis for Big Data", level: "700", type: "graduate", href: 'https://csi-graduate.catalog.cuny.edu/courses/1372531' },
-    { code: "CSC 770", title: "Parallel Computing", level: "700", type: "graduate", href: 'https://csi-graduate.catalog.cuny.edu/courses/0628111' },
-
-    // --- Graduate: PhD (Grouped by topic for display, code is generalized) ---
-    { code: "DS 801", title: "Big Data Analytics", level: "PhD", type: "graduate", href: '#' },
-    { code: "DS 802", title: "Data Mining & Visualization", level: "PhD", type: "graduate", href: '#' },
-    { code: "ML 810", title: "Machine Learning in Quant Finance", level: "PhD", type: "graduate", href: '#' },
-    { code: "ML 815", title: "Graphical Models & Optimization", level: "PhD", type: "graduate", href: '#' },
-    { code: "TH 820", title: "Advanced Data Structures", level: "PhD", type: "graduate", href: '#' },
-    { code: "TH 825", title: "Combinatorial Algorithms", level: "PhD", type: "graduate", href: '#' },
-    { code: "CP 830", title: "Parallel Scientific Computing", level: "PhD", type: "graduate", href: '#' },
-    { code: "NLP 840", title: "Natural Language Processing", level: "PhD", type: "graduate", href: '#' },
-    { code: "NLP 845", title: "Web Information Retrieval", level: "PhD", type: "graduate", href: '#' },
-    { code: "VIS 850", title: "Computer Vision & 3D Photo", level: "PhD", type: "graduate", href: '#' },
-    { code: "SOC 860", title: "Social Network Analysis", level: "PhD", type: "graduate", href: '#' },
-];
-
-// --- 2. Components ---
-
-const CourseCard = ({ course }: { course: typeof coursesDB[0] }) => {
+const CourseCard = ({ course }: { course: Course }) => {
     // Generate a subtle gradient based on the level/type
     const getGradient = () => {
         if (course.level === "PhD") return "from-purple-900 to-slate-900";
@@ -241,7 +128,7 @@ function CoursesPageContent() {
 
     // Filter Logic
     const filteredCourses = useMemo(() => {
-        return coursesDB.filter(course => {
+        return allCourses.filter(course => {
             // 1. Main Category
             if (mainFilter !== 'all' && course.type !== mainFilter) return false;
 

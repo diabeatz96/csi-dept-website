@@ -57,7 +57,7 @@ export interface AdjunctFaculty {
 // Course Types
 // ============================================
 
-export type CourseLevel = "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800";
+export type CourseLevel = "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "ISI" | "PhD";
 export type CourseType = "undergraduate" | "graduate";
 
 export interface Course {
@@ -68,7 +68,7 @@ export interface Course {
   type: CourseType;
   description?: string;
   prerequisites?: string[];
-  catalogUrl: string;
+  href: string;
 }
 
 // Program Types
