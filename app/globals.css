@@ -177,3 +177,130 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* ============================================
+   ACCESSIBILITY STYLES
+   ============================================ */
+
+/* Focus Indicators - Visible focus states for keyboard navigation */
+:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Remove default focus for mouse users, keep for keyboard */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Enhanced focus for interactive elements */
+button:focus-visible,
+a:focus-visible,
+[role="button"]:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Reduced Motion - Respect user preferences for motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Disable smooth scroll */
+  html {
+    scroll-behavior: auto;
+  }
+
+  /* Disable marquee animations */
+  .animate-marquee,
+  .animate-marquee-vertical {
+    animation: none !important;
+  }
+
+  /* Disable blob animations */
+  .animate-blob {
+    animation: none !important;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    --border: oklch(0.3 0 0);
+  }
+
+  button,
+  a {
+    border: 1px solid currentColor;
+  }
+}
+
+/* Screen Reader Only - Hide visually but keep accessible */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Show when focused (for skip links) */
+.sr-only:focus,
+.sr-only:focus-within {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Accessible Color Variables - WCAG AA compliant alternatives */
+:root {
+  /* Original brand blue #7abde8 doesn't meet contrast on white */
+  /* Use these accessible alternatives for text */
+  --color-accessible-blue: #2563eb; /* Blue 600 - 4.7:1 contrast on white */
+  --color-accessible-blue-dark: #1d4ed8; /* Blue 700 - 6.0:1 contrast on white */
+  --color-accessible-gray: #4b5563; /* Gray 600 - 5.9:1 contrast on white */
+  --color-brand-blue: #7abde8; /* Original brand color - use only for large text/decorative */
+}
+
+/* Accessible text color utilities */
+.text-accessible-blue {
+  color: var(--color-accessible-blue);
+}
+
+.text-accessible-blue-dark {
+  color: var(--color-accessible-blue-dark);
+}
+
+/*
+   ACCESSIBILITY NOTE:
+   The brand blue #7abde8 has insufficient contrast (2.7:1) against white for normal text.
+   WCAG AA requires 4.5:1 for normal text and 3:1 for large text (18pt+ or 14pt bold+).
+
+   Use #7abde8 ONLY for:
+   - Large headings (24px+ or 18px bold+)
+   - Decorative elements, backgrounds, borders
+   - Icons (when accompanied by accessible text)
+
+   Use #2563eb or #1d4ed8 for:
+   - Body text
+   - Small labels and tags
+   - Links
+   - Interactive element text
+*/

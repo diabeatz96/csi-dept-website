@@ -110,10 +110,20 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Skip Navigation Link - Accessibility */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:px-4 focus:py-2 focus:text-slate-900 focus:font-semibold focus:rounded-md focus:shadow-lg focus:ring-2 focus:ring-blue-600"
+        >
+          Skip to main content
+        </a>
+
         <SmoothScrollHandler />
         {/* <TopBanner /> */}
         <NavbarEdu />
-        {children}
+        <main id="main-content" tabIndex={-1}>
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

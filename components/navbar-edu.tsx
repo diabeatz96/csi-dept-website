@@ -24,7 +24,8 @@ const BackgroundLayer = ({ image, isOpen }: { image?: string, isOpen: boolean })
                 >
                     <Image
                         src={image}
-                        alt="Menu Background"
+                        alt="" // Decorative image
+                        role="presentation"
                         fill
                         className="object-cover object-center grayscale"
                         priority
@@ -95,10 +96,22 @@ export default function NavbarEdu() {
         else document.body.style.overflow = 'unset';
     }, [isOpen]);
 
+    // Keyboard accessibility - Escape key closes menu
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'Escape' && isOpen) {
+                setIsOpen(false);
+            }
+        };
+        document.addEventListener('keydown', handleKeyDown);
+        return () => document.removeEventListener('keydown', handleKeyDown);
+    }, [isOpen]);
+
     return (
         <>
             {/* --- Sticky Top Bar --- */}
             <nav
+                aria-label="Main navigation"
                 className={`fixed top-0 left-0 right-0 z-1000 transition-all duration-300 border-b ${isOpen
                     ? "bg-transparent border-transparent text-white py-5"
                     : isScrolled
@@ -109,7 +122,7 @@ export default function NavbarEdu() {
                 <div className="max-w-[1600px] mx-auto px-6 flex items-center justify-between">
 
                     {/* Brand Logo */}
-                    <Link href="/" className="flex items-center gap-3 group z-50 relative">
+                    <Link href="/" className="flex items-center gap-3 group z-50 relative" aria-label="CSI Computer Science Department - Home">
                         <div className="relative">
                             <div className="w-10 h-10 md:w-12 md:h-12  rounded-lg flex items-center justify-center ">
                                 {/* <svg
@@ -135,7 +148,7 @@ export default function NavbarEdu() {
                                         strokeLinejoin="round"
                                     />
                                 </svg> */}
-                                <Image src={isOpen ? "/cunycsiwhite.png" : "/cunycsi.png"} alt="Logo" width={40} height={40} />
+                                <Image src={isOpen ? "/cunycsiwhite.png" : "/cunycsi.png"} alt="CUNY College of Staten Island logo" width={40} height={40} />
                             </div>
                         </div>
                         <div className="flex flex-col">
@@ -157,17 +170,20 @@ export default function NavbarEdu() {
                         {/* Menu Toggle */}
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="flex items-center gap-3 group focus:outline-none"
+                            aria-expanded={isOpen}
+                            aria-controls="mega-menu"
+                            aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+                            className="flex items-center gap-3 group"
                         >
                             <span className={`hidden md:block text-sm font-bold uppercase tracking-widest transition-colors ${isOpen ? "text-white group-hover:text-blue-200" : "text-slate-900 group-hover:text-blue-600"
-                                }`}>
+                                }`} aria-hidden="true">
                                 {isOpen ? "Close" : "Menu"}
                             </span>
                             <div className={`p-2.5 rounded-full border transition-all duration-300 ${isOpen
                                 ? "border-white bg-white text-blue-900 rotate-90"
                                 : "border-slate-200 bg-slate-50 text-slate-900 group-hover:border-blue-600 group-hover:text-blue-600"
                                 }`}>
-                                {isOpen ? <X size={20} /> : <Menu size={20} />}
+                                {isOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
                             </div>
                         </button>
                     </div>
@@ -178,6 +194,10 @@ export default function NavbarEdu() {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
+                        id="mega-menu"
+                        role="dialog"
+                        aria-modal="true"
+                        aria-label="Site navigation menu"
                         initial={{ y: "-100%" }}
                         animate={{ y: "0%" }}
                         exit={{ y: "-100%" }}
