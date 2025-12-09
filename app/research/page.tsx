@@ -131,7 +131,7 @@ export default function ResearchHero() {
     });
 
     return (
-        <main className='max-w-8xl mx-auto pt-20 md:pt-24'>
+        <div className='max-w-8xl mx-auto pt-20 md:pt-24'>
             <section className="relative min-h-screen bg-slate-50 overflow-hidden flex flex-col items-center justify-center py-10 lg:py-0 rounded-xl">
 
                 {/* --- Background Decorative Elements --- */}
@@ -199,7 +199,7 @@ export default function ResearchHero() {
             </section>
             <div className='' id='faculty-research'><FacultyResearch /></div>
             <div className='' id='student-research'><StudentResearch /></div>
-        </main>
+        </div>
     );
 }
 

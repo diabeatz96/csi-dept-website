@@ -42,7 +42,7 @@ const NewsCard = ({ item }: { item: NewsItem }) => {
                 </div>
 
                 <div className="mt-auto pt-3 sm:pt-4 border-t border-gray-100 flex items-center justify-between">
-                    <div className="flex items-center text-xs text-gray-400 font-medium">
+                    <div className="flex items-center text-xs text-gray-600 font-medium">
                         <Calendar size={14} className="mr-1" aria-hidden="true" />
                         <time dateTime={item.date}>{item.date}</time>
                     </div>

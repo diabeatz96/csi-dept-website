@@ -129,7 +129,7 @@ export default function DegreePathHero() {
         mouseY.current = event.clientY;
     };
     return (
-        <main className='max-w-8xl mx-auto px-6 pt-20 md:pt-24'>
+        <div className='max-w-8xl mx-auto px-6 pt-20 md:pt-24'>
             <NotchTwo />
             <section className="bg-white min-h-screen flex items-center justify-center overflow-hidden relative" ref={ref} onMouseMove={handleMouseMove}>
 
@@ -425,7 +425,7 @@ export default function DegreePathHero() {
 
                 </div>
             </section>
-        </main>
+        </div>
     );
 }
 

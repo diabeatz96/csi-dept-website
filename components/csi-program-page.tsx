@@ -436,10 +436,10 @@ const SpotlightCarousel = () => {
 export default function CSIProgramsPage() {
     return (
         <div className="bg-white font-sans text-slate-800">
-            <main className='max-w-8xl mx-auto px-6'>
+            <div className='max-w-8xl mx-auto px-6'>
                 <DegreeListSection />
                 <SpotlightCarousel />
-            </main>
+            </div>
         </div>
     );
 }

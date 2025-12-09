@@ -143,7 +143,7 @@ const FacultyCard = ({ member, index }: { member: FacultyMember, index: number }
 
 export default function FacultyDirectory() {
     return (
-        <main className='max-w-8xl mx-auto'>
+        <div className='max-w-8xl mx-auto'>
             <section id="professors" className="bg-slate-50 pt-28 md:pt-32 pb-16 md:pb-24 min-h-screen">
                 <div className="max-w-7xl mx-auto px-4 md:px-6">
 
@@ -173,6 +173,6 @@ export default function FacultyDirectory() {
                 </div>
             </section>
             <div id='staff-directory'><DepartmentStaff /></div>
-        </main>
+        </div>
     );
 }

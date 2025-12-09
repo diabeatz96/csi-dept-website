@@ -362,7 +362,7 @@ function CoursesPageContent() {
             </div>
 
             {/* --- Course Grid Section --- */}
-            <main className="max-w-[1600px] mx-auto px-6 py-12">
+            <div className="max-w-[1600px] mx-auto px-6 py-12">
 
                 {/* Results Header */}
                 <div className="mb-8 flex items-center justify-between">
@@ -410,7 +410,7 @@ function CoursesPageContent() {
                     </motion.div>
                 )}
 
-            </main>
+            </div>
         </div>
     );
 }

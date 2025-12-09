@@ -556,7 +556,7 @@ const WhyChooseUsSection = () => {
 export default function CSIDepartmentPage() {
   return (
     <div className="min-h-screen bg-white font-sans text-[#2d2f31] max-w-8xl mx-auto">
-      <main className='pt-20 md:pt-24'>
+      <div className='pt-20 md:pt-24'>
         {/* 1. Hero - First Impression */}
         <HeroSection />
 
@@ -615,7 +615,7 @@ export default function CSIDepartmentPage() {
             ]}
           />
         </section>
-      </main>
+      </div>
     </div>
   );
 }
