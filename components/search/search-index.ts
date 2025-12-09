@@ -77,9 +77,11 @@ export function buildSearchIndex(): SearchableItem[] {
   });
 
   // === PEOPLE: Emeritus ===
-  emeritusFaculty.forEach(person => {
+  emeritusFaculty.forEach((person, index) => {
+    // Generate ID from name since emeritus don't have id field
+    const generatedId = person.name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-');
     items.push({
-      id: `emeritus-${person.id}`,
+      id: `emeritus-${generatedId}-${index}`,
       title: person.name,
       subtitle: 'Emeritus Faculty',
       category: 'people',

@@ -157,7 +157,7 @@ export function SearchCommand() {
   // Group results by category
   const groupedResults = useMemo(() => {
     const groups: Partial<Record<SearchCategory, SearchableItem[]>> = {};
-    const categoryOrder: SearchCategory[] = ['people', 'courses', 'programs', 'research', 'news'];
+    const categoryOrder: SearchCategory[] = ['people', 'courses', 'programs', 'research', 'news', 'resources'];
 
     results.forEach(item => {
       if (!groups[item.category]) {
