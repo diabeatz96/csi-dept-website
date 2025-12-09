@@ -1,0 +1,717 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - navigation "Main navigation" [ref=e3]:
+    - generic [ref=e4]:
+      - link "Department of Computer Science - Home" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "CUNY College of Staten Island logo" [ref=e8]
+        - generic [ref=e9]:
+          - generic [ref=e10]: Department of
+          - generic [ref=e11]: Computer Science
+      - link "blue status dot Spring 2026 Registration Open | Apply by December 15th to secure your spot in the program." [ref=e13] [cursor=pointer]:
+        - /url: https://www.csi.cuny.edu/academics-and-research/departments-programs/computer-science
+        - generic "blue status dot" [ref=e14]
+        - generic [ref=e15]:
+          - generic [ref=e16]: Spring 2026 Registration Open
+          - text: "|"
+          - generic [ref=e17]: Apply by December 15th to secure your spot in the program.
+      - button "Open navigation menu" [ref=e19]:
+        - generic [ref=e20]: Menu
+        - img [ref=e22]
+  - main [ref=e23]:
+    - main [ref=e25]:
+      - region "Hero slideshow" [ref=e26]:
+        - generic [ref=e27]:
+          - img "CSI computer science students in lab" [ref=e30]
+          - button "Pause slideshow" [ref=e32]:
+            - img [ref=e33]
+        - generic [ref=e37]:
+          - generic [ref=e38]:
+            - img "CUNY College of Staten Island logo" [ref=e39]
+            - generic [ref=e40]:
+              - paragraph [ref=e41]: Department of
+              - paragraph [ref=e42]: Computer Science
+          - heading "Build Your Future in Technology" [level=1] [ref=e43]
+          - paragraph [ref=e44]: ABET-accredited programs preparing students for careers in software engineering, AI, cybersecurity, and more.
+          - generic [ref=e45]:
+            - generic [ref=e46]:
+              - img [ref=e47]
+              - generic [ref=e50]: ABET
+              - generic [ref=e51]: Accredited
+            - generic [ref=e52]:
+              - img [ref=e53]
+              - generic [ref=e56]: 500+
+              - generic [ref=e57]: Students
+            - generic [ref=e58]:
+              - img [ref=e59]
+              - generic [ref=e64]: 15+
+              - generic [ref=e65]: Faculty
+            - generic [ref=e66]:
+              - img [ref=e67]
+              - generic [ref=e69]: 40+
+              - generic [ref=e70]: Courses
+          - generic [ref=e71]:
+            - link "Explore Programs" [ref=e72] [cursor=pointer]:
+              - /url: /undergraduate
+            - link "Apply Now" [ref=e73] [cursor=pointer]:
+              - /url: https://www.csi.cuny.edu/admissions
+      - generic [ref=e74]:
+        - generic [ref=e75]:
+          - link "Undergraduate BS & AAS Programs" [ref=e76] [cursor=pointer]:
+            - /url: /undergraduate
+            - generic [ref=e77]:
+              - img [ref=e79]
+              - generic [ref=e81]: Undergraduate
+              - paragraph [ref=e82]: BS & AAS Programs
+          - link "Graduate MS & PhD Programs" [ref=e83] [cursor=pointer]:
+            - /url: /graduate
+            - generic [ref=e84]:
+              - img [ref=e86]
+              - generic [ref=e89]: Graduate
+              - paragraph [ref=e90]: MS & PhD Programs
+          - link "Faculty Meet Our Team" [ref=e91] [cursor=pointer]:
+            - /url: /people
+            - generic [ref=e92]:
+              - img [ref=e94]
+              - generic [ref=e99]: Faculty
+              - paragraph [ref=e100]: Meet Our Team
+          - link "Research Projects & Labs" [ref=e101] [cursor=pointer]:
+            - /url: /research
+            - generic [ref=e102]:
+              - img [ref=e104]
+              - generic [ref=e107]: Research
+              - paragraph [ref=e108]: Projects & Labs
+          - link "Resources Student Support" [ref=e109] [cursor=pointer]:
+            - /url: /resources
+            - generic [ref=e110]:
+              - img [ref=e112]
+              - generic [ref=e114]: Resources
+              - paragraph [ref=e115]: Student Support
+          - link "Courses Course Catalog" [ref=e116] [cursor=pointer]:
+            - /url: /courses
+            - generic [ref=e117]:
+              - img [ref=e119]
+              - generic [ref=e121]: Courses
+              - paragraph [ref=e122]: Course Catalog
+        - generic [ref=e124]:
+          - generic [ref=e125]:
+            - generic [ref=e126]:
+              - img [ref=e127]
+              - generic [ref=e130]: Building 1N, Room 215
+            - link "718.982.2850" [ref=e131] [cursor=pointer]:
+              - /url: tel:7189822850
+              - img [ref=e132]
+              - generic [ref=e134]: 718.982.2850
+            - link "cs@csi.cuny.edu" [ref=e135] [cursor=pointer]:
+              - /url: mailto:cs@csi.cuny.edu
+              - img [ref=e136]
+              - generic [ref=e139]: cs@csi.cuny.edu
+          - generic [ref=e140]:
+            - img [ref=e141]
+            - generic [ref=e144]: "Mon-Fri: 9AM - 5PM"
+      - generic [ref=e145]:
+        - generic [ref=e146]:
+          - generic [ref=e147]:
+            - img [ref=e148]
+            - generic [ref=e149]: Academic Programs
+          - heading "Launch Your Career in Technology" [level=2] [ref=e150]
+          - paragraph [ref=e151]: From foundational undergraduate courses to advanced doctoral research, our programs prepare you for success in the ever-evolving tech industry.
+        - generic [ref=e152]:
+          - link "Bachelor of Science Undergraduate 4 Years 120 Credits Bachelor of Science in Computer Science ABET-accredited program with specializations in Game Development, Security, HPC, and Data Science. ABET Accredited 4 Specializations Internship Ready Explore Program" [ref=e154] [cursor=pointer]:
+            - /url: /undergraduate#bs-computer-science
+            - generic [ref=e155]:
+              - generic [ref=e156]:
+                - img "Bachelor of Science" [ref=e157]
+                - generic [ref=e161]:
+                  - img [ref=e162]
+                  - text: Undergraduate
+                - generic [ref=e165]:
+                  - generic [ref=e166]:
+                    - img [ref=e167]
+                    - text: 4 Years
+                  - generic [ref=e170]:
+                    - img [ref=e171]
+                    - text: 120 Credits
+              - generic [ref=e173]:
+                - heading "Bachelor of Science" [level=3] [ref=e174]
+                - paragraph [ref=e175]: in Computer Science
+                - paragraph [ref=e176]: ABET-accredited program with specializations in Game Development, Security, HPC, and Data Science.
+                - generic [ref=e177]:
+                  - generic [ref=e178]: ABET Accredited
+                  - generic [ref=e179]: 4 Specializations
+                  - generic [ref=e180]: Internship Ready
+                - generic [ref=e181]:
+                  - generic [ref=e182]: Explore Program
+                  - img [ref=e184]
+          - link "Master of Science Graduate 2 Years 30 Credits Master of Science in Computer Science Advanced study with tracks in AI, Cloud Computing, and Cybersecurity. 3 Specializations Research Focus Industry Partners Explore Program" [ref=e187] [cursor=pointer]:
+            - /url: /graduate#ms-computer-science
+            - generic [ref=e188]:
+              - generic [ref=e189]:
+                - img "Master of Science" [ref=e190]
+                - generic [ref=e194]:
+                  - img [ref=e195]
+                  - text: Graduate
+                - generic [ref=e198]:
+                  - generic [ref=e199]:
+                    - img [ref=e200]
+                    - text: 2 Years
+                  - generic [ref=e203]:
+                    - img [ref=e204]
+                    - text: 30 Credits
+              - generic [ref=e206]:
+                - heading "Master of Science" [level=3] [ref=e207]
+                - paragraph [ref=e208]: in Computer Science
+                - paragraph [ref=e209]: Advanced study with tracks in AI, Cloud Computing, and Cybersecurity.
+                - generic [ref=e210]:
+                  - generic [ref=e211]: 3 Specializations
+                  - generic [ref=e212]: Research Focus
+                  - generic [ref=e213]: Industry Partners
+                - generic [ref=e214]:
+                  - generic [ref=e215]: Explore Program
+                  - img [ref=e217]
+          - link "Ph.D. Program Doctoral 4-5 Years Research Ph.D. Program via CUNY Graduate Center Research-focused doctoral program in partnership with the CUNY Graduate Center. CUNY Partnership Faculty Mentorship Publication Support Explore Program" [ref=e220] [cursor=pointer]:
+            - /url: /graduate#phd-computer-science
+            - generic [ref=e221]:
+              - generic [ref=e222]:
+                - img "Ph.D. Program" [ref=e223]
+                - generic [ref=e227]:
+                  - img [ref=e228]
+                  - text: Doctoral
+                - generic [ref=e231]:
+                  - generic [ref=e232]:
+                    - img [ref=e233]
+                    - text: 4-5 Years
+                  - generic [ref=e236]:
+                    - img [ref=e237]
+                    - text: Research
+              - generic [ref=e239]:
+                - heading "Ph.D. Program" [level=3] [ref=e240]
+                - paragraph [ref=e241]: via CUNY Graduate Center
+                - paragraph [ref=e242]: Research-focused doctoral program in partnership with the CUNY Graduate Center.
+                - generic [ref=e243]:
+                  - generic [ref=e244]: CUNY Partnership
+                  - generic [ref=e245]: Faculty Mentorship
+                  - generic [ref=e246]: Publication Support
+                - generic [ref=e247]:
+                  - generic [ref=e248]: Explore Program
+                  - img [ref=e250]
+        - link "View All Programs & Courses" [ref=e253] [cursor=pointer]:
+          - /url: /courses
+          - text: View All Programs & Courses
+          - img [ref=e254]
+      - generic [ref=e258]:
+        - generic [ref=e260]:
+          - generic [ref=e261]:
+            - img [ref=e262]
+            - generic [ref=e263]: Why CSI
+          - heading "Why Choose Our Department?" [level=2] [ref=e264]
+          - paragraph [ref=e265]: Join a community of learners and innovators at one of CUNY's premier computer science programs.
+          - list [ref=e266]:
+            - listitem [ref=e267]:
+              - img [ref=e268]
+              - generic [ref=e271]: ABET-accredited BS in Computer Science
+            - listitem [ref=e272]:
+              - img [ref=e273]
+              - generic [ref=e276]: Small class sizes with personalized attention
+            - listitem [ref=e277]:
+              - img [ref=e278]
+              - generic [ref=e281]: Hands-on research opportunities with faculty
+            - listitem [ref=e282]:
+              - img [ref=e283]
+              - generic [ref=e286]: 95% job placement rate for graduates
+            - listitem [ref=e287]:
+              - img [ref=e288]
+              - generic [ref=e291]: Affordable CUNY tuition rates
+            - listitem [ref=e292]:
+              - img [ref=e293]
+              - generic [ref=e296]: Located on NYC's largest campus (204 acres)
+        - generic [ref=e298]:
+          - heading "Quick Links" [level=3] [ref=e299]
+          - generic [ref=e300]:
+            - link "Apply for Admission" [ref=e301] [cursor=pointer]:
+              - /url: https://www.csi.cuny.edu/admissions
+              - generic [ref=e302]:
+                - img [ref=e303]
+                - generic [ref=e305]: Apply for Admission
+              - img [ref=e306]
+            - link "Undergraduate Programs" [ref=e308] [cursor=pointer]:
+              - /url: /undergraduate
+              - generic [ref=e309]:
+                - img [ref=e310]
+                - generic [ref=e312]: Undergraduate Programs
+              - img [ref=e313]
+            - link "Graduate Programs" [ref=e315] [cursor=pointer]:
+              - /url: /graduate
+              - generic [ref=e316]:
+                - img [ref=e317]
+                - generic [ref=e320]: Graduate Programs
+              - img [ref=e321]
+            - link "Meet Our Faculty" [ref=e323] [cursor=pointer]:
+              - /url: /people
+              - generic [ref=e324]:
+                - img [ref=e325]
+                - generic [ref=e330]: Meet Our Faculty
+              - img [ref=e331]
+            - link "Student Resources" [ref=e333] [cursor=pointer]:
+              - /url: /resources
+              - generic [ref=e334]:
+                - img [ref=e335]
+                - generic [ref=e337]: Student Resources
+              - img [ref=e338]
+      - main [ref=e341]:
+        - generic [ref=e343]:
+          - generic [ref=e344]:
+            - generic [ref=e345]:
+              - img [ref=e346]
+              - generic [ref=e347]: Our Programs
+            - heading "Academic Degrees" [level=2] [ref=e348]
+            - paragraph [ref=e349]: Explore our comprehensive academic programs designed to prepare students for careers in software, systems, and research.
+          - generic [ref=e350]:
+            - generic [ref=e351]:
+              - generic [ref=e353]:
+                - img [ref=e355]
+                - heading "Undergraduate" [level=3] [ref=e357]
+              - list [ref=e360]:
+                - listitem [ref=e361]:
+                  - link "AAS in Computer Technology" [ref=e362] [cursor=pointer]:
+                    - /url: /undergraduate#aas-computer-technology
+                    - generic [ref=e363]: AAS in Computer Technology
+                    - img [ref=e364]
+                - listitem [ref=e366]:
+                  - link "BS in Computer Science" [ref=e367] [cursor=pointer]:
+                    - /url: /undergraduate#bs-computer-science
+                    - generic [ref=e368]: BS in Computer Science
+                    - img [ref=e369]
+                - listitem [ref=e371]:
+                  - link "BS in CS-Mathematics" [ref=e372] [cursor=pointer]:
+                    - /url: /undergraduate#additional-degrees
+                    - generic [ref=e373]: BS in CS-Mathematics
+                    - img [ref=e374]
+                - listitem [ref=e376]:
+                  - link "BS in Info Systems & Informatics" [ref=e377] [cursor=pointer]:
+                    - /url: /undergraduate#bs-information-systems-and-informatics
+                    - generic [ref=e378]: BS in Info Systems & Informatics
+                    - img [ref=e379]
+              - link "Explore undergraduate" [ref=e382] [cursor=pointer]:
+                - /url: /undergraduate
+                - text: Explore undergraduate
+                - img [ref=e383]
+            - generic [ref=e385]:
+              - generic [ref=e387]:
+                - img [ref=e389]
+                - heading "Graduate & Doctoral" [level=3] [ref=e392]
+              - list [ref=e395]:
+                - listitem [ref=e396]:
+                  - link "M.S. in Computer Science" [ref=e397] [cursor=pointer]:
+                    - /url: /graduate#ms-computer-science
+                    - generic [ref=e398]: M.S. in Computer Science
+                    - img [ref=e399]
+                - listitem [ref=e401]:
+                  - link "Ph.D. in Computer Science" [ref=e402] [cursor=pointer]:
+                    - /url: /graduate#phd-computer-science
+                    - generic [ref=e403]: Ph.D. in Computer Science
+                    - img [ref=e404]
+              - link "Explore graduate & doctoral" [ref=e407] [cursor=pointer]:
+                - /url: /graduate
+                - text: Explore graduate & doctoral
+                - img [ref=e408]
+            - generic [ref=e410]:
+              - generic [ref=e412]:
+                - img [ref=e414]
+                - heading "Minors & Certificates" [level=3] [ref=e417]
+              - list [ref=e420]:
+                - listitem [ref=e421]:
+                  - link "Computer Science Minor" [ref=e422] [cursor=pointer]:
+                    - /url: /undergraduate#minors-certificates
+                    - generic [ref=e423]: Computer Science Minor
+                    - img [ref=e424]
+                - listitem [ref=e426]:
+                  - link "Post-Baccalaureate Certificate" [ref=e427] [cursor=pointer]:
+                    - /url: /undergraduate#minors-certificates
+                    - generic [ref=e428]: Post-Baccalaureate Certificate
+                    - img [ref=e429]
+              - link "Explore minors & certificates" [ref=e432] [cursor=pointer]:
+                - /url: /undergraduate
+                - text: Explore minors & certificates
+                - img [ref=e433]
+          - generic [ref=e436]:
+            - img [ref=e438]
+            - generic [ref=e441]:
+              - heading "ABET Accredited & Career Ready" [level=4] [ref=e442]
+              - paragraph [ref=e443]: Our BS in Computer Science is accredited by ABET, ensuring the highest standards in computer science education and industry relevance.
+            - link "Explore Undergraduate Programs" [ref=e444] [cursor=pointer]:
+              - /url: /undergraduate
+        - generic [ref=e446]:
+          - generic [ref=e447]:
+            - generic [ref=e448]:
+              - img [ref=e449]
+              - generic [ref=e450]: Department Spotlight
+            - heading "Specialization Tracks" [level=2] [ref=e451]
+          - generic [ref=e453]:
+            - generic [ref=e455]:
+              - generic [ref=e456]:
+                - img [ref=e457]
+                - generic [ref=e460]: Bachelor of Science
+              - heading "BS Specializations" [level=3] [ref=e461]
+              - paragraph [ref=e462]: Tailor your undergraduate degree with focused tracks designed for high-demand industry roles.
+              - generic [ref=e463]:
+                - generic [ref=e464]:
+                  - generic [ref=e465]: Game Development
+                  - generic [ref=e466]: Interactive Media
+                - generic [ref=e467]:
+                  - generic [ref=e468]: Networking & Security
+                  - generic [ref=e469]: Infrastructure
+                - generic [ref=e470]:
+                  - generic [ref=e471]: High Performance Computing
+                  - generic [ref=e472]: Systems
+                - generic [ref=e473]:
+                  - generic [ref=e474]: Data Science
+                  - generic [ref=e475]: Analytics
+              - link "Explore Bachelor of Science" [ref=e476] [cursor=pointer]:
+                - /url: /undergraduate
+                - text: Explore Bachelor of Science
+                - img [ref=e477]
+            - generic [ref=e479]:
+              - img "BS Specializations" [ref=e481]
+              - generic [ref=e483]: 1 / 3
+          - generic [ref=e484]:
+            - generic [ref=e485]:
+              - button "Previous slide" [ref=e486]:
+                - img [ref=e487]
+              - button "Next slide" [ref=e489]:
+                - img [ref=e490]
+            - generic [ref=e492]:
+              - button "Go to BS Specializations" [ref=e493]
+              - button "Go to MS Specializations" [ref=e495]
+              - button "Go to PhD Program" [ref=e497]
+      - generic [ref=e501]:
+        - generic [ref=e502]:
+          - generic [ref=e503]:
+            - img [ref=e504]
+            - generic [ref=e505]: Meet Our Chair
+          - heading "Department Leadership" [level=2] [ref=e506]
+          - paragraph [ref=e507]: Guiding the vision of Computer Science at CSI with dedication to research, innovation, and student success.
+        - generic [ref=e509]:
+          - generic [ref=e510]:
+            - img "Professor Shuqun Zhang" [ref=e513]
+            - generic [ref=e516]:
+              - heading "Professor Shuqun Zhang" [level=3] [ref=e517]
+              - paragraph [ref=e518]: Chairperson of the Department
+            - generic [ref=e519]:
+              - link "Email Professor Shuqun Zhang" [ref=e520] [cursor=pointer]:
+                - /url: mailto:shuqun.zhang@csi.cuny.edu
+                - img [ref=e521]
+              - link "Call Professor Shuqun Zhang" [ref=e524] [cursor=pointer]:
+                - /url: tel:7189822850
+                - img [ref=e525]
+          - generic [ref=e527]:
+            - generic [ref=e528]:
+              - paragraph [ref=e529]: Professor Zhang leads the Department of Computer Science with a focus on academic excellence and research innovation. His leadership ensures that the curriculum remains rigorous and relevant to the evolving tech landscape.
+              - generic [ref=e530]:
+                - generic [ref=e531]: "\""
+                - blockquote [ref=e532]: Our mission is to provide a broad-based background in computer software, systems, and mathematics, preparing students not just for their first job, but for a lifelong career in technology.
+            - generic [ref=e533]:
+              - generic [ref=e534]:
+                - img [ref=e535]
+                - generic [ref=e540]: 15+
+                - generic [ref=e541]: Faculty Members
+              - generic [ref=e542]:
+                - img [ref=e543]
+                - generic [ref=e546]: 500+
+                - generic [ref=e547]: Students Enrolled
+              - generic [ref=e548]:
+                - img [ref=e549]
+                - generic [ref=e551]: 40+
+                - generic [ref=e552]: Courses Offered
+              - generic [ref=e553]:
+                - img [ref=e554]
+                - generic [ref=e557]: ABET
+                - generic [ref=e558]: Accredited
+            - generic [ref=e560]:
+              - generic [ref=e561]:
+                - img [ref=e562]
+                - generic [ref=e565]: 2800 Victory Blvd, 1N-215, Staten Island, NY 10314
+              - generic [ref=e566]:
+                - img [ref=e567]
+                - generic [ref=e569]: 718.982.2850
+              - generic [ref=e570]:
+                - img [ref=e571]
+                - generic [ref=e575]: "Fax: 718.982.2856"
+        - link "Meet all our faculty members" [ref=e577] [cursor=pointer]:
+          - /url: /people
+          - text: Meet all our faculty members
+          - img [ref=e578]
+      - region "Department News & Achievements" [ref=e580]:
+        - generic [ref=e581]:
+          - generic [ref=e582]:
+            - heading "Department News & Achievements" [level=2] [ref=e583]
+            - paragraph [ref=e584]: Celebrating the grants, awards, and groundbreaking research of our faculty and students.
+          - tablist "News by year" [ref=e585]:
+            - generic [ref=e586]:
+              - tab "2024" [selected] [ref=e587]: "2024"
+              - tab "2023" [ref=e589]
+              - tab "2022" [ref=e590]
+              - tab "2021" [ref=e591]
+          - tabpanel "2024" [ref=e592]:
+            - article [ref=e594] [cursor=pointer]:
+              - 'link "Grant NSF REU Grant: Computational Methods in High Performance Computing Author: Prof. Louis Petingi January 2024 (opens in new tab)" [ref=e595]':
+                - /url: https://www.nsf.gov/funding/pgm_summ.jsp?pims_id=5517
+                - generic [ref=e597]: Grant
+                - generic [ref=e598]:
+                  - 'heading "NSF REU Grant: Computational Methods in High Performance Computing" [level=3] [ref=e600]'
+                  - generic [ref=e601]:
+                    - img [ref=e602]
+                    - generic [ref=e607]: "Author:"
+                    - text: Prof. Louis Petingi
+                  - generic [ref=e608]:
+                    - generic [ref=e609]:
+                      - img [ref=e610]
+                      - time [ref=e612]: January 2024
+                    - img [ref=e614]
+                - generic [ref=e616]: (opens in new tab)
+            - link "View all archives" [ref=e618] [cursor=pointer]:
+              - /url: "#"
+              - text: View all archives
+              - img [ref=e619]
+        - generic [ref=e622]:
+          - paragraph [ref=e623]: Research Partners & Sponsors
+          - generic [ref=e624]:
+            - generic "National Science Foundation" [ref=e625]:
+              - img "National Science Foundation" [ref=e627]
+            - generic "Google CyberNYC" [ref=e628]:
+              - img [ref=e630]
+            - generic "Amazon Web Services" [ref=e641]:
+              - img [ref=e643]
+            - generic "City University of New York" [ref=e647]:
+              - img "City University of New York" [ref=e649]
+      - generic [ref=e652]:
+        - generic [ref=e653]:
+          - heading "About Us" [level=2] [ref=e654]
+          - generic [ref=e655]:
+            - text: The Computer Science Department offers programs that prepare students for careers as computer professionals and/or for continued study. The major provides a broad-based background in computer science and includes courses in computer software, computer systems, mathematics, network security, and computer hardware. We are committed to offering courses that stay current with changing technologies. Our BS in Computer Science degree is accredited by the Computing Accreditation Commission of
+            - strong [ref=e656]:
+              - link "ABET" [ref=e657] [cursor=pointer]:
+                - /url: http://www.abet.org
+            - text: .
+        - generic [ref=e658]:
+          - img "CSI Computer Science building and facilities" [ref=e660]
+          - generic [ref=e661]:
+            - generic [ref=e662]:
+              - img "CUNY College of Staten Island Logo" [ref=e664]
+              - generic [ref=e665]:
+                - paragraph [ref=e666]: ABET-Accredited Computer Science Programs
+                - paragraph [ref=e667]: Our Bachelor of Science in Computer Science is accredited by ABET, ensuring the highest standards in computer science education. Join a program that prepares you for successful careers in technology, research, and innovation.
+              - link "Explore Our Programs" [ref=e668] [cursor=pointer]:
+                - /url: /undergraduate
+            - img "CSI Computer Science students at graduation ceremony" [ref=e670]
+        - generic [ref=e673]:
+          - generic [ref=e674]:
+            - heading "Where Our Students Build Their Careers" [level=2] [ref=e675]
+            - paragraph [ref=e676]: Our graduates are highly sought after by leading technology companies, securing positions at Fortune 500 firms, innovative startups, and cutting-edge research institutions.
+            - generic [ref=e677]:
+              - generic [ref=e678]:
+                - paragraph [ref=e679]: Graduates Hired
+                - generic [ref=e680]: 95%
+              - generic [ref=e681]:
+                - paragraph [ref=e682]: Top Companies
+                - generic [ref=e683]: 200+
+              - generic [ref=e684]:
+                - paragraph [ref=e685]: Average Starting Salary
+                - generic [ref=e686]: $85K+
+          - generic [ref=e688]:
+            - paragraph [ref=e689]: Where our graduates build their careers
+            - generic [ref=e690]:
+              - generic [ref=e691]:
+                - generic [ref=e692]:
+                  - img [ref=e693]
+                  - img [ref=e704]
+                  - img [ref=e706]
+                  - img [ref=e711]
+                  - img [ref=e718]
+                  - img [ref=e720]
+                  - img [ref=e726]
+                  - img [ref=e730]
+                  - img [ref=e732]
+                - generic [ref=e734]:
+                  - img [ref=e735]
+                  - img [ref=e746]
+                  - img [ref=e748]
+                  - img [ref=e753]
+                  - img [ref=e760]
+                  - img [ref=e762]
+                  - img [ref=e768]
+                  - img [ref=e772]
+                  - img [ref=e774]
+                - generic [ref=e776]:
+                  - img [ref=e777]
+                  - img [ref=e788]
+                  - img [ref=e790]
+                  - img [ref=e795]
+                  - img [ref=e802]
+                  - img [ref=e804]
+                  - img [ref=e810]
+                  - img [ref=e814]
+                  - img [ref=e816]
+                - generic [ref=e818]:
+                  - img [ref=e819]
+                  - img [ref=e830]
+                  - img [ref=e832]
+                  - img [ref=e837]
+                  - img [ref=e844]
+                  - img [ref=e846]
+                  - img [ref=e852]
+                  - img [ref=e856]
+                  - img [ref=e858]
+              - generic [ref=e860]:
+                - generic [ref=e861]:
+                  - img [ref=e862]
+                  - img [ref=e864]
+                  - img [ref=e867]
+                  - img [ref=e872]
+                  - img [ref=e875]
+                  - img [ref=e878]
+                  - img [ref=e880]
+                  - img [ref=e884]
+                  - img [ref=e887]
+                - generic [ref=e892]:
+                  - img [ref=e893]
+                  - img [ref=e895]
+                  - img [ref=e898]
+                  - img [ref=e903]
+                  - img [ref=e906]
+                  - img [ref=e909]
+                  - img [ref=e911]
+                  - img [ref=e915]
+                  - img [ref=e918]
+                - generic [ref=e923]:
+                  - img [ref=e924]
+                  - img [ref=e926]
+                  - img [ref=e929]
+                  - img [ref=e934]
+                  - img [ref=e937]
+                  - img [ref=e940]
+                  - img [ref=e942]
+                  - img [ref=e946]
+                  - img [ref=e949]
+                - generic [ref=e954]:
+                  - img [ref=e955]
+                  - img [ref=e957]
+                  - img [ref=e960]
+                  - img [ref=e965]
+                  - img [ref=e968]
+                  - img [ref=e971]
+                  - img [ref=e973]
+                  - img [ref=e977]
+                  - img [ref=e980]
+  - contentinfo "Site footer" [ref=e985]:
+    - generic [ref=e986]:
+      - generic [ref=e987]:
+        - generic [ref=e988]:
+          - link "Department of Computer Science - Home" [ref=e989] [cursor=pointer]:
+            - /url: /
+            - img "CUNY College of Staten Island logo" [ref=e991]
+            - generic [ref=e992]:
+              - generic [ref=e993]: Department of
+              - generic [ref=e994]: Computer Science
+          - paragraph [ref=e995]: Advancing the frontiers of computing through excellence in education, research, and innovation.
+          - generic [ref=e996]:
+            - generic [ref=e997]:
+              - img [ref=e998]
+              - generic [ref=e1001]: 2800 Victory Blvd, Staten Island, NY 10314
+            - generic [ref=e1002]:
+              - img [ref=e1003]
+              - link "Call us at (718) 982-2800" [ref=e1005] [cursor=pointer]:
+                - /url: tel:+17189822800
+                - text: (718) 982-2800
+            - generic [ref=e1006]:
+              - img [ref=e1007]
+              - link "Email us at cs@csi.cuny.edu" [ref=e1010] [cursor=pointer]:
+                - /url: mailto:cs@csi.cuny.edu
+                - text: cs@csi.cuny.edu
+        - navigation "Programs navigation" [ref=e1011]:
+          - heading "Programs" [level=3] [ref=e1012]
+          - list [ref=e1013]:
+            - listitem [ref=e1014]:
+              - link "Undergraduate Programs" [ref=e1015] [cursor=pointer]:
+                - /url: /undergraduate
+                - img [ref=e1016]
+                - text: Undergraduate Programs
+            - listitem [ref=e1018]:
+              - link "Graduate Programs" [ref=e1019] [cursor=pointer]:
+                - /url: /graduate
+                - img [ref=e1020]
+                - text: Graduate Programs
+            - listitem [ref=e1022]:
+              - link "Courses" [ref=e1023] [cursor=pointer]:
+                - /url: /courses
+                - img [ref=e1024]
+                - text: Courses
+            - listitem [ref=e1026]:
+              - link "Research" [ref=e1027] [cursor=pointer]:
+                - /url: /research
+                - img [ref=e1028]
+                - text: Research
+        - navigation "Resources navigation" [ref=e1030]:
+          - heading "Resources" [level=3] [ref=e1031]
+          - list [ref=e1032]:
+            - listitem [ref=e1033]:
+              - link "People" [ref=e1034] [cursor=pointer]:
+                - /url: /people
+                - img [ref=e1035]
+                - text: People
+            - listitem [ref=e1037]:
+              - link "Resources" [ref=e1038] [cursor=pointer]:
+                - /url: /resources
+                - img [ref=e1039]
+                - text: Resources
+            - listitem [ref=e1041]:
+              - link "Student Spotlights" [ref=e1042] [cursor=pointer]:
+                - /url: /resources#student-spotlights
+                - img [ref=e1043]
+                - text: Student Spotlights
+            - listitem [ref=e1045]:
+              - link "Career Services" [ref=e1046] [cursor=pointer]:
+                - /url: /resources#resources-tools
+                - img [ref=e1047]
+                - text: Career Services
+        - navigation "Quick links" [ref=e1049]:
+          - heading "Quick Links" [level=3] [ref=e1050]
+          - list [ref=e1051]:
+            - listitem [ref=e1052]:
+              - link "CUNY First (opens in new tab)" [ref=e1053] [cursor=pointer]:
+                - /url: https://www.cuny.edu/about/administration/offices/cis/cunyfirst/
+                - text: CUNY First
+                - img [ref=e1054]
+            - listitem [ref=e1058]:
+              - link "Blackboard (opens in new tab)" [ref=e1059] [cursor=pointer]:
+                - /url: "#"
+                - text: Blackboard
+                - img [ref=e1060]
+            - listitem [ref=e1064]:
+              - link "DegreeWorks (opens in new tab)" [ref=e1065] [cursor=pointer]:
+                - /url: "#"
+                - text: DegreeWorks
+                - img [ref=e1066]
+            - listitem [ref=e1070]:
+              - link "Directory (opens in new tab)" [ref=e1071] [cursor=pointer]:
+                - /url: "#"
+                - text: Directory
+                - img [ref=e1072]
+      - generic [ref=e1077]:
+        - paragraph [ref=e1079]: © 2025 College of Staten Island, CUNY. All rights reserved.
+        - generic "Social media and external links" [ref=e1080]:
+          - link "Visit our Facebook page (opens in new tab)" [ref=e1081] [cursor=pointer]:
+            - /url: https://www.facebook.com/computerscienceatcsi/
+            - img [ref=e1082]
+          - link "Visit CSI main website (opens in new tab)" [ref=e1084] [cursor=pointer]:
+            - /url: https://www.csi.cuny.edu
+            - text: Visit CSI
+            - img [ref=e1085]
+  - button "Open Next.js Dev Tools" [ref=e1094] [cursor=pointer]:
+    - img [ref=e1095]
+  - alert [ref=e1098]
+```
