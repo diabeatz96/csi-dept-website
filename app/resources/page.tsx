@@ -17,7 +17,7 @@ import {
     LucideIcon
 } from 'lucide-react';
 import Image from 'next/image';
-import StudentSpotlights from '@/components/student-spotlight';
+// import StudentSpotlights from '@/components/student-spotlight';
 import { resourceCategories } from '@/data/resources';
 import type { ResourceCategory } from '@/data/resources';
 
@@ -87,7 +87,8 @@ const ResourceCard = ({ category, index }: { category: ResourceCategory, index: 
 export default function StudentResources() {
     return (
         <div className='bg-white pt-28 md:pt-32'>
-            <div className='' id='student-spotlights'><StudentSpotlights /></div>
+            {/* Student Spotlights section hidden for now - may move to different page */}
+            {/* <div className='' id='student-spotlights'><StudentSpotlights /></div> */}
             <section className="py-24 bg-slate-50" id='resources-tools'>
                 <div className="max-w-7xl mx-auto px-6">
 
