@@ -4,6 +4,7 @@ import React, { useState, useEffect, useMemo, Suspense } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { useSearchParams } from 'next/navigation';
 import { Search, Filter, BookOpen, Hash, X, Calendar, FileText, ExternalLink, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 import { allCourses } from '@/data/courses';
 import type { Course } from '@/data/types';
 
@@ -18,16 +19,8 @@ const CourseCard = ({ course }: { course: Course }) => {
         return "from-blue-900 to-slate-900"; // Default Undergraduate
     };
 
-    return (
-        <motion.div
-            layout
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.3 }}
-            whileHover={{ y: -8, transition: { duration: 0.2 } }}
-            className="group flex flex-col h-full cursor-pointer"
-        >
+    const CardContent = (
+        <>
             {/* Card Container */}
             <div className={`relative aspect-video rounded-xl overflow-hidden shadow-md border border-slate-200/60 group-hover:shadow-2xl group-hover:border-blue-500/30 transition-all duration-300`}>
 
@@ -71,7 +64,23 @@ const CourseCard = ({ course }: { course: Course }) => {
                     </p>
                 </div>
             </div>
-        </motion.div>
+        </>
+    );
+
+    return (
+        <Link href={course.href} target="_blank" rel="noopener noreferrer">
+            <motion.div
+                layout
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3 }}
+                whileHover={{ y: -8, transition: { duration: 0.2 } }}
+                className="group flex flex-col h-full cursor-pointer"
+            >
+                {CardContent}
+            </motion.div>
+        </Link>
     );
 };
 

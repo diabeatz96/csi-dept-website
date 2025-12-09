@@ -51,7 +51,7 @@ const cardData = [
 
 export default function GraduatePage() {
     return (
-        <main className='max-w-8xl pt-12 '>
+        <main className='max-w-8xl pt-20 md:pt-24'>
             <GraduatesNotch />
             <section className="relative min-h-[90vh] bg-white overflow-hidden flex flex-col">
 

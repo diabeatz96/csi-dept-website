@@ -174,7 +174,7 @@ const ResourceCard = ({ category, index }: { category: typeof resourceCategories
 
 export default function StudentResources() {
     return (
-        <main className='bg-white pt-12'>
+        <main className='bg-white pt-28 md:pt-32'>
             <div className='' id='student-spotlights'><StudentSpotlights /></div>
             <section className="py-24 bg-slate-50" id='resources-tools'>
                 <div className="max-w-7xl mx-auto px-6">

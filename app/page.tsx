@@ -136,11 +136,11 @@ const HeroSection = () => {
                 fetchPriority={currentIndex === 0 ? "high" : "auto"}
                 sizes="(max-width: 768px) 100vw, 66vw"
                 className="object-cover object-center"
-                style={{ maskImage: 'linear-gradient(to left, black 50%, transparent 100%)' }}
+                style={{ maskImage: 'linear-gradient(to left, black 30%, rgba(0,0,0,0.6) 55%, rgba(0,0,0,0.25) 75%, transparent 95%)' }}
               />
             </motion.div>
           </AnimatePresence>
-          <div className="absolute inset-0 bg-linear-to-l from-transparent via-transparent to-[#8AC2EB]/60 md:to-[#8AC2EB]/40 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#8AC2EB]/15 via-40% to-[#8AC2EB]/40 pointer-events-none" />
         </div>
 
         {/* Slideshow Controls */}

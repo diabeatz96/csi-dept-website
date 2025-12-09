@@ -132,13 +132,6 @@ export const faculty: FacultyMember[] = [
     phone: "718-982-3175",
     website: "https://www.cs.csi.cuny.edu/~zhangz/",
   },
-  {
-    id: "adam-kostandy",
-    name: "Adam Kostandy",
-    title: "Lecturer",
-    email: "adam.kostandy@csi.cuny.edu",
-    office: "1N-215",
-  },
 ];
 
 // Helper functions

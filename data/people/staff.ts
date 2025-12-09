@@ -52,6 +52,22 @@ export const technicalStaff: StaffMember[] = [
     office: "1N-218",
     phone: "718-982-3015",
   },
+  {
+    id: "adam-kostandy",
+    name: "Adam Kostandy",
+    title: "Adjunct Faculty / Lab Technician",
+    email: "adam.kostandy@csi.cuny.edu",
+    phone: "718-982-2857",
+    office: "1N-219",
+  },
+  {
+    id: "zhongcai-jiang",
+    name: "Zhongcai Jiang",
+    title: "College Lab Technician",
+    email: "zhongcai.jiang@csi.cuny.edu",
+    phone: "718-982-2857",
+    office: "1N-219",
+  }
 ];
 
 // Combined staff list

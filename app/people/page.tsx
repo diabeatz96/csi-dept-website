@@ -20,7 +20,46 @@ import type { FacultyMember } from '@/data/types';
 
 const FacultyCard = ({ member, index }: { member: FacultyMember, index: number }) => {
     const hasLink = member.website && member.website.trim() !== '';
-    const CardContent = (
+
+    // Contact info component - uses spans when card is a link (to avoid nested <a> tags)
+    const ContactInfo = ({ isInsideLink }: { isInsideLink: boolean }) => (
+        <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm text-slate-500 mt-auto grow">
+            {isInsideLink ? (
+                <div className="flex items-center gap-2 sm:gap-3 min-h-11">
+                    <div className="p-1.5 rounded-md bg-slate-50 text-slate-400 shrink-0">
+                        <Mail size={14} />
+                    </div>
+                    <span className="truncate">{member.email}</span>
+                </div>
+            ) : (
+                <a
+                    href={`mailto:${member.email}`}
+                    className="flex items-center gap-2 sm:gap-3 hover:text-[#8AC2EB] transition-colors group/link min-h-11"
+                >
+                    <div className="p-1.5 rounded-md bg-slate-50 text-slate-400 group-hover/link:bg-blue-100 group-hover/link:text-[#8AC2EB] transition-colors shrink-0">
+                        <Mail size={14} />
+                    </div>
+                    <span className="truncate">{member.email}</span>
+                </a>
+            )}
+
+            <div className="flex items-center gap-2 sm:gap-3">
+                <div className="p-1.5 rounded-md bg-slate-50 text-slate-400 shrink-0">
+                    <MapPin size={14} />
+                </div>
+                <span>Office: {member.office}</span>
+            </div>
+
+            <div className="flex items-center gap-2 sm:gap-3">
+                <div className="p-1.5 rounded-md bg-slate-50 text-slate-400 shrink-0">
+                    <Phone size={14} />
+                </div>
+                <span>{member.phone}</span>
+            </div>
+        </div>
+    );
+
+    const CardContent = ({ isInsideLink }: { isInsideLink: boolean }) => (
         <>
             {/* Avatar Section */}
             <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden bg-slate-100 border-b border-slate-100">
@@ -64,31 +103,7 @@ const FacultyCard = ({ member, index }: { member: FacultyMember, index: number }
                 </div>
 
                 {/* Contact Grid */}
-                <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm text-slate-500 mt-auto grow">
-                    <a
-                        href={`mailto:${member.email}`}
-                        className="flex items-center gap-2 sm:gap-3 hover:text-[#8AC2EB] transition-colors group/link min-h-11"
-                    >
-                        <div className="p-1.5 rounded-md bg-slate-50 text-slate-400 group-hover/link:bg-blue-100 group-hover/link:text-[#8AC2EB] transition-colors shrink-0">
-                            <Mail size={14} />
-                        </div>
-                        <span className="truncate">{member.email}</span>
-                    </a>
-
-                    <div className="flex items-center gap-2 sm:gap-3">
-                        <div className="p-1.5 rounded-md bg-slate-50 text-slate-400 shrink-0">
-                            <MapPin size={14} />
-                        </div>
-                        <span>Office: {member.office}</span>
-                    </div>
-
-                    <div className="flex items-center gap-2 sm:gap-3">
-                        <div className="p-1.5 rounded-md bg-slate-50 text-slate-400 shrink-0">
-                            <Phone size={14} />
-                        </div>
-                        <span>{member.phone}</span>
-                    </div>
-                </div>
+                <ContactInfo isInsideLink={isInsideLink} />
             </div>
         </>
     );
@@ -105,7 +120,7 @@ const FacultyCard = ({ member, index }: { member: FacultyMember, index: number }
                     whileHover={{ y: -8 }}
                     className="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-200 transition-all duration-300 flex flex-col h-full cursor-pointer"
                 >
-                    {CardContent}
+                    <CardContent isInsideLink={true} />
                 </motion.div>
             </Link>
         );
@@ -121,7 +136,7 @@ const FacultyCard = ({ member, index }: { member: FacultyMember, index: number }
             whileHover={{ y: -8 }}
             className="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-200 transition-all duration-300 flex flex-col h-full"
         >
-            {CardContent}
+            <CardContent isInsideLink={false} />
         </motion.div>
     );
 };
@@ -129,7 +144,7 @@ const FacultyCard = ({ member, index }: { member: FacultyMember, index: number }
 export default function FacultyDirectory() {
     return (
         <main className='max-w-8xl mx-auto'>
-            <section id="professors" className="bg-slate-50 py-16 md:py-24 min-h-screen">
+            <section id="professors" className="bg-slate-50 pt-28 md:pt-32 pb-16 md:pb-24 min-h-screen">
                 <div className="max-w-7xl mx-auto px-4 md:px-6">
 
                     {/* Header */}

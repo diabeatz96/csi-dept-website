@@ -21,6 +21,7 @@ export const adjunctFaculty: AdjunctFaculty[] = [
   { name: "Yuan, Kailie" },
   { name: "Lu, Jia" },
   { name: "Tooker, Joseph" },
+  { name: "Adam, Kostandy"},
 ];
 
 // Helper to get just the names as strings (for backward compatibility)
