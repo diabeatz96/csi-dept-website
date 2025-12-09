@@ -153,7 +153,7 @@ export default function ResearchHero() {
                     >
                         <div className="inline-flex items-center relative justify-center w-32 h-32 rounded-xl text-white mb-5">
                             {/* <Microscope size={28} /> */}
-                            <Image src="/cunycsi.png" alt="Research" fill className="object-contain" />
+                            <Image src="/csi-blue-logo.png" alt="Research" fill className="object-contain" />
                         </div>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl text-slate-900 mb-4 tracking-tight">
                             Innovation at <br />

@@ -6,6 +6,7 @@ import Footer from "@/components/footer";
 import TopBanner from "@/components/top-banner";
 import SmoothScrollHandler from "@/components/smooth-scroll-handler";
 import NavbarEdu from "@/components/navbar-edu";
+import { SearchProvider, SearchCommand } from "@/components/search";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -122,21 +123,24 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* Skip Navigation Link - Accessibility */}
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:px-4 focus:py-2 focus:text-slate-900 focus:font-semibold focus:rounded-md focus:shadow-lg focus:ring-2 focus:ring-blue-600"
-        >
-          Skip to main content
-        </a>
+        <SearchProvider>
+          {/* Skip Navigation Link - Accessibility */}
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:px-4 focus:py-2 focus:text-slate-900 focus:font-semibold focus:rounded-md focus:shadow-lg focus:ring-2 focus:ring-blue-600"
+          >
+            Skip to main content
+          </a>
 
-        <SmoothScrollHandler />
-        {/* <TopBanner /> */}
-        <NavbarEdu />
-        <main id="main-content" tabIndex={-1}>
-          {children}
-        </main>
-        <Footer />
+          <SmoothScrollHandler />
+          {/* <TopBanner /> */}
+          <NavbarEdu />
+          <main id="main-content" tabIndex={-1}>
+            {children}
+          </main>
+          <Footer />
+          <SearchCommand />
+        </SearchProvider>
       </body>
     </html>
   );

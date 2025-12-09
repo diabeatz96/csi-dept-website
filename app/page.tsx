@@ -596,7 +596,7 @@ export default function CSIDepartmentPage() {
               alt: "CSI Computer Science students at graduation ceremony",
             }}
             breakout={{
-              src: "/cunycsi.png",
+              src: "/csi-blue-logo.png",
               alt: "CUNY College of Staten Island Logo",
               title: "ABET-Accredited Computer Science Programs",
               description:

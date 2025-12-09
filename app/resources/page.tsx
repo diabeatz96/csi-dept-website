@@ -4,7 +4,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import {
     Briefcase,
-    GraduationCap,
     Users,
     Code2,
     Laptop,
@@ -14,120 +13,33 @@ import {
     ArrowUpRight,
     Search,
     Monitor,
-    Rocket
+    Rocket,
+    LucideIcon
 } from 'lucide-react';
 import Image from 'next/image';
 import StudentSpotlights from '@/components/student-spotlight';
-// --- Data Configuration ---
+import { resourceCategories } from '@/data/resources';
+import type { ResourceCategory } from '@/data/resources';
 
-const resourceCategories = [
-    {
-        title: "Career & Internships",
-        icon: Briefcase,
-        description: "Launch your career with internships, job listings, and professional development tools.",
-        links: [
-            { label: "Scholarships for CS & Women in CS", url: "#" },
-            { label: "Handshake: Internship & Job Opportunities", url: "#" },
-            { label: "Internship Prep Book", url: "#" },
-            { label: "NYC Tech Talent Pipeline", url: "#" },
-            { label: "CUNY Internship Program", url: "#" },
-            { label: "Center for Career & Professional Development", url: "#" }
-        ]
-    },
-    {
-        title: "Research & Innovation",
-        icon: Search,
-        description: "Engage in groundbreaking research like the REU program and collaborative projects.",
-        links: [
-            { label: "Research Experiences for Undergraduates (REU)", url: "#" },
-            { label: "CUNY High Performance Computing Center", url: "#" },
-            { label: "CUNY Institute for Software Design (CISDD)", url: "#" },
-            { label: "Virtual Work Experiences", url: "#" }
-        ]
-    },
-    {
-        title: "CUNY 2X Tech",
-        icon: Code2,
-        description: "A $2M initiative to double the number of tech graduates from CUNY.",
-        links: [
-            { label: "About CUNY 2X", url: "#" },
-            { label: "Benefits of Joining", url: "#" },
-            { label: "TTP Residency", url: "#" },
-            { label: "Virtual Work Experiences for CLUE", url: "#" }
-        ]
-    },
-    {
-        title: "CUNY Tech Prep",
-        icon: Rocket,
-        description: "A year long program to help students get hands on experience working on technical projects in teams.",
-        links: [
-            { label: "About CUNY Tech Prep", url: "#" },
-            { label: "How to Apply", url: "#" },
-            { label: "Program Benefits", url: "#" },
-            { label: "Current Projects", url: "#" },
-            { label: "Student Testimonials", url: "#" }
-        ]
-    },
-    {
-        title: "Academic Support",
-        icon: BookOpen,
-        description: "Get the help you need to succeed in your coursework.",
-        links: [
-            { label: "CS Tutoring Schedule", url: "#" },
-            { label: "Office of Academic Support", url: "#" },
-            { label: "Registrar", url: "#" },
-            { label: "Financial Aid", url: "#" }
-        ]
-    },
-    {
-        title: "Software & Tools",
-        icon: Laptop,
-        description: "Access essential software and technical documentation.",
-        links: [
-            { label: "Microsoft Imagine Access", url: "#" },
-            { label: "Linux Environment Setup", url: "#" },
-            { label: "Software Setup Guides", url: "#" },
-            { label: "Student Technology Help Desk", url: "#" }
-        ]
-    },
-    {
-        title: "Campus Resources",
-        icon: Building2,
-        description: "Navigate campus life, from accessibility services to counseling.",
-        links: [
-            { label: "Student Life / CLUE Program", url: "#" },
-            { label: "Accessibility Services", url: "#" },
-            { label: "Counseling Center", url: "#" },
-            { label: "Bursar / Student Accounts", url: "#" }
-        ]
-    },
-    {
-        title: "Special Programs",
-        icon: Users,
-        description: "Join specialized communities for accelerated growth.",
-        links: [
-            { label: "ASAP", url: "#" },
-            { label: "CSTEP", url: "#" },
-            { label: "SEEK Program", url: "#" },
-            { label: "Macaulay Honors College", url: "#" },
-            { label: "Verrazano School", url: "#" }
-        ]
-    },
-    {
-        title: "Department Info",
-        icon: Info,
-        description: "Key documents and videos about the CS department.",
-        links: [
-            { label: "Computer Science Fact Sheet", url: "#" },
-            { label: "Info Session (PPT/Video)", url: "#" },
-            { label: "Lab Tours Video", url: "#" }
-        ]
-    }
-];
+// Map icon names to Lucide components
+const iconMap: Record<string, LucideIcon> = {
+    Briefcase,
+    Users,
+    Code2,
+    Laptop,
+    Building2,
+    BookOpen,
+    Info,
+    Search,
+    Rocket,
+    Monitor,
+};
 
 // --- Components ---
 
-const ResourceCard = ({ category, index }: { category: typeof resourceCategories[0], index: number }) => {
+const ResourceCard = ({ category, index }: { category: ResourceCategory, index: number }) => {
+    const IconComponent = iconMap[category.iconName] || BookOpen;
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -139,7 +51,7 @@ const ResourceCard = ({ category, index }: { category: typeof resourceCategories
             {/* Header */}
             <div className="flex items-start gap-4 mb-4">
                 <div className="p-3 rounded-xl bg-slate-50 text-slate-600 group-hover:bg-[#8AC2EB] group-hover:text-white transition-colors duration-300">
-                    <category.icon size={24} />
+                    <IconComponent size={24} />
                 </div>
                 <div>
                     <h3 className="font-bold text-lg text-slate-900 group-hover:text-blue-700 transition-colors">
@@ -153,8 +65,8 @@ const ResourceCard = ({ category, index }: { category: typeof resourceCategories
 
             {/* Links List */}
             <ul className="space-y-3 mt-auto pt-4 border-t border-slate-50">
-                {category.links.map((link, idx) => (
-                    <li key={idx}>
+                {category.links.map((link) => (
+                    <li key={link.id}>
                         <a
                             href={link.url}
                             className="text-sm text-slate-600 hover:text-[#8AC2EB] font-medium flex items-center justify-between group/link transition-colors"
@@ -199,14 +111,14 @@ export default function StudentResources() {
                             </p>
                         </div>
                         <div className="flex items-center w-1/2 relative rounded-lg overflow-hidden h-42">
-                            <Image src="/cunycsi.png" alt="CUNY and CSI Logos" fill className="object-contain drop-shadow-sm" />
+                            <Image src="/csi-blue-logo.png" alt="CUNY and CSI Logos" fill className="object-contain drop-shadow-sm" />
                         </div>
                     </motion.div>
 
                     {/* Grid Layout */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {resourceCategories.map((category, idx) => (
-                            <ResourceCard key={category.title} category={category} index={idx} />
+                            <ResourceCard key={category.id} category={category} index={idx} />
                         ))}
                     </div>
 

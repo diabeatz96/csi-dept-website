@@ -112,3 +112,15 @@ export {
   getSpotlightsByCategory,
   getRecentSpotlights,
 } from "./spotlights";
+
+// =============================================================================
+// Resources
+// =============================================================================
+export {
+  resourceCategories,
+  getResourceCategoryById,
+  getAllResourceLinks,
+  getResourceLinkById,
+  searchResourceLinks,
+  getCategoryForLink,
+} from "./resources";

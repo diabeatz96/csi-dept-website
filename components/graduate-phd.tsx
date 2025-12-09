@@ -56,7 +56,7 @@ export default function PhDProgramSection() {
                         </p>
                     </motion.div>
                     <div className="flex items-center w-1/2 relative rounded-lg overflow-hidden h-50">
-                        <Image src="/cunycsi.png" alt="CUNY and CSI Logos" fill className="object-contain drop-shadow-sm" />
+                        <Image src="/csi-blue-logo.png" alt="CUNY and CSI Logos" fill className="object-contain drop-shadow-sm" />
                     </div>
                 </div>
 

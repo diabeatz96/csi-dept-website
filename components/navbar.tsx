@@ -53,7 +53,7 @@ export default function Navbar() {
                                         strokeLinejoin="round"
                                     />
                                 </svg> */}
-                                <Image src="/cunycsi.png" alt="Logo" width={40} height={40} />
+                                <Image src="/csi-blue-logo.png" alt="Logo" width={40} height={40} />
                             </div>
                         </div>
                         {/* Department Name */}
