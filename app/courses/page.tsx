@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useMemo, Suspense } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { useSearchParams } from 'next/navigation';
 import { Search, Filter, BookOpen, Hash, X, Calendar, FileText, ExternalLink, ArrowRight } from 'lucide-react';
 import { allCourses } from '@/data/courses';
@@ -78,12 +78,13 @@ const CourseCard = ({ course }: { course: Course }) => {
 const FilterPill = ({ label, isActive, onClick }: { label: string, isActive: boolean, onClick: () => void }) => (
     <button
         onClick={onClick}
-        className={`px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 whitespace-nowrap flex items-center gap-2 border ${isActive
+        aria-pressed={isActive}
+        className={`px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 whitespace-nowrap flex items-center gap-2 border focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 ${isActive
             ? 'bg-slate-900 text-white border-slate-900 shadow-sm shadow-slate-900/20'
             : 'bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:bg-slate-50'
             }`}
     >
-        {isActive && <div className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />}
+        {isActive && <div className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" aria-hidden="true" />}
         {label}
     </button>
 );
@@ -176,7 +177,7 @@ function CoursesPageContent() {
                     >
                         <div className="flex items-center gap-3 mb-8 justify-center md:justify-start">
                             <div className="p-2 bg-white/20 rounded-lg backdrop-blur-sm">
-                                <BookOpen size={24} />
+                                <BookOpen size={24} aria-hidden="true" />
                             </div>
                             <h2 className="text-2xl md:text-3xl font-bold">Course Resources</h2>
                         </div>
@@ -187,19 +188,20 @@ function CoursesPageContent() {
                                 href="https://globalsearch.cuny.edu/CFGlobalSearchTool/search.jsp"
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                aria-label="Computer Science Course Schedule (opens in new tab)"
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.5, delay: 0.2 }}
                                 whileHover={{ scale: 1.02, y: -4 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="group relative bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 hover:bg-white/20 hover:border-white/30 transition-all duration-300 overflow-hidden"
+                                className="group relative bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 hover:bg-white/20 hover:border-white/30 transition-all duration-300 overflow-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-blue-700"
                             >
                                 {/* Background gradient on hover */}
                                 <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                                 <div className="relative z-10 flex items-start gap-4">
                                     <div className="p-3 bg-white/20 rounded-lg group-hover:bg-white/30 transition-colors shrink-0">
-                                        <Calendar size={24} className="text-white" />
+                                        <Calendar size={24} className="text-white" aria-hidden="true" />
                                     </div>
                                     <div className="flex-1 min-w-0">
                                         <h3 className="font-bold text-lg mb-2 group-hover:text-blue-100 transition-colors">
@@ -210,10 +212,10 @@ function CoursesPageContent() {
                                         </p>
                                         <div className="flex items-center gap-2 text-sm font-medium text-white/90 group-hover:text-white transition-colors">
                                             <span>View Schedule</span>
-                                            <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" />
+                                            <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                                         </div>
                                     </div>
-                                    <ArrowRight size={20} className="text-white/60 group-hover:text-white group-hover:translate-x-1 transition-all shrink-0" />
+                                    <ArrowRight size={20} className="text-white/60 group-hover:text-white group-hover:translate-x-1 transition-all shrink-0" aria-hidden="true" />
                                 </div>
                             </motion.a>
 
@@ -222,19 +224,20 @@ function CoursesPageContent() {
                                 href="https://www.cs.csi.cuny.edu/content/overtally.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                aria-label="Waitlist and Overtally Policy PDF (opens in new tab)"
                                 initial={{ opacity: 0, x: 20 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.5, delay: 0.3 }}
                                 whileHover={{ scale: 1.02, y: -4 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="group relative bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 hover:bg-white/20 hover:border-white/30 transition-all duration-300 overflow-hidden"
+                                className="group relative bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 hover:bg-white/20 hover:border-white/30 transition-all duration-300 overflow-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-blue-700"
                             >
                                 {/* Background gradient on hover */}
                                 <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                                 <div className="relative z-10 flex items-start gap-4">
                                     <div className="p-3 bg-white/20 rounded-lg group-hover:bg-white/30 transition-colors shrink-0">
-                                        <FileText size={24} className="text-white" />
+                                        <FileText size={24} className="text-white" aria-hidden="true" />
                                     </div>
                                     <div className="flex-1 min-w-0">
                                         <h3 className="font-bold text-lg mb-2 group-hover:text-blue-100 transition-colors">
@@ -245,10 +248,10 @@ function CoursesPageContent() {
                                         </p>
                                         <div className="flex items-center gap-2 text-sm font-medium text-white/90 group-hover:text-white transition-colors">
                                             <span>View Policy</span>
-                                            <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" />
+                                            <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                                         </div>
                                     </div>
-                                    <ArrowRight size={20} className="text-white/60 group-hover:text-white group-hover:translate-x-1 transition-all shrink-0" />
+                                    <ArrowRight size={20} className="text-white/60 group-hover:text-white group-hover:translate-x-1 transition-all shrink-0" aria-hidden="true" />
                                 </div>
                             </motion.a>
                         </div>
@@ -268,12 +271,13 @@ function CoursesPageContent() {
                             <div className="flex items-center gap-4">
                         
                                 {/* Main Filter Tabs */}
-                                <div className="flex p-1.5 bg-slate-100 rounded-xl w-fit border border-slate-200">
+                                <div className="flex p-1.5 bg-slate-100 rounded-xl w-fit border border-slate-200" role="group" aria-label="Filter courses by program type">
                                     {['all', 'undergraduate', 'graduate'].map((filter) => (
                                         <button
                                             key={filter}
                                             onClick={() => setMainFilter(filter as any)}
-                                            className={`px-5 py-2 rounded-lg text-sm font-bold capitalize transition-all duration-300 ${mainFilter === filter
+                                            aria-pressed={mainFilter === filter}
+                                            className={`px-5 py-2 rounded-lg text-sm font-bold capitalize transition-all duration-300 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 ${mainFilter === filter
                                                 ? 'bg-white text-slate-900 shadow-sm ring-1 ring-black/5'
                                                 : 'text-slate-500 hover:text-slate-700 hover:bg-slate-200/50'
                                                 }`}
@@ -286,22 +290,29 @@ function CoursesPageContent() {
 
                             {/* Search Bar */}
                             <div className="relative w-full lg:w-96 group">
-                                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-[#7abde8] transition-colors">
-                                    <Search size={18} />
+                                <label htmlFor="course-search" className="sr-only">
+                                    Search courses by code or name
+                                </label>
+                                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-[#8AC2EB] transition-colors">
+                                    <Search size={18} aria-hidden="true" />
                                 </div>
                                 <input
+                                    id="course-search"
                                     type="text"
                                     placeholder="Search by code or name..."
                                     value={searchQuery}
                                     onChange={(e) => setSearchQuery(e.target.value)}
-                                    className="w-full pl-11 pr-10 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#7abde8]/20 focus:border-[#7abde8] transition-all shadow-inner"
+                                    autoComplete="off"
+                                    aria-describedby="search-results-count"
+                                    className="w-full pl-11 pr-12 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#8AC2EB]/20 focus:border-[#8AC2EB] transition-all shadow-inner"
                                 />
                                 {searchQuery && (
                                     <button
                                         onClick={() => setSearchQuery('')}
-                                        className="absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded-full hover:bg-slate-200 text-slate-400 transition-colors"
+                                        aria-label="Clear search"
+                                        className="absolute right-2 top-1/2 -translate-y-1/2 p-2 min-w-11 min-h-11 flex items-center justify-center rounded-full hover:bg-slate-200 text-slate-400 transition-colors focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
                                     >
-                                        <X size={14} />
+                                        <X size={16} aria-hidden="true" />
                                     </button>
                                 )}
                             </div>
@@ -315,7 +326,7 @@ function CoursesPageContent() {
                         >
                             <div className="flex flex-nowrap items-center gap-3">
                                 <span className="text-xs font-extrabold text-slate-400 uppercase tracking-widest mr-2 flex items-center gap-1 shrink-0 py-1">
-                                    <Filter size={12} /> Section:
+                                    <Filter size={12} aria-hidden="true" /> Section:
                                 </span>
 
                                 <FilterPill
@@ -346,9 +357,9 @@ function CoursesPageContent() {
 
                 {/* Results Header */}
                 <div className="mb-8 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2" aria-live="polite" aria-atomic="true" id="search-results-count">
                         <div className="p-2 bg-white border border-slate-200 rounded-lg text-slate-600 shadow-sm">
-                            <Hash size={18} />
+                            <Hash size={18} aria-hidden="true" />
                         </div>
                         <span className="font-bold text-slate-700">
                             {filteredCourses.length}
@@ -383,7 +394,7 @@ function CoursesPageContent() {
                         </p>
                         <button
                             onClick={() => { setSearchQuery(''); setSubFilter('all'); setMainFilter('all'); }}
-                            className="mt-6 text-[#7abde8] font-bold hover:underline"
+                            className="mt-6 text-[#8AC2EB] font-bold hover:underline"
                         >
                             Clear all filters
                         </button>

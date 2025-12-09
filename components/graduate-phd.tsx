@@ -44,7 +44,7 @@ export default function PhDProgramSection() {
                         viewport={{ once: true }}
                         className="max-w-3xl rounded-lg p-4"
                     >
-                        <div className="flex items-center gap-2 text-[#7abde8] font-bold uppercase tracking-widest text-xs mb-4">
+                        <div className="flex items-center gap-2 text-[#8AC2EB] font-bold uppercase tracking-widest text-xs mb-4">
                             <GraduationCap size={16} />
                             Doctoral Studies
                         </div>
@@ -114,7 +114,7 @@ export default function PhDProgramSection() {
                             className="bg-slate-900 rounded-2xl p-8 md:p-10 shadow-2xl text-white relative overflow-hidden"
                         >
                             {/* Decorative Background Circles */}
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-[#7abde8]/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-[#8AC2EB]/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
                             <div className="relative z-10">
                                 <div className="mb-8 border-b border-slate-700 pb-6">
@@ -183,7 +183,7 @@ export default function PhDProgramSection() {
                             transition={{ delay: 0.6 }}
                             className="mt-6 flex items-start gap-3 p-4 bg-blue-50 rounded-lg border border-blue-100 text-sm text-slate-600"
                         >
-                            <div className="bg-white p-1 rounded-full text-[#7abde8] shrink-0 mt-0.5">
+                            <div className="bg-white p-1 rounded-full text-[#8AC2EB] shrink-0 mt-0.5">
                                 <Building2 size={14} />
                             </div>
                             <p>

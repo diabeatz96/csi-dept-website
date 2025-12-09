@@ -21,7 +21,7 @@ const CourseBox = ({ code, title, isOr = false }: { code?: string, title: string
     <div className={`relative flex-1 p-3 rounded-lg border ${isOr ? 'bg-orange-50 border-orange-200' : 'bg-blue-50 border-blue-100'
         }`}>
         {code && (
-            <span className={`text-xs font-bold uppercase tracking-wider block mb-1 ${isOr ? 'text-orange-600' : 'text-[#7abde8]'
+            <span className={`text-xs font-bold uppercase tracking-wider block mb-1 ${isOr ? 'text-orange-600' : 'text-[#8AC2EB]'
                 }`}>
                 {code}
             </span>
@@ -140,7 +140,7 @@ export default function SpecializationsAccordion() {
                     viewport={{ once: true }}
                     className="mb-12"
                 >
-                    <span className="text-[#7abde8] font-bold tracking-widest uppercase text-xs mb-2 block">
+                    <span className="text-[#8AC2EB] font-bold tracking-widest uppercase text-xs mb-2 block">
                         Undergraduate Tracks
                     </span>
                     <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
@@ -150,7 +150,7 @@ export default function SpecializationsAccordion() {
                     <div className="bg-slate-50 border-l-4 border-blue-500 p-5 rounded-r-lg max-w-3xl">
                         <p className="text-slate-700 mb-3">
                             You may choose to earn a specialization in one of the following areas.
-                            Please speak to your <a href="#" className="text-[#7abde8] underline font-bold hover:text-blue-800">advisor</a> if one of these specializations interests you so you can plan to take the corresponding courses.
+                            Please speak to your <a href="#" className="text-[#8AC2EB] underline font-bold hover:text-blue-800">advisor</a> if one of these specializations interests you so you can plan to take the corresponding courses.
                         </p>
                         <a href="https://www.cs.csi.cuny.edu/content/CSC_Specializations_flyer_updated_SU18.pdf" className="inline-flex items-center gap-2 text-blue-700 font-bold hover:underline">
                             <FileText size={16} /> Open PDF Flyer
@@ -184,7 +184,7 @@ export default function SpecializationsAccordion() {
                                     {/* Header Area */}
                                     <div className="p-5 flex items-center gap-4">
                                         {/* Rank Number (Matches Image 1 #1, #2...) */}
-                                        <div className={`text-lg font-bold font-mono ${isActive ? 'text-[#7abde8]' : 'text-slate-300'}`}>
+                                        <div className={`text-lg font-bold font-mono ${isActive ? 'text-[#8AC2EB]' : 'text-slate-300'}`}>
                                             #{idx + 1}
                                         </div>
 
@@ -201,7 +201,7 @@ export default function SpecializationsAccordion() {
                                         </div>
 
                                         <ChevronDown
-                                            className={`text-slate-400 transition-transform duration-300 ${isActive ? 'rotate-180 text-[#7abde8]' : ''
+                                            className={`text-slate-400 transition-transform duration-300 ${isActive ? 'rotate-180 text-[#8AC2EB]' : ''
                                                 }`}
                                         />
                                     </div>
@@ -228,7 +228,7 @@ export default function SpecializationsAccordion() {
                                                 <div className="bg-white p-4 rounded-lg border border-slate-100 text-slate-600 text-sm">
                                                     {feature.description}
                                                     {feature.linkText && (
-                                                        <div className="mt-3 text-[#7abde8] font-bold flex items-center gap-1 cursor-pointer hover:underline">
+                                                        <div className="mt-3 text-[#8AC2EB] font-bold flex items-center gap-1 cursor-pointer hover:underline">
                                                             {feature.linkText} <ArrowRight size={14} />
                                                         </div>
                                                     )}
@@ -246,7 +246,7 @@ export default function SpecializationsAccordion() {
                                     {isActive && (
                                         <motion.div
                                             layoutId="active-pill"
-                                            className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#7abde8]"
+                                            className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#8AC2EB]"
                                         />
                                     )}
                                 </div>

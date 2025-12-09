@@ -15,11 +15,13 @@ const NewsCard = ({ item }: { item: NewsItem }) => {
     const cardContent = (
         <>
             {/* Image Section */}
-            <div className="relative h-40 overflow-hidden bg-gray-100">
-                <img
+            <div className="relative h-32 sm:h-40 overflow-hidden bg-gray-100">
+                <Image
                     src={item.image}
                     alt="" // Decorative, title is in heading
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-2 left-2 bg-white/90 backdrop-blur-sm px-2 py-1 text-xs font-bold uppercase tracking-wide text-blue-600 rounded-sm">
                     {item.category}
@@ -27,25 +29,25 @@ const NewsCard = ({ item }: { item: NewsItem }) => {
             </div>
 
             {/* Content Section */}
-            <div className="p-4 flex flex-col grow">
+            <div className="p-3 sm:p-4 flex flex-col grow">
                 <div className="mb-2">
-                    <h3 className="font-bold text-gray-900 line-clamp-3 group-hover:text-blue-700 transition-colors h-fit min-h-14">
+                    <h3 className="font-bold text-sm sm:text-base text-gray-900 line-clamp-3 group-hover:text-blue-700 transition-colors h-fit min-h-12 sm:min-h-14">
                         {item.title}
                     </h3>
                 </div>
 
-                <div className="text-xs text-gray-500 mb-4 flex items-center gap-1">
+                <div className="text-xs text-gray-500 mb-3 sm:mb-4 flex items-center gap-1">
                     <Users size={14} aria-hidden="true" />
                     <span className="sr-only">Author: </span>{item.author}
                 </div>
 
-                <div className="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
+                <div className="mt-auto pt-3 sm:pt-4 border-t border-gray-100 flex items-center justify-between">
                     <div className="flex items-center text-xs text-gray-400 font-medium">
                         <Calendar size={14} className="mr-1" aria-hidden="true" />
                         <time dateTime={item.date}>{item.date}</time>
                     </div>
                     {item.link && (
-                        <div className="bg-gray-50 p-1 rounded-full group-hover:bg-[#7abde8] group-hover:text-white transition-colors" aria-hidden="true">
+                        <div className="bg-gray-50 p-1 rounded-full group-hover:bg-[#8AC2EB] group-hover:text-white transition-colors" aria-hidden="true">
                             <ArrowRight size={16} />
                         </div>
                     )}
@@ -54,7 +56,7 @@ const NewsCard = ({ item }: { item: NewsItem }) => {
         </>
     );
 
-    const cardClassName = "group flex flex-col h-full bg-white border border-gray-200 hover:shadow-xl transition-all duration-300" + (item.link ? " cursor-pointer" : "");
+    const cardClassName = "group flex flex-col h-full bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 rounded-lg overflow-hidden" + (item.link ? " cursor-pointer" : "");
 
     return (
         <motion.article
@@ -72,12 +74,12 @@ const NewsCard = ({ item }: { item: NewsItem }) => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex flex-col h-full"
-                        aria-label={`Read more about: ${item.title} (opens in new tab)`}
                     >
                         {cardContent}
+                        <span className="sr-only">(opens in new tab)</span>
                     </a>
                 ) : (
-                    <Link href={item.link} className="flex flex-col h-full" aria-label={`Read more about: ${item.title}`}>
+                    <Link href={item.link} className="flex flex-col h-full">
                         {cardContent}
                     </Link>
                 )
@@ -173,27 +175,27 @@ export default function DepartmentNewsSection() {
     const [activeYear, setActiveYear] = useState("2024");
 
     return (
-        <section className="py-16 bg-white text-[#2d2f31]" aria-labelledby="news-heading">
-            <div className="max-w-[1400px] mx-auto px-6">
+        <section className="py-10 md:py-16 bg-white text-[#2d2f31]" aria-labelledby="news-heading">
+            <div className="max-w-[1400px] mx-auto px-4 md:px-6">
 
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mb-8"
+                    className="mb-6 md:mb-8"
                 >
-                    <h2 id="news-heading" className="text-3xl md:text-4xl font-bold mb-3 font-serif tracking-tight text-gray-900">
+                    <h2 id="news-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 md:mb-3 font-serif tracking-tight text-gray-900">
                         Department News & Achievements
                     </h2>
-                    <p className="text-lg text-gray-600 max-w-2xl">
+                    <p className="text-base md:text-lg text-gray-600 max-w-2xl">
                         Celebrating the grants, awards, and groundbreaking research of our faculty and students.
                     </p>
                 </motion.div>
 
                 {/* Tabs (Years) */}
-                <div className="mb-8 border-b border-gray-200" role="tablist" aria-label="News by year">
-                    <div className="flex space-x-6 overflow-x-auto pb-1 no-scrollbar">
+                <div className="mb-6 md:mb-8 border-b border-gray-200" role="tablist" aria-label="News by year">
+                    <div className="flex space-x-4 md:space-x-6 overflow-x-auto pb-1 no-scrollbar">
                         {newsYears.map((year) => (
                             <button
                                 key={year}
@@ -202,7 +204,7 @@ export default function DepartmentNewsSection() {
                                 aria-controls={`news-panel-${year}`}
                                 id={`news-tab-${year}`}
                                 onClick={() => setActiveYear(year)}
-                                className={`text-lg font-bold whitespace-nowrap pb-2 transition-all relative ${activeYear === year
+                                className={`text-base md:text-lg font-bold whitespace-nowrap pb-2 px-1 min-h-11 transition-all relative ${activeYear === year
                                     ? "text-black"
                                     : "text-gray-500 hover:text-gray-800"
                                     }`}
@@ -221,14 +223,14 @@ export default function DepartmentNewsSection() {
 
                 {/* Content Grid */}
                 <div
-                    className="min-h-[400px]"
+                    className="min-h-[300px] md:min-h-[400px]"
                     role="tabpanel"
                     id={`news-panel-${activeYear}`}
                     aria-labelledby={`news-tab-${activeYear}`}
                 >
                     <motion.div
                         layout
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
                     >
                         <AnimatePresence mode='popLayout'>
                             {newsData[activeYear] ? (
@@ -243,9 +245,9 @@ export default function DepartmentNewsSection() {
                         </AnimatePresence>
                     </motion.div>
 
-                    {/* "Show all" Link (Udemy style) */}
-                    <div className="mt-8">
-                        <a href="#" className="inline-flex items-center text-blue-600 font-bold border border-blue-600 px-4 py-2 hover:bg-blue-50 transition-colors">
+                    {/* "Show all" Link */}
+                    <div className="mt-6 md:mt-8">
+                        <a href="#" className="inline-flex items-center text-blue-600 font-bold border border-blue-600 px-4 py-2 min-h-11 hover:bg-blue-50 transition-colors rounded-md">
                             View all archives <ArrowRight size={16} className="ml-2" aria-hidden="true" />
                         </a>
                     </div>

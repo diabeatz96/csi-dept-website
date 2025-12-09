@@ -13,7 +13,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 const items = [
     [{
         name: "DEGREES",
-        color: "bg-[#7abde8]",
+        color: "bg-[#8AC2EB]",
         items: [
             { name: "AAS in Computer Technology", href: "/undergraduate#aas-computer-technology" },
             { name: "BS in Computer Science", href: "/undergraduate#bs-computer-science" },
@@ -145,8 +145,9 @@ const NotchTwo = () => {
                                             <button
                     onClick={() => setIsExpanded(false)}
                                                 className="p-2 rounded-lg text-gray-600 hover:bg-white/50 hover:text-gray-900 transition-all duration-200"
+                                                aria-label="Close navigation menu"
                   >
-                                                <X size={20} />
+                                                <X size={20} aria-hidden="true" />
                                             </button>
                 </motion.div>
 

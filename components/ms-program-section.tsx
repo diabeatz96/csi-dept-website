@@ -43,7 +43,7 @@ export default function MSProgramSection() {
                     >
                         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
                             <div className='flex items-center gap-2 flex-col'>
-                                <div className='h-1 w-[50%] self-start bg-[#7abde8] ' />
+                                <div className='h-1 w-[50%] self-start bg-[#8AC2EB] ' />
                                 <h2 className="text-4xl md:text-5xl font-bold text-slate-900">
                                     M.S. Program
                                 </h2>
@@ -60,7 +60,7 @@ export default function MSProgramSection() {
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.4, delay: 0.2 + (index * 0.1) }}
                                         whileHover={{ scale: 1.05 }}
-                                        className="text-[#7abde8] hover:text-blue-700 font-medium text-sm md:text-base transition-colors flex items-center gap-1"
+                                        className="text-[#8AC2EB] hover:text-blue-700 font-medium text-sm md:text-base transition-colors flex items-center gap-1"
                                     >
                                         {link.name}
                                         {index < quickLinks.length - 1 && (
@@ -91,7 +91,7 @@ export default function MSProgramSection() {
                             >
                                 <div className="flex items-start gap-4 mb-6">
                                     <div className="p-3 bg-blue-50 rounded-xl">
-                                        <ClipboardCheck size={24} className="text-[#7abde8]" />
+                                        <ClipboardCheck size={24} className="text-[#8AC2EB]" />
                                     </div>
                                     <div className="flex-1">
                                         <h3 className="text-xl font-bold text-slate-900 mb-6">Admission Requirements</h3>
@@ -108,12 +108,12 @@ export default function MSProgramSection() {
                                                     className="p-4 hover:bg-white transition-colors"
                                                 >
                                                     <div className="flex gap-4">
-                                                        <div className="flex-shrink-0 w-8 h-8 bg-[#7abde8] text-white rounded-lg flex items-center justify-center font-bold text-sm">
+                                                        <div className="flex-shrink-0 w-8 h-8 bg-[#8AC2EB] text-white rounded-lg flex items-center justify-center font-bold text-sm">
                                                             1
                                                         </div>
                                                         <div className="flex-1">
                                                             <p className="text-slate-700 leading-relaxed">
-                                                                A <span className="font-semibold text-slate-900">Bachelor of Science degree in Computer Science or related area</span> with a <span className="font-semibold text-[#7abde8]">B average (3.0 out of 4.0)</span> overall and in the major.
+                                                                A <span className="font-semibold text-slate-900">Bachelor of Science degree in Computer Science or related area</span> with a <span className="font-semibold text-[#8AC2EB]">B average (3.0 out of 4.0)</span> overall and in the major.
                                                             </p>
                                                         </div>
                                                     </div>
@@ -128,7 +128,7 @@ export default function MSProgramSection() {
                                                     className="p-4 hover:bg-white transition-colors"
                                                 >
                                                     <div className="flex gap-4">
-                                                        <div className="flex-shrink-0 w-8 h-8 bg-[#7abde8] text-white rounded-lg flex items-center justify-center font-bold text-sm">
+                                                        <div className="flex-shrink-0 w-8 h-8 bg-[#8AC2EB] text-white rounded-lg flex items-center justify-center font-bold text-sm">
                                                             2
                                                         </div>
                                                         <div className="flex-1">
@@ -148,7 +148,7 @@ export default function MSProgramSection() {
                                                     className="p-4 hover:bg-white transition-colors"
                                                 >
                                                     <div className="flex gap-4">
-                                                        <div className="flex-shrink-0 w-8 h-8 bg-[#7abde8] text-white rounded-lg flex items-center justify-center font-bold text-sm">
+                                                        <div className="flex-shrink-0 w-8 h-8 bg-[#8AC2EB] text-white rounded-lg flex items-center justify-center font-bold text-sm">
                                                             3
                                                         </div>
                                                         <div className="flex-1">
@@ -165,7 +165,7 @@ export default function MSProgramSection() {
                                                                         transition={{ duration: 0.3, delay: 0.45 + (index * 0.1) }}
                                                                         className="flex items-start gap-2 pl-6"
                                                                     >
-                                                                        <div className="w-1.5 h-1.5 bg-[#7abde8] rounded-full mt-2 shrink-0" />
+                                                                        <div className="w-1.5 h-1.5 bg-[#8AC2EB] rounded-full mt-2 shrink-0" />
                                                                         <p className="text-slate-700 text-sm leading-relaxed">{area}</p>
                                                                     </motion.div>
                                                                 ))}
@@ -182,7 +182,7 @@ export default function MSProgramSection() {
                                             whileInView={{ opacity: 1, y: 0 }}
                                             viewport={{ once: true }}
                                             transition={{ duration: 0.5, delay: 0.5 }}
-                                            className="bg-blue-50/50 rounded-xl p-5 border-l-4 border-[#7abde8] space-y-3"
+                                            className="bg-blue-50/50 rounded-xl p-5 border-l-4 border-[#8AC2EB] space-y-3"
                                         >
                                             <p className="text-slate-700 leading-relaxed">
                                                 <span className="font-semibold text-slate-900">Matriculation Status:</span> Students who satisfy the requirements listed above will be admitted as matriculated graduate students.
@@ -211,7 +211,7 @@ export default function MSProgramSection() {
                             >
                                 <div className="flex items-start gap-4 mb-4">
                                     <div className="p-3 bg-blue-50 rounded-xl">
-                                        <Target size={24} className="text-[#7abde8]" />
+                                        <Target size={24} className="text-[#8AC2EB]" />
                                     </div>
                                     <div className="flex-1">
                                         <h3 className="text-xl font-bold text-slate-900 mb-3">Program Overview</h3>
@@ -222,7 +222,7 @@ export default function MSProgramSection() {
                                             Students may continue in doctoral programs in computer science including the City University program in which CSI participates.{' '}
                                             <a
                                                 href="#"
-                                                className="text-[#7abde8] hover:text-blue-700 underline font-medium inline-flex items-center gap-1"
+                                                className="text-[#8AC2EB] hover:text-blue-700 underline font-medium inline-flex items-center gap-1"
                                             >
                                                 (Ph.D.)
                                                 <ExternalLink size={14} />
@@ -242,7 +242,7 @@ export default function MSProgramSection() {
                             >
                                 <div className="flex items-start gap-4 mb-4">
                                     <div className="p-3 bg-blue-50 rounded-xl">
-                                        <GraduationCap size={24} className="text-[#7abde8]" />
+                                        <GraduationCap size={24} className="text-[#8AC2EB]" />
                                     </div>
                                     <div className="flex-1">
                                         <h3 className="text-xl font-bold text-slate-900 mb-6">Degree Requirements</h3>
@@ -257,7 +257,7 @@ export default function MSProgramSection() {
                                                 className="bg-gradient-to-r from-blue-50 to-slate-50 rounded-xl p-5 border border-slate-200"
                                             >
                                                 <p className="text-slate-700 text-lg leading-relaxed">
-                                                    A program of <span className="font-bold text-[#7abde8]">10 courses (30 credits)</span> with at least a <span className="font-bold text-[#7abde8]">3.0 (B) average</span>.
+                                                    A program of <span className="font-bold text-[#8AC2EB]">10 courses (30 credits)</span> with at least a <span className="font-bold text-[#8AC2EB]">3.0 (B) average</span>.
                                                 </p>
                                             </motion.div>
 
@@ -269,7 +269,7 @@ export default function MSProgramSection() {
                                                 transition={{ duration: 0.6, delay: 0.5 }}
                                                 className="bg-slate-50 rounded-xl border-2 border-slate-200 overflow-hidden"
                                             >
-                                                <div className="bg-[#7abde8] px-6 py-4">
+                                                <div className="bg-[#8AC2EB] px-6 py-4">
                                                     <p className="text-white font-semibold italic text-sm md:text-base">
                                                         The following core courses are required for all students:
                                                     </p>
@@ -293,7 +293,7 @@ export default function MSProgramSection() {
                                                                     className="hover:bg-white transition-colors"
                                                                 >
                                                                     <td className="py-4 px-4">
-                                                                        <span className="font-mono font-bold text-[#7abde8] text-sm md:text-base">CSC 716</span>
+                                                                        <span className="font-mono font-bold text-[#8AC2EB] text-sm md:text-base">CSC 716</span>
                                                                     </td>
                                                                     <td className="py-4 px-4 text-slate-700">Advanced Operating Systems</td>
                                                                 </motion.tr>
@@ -305,7 +305,7 @@ export default function MSProgramSection() {
                                                                     className="hover:bg-white transition-colors"
                                                                 >
                                                                     <td className="py-4 px-4">
-                                                                        <span className="font-mono font-bold text-[#7abde8] text-sm md:text-base">CSC 727</span>
+                                                                        <span className="font-mono font-bold text-[#8AC2EB] text-sm md:text-base">CSC 727</span>
                                                                     </td>
                                                                     <td className="py-4 px-4 text-slate-700">Algorithms and Information Structures</td>
                                                                 </motion.tr>
@@ -317,9 +317,9 @@ export default function MSProgramSection() {
                                                                     className="hover:bg-white transition-colors"
                                                                 >
                                                                     <td className="py-4 px-4">
-                                                                        <span className="font-mono font-bold text-[#7abde8] text-sm md:text-base">CSC 740</span>
+                                                                        <span className="font-mono font-bold text-[#8AC2EB] text-sm md:text-base">CSC 740</span>
                                                                         <span className="text-slate-500 mx-2">-or-</span>
-                                                                        <span className="font-mono font-bold text-[#7abde8] text-sm md:text-base">CSC 770</span>
+                                                                        <span className="font-mono font-bold text-[#8AC2EB] text-sm md:text-base">CSC 770</span>
                                                                     </td>
                                                                     <td className="py-4 px-4 text-slate-700">
                                                                         Computer Systems Design
@@ -335,9 +335,9 @@ export default function MSProgramSection() {
                                                                     className="hover:bg-white transition-colors"
                                                                 >
                                                                     <td className="py-4 px-4">
-                                                                        <span className="font-mono font-bold text-[#7abde8] text-sm md:text-base">CSC 759</span>
+                                                                        <span className="font-mono font-bold text-[#8AC2EB] text-sm md:text-base">CSC 759</span>
                                                                         <span className="text-slate-500 mx-2">-or-</span>
-                                                                        <span className="font-mono font-bold text-[#7abde8] text-sm md:text-base">CSC 799</span>
+                                                                        <span className="font-mono font-bold text-[#8AC2EB] text-sm md:text-base">CSC 799</span>
                                                                     </td>
                                                                     <td className="py-4 px-4 text-slate-700">
                                                                         Graduate Research Laboratory
@@ -363,7 +363,7 @@ export default function MSProgramSection() {
                                                     The remaining <span className="font-semibold text-slate-900">six courses</span> will be chosen from any of courses listed in the graduate catalog except <span className="font-mono text-sm bg-slate-100 px-1.5 py-0.5 rounded">CSC 602</span>, <span className="font-mono text-sm bg-slate-100 px-1.5 py-0.5 rounded">CSC 702</span>, and <span className="font-mono text-sm bg-slate-100 px-1.5 py-0.5 rounded">CSC 704</span>.{' '}
                                                     <a
                                                         href="/courses"
-                                                        className="text-[#7abde8] hover:text-blue-700 underline font-medium inline-flex items-center gap-1"
+                                                        className="text-[#8AC2EB] hover:text-blue-700 underline font-medium inline-flex items-center gap-1"
                                                     >
                                                         Click here
                                                         <ExternalLink size={12} />
@@ -380,12 +380,12 @@ export default function MSProgramSection() {
                                                 transition={{ duration: 0.6, delay: 0.8 }}
                                                 className="space-y-4"
                                             >
-                                                <div className="bg-blue-50/50 rounded-xl p-5 border-l-4 border-[#7abde8]">
+                                                <div className="bg-blue-50/50 rounded-xl p-5 border-l-4 border-[#8AC2EB]">
                                                     <p className="text-slate-700 leading-relaxed mb-3">
                                                         <span className="font-semibold text-slate-900">Exceptional Students:</span> Exceptional students may be permitted to satisfy six credits of the total credit requirement with a master's thesis.
                                                     </p>
                                                 </div>
-                                                <div className="bg-blue-50/50 rounded-xl p-5 border-l-4 border-[#7abde8]">
+                                                <div className="bg-blue-50/50 rounded-xl p-5 border-l-4 border-[#8AC2EB]">
                                                     <p className="text-slate-700 leading-relaxed">
                                                         <span className="font-semibold text-slate-900">Specialization:</span> For specialization one must take two courses from one area and complete a master's thesis or project.
                                                     </p>
@@ -405,7 +405,7 @@ export default function MSProgramSection() {
                             >
                                 <div className="flex items-start gap-4">
                                     <div className="p-3 bg-blue-50 rounded-xl">
-                                        <BookOpen size={24} className="text-[#7abde8]" />
+                                        <BookOpen size={24} className="text-[#8AC2EB]" />
                                     </div>
                                     <div className="flex-1">
                                         <h3 className="text-xl font-bold text-slate-900 mb-4">Elective Policy and Exceptions</h3>

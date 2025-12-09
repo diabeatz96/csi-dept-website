@@ -204,7 +204,7 @@ export default function MinorsAccordion() {
                     viewport={{ once: true }}
                     className="mb-12"
                 >
-                    <span className="text-[#7abde8] font-bold tracking-widest uppercase text-xs mb-2 block">
+                    <span className="text-[#8AC2EB] font-bold tracking-widest uppercase text-xs mb-2 block">
                         Academic Minors
                     </span>
                     <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
@@ -248,7 +248,7 @@ export default function MinorsAccordion() {
                                     {/* Header Area */}
                                     <div className="p-5 flex items-center gap-4">
 
-                                        <div className={`p-2.5 rounded-xl transition-colors duration-300 shrink-0 ${isActive ? 'bg-[#7abde8] text-white' : 'bg-slate-200 text-slate-500'
+                                        <div className={`p-2.5 rounded-xl transition-colors duration-300 shrink-0 ${isActive ? 'bg-[#8AC2EB] text-white' : 'bg-slate-200 text-slate-500'
                                             }`}>
                                             <minor.icon size={22} />
                                         </div>
@@ -264,7 +264,7 @@ export default function MinorsAccordion() {
                                         </div>
 
                                         <ChevronDown
-                                            className={`text-slate-400 transition-transform duration-300 ${isActive ? 'rotate-180 text-[#7abde8]' : ''
+                                            className={`text-slate-400 transition-transform duration-300 ${isActive ? 'rotate-180 text-[#8AC2EB]' : ''
                                                 }`}
                                         />
                                     </div>
@@ -285,7 +285,7 @@ export default function MinorsAccordion() {
                                                 </div>
                                                 {minor.description}
                                                 {minor.link && (
-                                                    <div className="mt-3 text-[#7abde8] font-bold flex items-center gap-1 cursor-pointer hover:underline">
+                                                    <div className="mt-3 text-[#8AC2EB] font-bold flex items-center gap-1 cursor-pointer hover:underline">
                                                         {minor.linkText} <ArrowRight size={14} />
                                                     </div>
                                                 )}
@@ -297,7 +297,7 @@ export default function MinorsAccordion() {
                                             </div>
 
                                             <div className="mt-4 pt-4 border-t border-slate-100 flex justify-end">
-                                                <button className="text-xs font-bold text-[#7abde8] flex items-center gap-1 hover:gap-2 transition-all">
+                                                <button className="text-xs font-bold text-[#8AC2EB] flex items-center gap-1 hover:gap-2 transition-all">
                                                     View Course Details <ArrowRight size={12} />
                                                 </button>
                                             </div>
@@ -308,7 +308,7 @@ export default function MinorsAccordion() {
                                     {isActive && (
                                         <motion.div
                                             layoutId="active-pill-minor"
-                                            className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#7abde8]"
+                                            className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#8AC2EB]"
                                         />
                                     )}
                                 </div>

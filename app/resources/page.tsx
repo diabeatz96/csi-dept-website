@@ -138,7 +138,7 @@ const ResourceCard = ({ category, index }: { category: typeof resourceCategories
         >
             {/* Header */}
             <div className="flex items-start gap-4 mb-4">
-                <div className="p-3 rounded-xl bg-slate-50 text-slate-600 group-hover:bg-[#7abde8] group-hover:text-white transition-colors duration-300">
+                <div className="p-3 rounded-xl bg-slate-50 text-slate-600 group-hover:bg-[#8AC2EB] group-hover:text-white transition-colors duration-300">
                     <category.icon size={24} />
                 </div>
                 <div>
@@ -157,7 +157,7 @@ const ResourceCard = ({ category, index }: { category: typeof resourceCategories
                     <li key={idx}>
                         <a
                             href={link.url}
-                            className="text-sm text-slate-600 hover:text-[#7abde8] font-medium flex items-center justify-between group/link transition-colors"
+                            className="text-sm text-slate-600 hover:text-[#8AC2EB] font-medium flex items-center justify-between group/link transition-colors"
                         >
                             <span className="truncate pr-2">{link.label}</span>
                             <ArrowUpRight
@@ -187,7 +187,7 @@ export default function StudentResources() {
                         className="mb-16 flex flex-row items-stretch justify-between gap-4"
                     >
                         <div className='max-w-4xl'>
-                            <span className="text-[#7abde8] font-bold tracking-widest uppercase text-xs mb-2 block">
+                            <span className="text-[#8AC2EB] font-bold tracking-widest uppercase text-xs mb-2 block">
                                 Student Portal
                             </span>
                             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
@@ -227,7 +227,7 @@ export default function StudentResources() {
                                 <p className="text-slate-300 text-sm">The Student Technology Help Desk is available 24/7.</p>
                             </div>
                         </div>
-                        <button className="px-6 py-3 bg-[#7abde8] hover:bg-blue-500 text-white font-bold rounded-xl transition-colors shadow-lg shadow-blue-900/50 whitespace-nowrap">
+                        <button className="px-6 py-3 bg-[#8AC2EB] hover:bg-blue-500 text-white font-bold rounded-xl transition-colors shadow-lg shadow-blue-900/50 whitespace-nowrap">
                             Contact Help Desk
                         </button>
                     </motion.div>

@@ -75,13 +75,13 @@ export default function Navbar() {
                                 href={link.href}
                                 onClick={() => setActiveLink(link.name)}
                                 className={`px-4 py-2 text-sm font-medium transition-all duration-200 relative ${pathname === link.href
-                                    ? "text-[#7abde8]"
-                                    : "text-gray-700 hover:text-[#7abde8]"
+                                    ? "text-[#8AC2EB]"
+                                    : "text-gray-700 hover:text-[#8AC2EB]"
                                     }`}
                             >
                                 {link.name}
                                 {activeLink === link.name && (
-                                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#7abde8] rounded-full"></span>
+                                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#8AC2EB] rounded-full"></span>
                                 )}
                             </Link>
                         ))}
@@ -129,8 +129,8 @@ export default function Navbar() {
                                             setIsMobileMenuOpen(false);
                                         }}
                                         className={`block px-4 py-2 text-sm font-medium rounded-lg transition-colors ${activeLink === link.name
-                                            ? "bg-blue-50 text-[#7abde8]"
-                                            : "text-gray-700 hover:bg-gray-50 hover:text-[#7abde8]"
+                                            ? "bg-blue-50 text-[#8AC2EB]"
+                                            : "text-gray-700 hover:bg-gray-50 hover:text-[#8AC2EB]"
                                             }`}
                                     >
                                         {link.name}

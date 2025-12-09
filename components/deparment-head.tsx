@@ -2,15 +2,15 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Phone, MapPin, Printer, Mail } from 'lucide-react';
+import { Phone, MapPin, Printer, Mail, Award, Users, BookOpen, GraduationCap, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const DepartmentHeadSection = () => {
-  // Data extracted from Image 2 and enhanced for the layout
   const profile = {
     name: "Professor Shuqun Zhang",
     title: "Chairperson of the Department",
-    image: "/shuquan-zhang.png", // Professional placeholder
+    image: "/shuquan-zhang.png",
     bio: "Professor Zhang leads the Department of Computer Science with a focus on academic excellence and research innovation. His leadership ensures that the curriculum remains rigorous and relevant to the evolving tech landscape.",
     quote: "Our mission is to provide a broad-based background in computer software, systems, and mathematics, preparing students not just for their first job, but for a lifelong career in technology.",
     contact: {
@@ -21,24 +21,42 @@ const DepartmentHeadSection = () => {
     }
   };
 
-  return (
-    <section className="py-20 bg-[#f0f4f8] text-slate-800 overflow-hidden">
-      <div className="max-w-8xl mx-auto ">
+  const stats = [
+    { icon: Users, value: "15+", label: "Faculty Members" },
+    { icon: GraduationCap, value: "500+", label: "Students Enrolled" },
+    { icon: BookOpen, value: "40+", label: "Courses Offered" },
+    { icon: Award, value: "ABET", label: "Accredited" },
+  ];
 
-        {/* Section Header */}
+  return (
+    <section className="py-12 md:py-20 bg-white text-slate-800 overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 md:px-6">
+
+        {/* Section Header - Styled like CSI logo */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="mb-10 md:mb-14"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-            Department Leadership
+          <div className="flex items-center gap-3 mb-4">
+            <Image
+              src="/csi-blue-logo.png"
+              alt=""
+              width={32}
+              height={32}
+              className="h-8 w-auto object-contain"
+              aria-hidden="true"
+            />
+            <span className="text-xs font-bold uppercase tracking-widest text-slate-500">
+              Meet Our Chair
+            </span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#73797C] mb-3">
+            Department <span className="text-[#8AC2EB]">Leadership</span>
           </h2>
-          <p className="text-lg text-gray-600 leading-relaxed">
-            Meet the faculty guiding the vision of Computer Science at CSI.
-            Our leadership is dedicated to fostering an environment of research,
-            innovation, and student success.
+          <p className="text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl">
+            Guiding the vision of Computer Science at CSI with dedication to research, innovation, and student success.
           </p>
         </motion.div>
 
@@ -48,96 +66,163 @@ const DepartmentHeadSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className=" border border-t border-gray-200 flex flex-col lg:flex-row min-h-[700px]"
+          className="bg-white rounded-2xl border border-slate-200 shadow-lg overflow-hidden"
         >
+          <div className="flex flex-col lg:flex-row">
 
-          {/* LEFT COLUMN: Text Info */}
-          <div className="lg:w-1/2 relative p-8 md:p-12 flex flex-col justify-between border border-b-0 border-l-0 border-t-0 lg:border-r border-dashed border-gray-300">
+            {/* LEFT COLUMN: Image Area */}
+            <div className="lg:w-2/5 relative bg-[#F8FAFB] p-6 md:p-8 lg:p-10 flex flex-col items-center justify-center border-b lg:border-b-0 lg:border-r border-slate-200">
 
-            <div>
-              <motion.h3
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+              {/* Profile Image */}
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="relative z-10 mb-6"
+              >
+                <div className="relative w-44 h-44 sm:w-52 sm:h-52 md:w-60 md:h-60 rounded-2xl overflow-hidden shadow-lg border-4 border-white">
+                  <Image
+                    src={profile.image}
+                    alt={profile.name}
+                    fill
+                    sizes="240px"
+                    className="object-cover object-top"
+                  />
+                </div>
+                {/* Corner accent */}
+                <div className="absolute -bottom-2 -right-2 w-16 h-16 bg-[#8AC2EB]/10 rounded-xl -z-10" aria-hidden="true" />
+                <div className="absolute -top-2 -left-2 w-12 h-12 bg-[#8AC2EB]/5 rounded-xl -z-10" aria-hidden="true" />
+              </motion.div>
+
+              {/* Name & Title */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="text-3xl md:text-4xl font-bold text-gray-900 mb-2"
+                className="text-center relative z-10"
               >
-                {profile.name}
-              </motion.h3>
-              <motion.p
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
-                className="text-sm font-bold text-[#7abde8] tracking-widest uppercase mb-8"
-              >
-                {profile.title}
-              </motion.p>
+                <h3 className="text-xl sm:text-2xl font-bold text-[#73797C] mb-1">
+                  {profile.name}
+                </h3>
+                <p className="text-[#8AC2EB] font-semibold text-sm tracking-wide">
+                  {profile.title}
+                </p>
+              </motion.div>
 
+              {/* Contact Buttons */}
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
-                className="space-y-6 text-gray-600 leading-relaxed text-lg"
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+                className="flex gap-3 mt-6 relative z-10"
               >
-                <p>{profile.bio}</p>
-                <blockquote className="border-l-4 border-blue-500 pl-4 italic text-gray-800 font-medium">
-                  "{profile.quote}"
-                </blockquote>
+                <a
+                  href={`mailto:${profile.contact.email}`}
+                  className="w-11 h-11 rounded-xl bg-white hover:bg-[#8AC2EB] flex items-center justify-center text-[#8AC2EB] hover:text-white transition-all duration-300 shadow-sm border border-slate-200 hover:border-[#8AC2EB] hover:shadow-md"
+                  aria-label={`Email ${profile.name}`}
+                >
+                  <Mail size={18} />
+                </a>
+                <a
+                  href={`tel:${profile.contact.phone.replace(/\./g, '')}`}
+                  className="w-11 h-11 rounded-xl bg-white hover:bg-[#8AC2EB] flex items-center justify-center text-[#8AC2EB] hover:text-white transition-all duration-300 shadow-sm border border-slate-200 hover:border-[#8AC2EB] hover:shadow-md"
+                  aria-label={`Call ${profile.name}`}
+                >
+                  <Phone size={18} />
+                </a>
               </motion.div>
             </div>
 
-            {/* Contact Info Area (Bottom of Left Col) */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
-              className="mt-10 pt-8 border-t border-gray-100"
-            >
-              <h4 className="font-bold text-gray-900 mb-4">Contact Information</h4>
-              <div className="space-y-3 text-sm text-gray-600">
+            {/* RIGHT COLUMN: Content */}
+            <div className="lg:w-3/5 p-6 sm:p-8 md:p-10 flex flex-col">
 
-                <div className="flex items-start gap-3">
-                  <MapPin className="text-[#7abde8] shrink-0 mt-1" size={18} />
-                  <span>{profile.contact.address}</span>
+              {/* Bio Section */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="mb-6"
+              >
+                <p className="text-[#4A4A4A] leading-relaxed text-base md:text-lg mb-6">
+                  {profile.bio}
+                </p>
+
+                {/* Quote - WCAG AA compliant colors */}
+                <div className="relative bg-[#F0F9FF] rounded-xl p-5 border-l-4 border-[#8AC2EB]">
+                  <span className="absolute -top-1 left-4 text-4xl text-[#8AC2EB]/30 font-serif leading-none" aria-hidden="true">"</span>
+                  <blockquote className="italic text-[#374151] text-sm md:text-base relative z-10 pl-3">
+                    {profile.quote}
+                  </blockquote>
                 </div>
+              </motion.div>
 
-                <div className="flex flex-wrap gap-6">
-                  <div className="flex items-center gap-3">
-                    <Phone className="text-[#7abde8] shrink-0" size={18} />
-                    <span>Phone: {profile.contact.phone}</span>
+              {/* Stats Grid */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+                className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6"
+              >
+                {stats.map((stat, idx) => (
+                  <div
+                    key={idx}
+                    className="text-center p-4 rounded-xl bg-[#F8FAFB] hover:bg-[#E8F7FD] border border-transparent hover:border-[#8AC2EB]/20 transition-all duration-300 group"
+                  >
+                    <stat.icon className="w-5 h-5 mx-auto mb-2 text-[#8AC2EB] group-hover:scale-110 transition-transform" aria-hidden="true" />
+                    <div className="text-lg sm:text-xl font-bold text-[#73797C]">{stat.value}</div>
+                    <div className="text-[10px] sm:text-xs text-[#6B7280] uppercase tracking-wider font-medium">{stat.label}</div>
                   </div>
+                ))}
+              </motion.div>
 
-                  <div className="flex items-center gap-3">
-                    <Printer className="text-[#7abde8] shrink-0" size={18} />
+              {/* Contact Details - WCAG AA compliant */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+                className="mt-auto pt-6 border-t border-slate-100"
+              >
+                <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-[#4B5563]">
+                  <div className="flex items-center gap-2">
+                    <MapPin size={16} className="text-[#8AC2EB] shrink-0" aria-hidden="true" />
+                    <span>{profile.contact.address}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Phone size={16} className="text-[#8AC2EB] shrink-0" aria-hidden="true" />
+                    <span>{profile.contact.phone}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Printer size={16} className="text-[#8AC2EB] shrink-0" aria-hidden="true" />
                     <span>Fax: {profile.contact.fax}</span>
                   </div>
                 </div>
+              </motion.div>
 
-              </div>
-            </motion.div>
+            </div>
           </div>
+        </motion.div>
 
-          {/* RIGHT COLUMN: Image */}
-          <div className="lg:w-1/2 relative bg-gray-100 overflow-hidden ">
-            {/* Grayscale Filter + Image */}
-            <motion.div
-              initial={{ scale: 1.1,  }}
-              whileInView={{ scale: 1,  }}
-              whileHover={{  }} // Cool interactive effect: color on hover
-              transition={{ duration: 0.8 }}
-              className="w-full h-full relative"
-            >
-              <Image 
-                  src={profile.image} 
-                  alt={profile.name}
-                  className=" inset-0 w-full h-full object-cover object-center "
-                  fill
-                />
-
-              {/* Gradient Overlay for smooth fade at bottom (optional aesthetic touch) */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
-            </motion.div>
-          </div>
-
+        {/* CTA Link */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6 }}
+          className="text-center mt-8"
+        >
+          <Link
+            href="/people"
+            className="inline-flex items-center gap-2 text-[#0284C7] hover:text-[#0369A1] font-semibold transition-colors group"
+          >
+            Meet all our faculty members
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+          </Link>
         </motion.div>
 
       </div>

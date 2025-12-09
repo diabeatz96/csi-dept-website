@@ -36,7 +36,7 @@ export default function ABETAccreditation() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="bg-gradient-to-br from-[#7abde8] to-blue-800 rounded-3xl p-8 md:p-12 text-white mb-12 shadow-xl"
+                        className="bg-gradient-to-br from-[#8AC2EB] to-blue-800 rounded-3xl p-8 md:p-12 text-white mb-12 shadow-xl"
                     >
                         <div className="flex items-start gap-4 mb-6">
                             <div className="p-3 bg-white/20 rounded-xl backdrop-blur-sm">
@@ -72,7 +72,7 @@ export default function ABETAccreditation() {
                         className="bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-slate-200 mb-8"
                     >
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="p-2 bg-[#7abde8] rounded-lg">
+                            <div className="p-2 bg-[#8AC2EB] rounded-lg">
                                 <Target size={24} className="text-white" />
                             </div>
                             <h3 className="text-2xl md:text-3xl font-bold text-slate-900">
@@ -90,9 +90,9 @@ export default function ABETAccreditation() {
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.5, delay: 0.3 + (index * 0.1) }}
-                                    className="flex gap-4 p-4 bg-slate-50 rounded-xl border-l-4 border-[#7abde8]"
+                                    className="flex gap-4 p-4 bg-slate-50 rounded-xl border-l-4 border-[#8AC2EB]"
                                 >
-                                    <div className="flex-shrink-0 w-6 h-6 bg-[#7abde8] text-white rounded-full flex items-center justify-center font-bold text-xs mt-0.5">
+                                    <div className="flex-shrink-0 w-6 h-6 bg-[#8AC2EB] text-white rounded-full flex items-center justify-center font-bold text-xs mt-0.5">
                                         {index + 1}
                                     </div>
                                     <p className="text-slate-700 leading-relaxed">{objective}</p>
@@ -110,7 +110,7 @@ export default function ABETAccreditation() {
                         className="bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-slate-200 mb-8"
                     >
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="p-2 bg-[#7abde8] rounded-lg">
+                            <div className="p-2 bg-[#8AC2EB] rounded-lg">
                                 <Users size={24} className="text-white" />
                             </div>
                             <h3 className="text-2xl md:text-3xl font-bold text-slate-900">
@@ -128,7 +128,7 @@ export default function ABETAccreditation() {
                                     className="p-4 bg-slate-50 rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all"
                                 >
                                     <div className="flex gap-3">
-                                        <div className="flex-shrink-0 w-6 h-6 bg-[#7abde8] text-white rounded-full flex items-center justify-center font-bold text-xs mt-0.5">
+                                        <div className="flex-shrink-0 w-6 h-6 bg-[#8AC2EB] text-white rounded-full flex items-center justify-center font-bold text-xs mt-0.5">
                                             {index + 1}
                                         </div>
                                         <p className="text-slate-700 leading-relaxed text-sm">{outcome}</p>
@@ -147,7 +147,7 @@ export default function ABETAccreditation() {
                         className="bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-slate-200"
                     >
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="p-2 bg-[#7abde8] rounded-lg">
+                            <div className="p-2 bg-[#8AC2EB] rounded-lg">
                                 <TrendingUp size={24} className="text-white" />
                             </div>
                             <h3 className="text-2xl md:text-3xl font-bold text-slate-900">
@@ -156,7 +156,7 @@ export default function ABETAccreditation() {
                         </div>
                         <a
                             href="https://www.cs.csi.cuny.edu/content/abet_table.pdf"
-                            className="inline-flex items-center gap-2 text-[#7abde8] hover:text-blue-700 font-semibold text-lg transition-colors"
+                            className="inline-flex items-center gap-2 text-[#8AC2EB] hover:text-blue-700 font-semibold text-lg transition-colors"
                         >
                             BS Program Enrollment and Degree Data
                             <ExternalLink size={18} />

@@ -50,7 +50,7 @@ export default function DoubleCountingPolicy() {
                         </div>
                         <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
                             Computer Science Graduate Course<br />
-                            <span className="text-[#7abde8]">Double-Counting Policy</span>
+                            <span className="text-[#8AC2EB]">Double-Counting Policy</span>
                         </h2>
                     </div>
 
@@ -66,7 +66,7 @@ export default function DoubleCountingPolicy() {
                         <div className="mb-8 pb-8 border-b border-slate-200">
                             <a
                                 href="https://www.cs.csi.cuny.edu/content/BS_MS_Accelerated_Poster.pdf"
-                                className="inline-flex items-center gap-3 px-6 py-3 bg-[#7abde8] text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg"
+                                className="inline-flex items-center gap-3 px-6 py-3 bg-[#8AC2EB] text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg"
                             >
                                 <FileText size={20} />
                                 Open PDF Flyer
@@ -77,14 +77,14 @@ export default function DoubleCountingPolicy() {
                         {/* Policy Description */}
                         <div className="mb-10">
                             <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                                Undergraduate students majoring in Computer Science or CS/Mathematics and satisfying the following criteria may be granted permission to take up to <span className="font-semibold text-slate-900">three graduate courses</span> at undergraduate tuition to be counted towards their bachelor's degree. These courses may be used only to substitute for <span className="font-semibold text-slate-900">400 level Computer Science elective courses (CSC designation)</span>. These graduate courses will be <span className="font-semibold text-slate-900">double-counted toward their master's degree</span>. This allows students to earn both the bachelor's and the master's degrees in <span className="font-semibold text-[#7abde8]">five years</span>.
+                                Undergraduate students majoring in Computer Science or CS/Mathematics and satisfying the following criteria may be granted permission to take up to <span className="font-semibold text-slate-900">three graduate courses</span> at undergraduate tuition to be counted towards their bachelor's degree. These courses may be used only to substitute for <span className="font-semibold text-slate-900">400 level Computer Science elective courses (CSC designation)</span>. These graduate courses will be <span className="font-semibold text-slate-900">double-counted toward their master's degree</span>. This allows students to earn both the bachelor's and the master's degrees in <span className="font-semibold text-[#8AC2EB]">five years</span>.
                             </p>
                         </div>
 
                         {/* Criteria Section */}
                         <div>
                             <div className="flex items-center gap-3 mb-6">
-                                <div className="p-2 bg-[#7abde8] rounded-lg">
+                                <div className="p-2 bg-[#8AC2EB] rounded-lg">
                                     <CheckCircle2 size={24} className="text-white" />
                                 </div>
                                 <h3 className="text-2xl font-bold text-slate-900">Criteria:</h3>
@@ -100,7 +100,7 @@ export default function DoubleCountingPolicy() {
                                         transition={{ duration: 0.5, delay: 0.3 + (index * 0.1) }}
                                         className="flex gap-4 p-4 bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all"
                                     >
-                                        <div className="flex-shrink-0 w-8 h-8 bg-[#7abde8] text-white rounded-full flex items-center justify-center font-bold text-sm">
+                                        <div className="flex-shrink-0 w-8 h-8 bg-[#8AC2EB] text-white rounded-full flex items-center justify-center font-bold text-sm">
                                             {item.number}
                                         </div>
                                         <p className="text-slate-700 leading-relaxed pt-1">{item.text}</p>

@@ -1,7 +1,10 @@
+'use client';
+
 import { Button } from "@/components/ui/button";
 import React from "react";
 import { motion } from "framer-motion";
 import { CompaniesMarquee } from "../companies-marquee";
+import Image from "next/image";
 
 interface About3Props {
   title?: string;
@@ -99,10 +102,10 @@ export const About3 = ({
   const defaultTransition = { duration: 0.6, ease: "easeOut" as const };
 
   return (
-    <section className="py-32">
-      <div className="container mx-auto">
+    <section className="py-16 md:py-32">
+      <div className="container mx-auto px-4">
         <motion.div
-          className="mb-14 grid gap-5 text-center md:grid-cols-2 md:text-left"
+          className="mb-8 md:mb-14 grid gap-4 md:gap-5 text-center md:grid-cols-2 md:text-left"
           initial="initial"
           whileInView="whileInView"
           viewport={{ once: true, margin: "-100px" }}
@@ -111,17 +114,17 @@ export const About3 = ({
             whileInView: {},
           }}
         >
-          <motion.h1
-            className="text-5xl font-semibold"
+          <motion.h2
+            className="text-3xl sm:text-4xl md:text-5xl font-semibold"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={viewportOptions}
             transition={defaultTransition}
           >
             {title}
-          </motion.h1>
+          </motion.h2>
           <motion.div
-            className="text-muted-foreground"
+            className="text-sm md:text-base text-muted-foreground"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={viewportOptions}
@@ -131,77 +134,95 @@ export const About3 = ({
           </motion.div>
         </motion.div>
 
-        <div className="grid gap-7 lg:grid-cols-3">
-          <motion.img
-            src={mainImage.src}
-            alt={mainImage.alt}
-            className="size-full max-h-[620px] rounded-xl object-cover lg:col-span-2"
+        <div className="grid gap-4 md:gap-7 lg:grid-cols-3">
+          <motion.div
+            className="relative w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[620px] rounded-xl overflow-hidden lg:col-span-2"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={viewportOptions}
             transition={{ duration: 0.8, ease: "easeOut" as const }}
-          />
-          <div className="flex flex-col gap-7 md:flex-row lg:flex-col">
+          >
+            <Image
+              src={mainImage.src}
+              alt={mainImage.alt}
+              fill
+              sizes="(max-width: 1024px) 100vw, 66vw"
+              className="object-cover"
+            />
+          </motion.div>
+          <div className="flex flex-col gap-4 md:gap-7 md:flex-row lg:flex-col">
             <motion.div
-              className="flex flex-col justify-between gap-6 rounded-xl bg-muted p-7 md:w-1/2 lg:w-auto"
+              className="flex flex-col justify-between gap-4 md:gap-6 rounded-xl bg-muted p-5 md:p-7 md:w-1/2 lg:w-auto"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={viewportOptions}
               transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" as const }}
             >
-              <motion.img
-                src={breakout.src}
-                alt={breakout.alt}
-                className="mr-auto h-12"
+              <motion.div
+                className="relative h-10 md:h-12 w-24 md:w-32"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-              />
+              >
+                <Image
+                  src={breakout.src}
+                  alt={breakout.alt}
+                  fill
+                  sizes="128px"
+                  className="object-contain object-left"
+                />
+              </motion.div>
               <div>
-                <p className="mb-2 text-lg font-semibold">{breakout.title}</p>
-                <p className="text-muted-foreground">{breakout.description}</p>
+                <p className="mb-2 text-base md:text-lg font-semibold">{breakout.title}</p>
+                <p className="text-sm md:text-base text-muted-foreground">{breakout.description}</p>
               </div>
               <Button variant="outline" className="mr-auto" asChild>
-                <a href={breakout.buttonUrl} target="_blank">
+                <a href={breakout.buttonUrl} target="_blank" rel="noopener noreferrer">
                   {breakout.buttonText}
                 </a>
               </Button>
             </motion.div>
-            <motion.img
-              src={secondaryImage.src}
-              alt={secondaryImage.alt}
-              className="grow basis-0 rounded-xl object-cover object-center md:w-1/2 lg:min-h-0 lg:w-auto"
+            <motion.div
+              className="relative h-[200px] md:h-[250px] lg:h-auto lg:grow rounded-xl overflow-hidden md:w-1/2 lg:w-auto"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={viewportOptions}
               transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" as const }}
-            />
+            >
+              <Image
+                src={secondaryImage.src}
+                alt={secondaryImage.alt}
+                fill
+                sizes="(max-width: 1024px) 50vw, 33vw"
+                className="object-cover object-center"
+              />
+            </motion.div>
           </div>
         </div>
 
-        <div className="py-10" />
+        <div className="py-6 md:py-10" />
         <motion.div
-          className="relative overflow-hidden rounded-xl bg-muted p-10 md:p-16"
+          className="relative overflow-hidden rounded-xl bg-muted p-6 md:p-10 lg:p-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={viewportOptions}
           transition={{ duration: 0.8, ease: "easeOut" as const }}
         >
           <motion.div
-            className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between"
+            className="flex flex-col gap-6 md:gap-8 md:flex-row md:items-center md:justify-between"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="text-start md:w-1/2">
-              <h2 className="text-4xl font-semibold mb-4">{achievementsTitle}</h2>
-              <p className="text-lg text-muted-foreground mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-3 md:mb-4">{achievementsTitle}</h2>
+              <p className="text-base md:text-lg text-muted-foreground mb-4 md:mb-6">
                 {achievementsDescription}
               </p>
               <motion.div
-                className="flex flex-wrap gap-6 md:gap-8"
+                className="flex flex-wrap gap-4 md:gap-6 lg:gap-8"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={viewportOptions}
@@ -209,7 +230,7 @@ export const About3 = ({
               >
                 {achievements.map((item, idx) => (
                   <motion.div
-                    className="flex flex-col gap-2"
+                    className="flex flex-col gap-1 md:gap-2"
                     key={item.label + idx}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -217,9 +238,9 @@ export const About3 = ({
                     transition={{ duration: 0.5, ease: "easeOut" as const, delay: idx * 0.1 }}
                     whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                   >
-                    <p className="text-sm text-muted-foreground">{item.label}</p>
+                    <p className="text-xs md:text-sm text-muted-foreground">{item.label}</p>
                     <motion.span
-                      className="text-3xl font-semibold md:text-4xl"
+                      className="text-2xl sm:text-3xl md:text-4xl font-semibold"
                       initial={{ opacity: 0, scale: 0.5 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={viewportOptions}
@@ -239,7 +260,7 @@ export const About3 = ({
             <div className="md:w-1/2 flex items-center justify-center">
               <div className="w-full">
                 <motion.p
-                  className="text-center text-sm font-medium text-muted-foreground mb-4"
+                  className="text-center text-xs md:text-sm font-medium text-muted-foreground mb-4"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}

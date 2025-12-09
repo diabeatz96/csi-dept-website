@@ -97,7 +97,7 @@ const SpotlightItem = ({ story, index }: { story: typeof spotlights[0], index: n
         className="flex gap-4 p-4 rounded-2xl hover:bg-slate-50 transition-colors cursor-pointer group border border-transparent hover:border-slate-100"
     >
         <div className="shrink-0 mt-1">
-            <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-[#7abde8] group-hover:bg-[#7abde8] group-hover:text-white transition-all duration-300 shadow-sm">
+            <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-[#8AC2EB] group-hover:bg-[#8AC2EB] group-hover:text-white transition-all duration-300 shadow-sm">
                 <story.icon size={20} />
             </div>
         </div>
@@ -142,7 +142,7 @@ export default function StudentSpotlights() {
                 {/* Header */}
                 <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                     <div>
-                        <div className="flex items-center gap-2 text-[#7abde8] font-bold uppercase tracking-widest text-xs mb-2">
+                        <div className="flex items-center gap-2 text-[#8AC2EB] font-bold uppercase tracking-widest text-xs mb-2">
                             <Sparkles size={14} />
                             Student Success
                         </div>

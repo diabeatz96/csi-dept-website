@@ -269,14 +269,34 @@ a:focus-visible,
   white-space: normal;
 }
 
-/* Accessible Color Variables - WCAG AA compliant alternatives */
+/* CSI Official Brand Colors - From brandcolorcode.com/college-of-staten-island-csi */
 :root {
-  /* Original brand blue #7abde8 doesn't meet contrast on white */
-  /* Use these accessible alternatives for text */
+  /* Official CSI Brand Colors */
+  --color-csi-blue: #8AC2EB; /* Pantone 292 C - Primary brand blue */
+  --color-csi-gray: #73797C; /* Pantone 431 C - Primary brand gray */
+
+  /* Accessible alternatives for text (WCAG AA compliant) */
   --color-accessible-blue: #2563eb; /* Blue 600 - 4.7:1 contrast on white */
   --color-accessible-blue-dark: #1d4ed8; /* Blue 700 - 6.0:1 contrast on white */
   --color-accessible-gray: #4b5563; /* Gray 600 - 5.9:1 contrast on white */
-  --color-brand-blue: #7abde8; /* Original brand color - use only for large text/decorative */
+  --color-brand-blue: #8AC2EB; /* Official CSI brand color - use only for large text/decorative */
+}
+
+/* CSI Brand color utilities */
+.text-csi-blue {
+  color: var(--color-csi-blue);
+}
+
+.text-csi-gray {
+  color: var(--color-csi-gray);
+}
+
+.bg-csi-blue {
+  background-color: var(--color-csi-blue);
+}
+
+.bg-csi-gray {
+  background-color: var(--color-csi-gray);
 }
 
 /* Accessible text color utilities */
@@ -289,11 +309,15 @@ a:focus-visible,
 }
 
 /*
+   CSI BRAND COLOR REFERENCE:
+   - Blue: #8AC2EB (Pantone 292 C)
+   - Gray: #73797C (Pantone 431 C)
+
    ACCESSIBILITY NOTE:
-   The brand blue #7abde8 has insufficient contrast (2.7:1) against white for normal text.
+   The brand blue #8AC2EB has insufficient contrast against white for small text.
    WCAG AA requires 4.5:1 for normal text and 3:1 for large text (18pt+ or 14pt bold+).
 
-   Use #7abde8 ONLY for:
+   Use #8AC2EB ONLY for:
    - Large headings (24px+ or 18px bold+)
    - Decorative elements, backgrounds, borders
    - Icons (when accompanied by accessible text)

@@ -12,7 +12,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 const items = [
     [{
         name: "DEGREES",
-        color: "bg-[#7abde8]",
+        color: "bg-[#8AC2EB]",
         items: [
             { name: "Master of Science (M.S) Program", href: "/graduate#ms-computer-science" },
             { name: "Admission Requirements", href: "/graduate#ms-computer-science", isSubItem: true },

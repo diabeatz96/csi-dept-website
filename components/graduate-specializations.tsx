@@ -80,11 +80,11 @@ const CourseModule = ({ code, title, icon: Icon, delay }: { code: string, title:
     whileHover={{ y: -4, shadow: "0 10px 30px -10px rgba(0,0,0,0.1)" }}
     className="bg-white rounded-xl p-4 border border-slate-100 shadow-sm flex items-center gap-4 group cursor-default"
   >
-    <div className="h-10 w-10 rounded-lg bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-[#7abde8] group-hover:text-white transition-all duration-300">
+    <div className="h-10 w-10 rounded-lg bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-[#8AC2EB] group-hover:text-white transition-all duration-300">
       <Icon size={18} />
     </div>
     <div>
-      <div className="text-xs font-bold text-[#7abde8] uppercase tracking-wider mb-0.5">
+      <div className="text-xs font-bold text-[#8AC2EB] uppercase tracking-wider mb-0.5">
         {code}
       </div>
       <div className="text-sm font-semibold text-slate-800 leading-tight">
@@ -107,13 +107,13 @@ const SpecializationCard = ({ data, index }: { data: typeof specializations[0], 
 
         {/* Left: Info Header */}
         <div className="lg:w-1/3 flex flex-col items-start">
-          <div className="p-3 bg-white rounded-2xl shadow-sm border border-slate-100 mb-6 text-[#7abde8]">
+          <div className="p-3 bg-white rounded-2xl shadow-sm border border-slate-100 mb-6 text-[#8AC2EB]">
             <data.icon size={32} />
           </div>
           <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
             {data.title}
           </h3>
-          <p className="text-[#7abde8] font-medium text-sm mb-4">
+          <p className="text-[#8AC2EB] font-medium text-sm mb-4">
             {data.subtitle}
           </p>
           <p className="text-slate-600 leading-relaxed mb-6">
@@ -155,7 +155,7 @@ export default function GraduateSpecializations() {
 
         {/* Header */}
         <div className="text-start max-w-7xl mx-auto mb-10">
-          <div className='h-1 w-[14%] self-start bg-[#7abde8] mb-2' />
+          <div className='h-1 w-[14%] self-start bg-[#8AC2EB] mb-2' />
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

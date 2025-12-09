@@ -53,7 +53,7 @@ export default function GraduateAdvisement() {
                                     <div className="flex flex-wrap items-center gap-3 text-xs md:text-sm">
                                         <a
                                             href="mailto:Xiaowen.Zhang@csi.cuny.edu"
-                                            className="text-[#7abde8] hover:text-blue-700 font-medium transition-colors inline-flex items-center gap-1.5"
+                                            className="text-[#8AC2EB] hover:text-blue-700 font-medium transition-colors inline-flex items-center gap-1.5"
                                         >
                                             <Mail size={14} />
                                             <span>Xiaowen.Zhang@csi.cuny.edu</span>
@@ -70,7 +70,7 @@ export default function GraduateAdvisement() {
                                 <div className="flex-shrink-0 pt-2 md:pt-0 md:border-l md:border-slate-200 md:pl-6">
                                     <a
                                         href="https://www.cs.csi.cuny.edu/content/abet_table.pdf"
-                                        className="text-[#7abde8] hover:text-blue-700 underline font-medium text-sm inline-flex items-center gap-1.5 transition-colors"
+                                        className="text-[#8AC2EB] hover:text-blue-700 underline font-medium text-sm inline-flex items-center gap-1.5 transition-colors"
                                     >
                                         <BookOpen size={14} />
                                         <span>Graduate Catalog</span>

@@ -72,11 +72,11 @@ const YearCard = ({ year, title, subtitle, icon: Icon, isLast = false }: any) =>
                 </div>
                 <div>
                     <div className="flex items-center gap-2 mb-1.5">
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 bg-slate-50 px-2 py-0.5 rounded-sm border border-slate-100">
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-slate-600 bg-slate-50 px-2 py-0.5 rounded-sm border border-slate-100">
                             Year 0{year}
                         </span>
                     </div>
-                    <h4 className="font-bold text-slate-900 text-sm">{title}</h4>
+                    <h3 className="font-bold text-slate-900 text-sm">{title}</h3>
                     <p className="text-xs text-slate-500 mt-1 leading-relaxed">{subtitle}</p>
                 </div>
 
@@ -91,7 +91,7 @@ const YearCard = ({ year, title, subtitle, icon: Icon, isLast = false }: any) =>
 const PlusConnector = () => (
     <div className="relative z-20 my-2 flex justify-center">
         <div className="bg-white p-1 rounded-full border border-blue-100 shadow-sm z-20">
-            <Plus size={16} className="text-[#7abde8]" />
+            <Plus size={16} className="text-[#8AC2EB]" />
         </div>
     </div>
 );
@@ -107,13 +107,13 @@ const CareerPathCard = ({ title, role, icon: Icon, colorClass, delay }: any) => 
             <div className={`p-2 rounded-md ${colorClass} bg-opacity-10`}>
                 <Icon size={20} className={`text-white`} />
             </div>
-            <div className="bg-slate-50 px-2 py-1 rounded text-[10px] font-bold uppercase text-slate-400">
+            <div className="bg-slate-50 px-2 py-1 rounded text-[10px] font-bold uppercase text-slate-600">
                 Career Track
             </div>
         </div>
 
         <div>
-            <h4 className="font-bold text-slate-900 text-sm">{title}</h4>
+            <h3 className="font-bold text-slate-900 text-sm">{title}</h3>
             <p className="text-xs text-slate-500 mt-1">{role}</p>
         </div>
     </motion.div>
@@ -148,9 +148,9 @@ export default function DegreePathHero() {
                     >
                         {/* Pill Badge */}
                         <div className="inline-flex items-center gap-2 bg-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold px-4 py-1.5 rounded-full mb-8 cursor-pointer hover:bg-white hover:border-blue-300 transition-colors group">
-                            <span className="w-2 h-2 rounded-full bg-[#7abde8] animate-pulse"></span>
+                            <span className="w-2 h-2 rounded-full bg-[#8AC2EB] animate-pulse"></span>
                             <span>Spring 2026 Admissions Cycle Open</span>
-                            <ArrowRight size={14} className="text-slate-400 group-hover:text-[#7abde8] transition-colors ml-1" />
+                            <ArrowRight size={14} className="text-slate-400 group-hover:text-[#8AC2EB] transition-colors ml-1" />
                         </div>
 
                         {/* Headline */}
@@ -255,25 +255,25 @@ export default function DegreePathHero() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.4 }}
-                                    className="w-72 bg-white border-2 border-[#7abde8] rounded-lg shadow-lg p-5 flex items-center gap-4 relative z-20"
+                                    className="w-72 bg-white border-2 border-[#8AC2EB] rounded-lg shadow-lg p-5 flex items-center gap-4 relative z-20"
                                 >
-                                    <div className="bg-blue-50 p-2.5 rounded-md text-[#7abde8] shrink-0">
+                                    <div className="bg-blue-50 p-2.5 rounded-md text-[#8AC2EB] shrink-0">
                                         <CheckCircle2 size={20} />
                                     </div>
                                     <div>
                                         <div className="flex items-center gap-2 mb-1.5">
-                                            <span className="text-[10px] font-bold uppercase tracking-widest text-white bg-[#7abde8] px-2 py-0.5 rounded-sm">
+                                            <span className="text-[10px] font-bold uppercase tracking-widest text-white bg-[#0369A1] px-2 py-0.5 rounded-sm">
                                                 Year 04
                                             </span>
                                         </div>
-                                        <h4 className="font-bold text-slate-900 text-sm">Capstone Projects</h4>
+                                        <h3 className="font-bold text-slate-900 text-sm">Capstone Projects</h3>
                                         <p className="text-xs text-slate-500 mt-1">Select your graduation track</p>
                                     </div>
                                 </motion.div>
                                 {/* Final Plus Connector before split */}
                                 <div className="absolute left-1/2 -translate-x-1/2 -bottom-8 z-20">
                                     <div className="bg-white p-1 rounded-full border border-blue-100 shadow-sm">
-                                        <Plus size={16} className="text-[#7abde8]" />
+                                        <Plus size={16} className="text-[#8AC2EB]" />
                                     </div>
                                 </div>
                             </div>
@@ -320,14 +320,14 @@ export default function DegreePathHero() {
                             <div className="flex flex-col md:flex-row justify-between gap-4 pt-8">
                                 {/* Path A */}
                                 <div className="relative">
-                                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#7abde8] text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-20">
+                                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0369A1] text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-20">
                                         Path A
                                     </div>
                                     <CareerPathCard
                                         title="Software Engineering"
                                         role="Full Stack & Systems Architect"
                                         icon={Laptop}
-                                        colorClass="bg-[#7abde8]"
+                                        colorClass="bg-[#8AC2EB]"
                                         delay={1.8}
                                     />
                                 </div>

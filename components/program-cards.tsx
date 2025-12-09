@@ -103,7 +103,7 @@ const ProgramCard = ({
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
             >
-              <span className="text-[#7abde8] font-bold tracking-widest uppercase text-xs mb-2 block bg-blue-200/50 rounded-full w-fit p-2">
+              <span className="text-[#8AC2EB] font-bold tracking-widest uppercase text-xs mb-2 block bg-blue-200/50 rounded-full w-fit p-2">
                 {category}
               </span>
 
@@ -119,7 +119,7 @@ const ProgramCard = ({
                     href="http://www.abet.org"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#7abde8] hover:text-blue-700 underline"
+                    className="text-[#8AC2EB] hover:text-blue-700 underline"
                   >
                     ABET
                   </a>
@@ -147,7 +147,7 @@ const ProgramCard = ({
                       transition={{ delay: 0.4 + (idx * 0.1) }}
                       className="group flex items-center gap-3 p-3 rounded-lg bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all cursor-pointer"
                     >
-                      <div className="bg-blue-50 text-[#7abde8] p-2 rounded-md group-hover:bg-[#7abde8] group-hover:text-white transition-colors">
+                      <div className="bg-blue-50 text-[#8AC2EB] p-2 rounded-md group-hover:bg-[#8AC2EB] group-hover:text-white transition-colors">
                         {getIcon(link.type)}
                       </div>
                       <span className="text-sm font-semibold text-slate-700 group-hover:text-blue-700 transition-colors line-clamp-1">
@@ -164,7 +164,7 @@ const ProgramCard = ({
                 <button className="bg-slate-900 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors shadow-lg">
                   View Degree Details
                 </button>
-                <button className="text-slate-600 font-bold px-6 py-3 hover:text-[#7abde8] transition-colors flex items-center gap-2">
+                <button className="text-slate-600 font-bold px-6 py-3 hover:text-[#8AC2EB] transition-colors flex items-center gap-2">
                   Contact Advisor <ArrowRight size={18} />
                 </button>
               </div>

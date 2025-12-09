@@ -72,7 +72,7 @@ export default function GraduatePage() {
 
                         <h1 className="text-5xl md:text-6xl  text-slate-900 mb-6 leading-tight">
                             Elevate your expertise <br />
-                            <span className="text-[#7abde8]">define the future.</span>
+                            <span className="text-[#8AC2EB]">define the future.</span>
                         </h1>
 
                         <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
@@ -135,7 +135,7 @@ export default function GraduatePage() {
                                     <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
 
                                     {/* Icon */}
-                                    <div className="relative mb-6 w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center text-[#7abde8] group-hover:bg-[#7abde8] group-hover:text-white transition-all duration-300 shadow-inner">
+                                    <div className="relative mb-6 w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center text-[#8AC2EB] group-hover:bg-[#8AC2EB] group-hover:text-white transition-all duration-300 shadow-inner">
                                         <card.icon size={32} />
                                     </div>
 
@@ -151,7 +151,7 @@ export default function GraduatePage() {
 
                                     {/* Footer Link */}
                                     {/* <div className="relative mt-auto pt-4 border-t border-slate-50 w-full flex justify-center">
-                                        <span className="text-xs font-bold text-slate-400 group-hover:text-[#7abde8] uppercase tracking-widest flex items-center gap-2 transition-colors">
+                                        <span className="text-xs font-bold text-slate-400 group-hover:text-[#8AC2EB] uppercase tracking-widest flex items-center gap-2 transition-colors">
                                             Explore <ArrowRight size={14} />
                                         </span>
                                     </div> */}
