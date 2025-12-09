@@ -186,8 +186,8 @@ export default function DegreePathHero() {
                     {/* RIGHT COLUMN: Degree Path Animation */}
                     <div className="relative min-h-[800px] flex flex-col items-center justify-start pt-10">
 
-                        {/* Container for the background floating icons */}
-                        <div className="absolute inset-0 w-full h-full">
+                        {/* Container for the background floating icons - hidden on mobile */}
+                        <div className="absolute inset-0 w-full h-full hidden lg:block">
                             {demoIcons.map((iconData, index) => (
                                 <Icon
                                     key={iconData.id}
@@ -280,11 +280,11 @@ export default function DegreePathHero() {
                         </div>
                         {/* 3. THE SPLIT PATH (SVG + CARDS) */}
                         <div className="relative w-full max-w-lg mt-6">
-                            {/* Split Lines SVG */}
-                            <svg className="absolute -top-8 left-0 w-full h-20 z-0 pointer-events-none overflow-visible">
+                            {/* Split Lines SVG - Desktop only */}
+                            <svg className="absolute -top-8 left-0 w-full h-20 z-0 pointer-events-none overflow-visible hidden md:block" viewBox="0 0 512 50" preserveAspectRatio="xMidYMin meet">
                                 {/* Left Branch */}
                                 <motion.path
-                                    d="M 256 0 V 20 H 128 V 40" // Assumes container roughly 512 wide, center 256
+                                    d="M 256 0 V 20 H 128 V 40"
                                     fill="transparent"
                                     stroke="#94a3b8"
                                     strokeWidth="2"
@@ -316,8 +316,20 @@ export default function DegreePathHero() {
                                 />
                             </svg>
 
+                            {/* Mobile vertical connector line */}
+                            <div className="md:hidden flex justify-center -mt-2 mb-2">
+                                <motion.div
+                                    className="w-0.5 h-8 bg-slate-300"
+                                    initial={{ scaleY: 0 }}
+                                    whileInView={{ scaleY: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 1.5, duration: 0.5 }}
+                                    style={{ transformOrigin: 'top' }}
+                                />
+                            </div>
+
                             {/* Split Cards */}
-                            <div className="flex flex-col md:flex-row justify-between gap-4 pt-8">
+                            <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-4 md:pt-8 items-center md:items-start">
                                 {/* Path A */}
                                 <div className="relative">
                                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0369A1] text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-20">
@@ -330,6 +342,13 @@ export default function DegreePathHero() {
                                         colorClass="bg-[#8AC2EB]"
                                         delay={1.8}
                                     />
+                                </div>
+
+                                {/* Mobile "OR" divider */}
+                                <div className="md:hidden flex items-center gap-2 py-2">
+                                    <div className="w-8 h-0.5 bg-slate-200"></div>
+                                    <span className="text-xs font-bold text-slate-400 uppercase">or</span>
+                                    <div className="w-8 h-0.5 bg-slate-200"></div>
                                 </div>
 
                                 {/* Path B */}

@@ -143,8 +143,8 @@ const HeroSection = () => {
           <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#8AC2EB]/15 via-40% to-[#8AC2EB]/40 pointer-events-none" />
         </div>
 
-        {/* Slideshow Controls */}
-        <div className="absolute bottom-4 right-4 z-20 flex items-center gap-2">
+        {/* Slideshow Controls - Desktop only */}
+        <div className="absolute bottom-4 right-4 z-20 hidden md:flex items-center gap-2">
           <button
             onClick={() => setIsPaused(!isPaused)}
             aria-label={isPaused ? "Play slideshow" : "Pause slideshow"}
