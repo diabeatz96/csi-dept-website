@@ -91,7 +91,7 @@ const YearCard = ({ year, title, subtitle, icon: Icon, isLast = false }: any) =>
 const PlusConnector = () => (
     <div className="relative z-20 my-2 flex justify-center">
         <div className="bg-white p-1 rounded-full border border-blue-100 shadow-sm z-20">
-            <Plus size={16} className="text-[#8AC2EB]" />
+            <Plus size={16} className="text-[#0369A1]" />
         </div>
     </div>
 );
@@ -148,9 +148,9 @@ export default function DegreePathHero() {
                     >
                         {/* Pill Badge */}
                         <div className="inline-flex items-center gap-2 bg-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold px-4 py-1.5 rounded-full mb-8 cursor-pointer hover:bg-white hover:border-blue-300 transition-colors group">
-                            <span className="w-2 h-2 rounded-full bg-[#8AC2EB] animate-pulse"></span>
+                            <span className="w-2 h-2 rounded-full bg-[#0369A1] animate-pulse"></span>
                             <span>Spring 2026 Admissions Cycle Open</span>
-                            <ArrowRight size={14} className="text-slate-400 group-hover:text-[#8AC2EB] transition-colors ml-1" />
+                            <ArrowRight size={14} className="text-slate-400 group-hover:text-[#0369A1] transition-colors ml-1" />
                         </div>
 
                         {/* Headline */}
@@ -255,9 +255,9 @@ export default function DegreePathHero() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.4 }}
-                                    className="w-72 bg-white border-2 border-[#8AC2EB] rounded-lg shadow-lg p-5 flex items-center gap-4 relative z-20"
+                                    className="w-72 bg-white border-2 border-[#0369A1] rounded-lg shadow-lg p-5 flex items-center gap-4 relative z-20"
                                 >
-                                    <div className="bg-blue-50 p-2.5 rounded-md text-[#8AC2EB] shrink-0">
+                                    <div className="bg-blue-50 p-2.5 rounded-md text-[#0369A1] shrink-0">
                                         <CheckCircle2 size={20} />
                                     </div>
                                     <div>
@@ -273,7 +273,7 @@ export default function DegreePathHero() {
                                 {/* Final Plus Connector before split */}
                                 <div className="absolute left-1/2 -translate-x-1/2 -bottom-8 z-20">
                                     <div className="bg-white p-1 rounded-full border border-blue-100 shadow-sm">
-                                        <Plus size={16} className="text-[#8AC2EB]" />
+                                        <Plus size={16} className="text-[#0369A1]" />
                                     </div>
                                 </div>
                             </div>

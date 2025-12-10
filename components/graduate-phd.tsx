@@ -44,7 +44,7 @@ export default function PhDProgramSection() {
                         viewport={{ once: true }}
                         className="max-w-3xl rounded-lg p-4"
                     >
-                        <div className="flex items-center gap-2 text-[#8AC2EB] font-bold uppercase tracking-widest text-xs mb-4">
+                        <div className="flex items-center gap-2 text-[#0369A1] font-bold uppercase tracking-widest text-xs mb-4">
                             <GraduationCap size={16} />
                             Doctoral Studies
                         </div>
@@ -183,7 +183,7 @@ export default function PhDProgramSection() {
                             transition={{ delay: 0.6 }}
                             className="mt-6 flex items-start gap-3 p-4 bg-blue-50 rounded-lg border border-blue-100 text-sm text-slate-600"
                         >
-                            <div className="bg-white p-1 rounded-full text-[#8AC2EB] shrink-0 mt-0.5">
+                            <div className="bg-white p-1 rounded-full text-[#0369A1] shrink-0 mt-0.5">
                                 <Building2 size={14} />
                             </div>
                             <p>

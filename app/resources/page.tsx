@@ -69,7 +69,7 @@ const ResourceCard = ({ category, index }: { category: ResourceCategory, index: 
                     <li key={link.id}>
                         <a
                             href={link.url}
-                            className="text-sm text-slate-600 hover:text-[#8AC2EB] font-medium flex items-center justify-between group/link transition-colors"
+                            className="text-sm text-slate-600 hover:text-[#0369A1] font-medium flex items-center justify-between group/link transition-colors"
                         >
                             <span className="truncate pr-2">{link.label}</span>
                             <ArrowUpRight
@@ -87,6 +87,9 @@ const ResourceCard = ({ category, index }: { category: ResourceCategory, index: 
 export default function StudentResources() {
     return (
         <div className='bg-white pt-28 md:pt-32'>
+            {/* Visually hidden H1 for accessibility */}
+            <h1 className="sr-only">Student Resources - CSI Computer Science</h1>
+
             {/* Student Spotlights section hidden for now - may move to different page */}
             {/* <div className='' id='student-spotlights'><StudentSpotlights /></div> */}
             <section className="py-24 bg-slate-50" id='resources-tools'>
@@ -100,7 +103,7 @@ export default function StudentResources() {
                         className="mb-16 flex flex-row items-stretch justify-between gap-4"
                     >
                         <div className='max-w-4xl'>
-                            <span className="text-[#8AC2EB] font-bold tracking-widest uppercase text-xs mb-2 block">
+                            <span className="text-[#0369A1] font-bold tracking-widest uppercase text-xs mb-2 block">
                                 Student Portal
                             </span>
                             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">

@@ -36,7 +36,7 @@ export default function ABETAccreditation() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="bg-gradient-to-br from-[#8AC2EB] to-blue-800 rounded-3xl p-8 md:p-12 text-white mb-12 shadow-xl"
+                        className="bg-gradient-to-br from-[#0369A1] to-blue-800 rounded-3xl p-8 md:p-12 text-white mb-12 shadow-xl"
                     >
                         <div className="flex items-start gap-4 mb-6">
                             <div className="p-3 bg-white/20 rounded-xl backdrop-blur-sm">
@@ -147,7 +147,7 @@ export default function ABETAccreditation() {
                         className="bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-slate-200"
                     >
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="p-2 bg-[#8AC2EB] rounded-lg">
+                            <div className="p-2 bg-[#0369A1] rounded-lg">
                                 <TrendingUp size={24} className="text-white" />
                             </div>
                             <h3 className="text-2xl md:text-3xl font-bold text-slate-900">
@@ -156,7 +156,7 @@ export default function ABETAccreditation() {
                         </div>
                         <a
                             href="https://www.cs.csi.cuny.edu/content/abet_table.pdf"
-                            className="inline-flex items-center gap-2 text-[#8AC2EB] hover:text-blue-700 font-semibold text-lg transition-colors"
+                            className="inline-flex items-center gap-2 text-[#0369A1] hover:text-blue-800 font-semibold text-lg transition-colors"
                         >
                             BS Program Enrollment and Degree Data
                             <ExternalLink size={18} />

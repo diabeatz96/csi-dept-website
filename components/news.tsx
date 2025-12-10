@@ -47,7 +47,7 @@ const NewsCard = ({ item }: { item: NewsItem }) => {
                         <time dateTime={item.date}>{item.date}</time>
                     </div>
                     {item.link && (
-                        <div className="bg-gray-50 p-1 rounded-full group-hover:bg-[#8AC2EB] group-hover:text-white transition-colors" aria-hidden="true">
+                        <div className="bg-gray-50 p-1 rounded-full group-hover:bg-[#0369A1] group-hover:text-white transition-colors" aria-hidden="true">
                             <ArrowRight size={16} />
                         </div>
                     )}

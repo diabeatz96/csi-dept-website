@@ -35,14 +35,14 @@ const StaffCard = ({ member, index }: { member: any, index: number }) => (
       </div>
       <div>
         <h3 className="font-bold text-lg text-slate-900">{member.name}</h3>
-        <p className="text-sm text-[#8AC2EB] font-medium">{member.title}</p>
+        <p className="text-sm text-[#0369A1] font-medium">{member.title}</p>
       </div>
     </div>
 
     <div className="p-6 space-y-3 text-sm text-slate-600">
       <div className="flex items-center gap-3">
         <Mail size={16} className="text-slate-400" />
-        <a href={`mailto:${member.email}`} className="hover:text-[#8AC2EB] transition-colors truncate">
+        <a href={`mailto:${member.email}`} className="hover:text-[#0369A1] transition-colors truncate">
           {member.email}
         </a>
       </div>
@@ -66,7 +66,7 @@ const NameListSection = ({ title, names, icon: Icon }: { title: string, names: s
       viewport={{ once: true }}
       className="flex items-center gap-3 mb-8"
     >
-      <div className="p-2 bg-blue-100 text-[#8AC2EB] rounded-lg">
+      <div className="p-2 bg-blue-100 text-[#0369A1] rounded-lg">
         <Icon size={24} />
       </div>
       <h3 className="text-2xl font-bold text-slate-900">{title}</h3>
@@ -134,7 +134,7 @@ export default function DepartmentStaff() {
             viewport={{ once: true }}
             className="flex items-center gap-3 mb-10"
           >
-            <div className="p-2 bg-blue-100 text-[#8AC2EB] rounded-lg">
+            <div className="p-2 bg-blue-100 text-[#0369A1] rounded-lg">
               <Briefcase size={24} />
             </div>
             <h3 className="text-2xl font-bold text-slate-900">Office & Technical Staff</h3>

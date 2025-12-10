@@ -83,13 +83,13 @@ function SearchResultItem({ item, isSelected, onClick }: SearchResultItemProps) 
         'w-full px-4 py-3 flex items-center gap-3 text-left transition-colors',
         'focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-600',
         isSelected
-          ? 'bg-blue-50 border-l-2 border-[#8AC2EB]'
+          ? 'bg-blue-50 border-l-2 border-[#0369A1]'
           : 'hover:bg-slate-50 border-l-2 border-transparent'
       )}
     >
       <div className={cn(
         'shrink-0 w-9 h-9 rounded-lg flex items-center justify-center',
-        isSelected ? 'bg-[#8AC2EB] text-white' : 'bg-slate-100 text-slate-500'
+        isSelected ? 'bg-[#0369A1] text-white' : 'bg-slate-100 text-slate-500'
       )}>
         <IconComponent size={18} />
       </div>
@@ -108,7 +108,7 @@ function SearchResultItem({ item, isSelected, onClick }: SearchResultItemProps) 
         size={16}
         className={cn(
           'shrink-0 transition-opacity',
-          isSelected ? 'opacity-100 text-[#8AC2EB]' : 'opacity-0'
+          isSelected ? 'opacity-100 text-[#0369A1]' : 'opacity-0'
         )}
       />
     </button>

@@ -175,6 +175,9 @@ function CoursesPageContent() {
 
     return (
         <div className="min-h-screen bg-slate-50/50 font-sans text-slate-900 ">
+            {/* Visually hidden H1 for accessibility */}
+            <h1 className="sr-only">Computer Science Course Catalog - CSI</h1>
+
             {/* --- Quick Links Section --- */}
             <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-cyan-700 text-white pb-12 md:pb-16 pt-32">
                 <div className="max-w-[1600px] mx-auto px-6">
@@ -302,7 +305,7 @@ function CoursesPageContent() {
                                 <label htmlFor="course-search" className="sr-only">
                                     Search courses by code or name
                                 </label>
-                                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-[#8AC2EB] transition-colors">
+                                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-[#0369A1] transition-colors">
                                     <Search size={18} aria-hidden="true" />
                                 </div>
                                 <input
@@ -313,7 +316,7 @@ function CoursesPageContent() {
                                     onChange={(e) => setSearchQuery(e.target.value)}
                                     autoComplete="off"
                                     aria-describedby="search-results-count"
-                                    className="w-full pl-11 pr-12 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#8AC2EB]/20 focus:border-[#8AC2EB] transition-all shadow-inner"
+                                    className="w-full pl-11 pr-12 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#0369A1]/20 focus:border-[#0369A1] transition-all shadow-inner"
                                 />
                                 {searchQuery && (
                                     <button
@@ -403,7 +406,7 @@ function CoursesPageContent() {
                         </p>
                         <button
                             onClick={() => { setSearchQuery(''); setSubFilter('all'); setMainFilter('all'); }}
-                            className="mt-6 text-[#8AC2EB] font-bold hover:underline"
+                            className="mt-6 text-[#0369A1] font-bold hover:underline"
                         >
                             Clear all filters
                         </button>

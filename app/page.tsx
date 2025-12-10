@@ -167,13 +167,14 @@ const HeroSection = () => {
           <div className="flex items-center gap-2 mb-4">
             <Image
               src="/csi-blue-logo.png"
-              alt="CUNY College of Staten Island logo"
+              alt=""
               width={36}
               height={36}
               className="h-8 w-auto object-contain"
+              aria-hidden="true"
             />
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Department of</p>
+              <p className="text-[10px] font-bold uppercase tracking-wider text-slate-600">Department of</p>
               <p className="text-sm font-bold text-[#5F6368]">Computer Science</p>
             </div>
           </div>
@@ -192,7 +193,7 @@ const HeroSection = () => {
               <div key={idx} className="text-center">
                 <stat.icon size={18} className={`mx-auto mb-1 ${stat.color}`} aria-hidden="true" />
                 <div className="text-lg font-bold text-[#5F6368]">{stat.value}</div>
-                <div className="text-[10px] text-slate-500 uppercase tracking-wide">{stat.label}</div>
+                <div className="text-[10px] text-slate-600 uppercase tracking-wide">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -244,16 +245,16 @@ const QuickLinksBar = () => {
           <Link
             key={idx}
             href={link.href}
-            className="group relative bg-white rounded-xl border border-slate-200 p-4 hover:border-[#8AC2EB] hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+            className="group relative bg-white rounded-xl border border-slate-200 p-4 hover:border-[#0369A1] hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
           >
             <div className="flex flex-col items-center text-center">
-              <div className="w-12 h-12 rounded-xl bg-[#8AC2EB]/10 flex items-center justify-center mb-3 group-hover:bg-[#8AC2EB] transition-colors">
-                <link.icon size={22} className="text-[#8AC2EB] group-hover:text-white transition-colors" aria-hidden="true" />
+              <div className="w-12 h-12 rounded-xl bg-[#0369A1]/10 flex items-center justify-center mb-3 group-hover:bg-[#0369A1] transition-colors">
+                <link.icon size={22} className="text-[#0369A1] group-hover:text-white transition-colors" aria-hidden="true" />
               </div>
-              <span className="font-bold text-[#5F6368] text-sm group-hover:text-[#8AC2EB] transition-colors">
+              <span className="font-bold text-[#5F6368] text-sm group-hover:text-[#0369A1] transition-colors">
                 {link.label}
               </span>
-              <p className="text-[10px] text-slate-500 mt-0.5 hidden sm:block">
+              <p className="text-[10px] text-slate-600 mt-0.5 hidden sm:block">
                 {link.description}
               </p>
             </div>
@@ -271,20 +272,20 @@ const QuickLinksBar = () => {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div className="flex flex-wrap items-center gap-4 md:gap-6 text-sm">
             <div className="flex items-center gap-2 text-slate-600">
-              <MapPin size={14} className="text-[#8AC2EB] shrink-0" aria-hidden="true" />
+              <MapPin size={14} className="text-[#0369A1] shrink-0" aria-hidden="true" />
               <span className="text-xs md:text-sm">Building 1N, Room 215</span>
             </div>
-            <a href="tel:7189822850" className="flex items-center gap-2 text-slate-600 hover:text-[#8AC2EB] transition-colors min-h-11">
-              <Phone size={14} className="text-[#8AC2EB] shrink-0" aria-hidden="true" />
+            <a href="tel:7189822850" className="flex items-center gap-2 text-slate-600 hover:text-[#0369A1] transition-colors min-h-11">
+              <Phone size={14} className="text-[#0369A1] shrink-0" aria-hidden="true" />
               <span className="text-xs md:text-sm">718.982.2850</span>
             </a>
-            <a href="mailto:cs@csi.cuny.edu" className="flex items-center gap-2 text-slate-600 hover:text-[#8AC2EB] transition-colors min-h-11">
-              <Mail size={14} className="text-[#8AC2EB] shrink-0" aria-hidden="true" />
+            <a href="mailto:cs@csi.cuny.edu" className="flex items-center gap-2 text-slate-600 hover:text-[#0369A1] transition-colors min-h-11">
+              <Mail size={14} className="text-[#0369A1] shrink-0" aria-hidden="true" />
               <span className="text-xs md:text-sm">cs@csi.cuny.edu</span>
             </a>
           </div>
           <div className="flex items-center gap-2 text-sm">
-            <Clock size={14} className="text-[#8AC2EB] shrink-0" aria-hidden="true" />
+            <Clock size={14} className="text-[#0369A1] shrink-0" aria-hidden="true" />
             <span className="text-slate-600 text-xs md:text-sm">Mon-Fri: 9AM - 5PM</span>
           </div>
         </div>
@@ -304,7 +305,7 @@ const FeaturedPrograms = () => {
         viewport={{ once: true }}
         className="text-center mb-10 md:mb-14"
       >
-        <div className="inline-flex items-center gap-3 mb-4 px-4 py-2 bg-[#8AC2EB]/10 rounded-full">
+        <div className="inline-flex items-center gap-3 mb-4 px-4 py-2 bg-[#0369A1]/10 rounded-full">
           <Image
             src="/csi-blue-logo.png"
             alt=""
@@ -373,7 +374,7 @@ const FeaturedPrograms = () => {
                 {/* Content */}
                 <div className="p-6 md:p-8">
                   {/* Title */}
-                  <h3 className="text-2xl md:text-2xl font-bold text-[#5F6368] mb-1 group-hover:text-[#8AC2EB] transition-colors">
+                  <h3 className="text-2xl md:text-2xl font-bold text-[#5F6368] mb-1 group-hover:text-[#0369A1] transition-colors">
                     {program.title}
                   </h3>
                   <p className="text-sm text-slate-500 mb-4 font-medium">{program.subtitle}</p>
@@ -388,7 +389,7 @@ const FeaturedPrograms = () => {
                     {program.highlights.map((highlight, i) => (
                       <span
                         key={i}
-                        className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-full group-hover:bg-[#8AC2EB]/10 group-hover:text-[#8AC2EB] transition-colors"
+                        className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-full group-hover:bg-[#0369A1]/10 group-hover:text-[#0369A1] transition-colors"
                       >
                         {highlight}
                       </span>
@@ -400,8 +401,8 @@ const FeaturedPrograms = () => {
                     <span className="text-[#0369A1] font-bold text-sm group-hover:text-[#025a8a] transition-colors">
                       Explore Program
                     </span>
-                    <div className="w-10 h-10 rounded-full bg-[#8AC2EB]/10 flex items-center justify-center group-hover:bg-[#8AC2EB] transition-colors">
-                      <ArrowRight size={18} className="text-[#8AC2EB] group-hover:text-white transition-colors" aria-hidden="true" />
+                    <div className="w-10 h-10 rounded-full bg-[#0369A1]/10 flex items-center justify-center group-hover:bg-[#0369A1] transition-colors">
+                      <ArrowRight size={18} className="text-[#0369A1] group-hover:text-white transition-colors" aria-hidden="true" />
                     </div>
                   </div>
                 </div>
@@ -452,7 +453,7 @@ const WhyChooseUsSection = () => {
                   className="h-8 w-auto object-contain"
                   aria-hidden="true"
                 />
-                <span className="text-xs font-bold uppercase tracking-widest text-slate-500">
+                <span className="text-xs font-bold uppercase tracking-widest text-slate-600">
                   Why CSI
                 </span>
               </div>
@@ -495,53 +496,53 @@ const WhyChooseUsSection = () => {
                 <Link
                   href="https://www.csi.cuny.edu/admissions"
                   target="_blank"
-                  className="flex items-center justify-between p-4 bg-slate-50 rounded-lg hover:bg-[#8AC2EB]/10 transition-colors group min-h-11"
+                  className="flex items-center justify-between p-4 bg-slate-50 rounded-lg hover:bg-[#0369A1]/10 transition-colors group min-h-11"
                 >
                   <div className="flex items-center gap-3">
-                    <Calendar size={20} className="text-[#8AC2EB]" aria-hidden="true" />
-                    <span className="font-medium text-slate-700 group-hover:text-[#8AC2EB]">Apply for Admission</span>
+                    <Calendar size={20} className="text-[#0369A1]" aria-hidden="true" />
+                    <span className="font-medium text-slate-700 group-hover:text-[#0369A1]">Apply for Admission</span>
                   </div>
-                  <ArrowRight size={16} className="text-slate-400 group-hover:text-[#8AC2EB]" aria-hidden="true" />
+                  <ArrowRight size={16} className="text-slate-400 group-hover:text-[#0369A1]" aria-hidden="true" />
                 </Link>
                 <Link
                   href="/undergraduate"
-                  className="flex items-center justify-between p-4 bg-slate-50 rounded-lg hover:bg-[#8AC2EB]/10 transition-colors group min-h-11"
+                  className="flex items-center justify-between p-4 bg-slate-50 rounded-lg hover:bg-[#0369A1]/10 transition-colors group min-h-11"
                 >
                   <div className="flex items-center gap-3">
-                    <BookOpen size={20} className="text-[#8AC2EB]" aria-hidden="true" />
-                    <span className="font-medium text-slate-700 group-hover:text-[#8AC2EB]">Undergraduate Programs</span>
+                    <BookOpen size={20} className="text-[#0369A1]" aria-hidden="true" />
+                    <span className="font-medium text-slate-700 group-hover:text-[#0369A1]">Undergraduate Programs</span>
                   </div>
-                  <ArrowRight size={16} className="text-slate-400 group-hover:text-[#8AC2EB]" aria-hidden="true" />
+                  <ArrowRight size={16} className="text-slate-400 group-hover:text-[#0369A1]" aria-hidden="true" />
                 </Link>
                 <Link
                   href="/graduate"
-                  className="flex items-center justify-between p-4 bg-slate-50 rounded-lg hover:bg-[#8AC2EB]/10 transition-colors group min-h-11"
+                  className="flex items-center justify-between p-4 bg-slate-50 rounded-lg hover:bg-[#0369A1]/10 transition-colors group min-h-11"
                 >
                   <div className="flex items-center gap-3">
-                    <GraduationCap size={20} className="text-[#8AC2EB]" aria-hidden="true" />
-                    <span className="font-medium text-slate-700 group-hover:text-[#8AC2EB]">Graduate Programs</span>
+                    <GraduationCap size={20} className="text-[#0369A1]" aria-hidden="true" />
+                    <span className="font-medium text-slate-700 group-hover:text-[#0369A1]">Graduate Programs</span>
                   </div>
-                  <ArrowRight size={16} className="text-slate-400 group-hover:text-[#8AC2EB]" aria-hidden="true" />
+                  <ArrowRight size={16} className="text-slate-400 group-hover:text-[#0369A1]" aria-hidden="true" />
                 </Link>
                 <Link
                   href="/people"
-                  className="flex items-center justify-between p-4 bg-slate-50 rounded-lg hover:bg-[#8AC2EB]/10 transition-colors group min-h-11"
+                  className="flex items-center justify-between p-4 bg-slate-50 rounded-lg hover:bg-[#0369A1]/10 transition-colors group min-h-11"
                 >
                   <div className="flex items-center gap-3">
-                    <Users size={20} className="text-[#8AC2EB]" aria-hidden="true" />
-                    <span className="font-medium text-slate-700 group-hover:text-[#8AC2EB]">Meet Our Faculty</span>
+                    <Users size={20} className="text-[#0369A1]" aria-hidden="true" />
+                    <span className="font-medium text-slate-700 group-hover:text-[#0369A1]">Meet Our Faculty</span>
                   </div>
-                  <ArrowRight size={16} className="text-slate-400 group-hover:text-[#8AC2EB]" aria-hidden="true" />
+                  <ArrowRight size={16} className="text-slate-400 group-hover:text-[#0369A1]" aria-hidden="true" />
                 </Link>
                 <Link
                   href="/resources"
-                  className="flex items-center justify-between p-4 bg-slate-50 rounded-lg hover:bg-[#8AC2EB]/10 transition-colors group min-h-11"
+                  className="flex items-center justify-between p-4 bg-slate-50 rounded-lg hover:bg-[#0369A1]/10 transition-colors group min-h-11"
                 >
                   <div className="flex items-center gap-3">
-                    <BookOpen size={20} className="text-[#8AC2EB]" aria-hidden="true" />
-                    <span className="font-medium text-slate-700 group-hover:text-[#8AC2EB]">Student Resources</span>
+                    <BookOpen size={20} className="text-[#0369A1]" aria-hidden="true" />
+                    <span className="font-medium text-slate-700 group-hover:text-[#0369A1]">Student Resources</span>
                   </div>
-                  <ArrowRight size={16} className="text-slate-400 group-hover:text-[#8AC2EB]" aria-hidden="true" />
+                  <ArrowRight size={16} className="text-slate-400 group-hover:text-[#0369A1]" aria-hidden="true" />
                 </Link>
               </div>
             </motion.div>

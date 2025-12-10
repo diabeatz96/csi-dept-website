@@ -71,7 +71,7 @@ const BentoCard = ({ project, index }: { project: typeof projects[0], index: num
   }[project.color] || "bg-slate-50 hover:border-slate-300 text-slate-900";
 
   const iconColor = {
-    blue: "text-[#8AC2EB] bg-white",
+    blue: "text-[#0369A1] bg-white",
     slate: "text-slate-600 bg-white",
     purple: "text-purple-600 bg-white",
     emerald: "text-emerald-600 bg-white",
@@ -139,7 +139,7 @@ const BentoCard = ({ project, index }: { project: typeof projects[0], index: num
             <span className="text-xs font-semibold text-slate-700 uppercase tracking-wider">
               View Research
             </span>
-            <div className="p-2 rounded-full bg-white/90 backdrop-blur-sm shadow-md group-hover:bg-[#8AC2EB] group-hover:text-white transition-all duration-300">
+            <div className="p-2 rounded-full bg-white/90 backdrop-blur-sm shadow-md group-hover:bg-[#0369A1] group-hover:text-white transition-all duration-300">
               <ArrowUpRight size={18} className="text-slate-700 group-hover:text-white transition-colors" />
             </div>
           </div>

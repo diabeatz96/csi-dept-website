@@ -13,7 +13,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 const items = [
     [{
         name: "DEGREES",
-        color: "bg-[#8AC2EB]",
+        color: "bg-[#0369A1]",
         items: [
             { name: "AAS in Computer Technology", href: "/undergraduate#aas-computer-technology" },
             { name: "BS in Computer Science", href: "/undergraduate#bs-computer-science" },

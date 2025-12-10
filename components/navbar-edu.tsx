@@ -141,15 +141,16 @@ export default function NavbarEdu() {
                 <div className="max-w-[1600px] mx-auto px-4 sm:px-6 flex items-center justify-between">
 
                     {/* Brand Logo */}
-                    <Link href="/" className="flex items-center gap-2 sm:gap-3 group z-50 relative shrink-0" aria-label="Department of Computer Science - Home">
+                    <Link href="/" className="flex items-center gap-2 sm:gap-3 group z-50 relative shrink-0">
                         <div className="relative">
                             <div className="w-9 h-11 sm:w-10 sm:h-12 md:w-11 md:h-14 rounded-lg flex items-center justify-center">
                                 <Image
                                     src={isOpen ? "/cunycsiwhite.png" : "/csi-blue-logo.png"}
-                                    alt="CUNY College of Staten Island logo"
+                                    alt=""
                                     width={32}
                                     height={41}
                                     className="w-7 h-9 sm:w-8 sm:h-10 md:w-9 md:h-11 object-contain"
+                                    aria-hidden="true"
                                 />
                             </div>
                         </div>
@@ -178,7 +179,7 @@ export default function NavbarEdu() {
                             aria-label="Open site search (Cmd+K)"
                             className={`p-2 sm:p-2.5 rounded-full border transition-all duration-300 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 ${isOpen
                                 ? "border-white/30 bg-white/10 text-white hover:bg-white/20"
-                                : "border-slate-200 bg-slate-50 text-slate-900 hover:border-[#8AC2EB] hover:text-[#8AC2EB]"
+                                : "border-slate-200 bg-slate-50 text-slate-900 hover:border-[#0369A1] hover:text-[#0369A1]"
                                 }`}
                         >
                             <Search size={18} className="sm:w-5 sm:h-5" aria-hidden="true" />

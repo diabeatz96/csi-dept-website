@@ -44,9 +44,9 @@ export default function Footer() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12 mb-10 md:mb-12">
                     {/* Brand Section */}
                     <div className="sm:col-span-2 lg:col-span-2">
-                        <Link href="/" className="flex items-center gap-3 mb-4 md:mb-6 group" aria-label="Department of Computer Science - Home">
+                        <Link href="/" className="flex items-center gap-3 mb-4 md:mb-6 group">
                             <div className="w-10 h-12 md:w-12 md:h-16 rounded-lg flex items-center justify-center">
-                                <Image src="/cunycsiwhite.png" alt="CUNY College of Staten Island logo" width={32} height={41} className="w-8 h-10 md:w-10 md:h-13 object-contain" />
+                                <Image src="/cunycsiwhite.png" alt="" width={32} height={41} className="w-8 h-10 md:w-10 md:h-13 object-contain" aria-hidden="true" />
                             </div>
                             <div className="flex flex-col">
                                 <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-slate-400">
@@ -63,18 +63,18 @@ export default function Footer() {
                         {/* Contact Info */}
                         <address className="space-y-2 md:space-y-3 not-italic">
                             <div className="flex items-start gap-2 md:gap-3 text-xs md:text-sm text-slate-300">
-                                <MapPin size={14} className="text-[#8AC2EB] mt-0.5 shrink-0" aria-hidden="true" />
+                                <MapPin size={14} className="text-[#0369A1] mt-0.5 shrink-0" aria-hidden="true" />
                                 <span>2800 Victory Blvd, Staten Island, NY 10314</span>
                             </div>
                             <div className="flex items-center gap-2 md:gap-3 text-xs md:text-sm text-slate-300">
-                                <Phone size={14} className="text-[#8AC2EB] shrink-0" aria-hidden="true" />
-                                <a href="tel:+17189822800" className="hover:text-[#8AC2EB] transition-colors min-h-11 flex items-center" aria-label="Call us at (718) 982-2800">
+                                <Phone size={14} className="text-[#0369A1] shrink-0" aria-hidden="true" />
+                                <a href="tel:+17189822800" className="hover:text-[#0369A1] transition-colors min-h-11 flex items-center" aria-label="Call us at (718) 982-2800">
                                     (718) 982-2800
                                 </a>
                             </div>
                             <div className="flex items-center gap-2 md:gap-3 text-xs md:text-sm text-slate-300">
-                                <Mail size={14} className="text-[#8AC2EB] shrink-0" aria-hidden="true" />
-                                <a href="mailto:cs@csi.cuny.edu" className="hover:text-[#8AC2EB] transition-colors min-h-11 flex items-center" aria-label="Email us at cs@csi.cuny.edu">
+                                <Mail size={14} className="text-[#0369A1] shrink-0" aria-hidden="true" />
+                                <a href="mailto:cs@csi.cuny.edu" className="hover:text-[#0369A1] transition-colors min-h-11 flex items-center" aria-label="Email us at cs@csi.cuny.edu">
                                     cs@csi.cuny.edu
                                 </a>
                             </div>
@@ -91,7 +91,7 @@ export default function Footer() {
                                 <li key={link.name}>
                                     <Link
                                         href={link.href}
-                                        className="text-slate-300 hover:text-[#8AC2EB] transition-colors text-sm flex items-center gap-2 group"
+                                        className="text-slate-300 hover:text-[#0369A1] transition-colors text-sm flex items-center gap-2 group"
                                     >
                                         <ArrowRight size={12} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" aria-hidden="true" />
                                         {link.name}
@@ -111,7 +111,7 @@ export default function Footer() {
                                 <li key={link.name}>
                                     <Link
                                         href={link.href}
-                                        className="text-slate-300 hover:text-[#8AC2EB] transition-colors text-sm flex items-center gap-2 group"
+                                        className="text-slate-300 hover:text-[#0369A1] transition-colors text-sm flex items-center gap-2 group"
                                     >
                                         <ArrowRight size={12} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" aria-hidden="true" />
                                         {link.name}
@@ -134,7 +134,7 @@ export default function Footer() {
                                             href={link.href}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="text-slate-300 hover:text-[#8AC2EB] transition-colors text-sm flex items-center gap-2 group"
+                                            className="text-slate-300 hover:text-[#0369A1] transition-colors text-sm flex items-center gap-2 group"
                                             aria-label={`${link.name} (opens in new tab)`}
                                         >
                                             {link.name}
@@ -143,7 +143,7 @@ export default function Footer() {
                                     ) : (
                                         <Link
                                             href={link.href}
-                                            className="text-slate-300 hover:text-[#8AC2EB] transition-colors text-sm flex items-center gap-2 group"
+                                            className="text-slate-300 hover:text-[#0369A1] transition-colors text-sm flex items-center gap-2 group"
                                         >
                                             {link.name}
                                         </Link>
@@ -168,7 +168,7 @@ export default function Footer() {
                                 href="https://www.facebook.com/computerscienceatcsi/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-11 h-11 rounded-full bg-slate-800 hover:bg-[#8AC2EB] flex items-center justify-center text-slate-300 hover:text-white transition-all duration-300 group"
+                                className="w-11 h-11 rounded-full bg-slate-800 hover:bg-[#0369A1] flex items-center justify-center text-slate-300 hover:text-white transition-all duration-300 group"
                                 aria-label="Visit our Facebook page (opens in new tab)"
                             >
                                 <Facebook size={18} className="group-hover:scale-110 transition-transform" aria-hidden="true" />
@@ -177,7 +177,7 @@ export default function Footer() {
                                 href="https://www.csi.cuny.edu"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-slate-400 hover:text-[#8AC2EB] text-xs md:text-sm font-bold uppercase tracking-widest transition-colors flex items-center gap-2 min-h-11"
+                                className="text-slate-400 hover:text-[#0369A1] text-xs md:text-sm font-bold uppercase tracking-widest transition-colors flex items-center gap-2 min-h-11"
                                 aria-label="Visit CSI main website (opens in new tab)"
                             >
                                 Visit CSI <ExternalLink size={14} aria-hidden="true" />

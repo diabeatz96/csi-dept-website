@@ -157,7 +157,7 @@ export default function ResearchHero() {
                         </div>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl text-slate-900 mb-4 tracking-tight">
                             Innovation at <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8AC2EB] to-cyan-500">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0369A1] to-cyan-600">
                                 The Frontier
                             </span>
                         </h1>
@@ -218,7 +218,7 @@ const ResearchCard = ({ project }: { project: typeof researchProjects[0] }) => {
             >
                 {/* Header: Icon & Tag */}
                 <div className="flex justify-between items-start mb-2">
-                    <div className="p-1.5 bg-blue-50 text-[#8AC2EB] rounded-lg">
+                    <div className="p-1.5 bg-blue-50 text-[#0369A1] rounded-lg">
                         <project.icon size={16} />
                     </div>
                     <span className="text-[9px] font-bold uppercase tracking-wider bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full">
@@ -240,7 +240,7 @@ const ResearchCard = ({ project }: { project: typeof researchProjects[0] }) => {
                 {/* Footer: Metadata */}
                 <div className="mt-auto pt-2 border-t border-slate-50 flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                        <div className="w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center text-[#8AC2EB] shrink-0">
+                        <div className="w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center text-[#0369A1] shrink-0">
                             <User size={10} />
                         </div>
                         <div className="flex flex-col">

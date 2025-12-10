@@ -84,7 +84,7 @@ const CourseModule = ({ code, title, icon: Icon, delay }: { code: string, title:
       <Icon size={18} />
     </div>
     <div>
-      <div className="text-xs font-bold text-[#8AC2EB] uppercase tracking-wider mb-0.5">
+      <div className="text-xs font-bold text-[#0369A1] uppercase tracking-wider mb-0.5">
         {code}
       </div>
       <div className="text-sm font-semibold text-slate-800 leading-tight">
@@ -107,13 +107,13 @@ const SpecializationCard = ({ data, index }: { data: typeof specializations[0], 
 
         {/* Left: Info Header */}
         <div className="lg:w-1/3 flex flex-col items-start">
-          <div className="p-3 bg-white rounded-2xl shadow-sm border border-slate-100 mb-6 text-[#8AC2EB]">
+          <div className="p-3 bg-white rounded-2xl shadow-sm border border-slate-100 mb-6 text-[#0369A1]">
             <data.icon size={32} />
           </div>
           <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
             {data.title}
           </h3>
-          <p className="text-[#8AC2EB] font-medium text-sm mb-4">
+          <p className="text-[#0369A1] font-medium text-sm mb-4">
             {data.subtitle}
           </p>
           <p className="text-slate-600 leading-relaxed mb-6">

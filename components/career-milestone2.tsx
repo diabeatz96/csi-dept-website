@@ -218,7 +218,7 @@ export default function CareerMilestonesHero2() {
                     </h4>
                     <h1 className="text-4xl md:text-5xl font-serif text-slate-900 mb-12">
                         Navigate your <br />
-                        <span className="text-[#8AC2EB]">Career Milestones</span>
+                        <span className="text-[#0369A1]">Career Milestones</span>
                     </h1>
 
                     {/* 
@@ -256,7 +256,7 @@ export default function CareerMilestonesHero2() {
                                     )}
 
                                     {/* Label */}
-                                    <div className={`absolute top-8 left-1/2 -translate-x-1/2 text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-300 ${isActive ? 'text-[#8AC2EB]' : 'text-slate-400'
+                                    <div className={`absolute top-8 left-1/2 -translate-x-1/2 text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-300 ${isActive ? 'text-[#0369A1]' : 'text-slate-600'
                                         }`}>
                                         {node.year}
                                     </div>
@@ -276,7 +276,7 @@ export default function CareerMilestonesHero2() {
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: 20 }}
-                            className="p-4 bg-blue-50 border-l-4 border-[#8AC2EB] rounded-r-lg inline-block mb-16"
+                            className="p-4 bg-blue-50 border-l-4 border-[#0369A1] rounded-r-lg inline-block mb-16"
                         >
                             <h3 className="font-bold text-blue-900 text-lg">{currentData.year}</h3>
                             <p className="text-blue-700 text-sm">{currentData.tagline}</p>

@@ -53,7 +53,7 @@ const DepartmentHeadSection = () => {
             </span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#73797C] mb-3">
-            Department <span className="text-[#8AC2EB]">Leadership</span>
+            Department <span className="text-[#0369A1]">Leadership</span>
           </h2>
           <p className="text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl">
             Guiding the vision of Computer Science at CSI with dedication to research, innovation, and student success.
@@ -106,7 +106,7 @@ const DepartmentHeadSection = () => {
                 <h3 className="text-xl sm:text-2xl font-bold text-[#73797C] mb-1">
                   {profile.name}
                 </h3>
-                <p className="text-[#8AC2EB] font-semibold text-sm tracking-wide">
+                <p className="text-[#0369A1] font-semibold text-sm tracking-wide">
                   {profile.title}
                 </p>
               </motion.div>
@@ -121,14 +121,14 @@ const DepartmentHeadSection = () => {
               >
                 <a
                   href={`mailto:${profile.contact.email}`}
-                  className="w-11 h-11 rounded-xl bg-white hover:bg-[#8AC2EB] flex items-center justify-center text-[#8AC2EB] hover:text-white transition-all duration-300 shadow-sm border border-slate-200 hover:border-[#8AC2EB] hover:shadow-md"
+                  className="w-11 h-11 rounded-xl bg-white hover:bg-[#0369A1] flex items-center justify-center text-[#0369A1] hover:text-white transition-all duration-300 shadow-sm border border-slate-200 hover:border-[#0369A1] hover:shadow-md"
                   aria-label={`Email ${profile.name}`}
                 >
                   <Mail size={18} />
                 </a>
                 <a
                   href={`tel:${profile.contact.phone.replace(/\./g, '')}`}
-                  className="w-11 h-11 rounded-xl bg-white hover:bg-[#8AC2EB] flex items-center justify-center text-[#8AC2EB] hover:text-white transition-all duration-300 shadow-sm border border-slate-200 hover:border-[#8AC2EB] hover:shadow-md"
+                  className="w-11 h-11 rounded-xl bg-white hover:bg-[#0369A1] flex items-center justify-center text-[#0369A1] hover:text-white transition-all duration-300 shadow-sm border border-slate-200 hover:border-[#0369A1] hover:shadow-md"
                   aria-label={`Call ${profile.name}`}
                 >
                   <Phone size={18} />
@@ -153,7 +153,7 @@ const DepartmentHeadSection = () => {
 
                 {/* Quote - WCAG AA compliant colors */}
                 <div className="relative bg-[#F0F9FF] rounded-xl p-5 border-l-4 border-[#8AC2EB]">
-                  <span className="absolute -top-1 left-4 text-4xl text-[#8AC2EB]/30 font-serif leading-none" aria-hidden="true">"</span>
+                  <span className="absolute -top-1 left-4 text-4xl text-[#0369A1]/30 font-serif leading-none" aria-hidden="true">"</span>
                   <blockquote className="italic text-[#374151] text-sm md:text-base relative z-10 pl-3">
                     {profile.quote}
                   </blockquote>
@@ -171,9 +171,9 @@ const DepartmentHeadSection = () => {
                 {stats.map((stat, idx) => (
                   <div
                     key={idx}
-                    className="text-center p-4 rounded-xl bg-[#F8FAFB] hover:bg-[#E8F7FD] border border-transparent hover:border-[#8AC2EB]/20 transition-all duration-300 group"
+                    className="text-center p-4 rounded-xl bg-[#F8FAFB] hover:bg-[#E8F7FD] border border-transparent hover:border-[#0369A1]/20 transition-all duration-300 group"
                   >
-                    <stat.icon className="w-5 h-5 mx-auto mb-2 text-[#8AC2EB] group-hover:scale-110 transition-transform" aria-hidden="true" />
+                    <stat.icon className="w-5 h-5 mx-auto mb-2 text-[#0369A1] group-hover:scale-110 transition-transform" aria-hidden="true" />
                     <div className="text-lg sm:text-xl font-bold text-[#73797C]">{stat.value}</div>
                     <div className="text-[10px] sm:text-xs text-[#6B7280] uppercase tracking-wider font-medium">{stat.label}</div>
                   </div>
@@ -190,15 +190,15 @@ const DepartmentHeadSection = () => {
               >
                 <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-[#4B5563]">
                   <div className="flex items-center gap-2">
-                    <MapPin size={16} className="text-[#8AC2EB] shrink-0" aria-hidden="true" />
+                    <MapPin size={16} className="text-[#0369A1] shrink-0" aria-hidden="true" />
                     <span>{profile.contact.address}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Phone size={16} className="text-[#8AC2EB] shrink-0" aria-hidden="true" />
+                    <Phone size={16} className="text-[#0369A1] shrink-0" aria-hidden="true" />
                     <span>{profile.contact.phone}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Printer size={16} className="text-[#8AC2EB] shrink-0" aria-hidden="true" />
+                    <Printer size={16} className="text-[#0369A1] shrink-0" aria-hidden="true" />
                     <span>Fax: {profile.contact.fax}</span>
                   </div>
                 </div>

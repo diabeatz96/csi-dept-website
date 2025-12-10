@@ -68,7 +68,7 @@ const specializations = [
             { label: "Data Science", value: "Analytics" }
         ],
         image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2670&auto=format&fit=crop",
-        color: "text-[#8AC2EB]",
+        color: "text-[#0369A1]",
         bgAccent: "bg-blue-50"
     },
     {
@@ -146,7 +146,7 @@ const DegreeListSection = () => {
                         </span>
                     </div>
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#73797C] mb-3">
-                        Academic <span className="text-[#8AC2EB]">Degrees</span>
+                        Academic <span className="text-[#0369A1]">Degrees</span>
                     </h2>
                     <p className="text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl">
                         {degreeCategories.featured.description}
@@ -162,7 +162,7 @@ const DegreeListSection = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 + (idx * 0.1) }}
-                            className="group bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-[#8AC2EB]/30 transition-all duration-300 overflow-hidden"
+                            className="group bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-[#0369A1]/30 transition-all duration-300 overflow-hidden"
                         >
                             {/* Card Header */}
                             <div className="p-5 md:p-6 border-b border-slate-100">
@@ -186,12 +186,12 @@ const DegreeListSection = () => {
                                             <li key={i}>
                                                 <Link
                                                     href={href}
-                                                    className="flex items-center justify-between py-3 px-3 -mx-3 rounded-lg text-slate-700 hover:bg-[#F0F9FF] hover:text-[#8AC2EB] transition-all group/link min-h-11"
+                                                    className="flex items-center justify-between py-3 px-3 -mx-3 rounded-lg text-slate-700 hover:bg-[#F0F9FF] hover:text-[#0369A1] transition-all group/link min-h-11"
                                                 >
                                                     <span className="font-medium text-sm md:text-base">{item}</span>
                                                     <ChevronRight
                                                         size={16}
-                                                        className="text-slate-300 group-hover/link:text-[#8AC2EB] group-hover/link:translate-x-1 transition-all"
+                                                        className="text-slate-300 group-hover/link:text-[#0369A1] group-hover/link:translate-x-1 transition-all"
                                                         aria-hidden="true"
                                                     />
                                                 </Link>
@@ -205,7 +205,7 @@ const DegreeListSection = () => {
                             <div className="px-5 md:px-6 pb-5 md:pb-6">
                                 <Link
                                     href={idx === 1 ? "/graduate" : "/undergraduate"}
-                                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#8AC2EB] hover:text-[#5BA3D0] transition-colors min-h-11"
+                                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#0369A1] hover:text-[#025a8a] transition-colors min-h-11"
                                 >
                                     Explore {col.header.toLowerCase()}
                                     <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
@@ -221,11 +221,11 @@ const DegreeListSection = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.4 }}
-                    className="mt-8 md:mt-10 bg-linear-to-r from-[#F0F9FF] to-[#E0F2FE] rounded-2xl p-5 md:p-6 border border-[#8AC2EB]/20"
+                    className="mt-8 md:mt-10 bg-linear-to-r from-[#F0F9FF] to-[#E0F2FE] rounded-2xl p-5 md:p-6 border border-[#0369A1]/20"
                 >
                     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                        <div className="p-3 rounded-xl bg-white shadow-sm border border-[#8AC2EB]/20">
-                            <Briefcase size={24} className="text-[#8AC2EB]" aria-hidden="true" />
+                        <div className="p-3 rounded-xl bg-white shadow-sm border border-[#0369A1]/20">
+                            <Briefcase size={24} className="text-[#0369A1]" aria-hidden="true" />
                         </div>
                         <div className="flex-1">
                             <h4 className="font-bold text-[#5F6368] mb-1">ABET Accredited & Career Ready</h4>
@@ -285,7 +285,7 @@ const SpotlightCarousel = () => {
                         </span>
                     </div>
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#73797C]">
-                        Specialization <span className="text-[#8AC2EB]">Tracks</span>
+                        Specialization <span className="text-[#0369A1]">Tracks</span>
                     </h2>
                 </motion.div>
 
@@ -329,7 +329,7 @@ const SpotlightCarousel = () => {
                                         {currentSlide.stats.map((stat, idx) => (
                                             <div
                                                 key={idx}
-                                                className="bg-slate-50 rounded-xl p-4 border border-slate-100 hover:border-[#8AC2EB]/30 hover:bg-[#F0F9FF] transition-all"
+                                                className="bg-slate-50 rounded-xl p-4 border border-slate-100 hover:border-[#0369A1]/30 hover:bg-[#F0F9FF] transition-all"
                                             >
                                                 <div className={`text-base sm:text-lg md:text-xl font-bold ${currentSlide.color} mb-1 leading-tight`}>
                                                     {stat.label}
@@ -392,7 +392,7 @@ const SpotlightCarousel = () => {
                         <button
                             onClick={prevSlide}
                             aria-label="Previous slide"
-                            className="w-11 h-11 md:w-12 md:h-12 rounded-full border border-slate-300 bg-white flex items-center justify-center hover:bg-[#8AC2EB] hover:border-[#8AC2EB] hover:text-white text-slate-600 transition-all focus-visible:ring-2 focus-visible:ring-[#8AC2EB] focus-visible:ring-offset-2"
+                            className="w-11 h-11 md:w-12 md:h-12 rounded-full border border-slate-300 bg-white flex items-center justify-center hover:bg-[#0369A1] hover:border-[#0369A1] hover:text-white text-slate-600 transition-all focus-visible:ring-2 focus-visible:ring-[#0369A1] focus-visible:ring-offset-2"
                         >
                             <ChevronLeft size={20} aria-hidden="true" />
                         </button>
@@ -400,7 +400,7 @@ const SpotlightCarousel = () => {
                         <button
                             onClick={nextSlide}
                             aria-label="Next slide"
-                            className="w-11 h-11 md:w-12 md:h-12 rounded-full border border-slate-300 bg-white flex items-center justify-center hover:bg-[#8AC2EB] hover:border-[#8AC2EB] hover:text-white text-slate-600 transition-all focus-visible:ring-2 focus-visible:ring-[#8AC2EB] focus-visible:ring-offset-2"
+                            className="w-11 h-11 md:w-12 md:h-12 rounded-full border border-slate-300 bg-white flex items-center justify-center hover:bg-[#0369A1] hover:border-[#0369A1] hover:text-white text-slate-600 transition-all focus-visible:ring-2 focus-visible:ring-[#0369A1] focus-visible:ring-offset-2"
                         >
                             <ChevronRight size={20} aria-hidden="true" />
                         </button>
@@ -414,9 +414,9 @@ const SpotlightCarousel = () => {
                                 onClick={() => setCurrentIndex(idx)}
                                 aria-label={`Go to ${spec.title}`}
                                 aria-current={idx === currentIndex ? "true" : undefined}
-                                className={`min-h-11 min-w-11 rounded-full transition-all focus-visible:ring-2 focus-visible:ring-[#8AC2EB] focus-visible:ring-offset-2 flex items-center justify-center ${
+                                className={`min-h-11 min-w-11 rounded-full transition-all focus-visible:ring-2 focus-visible:ring-[#0369A1] focus-visible:ring-offset-2 flex items-center justify-center ${
                                     idx === currentIndex
-                                        ? 'bg-[#8AC2EB]'
+                                        ? 'bg-[#0369A1]'
                                         : 'bg-slate-300 hover:bg-slate-400'
                                 }`}
                             >
