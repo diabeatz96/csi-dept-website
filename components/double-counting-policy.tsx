@@ -100,7 +100,7 @@ export default function DoubleCountingPolicy() {
                                         transition={{ duration: 0.5, delay: 0.3 + (index * 0.1) }}
                                         className="flex gap-4 p-4 bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all"
                                     >
-                                        <div className="flex-shrink-0 w-8 h-8 bg-[#8AC2EB] text-white rounded-full flex items-center justify-center font-bold text-sm">
+                                        <div className="flex-shrink-0 w-8 h-8 bg-[#0369A1] text-white rounded-full flex items-center justify-center font-bold text-sm">
                                             {item.number}
                                         </div>
                                         <p className="text-slate-700 leading-relaxed pt-1">{item.text}</p>

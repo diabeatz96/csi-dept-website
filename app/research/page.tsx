@@ -250,7 +250,7 @@ const ResearchCard = ({ project }: { project: typeof researchProjects[0] }) => {
                     </div>
 
                     <div
-                        className="p-1.5 rounded-full bg-slate-50 text-slate-400 group-hover:bg-[#8AC2EB] group-hover:text-white transition-all"
+                        className="p-1.5 rounded-full bg-slate-50 text-slate-400 group-hover:bg-[#0369A1] group-hover:text-white transition-all"
                         aria-hidden="true"
                     >
                         <ExternalLink size={12} />

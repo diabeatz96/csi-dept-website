@@ -309,7 +309,7 @@ export default function CareerMilestones() {
                                         transition={{ delay: idx * 0.1 }} // Stagger effect
                                         className="bg-slate-50 rounded-xl h-full p-5 border border-slate-100 hover:shadow-md hover:border-blue-200 transition-all duration-300 group"
                                     >
-                                        <div className="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-500 mb-4 group-hover:bg-[#8AC2EB] group-hover:text-white transition-colors duration-300 shadow-sm">
+                                        <div className="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-500 mb-4 group-hover:bg-[#0369A1] group-hover:text-white transition-colors duration-300 shadow-sm">
                                             <item.icon size={20} />
                                         </div>
                                         <h3 className="font-bold text-slate-900 mb-2 text-sm">

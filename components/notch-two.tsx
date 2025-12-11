@@ -185,7 +185,7 @@ const NotchTwo = () => {
                                 title={item.name}
                             >
                                 <Tooltip>
-                                    <TooltipTrigger><item.icon className="h-5 w-5 hover:cursor-pointer" /></TooltipTrigger>
+                                    <TooltipTrigger aria-label={item.name}><item.icon className="h-5 w-5 hover:cursor-pointer" aria-hidden="true" /></TooltipTrigger>
                                     <TooltipContent>{item.name}</TooltipContent>
                                 </Tooltip>
                 </motion.div>

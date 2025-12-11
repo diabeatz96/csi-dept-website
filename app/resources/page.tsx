@@ -50,7 +50,7 @@ const ResourceCard = ({ category, index }: { category: ResourceCategory, index: 
         >
             {/* Header */}
             <div className="flex items-start gap-4 mb-4">
-                <div className="p-3 rounded-xl bg-slate-50 text-slate-600 group-hover:bg-[#8AC2EB] group-hover:text-white transition-colors duration-300">
+                <div className="p-3 rounded-xl bg-slate-50 text-slate-600 group-hover:bg-[#0369A1] group-hover:text-white transition-colors duration-300">
                     <IconComponent size={24} />
                 </div>
                 <div>
@@ -143,7 +143,7 @@ export default function StudentResources() {
                                 <p className="text-slate-300 text-sm">The Student Technology Help Desk is available 24/7.</p>
                             </div>
                         </div>
-                        <button className="px-6 py-3 bg-[#8AC2EB] hover:bg-blue-500 text-white font-bold rounded-xl transition-colors shadow-lg shadow-blue-900/50 whitespace-nowrap">
+                        <button className="px-6 py-3 bg-[#0369A1] hover:bg-blue-700 text-white font-bold rounded-xl transition-colors shadow-lg shadow-blue-900/50 whitespace-nowrap">
                             Contact Help Desk
                         </button>
                     </motion.div>

@@ -129,8 +129,9 @@ const GraduatesNotch = () => {
                                             <button
                                                 onClick={() => setIsExpanded(false)}
                                                 className="p-2 rounded-lg text-gray-600 hover:bg-white/50 hover:text-gray-900 transition-all duration-200"
+                                                aria-label="Close navigation menu"
                                             >
-                                                <X size={20} />
+                                                <X size={20} aria-hidden="true" />
                                             </button>
                                         </motion.div>
 
@@ -168,7 +169,7 @@ const GraduatesNotch = () => {
                                 title={item.name}
                             >
                                 <Tooltip>
-                                    <TooltipTrigger><item.icon className="h-5 w-5 hover:cursor-pointer" /></TooltipTrigger>
+                                    <TooltipTrigger aria-label={item.name}><item.icon className="h-5 w-5 hover:cursor-pointer" aria-hidden="true" /></TooltipTrigger>
                                     <TooltipContent>{item.name}</TooltipContent>
                                 </Tooltip>
                             </motion.div>

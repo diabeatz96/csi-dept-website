@@ -80,7 +80,7 @@ const CourseModule = ({ code, title, icon: Icon, delay }: { code: string, title:
     whileHover={{ y: -4, shadow: "0 10px 30px -10px rgba(0,0,0,0.1)" }}
     className="bg-white rounded-xl p-4 border border-slate-100 shadow-sm flex items-center gap-4 group cursor-default"
   >
-    <div className="h-10 w-10 rounded-lg bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-[#8AC2EB] group-hover:text-white transition-all duration-300">
+    <div className="h-10 w-10 rounded-lg bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-[#0369A1] group-hover:text-white transition-all duration-300">
       <Icon size={18} />
     </div>
     <div>
