@@ -360,11 +360,11 @@ const FeaturedPrograms = () => {
 
                   {/* Stats on Image */}
                   <div className="absolute bottom-4 left-4 right-4 flex gap-3">
-                    <div className="px-3 py-1.5 bg-white/20 backdrop-blur-md rounded-lg text-white text-xs font-semibold">
+                    <div className="px-3 py-1.5 bg-black/40 backdrop-blur-md rounded-lg text-white text-xs font-semibold">
                       <Clock size={12} className="inline mr-1.5" aria-hidden="true" />
                       {program.stats.duration}
                     </div>
-                    <div className="px-3 py-1.5 bg-white/20 backdrop-blur-md rounded-lg text-white text-xs font-semibold">
+                    <div className="px-3 py-1.5 bg-black/40 backdrop-blur-md rounded-lg text-white text-xs font-semibold">
                       <BookOpen size={12} className="inline mr-1.5" aria-hidden="true" />
                       {program.stats.credits}
                     </div>
@@ -435,7 +435,7 @@ const FeaturedPrograms = () => {
 const WhyChooseUsSection = () => {
   return (
     <section className="max-w-[1600px] mx-auto px-4 md:px-6 mb-12 md:mb-16">
-      <div className="bg-linear-to-br from-[#F0F9FF] to-[#E0F7FA] rounded-2xl p-6 md:p-10 border border-[#8AC2EB]/20">
+      <div className="bg-linear-to-br from-slate-50 to-slate-100 rounded-2xl p-6 md:p-10 border border-slate-200">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
           {/* Left Content */}
           <div className="lg:w-1/2">
