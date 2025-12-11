@@ -93,9 +93,9 @@ const FacultyCard = ({ member, index }: { member: FacultyMember, index: number }
             {/* Info Section */}
             <div className="p-4 sm:p-5 md:p-6 flex flex-col grow">
                 <div className="mb-3 md:mb-4">
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors mb-1">
+                    <h2 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors mb-1">
                         {member.name}
-                    </h3>
+                    </h2>
                     <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-[10px] sm:text-xs font-semibold uppercase tracking-wider">
                         {member.title.includes('Distinguished') && <GraduationCap size={12} />}
                         {member.title}

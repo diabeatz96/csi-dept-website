@@ -47,10 +47,10 @@ const FeaturedCard = () => (
                 transition={{ delay: 0.2 }}
             >
                 <Microscope className="w-12 h-12 text-blue-400 mx-auto mb-6 opacity-80" />
-                <h1 className="text-4xl md:text-6xl font-serif text-white mb-6 max-w-4xl leading-tight">
+                <h2 className="text-4xl md:text-6xl font-serif text-white mb-6 max-w-4xl leading-tight">
                     Pushing the Boundaries of <br />
                     <span className="italic text-blue-200">Computer Science</span>
-                </h1>
+                </h2>
                 <p className="text-slate-300 text-lg max-w-2xl mx-auto mb-8">
                     Our faculty are leaders in their fields, driving innovation in AI, Cybersecurity, Imaging, and Data Science right here at CSI.
                 </p>

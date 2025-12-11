@@ -34,7 +34,7 @@ const StaffCard = ({ member, index }: { member: any, index: number }) => (
         <User size={32} />
       </div>
       <div>
-        <h3 className="font-bold text-lg text-slate-900">{member.name}</h3>
+        <h4 className="font-bold text-lg text-slate-900">{member.name}</h4>
         <p className="text-sm text-[#0369A1] font-medium">{member.title}</p>
       </div>
     </div>

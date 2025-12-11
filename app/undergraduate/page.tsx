@@ -76,7 +76,7 @@ const YearCard = ({ year, title, subtitle, icon: Icon, isLast = false }: any) =>
                             Year 0{year}
                         </span>
                     </div>
-                    <h3 className="font-bold text-slate-900 text-sm">{title}</h3>
+                    <p className="font-bold text-slate-900 text-sm">{title}</p>
                     <p className="text-xs text-slate-500 mt-1 leading-relaxed">{subtitle}</p>
                 </div>
 
@@ -95,7 +95,7 @@ const PlusConnector = () => (
         </div>
     </div>
 );
-const CareerPathCard = ({ title, role, icon: Icon, colorClass, delay }: any) => (
+const CareerPathCard = ({ title, role, icon: Icon, colorClass, textColorClass, delay }: any) => (
     <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -104,8 +104,8 @@ const CareerPathCard = ({ title, role, icon: Icon, colorClass, delay }: any) => 
         className="w-64 bg-white rounded-lg border border-slate-200 shadow-md p-4 flex flex-col gap-3 relative z-10"
     >
         <div className="flex items-center justify-between">
-            <div className={`p-2 rounded-md ${colorClass} bg-opacity-10`}>
-                <Icon size={20} className={`text-white`} />
+            <div className={`p-2 rounded-md ${colorClass}`}>
+                <Icon size={20} className={textColorClass} aria-hidden="true" />
             </div>
             <div className="bg-slate-50 px-2 py-1 rounded text-[10px] font-bold uppercase text-slate-600">
                 Career Track
@@ -113,7 +113,7 @@ const CareerPathCard = ({ title, role, icon: Icon, colorClass, delay }: any) => 
         </div>
 
         <div>
-            <h3 className="font-bold text-slate-900 text-sm">{title}</h3>
+            <p className="font-bold text-slate-900 text-sm">{title}</p>
             <p className="text-xs text-slate-500 mt-1">{role}</p>
         </div>
     </motion.div>
@@ -266,7 +266,7 @@ export default function DegreePathHero() {
                                                 Year 04
                                             </span>
                                         </div>
-                                        <h3 className="font-bold text-slate-900 text-sm">Capstone Projects</h3>
+                                        <p className="font-bold text-slate-900 text-sm">Capstone Projects</p>
                                         <p className="text-xs text-slate-500 mt-1">Select your graduation track</p>
                                     </div>
                                 </motion.div>
@@ -339,7 +339,8 @@ export default function DegreePathHero() {
                                         title="Software Engineering"
                                         role="Full Stack & Systems Architect"
                                         icon={Laptop}
-                                        colorClass="bg-[#8AC2EB]"
+                                        colorClass="bg-blue-50"
+                                        textColorClass="text-[#0369A1]"
                                         delay={1.8}
                                     />
                                 </div>
@@ -360,7 +361,8 @@ export default function DegreePathHero() {
                                         title="Cybersecurity Analytics"
                                         role="InfoSec & Network Defense"
                                         icon={ShieldCheck}
-                                        colorClass="bg-indigo-600"
+                                        colorClass="bg-indigo-50"
+                                        textColorClass="text-indigo-600"
                                         delay={2.0}
                                     />
                                 </div>

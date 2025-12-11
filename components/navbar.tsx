@@ -90,8 +90,8 @@ export default function Navbar() {
                     {/* Search and Mobile Menu Button */}
                     <div className="flex items-center gap-3">
                         {/* Search Icon - Desktop */}
-                        <button className="hidden md:flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition-colors text-gray-600 hover:text-gray-900">
-                            <Search size={20} />
+                        <button className="hidden md:flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition-colors text-gray-600 hover:text-gray-900" aria-label="Search">
+                            <Search size={20} aria-hidden="true" />
                         </button>
 
                         {/* Mobile Menu Button */}
@@ -137,7 +137,7 @@ export default function Navbar() {
                                     </Link>
                                 ))}
                                 <button className="w-full mt-4 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-lg flex items-center gap-2">
-                                    <Search size={18} />
+                                    <Search size={18} aria-hidden="true" />
                                     Search
                                 </button>
                             </div>
