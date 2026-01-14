@@ -17,34 +17,34 @@ const features = [
         description: "Find your advisor and access self-advisement resources to plan your degree.",
         image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2670&auto=format&fit=crop",
         content: (
-            <div className="space-y-4 text-slate-600">
+            <div className="space-y-3 text-slate-900 text-sm">
                 <div>
-                    <p className="font-semibold text-slate-900 mb-2">For AAS Computer Technology, BS in Computer Science, or BS in Computer Science-Mathematics:</p>
-                    <p className="mb-3">You can find out who is your advisor on <a href="https://www.cuny.edu/about/administration/offices/cis/cunyfirst/" target="_blank" rel="noopener noreferrer" className="text-[#0369A1] hover:text-blue-800 underline font-medium">CUNYFirst</a>. Please use the <a href="https://www.cs.csi.cuny.edu/~flowchart/" className="text-[#0369A1] hover:text-blue-800 underline font-medium">CS FlowChart</a> for self-advisement.</p>
+                    <p className="font-bold text-slate-900 mb-1.5">For AAS Computer Technology, BS in Computer Science, or BS in Computer Science-Mathematics:</p>
+                    <p className="mb-2">Find your advisor on <a href="https://www.cuny.edu/about/administration/offices/cis/cunyfirst/" target="_blank" rel="noopener noreferrer" className="text-[#0369A1] hover:text-blue-800 underline font-semibold">CUNYFirst</a>. Use the <a href="https://www.cs.csi.cuny.edu/~flowchart/" className="text-[#0369A1] hover:text-blue-800 underline font-semibold">CS FlowChart</a> for self-advisement and course planning.</p>
                 </div>
                 <div>
-                    <p className="font-semibold text-slate-900 mb-2">For BS in Information Systems and Informatics (ISI):</p>
-                    <p className="mb-3">Please contact the ISI coordinator:</p>
-                    <ul className="list-disc list-inside space-y-1 ml-2">
+                    <p className="font-bold text-slate-900 mb-1.5">For BS in Information Systems and Informatics (ISI):</p>
+                    <p className="mb-1.5">Contact ISI coordinators:</p>
+                    <ul className="list-disc list-inside space-y-0.5 ml-2 text-sm">
                         <li>
-                            <Link href="/people#professors" className="text-[#0369A1] hover:text-blue-800 underline font-medium">
+                            <Link href="/people#professors" className="text-[#0369A1] hover:text-blue-800 underline font-semibold">
                                 Prof. Louis Petingi
-                            </Link>
+                            </Link> - Office: 1N-215
                         </li>
                         <li>
-                            <Link href="/people#professors" className="text-[#0369A1] hover:text-blue-800 underline font-medium">
+                            <Link href="/people#professors" className="text-[#0369A1] hover:text-blue-800 underline font-semibold">
                                 Prof. Soon Chun
-                            </Link>
+                            </Link> - Office: 1N-219
                         </li>
                     </ul>
                 </div>
-                <div className="pt-4 border-t border-slate-200 space-y-2">
-                    <a href="https://ssologin.cuny.edu/cuny.html?bmctx=D59E04882DF4F80F0E4A64DD59167034&password=secure_string&contextType=external&OverrideRetryLimit=1&ChallengeRedirectMethod=GET&username=string&challenge_url=https://ssologin.cuny.edu/cuny.html&request_id=3988825378751157104&authn_try_count=0&locale=en_US&resource_url=https%253A%252F%252Flandingpageprod.cuny.edu%252Fland%252Fmain.jsp" target="_blank" rel="noopener noreferrer" aria-label="Sign in to DegreeWorks (opens in new tab)" className="flex items-center gap-2 text-[#0369A1] hover:text-blue-800 font-medium focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 rounded">
-                        Sign in to DegreeWorks <ExternalLink size={14} aria-hidden="true" />
+                <div className="pt-3 border-t border-slate-200 space-y-1.5">
+                    <a href="https://ssologin.cuny.edu/cuny.html?bmctx=D59E04882DF4F80F0E4A64DD59167034&password=secure_string&contextType=external&OverrideRetryLimit=1&ChallengeRedirectMethod=GET&username=string&challenge_url=https://ssologin.cuny.edu/cuny.html&request_id=3988825378751157104&authn_try_count=0&locale=en_US&resource_url=https%253A%252F%252Flandingpageprod.cuny.edu%252Fland%252Fmain.jsp" target="_blank" rel="noopener noreferrer" aria-label="Sign in to DegreeWorks (opens in new tab)" className="flex items-center gap-2 text-[#0369A1] hover:text-blue-800 font-semibold text-sm focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 rounded">
+                        Sign in to DegreeWorks <ExternalLink size={12} aria-hidden="true" />
                     </a>
-                    <p className="text-sm text-slate-500">See what courses you can take to fulfill degree requirements and track your academic progress.</p>
-                    <Link href="/courses?filter=undergraduate" className="flex items-center gap-2 text-[#0369A1] hover:text-blue-800 font-medium focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 rounded">
-                        View Undergraduate Catalog <ExternalLink size={14} aria-hidden="true" />
+                    <p className="text-xs text-slate-700">Track degree progress, view required courses, and plan your academic path.</p>
+                    <Link href="/courses?filter=undergraduate" className="flex items-center gap-2 text-[#0369A1] hover:text-blue-800 font-semibold text-sm focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 rounded">
+                        View Undergraduate Catalog <ExternalLink size={12} aria-hidden="true" />
                     </Link>
                 </div>
             </div>
@@ -58,21 +58,22 @@ const features = [
         description: "If you completed computer science coursework at another accredited college, request an evaluation of your transfer credits.",
         image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2670&auto=format&fit=crop",
         content: (
-            <div className="space-y-4 text-slate-600">
-                <p>If you completed computer science coursework at another accredited college, and these credits did not convert to anything in the computer science catalog here (i.e. they show as <span className="font-medium">CSC BKT credits</span> in your CUNYfirst course history), you may request these credits be evaluated.</p>
-                <div className="bg-blue-50 border border-blue-100 rounded-lg p-4">
-                    <p className="font-semibold text-slate-900 mb-2">To request evaluation:</p>
-                    <ol className="list-decimal list-inside space-y-2 ml-2">
-                        <li>Complete the <a href="https://www.cs.csi.cuny.edu/content/TransferOnlineFormV2.pdf" className="text-[#0369A1] hover:text-blue-800 underline font-medium">Transfer Credit Evaluation Form</a></li>
-                        <li>Include a copy of your transcript from the institution at which you completed the course</li>
-                        <li>Include either the course description (from that college's catalog) or syllabus</li>
-                        <li>Submit these to <span className="font-medium">1N-215</span>, or contact the department Chair</li>
+            <div className="space-y-3 text-slate-900 text-sm">
+                <p className="text-sm">If your CS credits from another accredited college show as <span className="font-bold">CSC BKT credits</span> in CUNYfirst, request an evaluation to convert them to specific courses.</p>
+                <div className="bg-blue-50 border border-blue-100 rounded-lg p-3">
+                    <p className="font-bold text-slate-900 mb-1.5 text-sm">Evaluation Process:</p>
+                    <ol className="list-decimal list-inside space-y-1 ml-2 text-sm">
+                        <li>Complete the <a href="https://www.cs.csi.cuny.edu/content/TransferOnlineFormV2.pdf" className="text-[#0369A1] hover:text-blue-800 underline font-semibold">Transfer Credit Evaluation Form</a></li>
+                        <li>Include transcript from the original institution</li>
+                        <li>Provide course description or syllabus from that college</li>
+                        <li>Submit to <span className="font-bold">Room 1N-215</span> or contact the department Chair</li>
                     </ol>
                 </div>
-                <a href="https://www.cs.csi.cuny.edu/content/TransferOnlineFormV2.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download Transfer Credit Evaluation Form PDF (opens in new tab)" className="inline-flex items-center gap-2 text-[#0369A1] hover:text-blue-800 font-medium border border-blue-200 rounded-lg px-4 py-2 hover:bg-blue-50 transition-colors focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2">
-                    <BookOpen size={16} aria-hidden="true" />
-                    Transfer Credit Evaluation Form Download
-                    <ExternalLink size={14} aria-hidden="true" />
+                <p className="text-xs text-slate-700"><span className="font-bold">Processing Time:</span> Evaluations typically take 2-4 weeks. Submit early in the semester for timely course registration.</p>
+                <a href="https://www.cs.csi.cuny.edu/content/TransferOnlineFormV2.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download Transfer Credit Evaluation Form PDF (opens in new tab)" className="inline-flex items-center gap-2 text-[#0369A1] hover:text-blue-800 font-semibold border border-blue-200 rounded-lg px-3 py-1.5 text-sm hover:bg-blue-50 transition-colors focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2">
+                    <BookOpen size={14} aria-hidden="true" />
+                    Download Evaluation Form
+                    <ExternalLink size={12} aria-hidden="true" />
                 </a>
             </div>
         )
@@ -85,18 +86,28 @@ const features = [
         description: "Access computer science tutoring services and academic support resources to help you succeed.",
         image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2670&auto=format&fit=crop",
         content: (
-            <div className="space-y-4 text-slate-600">
+            <div className="space-y-3 text-slate-900 text-sm">
                 <div>
-                    <a href="https://www.cs.csi.cuny.edu/content/tutoring.pdf" target="_blank" rel="noopener noreferrer" aria-label="Computer Science Tutoring Schedule PDF (opens in new tab)" className="flex items-center gap-2 text-[#0369A1] hover:text-blue-700 font-medium mb-2 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 rounded">
-                        Computer Science Tutoring Schedule <ExternalLink size={14} aria-hidden="true" />
+                    <p className="font-bold text-slate-900 mb-1.5">CS Department Tutoring:</p>
+                    <ul className="list-disc list-inside space-y-0.5 ml-2 text-sm mb-2">
+                        <li><span className="font-semibold">Location:</span> Room 1N-232 (Computer Science Lab)</li>
+                        <li><span className="font-semibold">Hours:</span> Monday-Friday, varies by semester</li>
+                        <li><span className="font-semibold">Courses:</span> CSC 126, 226, 326, and upper-level courses</li>
+                        <li><span className="font-semibold">Format:</span> Walk-in, one-on-one, and group sessions</li>
+                    </ul>
+                    <a href="https://www.cs.csi.cuny.edu/content/tutoring.pdf" target="_blank" rel="noopener noreferrer" aria-label="Computer Science Tutoring Schedule PDF (opens in new tab)" className="flex items-center gap-2 text-[#0369A1] hover:text-blue-700 font-semibold text-sm focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 rounded">
+                        View Current Tutoring Schedule <ExternalLink size={12} aria-hidden="true" />
                     </a>
-                    <p className="text-sm text-slate-500">View the current tutoring schedule for computer science courses.</p>
                 </div>
-                <div className="pt-4 border-t border-slate-200">
-                    <a href="https://www.csi.cuny.edu/students/academic-assistance/tutoring" target="_blank" rel="noopener noreferrer" aria-label="Office of Academic Support (opens in new tab)" className="flex items-center gap-2 text-[#0369A1] hover:text-blue-700 font-medium mb-2 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 rounded">
-                        Office of Academic Support <ExternalLink size={14} aria-hidden="true" />
+                <div className="pt-3 border-t border-slate-200">
+                    <p className="font-bold text-slate-900 mb-1.5">Additional Support Services:</p>
+                    <p className="text-sm mb-2">The Office of Academic Support provides free tutoring for math, writing, study skills, and other subjects.</p>
+                    <a href="https://www.csi.cuny.edu/students/academic-assistance/tutoring" target="_blank" rel="noopener noreferrer" aria-label="Office of Academic Support (opens in new tab)" className="flex items-center gap-2 text-[#0369A1] hover:text-blue-700 font-semibold text-sm focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 rounded">
+                        Office of Academic Support <ExternalLink size={12} aria-hidden="true" />
                     </a>
-                    <p className="text-sm text-slate-500">Access additional academic support services and resources.</p>
+                </div>
+                <div className="bg-teal-50 border border-teal-100 rounded-lg p-2 mt-2">
+                    <p className="text-xs text-slate-900"><span className="font-bold">Pro Tip:</span> Tutoring is most effective when used regularly throughout the semester, not just before exams. Start early!</p>
                 </div>
             </div>
         )
@@ -113,7 +124,7 @@ export default function ResourcesAccordion() {
     const activeFeature = features.find(f => f.id === activeId) || features[0];
 
     return (
-        <section className="bg-white">
+        <section className="bg-white py-8 md:py-12">
             <div className="max-w-8xl mx-auto px-4 md:px-6">
 
                 {/* Section Header */}
@@ -121,13 +132,13 @@ export default function ResourcesAccordion() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mb-8 md:mb-12 text-start"
+                    className="mb-6 md:mb-8 text-start"
                 >
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-3 md:mb-4">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-2 md:mb-3">
                         Resources
                     </h2>
-                    <p className="text-slate-600 max-w-2xl text-base md:text-lg">
-                        We offer a wide range of resources to help you succeed in your academic journey.
+                    <p className="text-slate-900 max-w-2xl text-sm md:text-base">
+                        Access advisement, transfer credit evaluation, tutoring services, and academic support to succeed in your studies.
                     </p>
                 </motion.div>
 
@@ -137,11 +148,11 @@ export default function ResourcesAccordion() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7 }}
-                    className="bg-slate-50 rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-6 shadow-sm border border-slate-200 flex flex-col lg:flex-row gap-4 md:gap-6 min-h-[400px] md:min-h-[500px]"
+                    className="bg-slate-50 rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-5 shadow-sm border border-slate-200 flex flex-col lg:flex-row gap-3 md:gap-4 min-h-[300px] md:min-h-[350px]"
                 >
 
                     {/* LEFT SIDE: Accordion Controls */}
-                    <div className="lg:w-1/2 flex flex-col justify-center gap-3 md:gap-4" role="tablist" aria-label="Resources">
+                    <div className="lg:w-1/2 flex flex-col justify-center gap-2 md:gap-3" role="tablist" aria-label="Resources">
                         {features.map((feature) => {
                             const isActive = activeId === feature.id;
                             const panelId = `panel-${feature.id}`;

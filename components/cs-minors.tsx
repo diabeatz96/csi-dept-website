@@ -66,7 +66,7 @@ const minors = [
         linkText: "View Computer Science Minor",
         link: "https://csi-undergraduate.catalog.cuny.edu/programs/CSC-MIN",
         image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2670&auto=format&fit=crop",
-        description: "A solid technical foundation for students in other majors. Requires completion of core math/CS courses plus one specialized track.",
+        description: "Build essential programming and CS fundamentals to complement any major. Perfect for Biology, Business, and Engineering students seeking technical skills. Complete 18 credits including core programming courses and choose between hardware-focused Engineering or software-focused Applications track. Opens career doors in technical consulting, product management, and software development. Time commitment: 6 courses over 2-3 semesters.",
         content: (
             <div className="space-y-4">
                 <RequirementSection title="Core Requirements">
@@ -94,7 +94,7 @@ const minors = [
         linkText: "View Data Science Minor",
         icon: BrainCircuit,
         image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=2674&auto=format&fit=crop",
-        description: "Focuses on extracting knowledge from data. Ideal for Math, Biology, and Business majors looking to add analytical skills.",
+        description: "Master data analysis, statistical modeling, and machine learning techniques. Highly valuable for Math, Biology, Business, and Social Science majors. Learn Python, R, and modern ML frameworks. Career paths: Data Analyst ($85k-$110k), ML Engineer ($120k+), Business Intelligence Analyst ($90k-$115k). Skills in demand across finance, healthcare, tech, and research. Complete 12 credits including probability, ML, and electives. Time commitment: 4 courses over 2 semesters.",
         content: (
             <div className="space-y-4">
                 <RequirementSection title="Core Prerequisites">
@@ -125,7 +125,7 @@ const minors = [
         linkText: "View Computational Linguistics Minor",
         icon: Languages,
         image: "https://images.unsplash.com/photo-1655720828018-edd2daec9349?q=80&w=2832&auto=format&fit=crop",
-        description: "An interdisciplinary minor bridging Computer Science and Linguistics. Perfect for interest in NLP, Speech Recognition, and AI.",
+        description: "Explore the intersection of language, AI, and computing. Ideal for Linguistics, English, Psychology, and CS majors. Learn NLP, speech recognition, chatbot development, and language AI. Career opportunities: NLP Engineer ($115k-$140k), Conversational AI Developer ($105k-$130k), Speech Recognition Specialist ($100k-$125k). Work on voice assistants, translation systems, and language models at tech giants. Complete 18 credits combining programming, linguistics, and math. Time commitment: 6 courses over 2-3 semesters.",
         content: (
             <div className="space-y-4">
                 <RequirementSection title="Programming Core">
@@ -162,7 +162,7 @@ const minors = [
         linkText: "View Cyber Security Minor",
         icon: ShieldAlert,
         image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1470&auto=format&fit=crop",
-        description: "Prepare for careers in information assurance. Learn to protect networks, secure data, and understand ethical hacking.",
+        description: "Master network defense, ethical hacking, cryptography, and risk management. Critical skills for the digital age—all majors welcome. Learn penetration testing, security protocols, and incident response. High-demand careers: Security Analyst ($95k-$120k), Penetration Tester ($110k-$140k), Security Consultant ($105k-$135k), Information Security Officer ($120k-$150k). NYC's financial and tech sectors actively recruit security professionals. Complete 12 credits with networking, security fundamentals, and advanced tracks. Time commitment: 4 courses over 2 semesters.",
         content: (
             <div className="space-y-4">
                 <RequirementSection title="Core Security">
@@ -194,7 +194,7 @@ export default function MinorsAccordion() {
     const activeFeature = minors.find(f => f.id === activeId) || minors[0];
 
     return (
-        <section className=" mb-24">
+        <section className="py-12 md:py-16">
             <div className="max-w-8xl mx-auto px-6">
 
                 {/* Section Header */}
@@ -202,22 +202,24 @@ export default function MinorsAccordion() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mb-12"
+                    className="mb-8 md:mb-10"
                 >
                     <span className="text-[#0369A1] font-bold tracking-widest uppercase text-xs mb-2 block">
-                        Academic Minors
+                        Academic Minors & Certificates
                     </span>
                     <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-                        Enhance Your Degree
+                        Enhance Your Degree with Specialized Skills
                     </h2>
 
-                    <div className="bg-slate-50 border-l-4 border-blue-500 p-5 rounded-r-lg max-w-3xl">
-                        <p className="text-slate-700 mb-2">
-                            A minor allows you to specialize in a specific area of technology while pursuing your major.
-                            These are open to all CSI students who meet the prerequisites.
+                    <div className="bg-slate-50 border-l-4 border-blue-500 p-5 rounded-r-lg max-w-4xl">
+                        <p className="text-slate-900 mb-3 font-medium">
+                            Stand out to employers by adding in-demand technical skills to your major. Minors require 12-18 credits (4-6 courses) and can be completed in 2-3 semesters alongside your primary degree. All CSI students who meet prerequisites are welcome—no CS major required.
                         </p>
-                        <a href="#" className="inline-flex items-center gap-2 text-blue-700 font-bold hover:underline text-sm">
-                            <BookOpen size={16} /> View Academic Catalog for Full Details
+                        <p className="text-slate-700 text-sm mb-3">
+                            <span className="font-bold text-slate-900">Why add a minor?</span> Increase salary potential by 15-25%, qualify for technical roles in your field, and gain competitive advantage for graduate school admissions. Many employers now prefer candidates with interdisciplinary expertise.
+                        </p>
+                        <a href="https://csi-undergraduate.catalog.cuny.edu/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-blue-700 font-bold hover:underline text-sm">
+                            <BookOpen size={16} /> View Full Requirements in Academic Catalog
                         </a>
                     </div>
                 </motion.div>
@@ -228,7 +230,7 @@ export default function MinorsAccordion() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7 }}
-                    className="backdrop-blur-md rounded-3xl p-4 md:p-6 shadow-sm border border-slate-200 flex flex-col lg:flex-row gap-6 min-h-[600px]"
+                    className="backdrop-blur-md bg-white rounded-3xl p-4 md:p-6 shadow-sm border border-slate-200 flex flex-col lg:flex-row gap-4 min-h-[500px]"
                 >
 
                     {/* LEFT SIDE: Accordion Controls */}
@@ -279,15 +281,15 @@ export default function MinorsAccordion() {
                                         <div className="px-5 pb-6 pt-0">
 
                                             {/* Description */}
-                                            <div className="mb-6 text-sm text-slate-500 leading-relaxed bg-slate-50 p-3 rounded-lg border border-slate-100">
-                                                <div className="flex items-center gap-2 mb-1 text-slate-800 font-bold text-xs uppercase tracking-wider">
-                                                    <Info size={12} /> Overview
+                                            <div className="mb-6 text-sm text-slate-900 leading-relaxed bg-slate-50 p-4 rounded-lg border border-slate-200">
+                                                <div className="flex items-center gap-2 mb-2 text-slate-900 font-bold text-xs uppercase tracking-wider">
+                                                    <Info size={14} /> Overview & Career Paths
                                                 </div>
                                                 {minor.description}
                                                 {minor.link && (
-                                                    <div className="mt-3 text-[#0369A1] font-bold flex items-center gap-1 cursor-pointer hover:underline">
+                                                    <a href={minor.link} target="_blank" rel="noopener noreferrer" className="mt-3 text-[#0369A1] font-bold flex items-center gap-1 hover:underline">
                                                         {minor.linkText} <ArrowRight size={14} />
-                                                    </div>
+                                                    </a>
                                                 )}
                                             </div>
 

@@ -84,12 +84,12 @@ export default function CareerMilestones() {
     const currentData = timelineData.find(n => n.id === activeNode) || timelineData[0];
 
     return (
-        <section className="relative  min-h-screen py-24 mt-24 overflow-hidden flex flex-col justify-center [mask-composite:intersect] [mask-image:linear-gradient(to_bottom,transparent,black_6rem,linear-gradient(to_left,transparent,black_6rem))]">
+        <section className="relative min-h-[800px] md:min-h-screen py-16 md:py-20 mt-8 overflow-hidden flex flex-col justify-center bg-linear-to-br from-slate-50 to-white">
 
             {/* ------------------------------------------------------- */}
             {/* SVG BACKGROUND LAYER                                    */}
             {/* ------------------------------------------------------- */}
-            <div className="absolute inset-0 pointer-events-none  -top-1/8">
+            <div className="absolute inset-0 pointer-events-none">
                 <svg className="w-full h-full" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice">
                     <defs>
                         <radialGradient id="webGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
@@ -214,12 +214,12 @@ export default function CareerMilestones() {
             {/* ------------------------------------------------------- */}
             <div className="max-w-[1400px] mx-auto px-6 w-full relative z-0 ">
 
-                {/* Header Section */}
-                <div className="max-w-4xl">
-                    <span className="text-slate-500 font-bold uppercase tracking-widest text-xs mb-3 pl-1 block">
+                {/* Header Section - Enhanced */}
+                <div className="max-w-5xl mb-8">
+                    <span className="text-slate-600 font-bold uppercase tracking-widest text-sm mb-4 pl-1 block">
                         Student Roadmap
                     </span>
-                    <h2 className="text-4xl md:text-5xl font-serif text-slate-900 ">
+                    <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif text-slate-900 mb-2">
                         Navigate your <br />
                         <span className="text-[#0369A1]">Career Milestones</span>
                     </h2>
@@ -268,7 +268,7 @@ export default function CareerMilestones() {
                         })}
                     </div>
 
-                    <p className="text-slate-600 leading-relaxed text-lg max-w-xl mb-6 ">
+                    <p className="text-slate-900 leading-relaxed text-lg md:text-xl max-w-2xl mb-6">
                         Click on a milestone above to reveal the essential steps, workshops, and opportunities for that academic year.
                     </p>
 

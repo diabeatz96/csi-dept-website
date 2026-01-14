@@ -2,9 +2,8 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Phone, MapPin, Printer, Mail, Award, Users, BookOpen, GraduationCap, ArrowRight } from 'lucide-react';
+import { Phone, MapPin, Printer, Mail, Award, Users, BookOpen, GraduationCap } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 const DepartmentHeadSection = () => {
   const profile = {
@@ -29,7 +28,7 @@ const DepartmentHeadSection = () => {
   ];
 
   return (
-    <section className="py-12 md:py-20 bg-white text-slate-800 overflow-hidden">
+    <section className="py-8 md:py-12 bg-white text-slate-800 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 md:px-6">
 
         {/* Section Header - Styled like CSI logo */}
@@ -206,23 +205,6 @@ const DepartmentHeadSection = () => {
 
             </div>
           </div>
-        </motion.div>
-
-        {/* CTA Link */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6 }}
-          className="text-center mt-8"
-        >
-          <Link
-            href="/people"
-            className="inline-flex items-center gap-2 text-[#0284C7] hover:text-[#0369A1] font-semibold transition-colors group"
-          >
-            Meet all our faculty members
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-          </Link>
         </motion.div>
 
       </div>

@@ -51,14 +51,14 @@ const cardData = [
 
 export default function GraduatePage() {
     return (
-        <div className='max-w-8xl pt-20 md:pt-24'>
+        <div className='max-w-8xl pt-16 md:pt-18'>
             <GraduatesNotch />
             <section className="relative min-h-[90vh] bg-white overflow-hidden flex flex-col">
 
                 {/* ------------------------------------------------------- */}
                 {/* TOP SECTION: White Background (Inspiration Text)        */}
                 {/* ------------------------------------------------------- */}
-                <div className="relative z-10 pt-24 pb-32 px-6 text-center max-w-4xl mx-auto">
+                <div className="relative z-10 pt-12 pb-16 px-6 text-center max-w-4xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -117,7 +117,7 @@ export default function GraduatePage() {
                 {/* ------------------------------------------------------- */}
                 {/* BOTTOM SECTION: Cards Grid                              */}
                 {/* ------------------------------------------------------- */}
-                <div className="relative z-10 flex-grow px-6 pb-20">
+                <div className="relative z-10 flex-grow px-6 pb-12">
                     <div className="max-w-7xl mx-auto">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 

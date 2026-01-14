@@ -1,70 +1,80 @@
 'use client';
 
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Calendar, Award, ArrowRight, FileText, Users } from 'lucide-react';
+import { Calendar, ArrowRight, Users, ChevronLeft, ChevronRight, Award } from 'lucide-react';
 import Image from 'next/image';
 import { allIcons } from './floating-icons';
-import { newsData, newsYears, type NewsItem } from '@/data/news';
+import { getAllNews, type NewsItem } from '@/data/news';
 
 // --- Components ---
 
-const NewsCard = ({ item }: { item: NewsItem }) => {
+const TimelineCard = ({ item, index }: { item: NewsItem; index: number }) => {
     const isExternalLink = item.link?.startsWith('http://') || item.link?.startsWith('https://');
+
     const cardContent = (
         <>
-            {/* Image Section */}
-            <div className="relative h-32 sm:h-40 overflow-hidden bg-gray-100">
+            {/* Image Section - Larger for timeline */}
+            <div className="relative h-56 sm:h-64 overflow-hidden bg-gray-100">
                 <Image
                     src={item.image}
-                    alt="" // Decorative, title is in heading
+                    alt=""
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    sizes="400px"
                     className="object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-2 left-2 bg-white/90 backdrop-blur-sm px-2 py-1 text-xs font-bold uppercase tracking-wide text-blue-600 rounded-sm">
+                {/* Category Badge */}
+                <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-[#0369A1] rounded-md shadow-sm">
                     {item.category}
                 </div>
             </div>
 
             {/* Content Section */}
-            <div className="p-3 sm:p-4 flex flex-col grow">
-                <div className="mb-2">
-                    <h3 className="font-bold text-sm sm:text-base text-gray-900 line-clamp-3 group-hover:text-blue-700 transition-colors h-fit min-h-12 sm:min-h-14">
-                        {item.title}
-                    </h3>
+            <div className="p-5 flex flex-col grow">
+                {/* Date with larger styling */}
+                <div className="flex items-center text-sm text-gray-600 font-semibold mb-3">
+                    <Calendar size={16} className="mr-2 text-[#0369A1]" aria-hidden="true" />
+                    <time dateTime={item.date}>{item.date}</time>
                 </div>
 
-                <div className="text-xs text-gray-500 mb-3 sm:mb-4 flex items-center gap-1">
-                    <Users size={14} aria-hidden="true" />
-                    <span className="sr-only">Author: </span>{item.author}
-                </div>
+                {/* Title */}
+                <h3 className="font-bold text-lg text-gray-900 mb-3 line-clamp-2 group-hover:text-[#0369A1] transition-colors min-h-14">
+                    {item.title}
+                </h3>
 
-                <div className="mt-auto pt-3 sm:pt-4 border-t border-gray-100 flex items-center justify-between">
-                    <div className="flex items-center text-xs text-gray-600 font-medium">
-                        <Calendar size={14} className="mr-1" aria-hidden="true" />
-                        <time dateTime={item.date}>{item.date}</time>
+                {/* Author */}
+                {item.author && (
+                    <div className="text-sm text-gray-600 mb-4 flex items-center gap-2">
+                        <Users size={16} className="text-gray-400" aria-hidden="true" />
+                        <span className="sr-only">Author: </span>
+                        <span>{item.author}</span>
                     </div>
-                    {item.link && (
-                        <div className="bg-gray-50 p-1 rounded-full group-hover:bg-[#0369A1] group-hover:text-white transition-colors" aria-hidden="true">
-                            <ArrowRight size={16} />
+                )}
+
+                {/* Link indicator */}
+                {item.link && (
+                    <div className="mt-auto pt-4 border-t border-gray-100 flex items-center justify-end">
+                        <div className="flex items-center gap-2 text-sm font-semibold text-[#0369A1] group-hover:gap-3 transition-all">
+                            <span>Read more</span>
+                            <div className="bg-[#0369A1]/10 p-1.5 rounded-full group-hover:bg-[#0369A1] group-hover:text-white transition-colors">
+                                <ArrowRight size={16} />
+                            </div>
                         </div>
-                    )}
-                </div>
+                    </div>
+                )}
             </div>
         </>
     );
 
-    const cardClassName = "group flex flex-col h-full bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 rounded-lg overflow-hidden" + (item.link ? " cursor-pointer" : "");
+    const cardClassName = "group flex flex-col h-full bg-white border border-gray-200 hover:shadow-2xl hover:border-[#0369A1]/30 transition-all duration-300 rounded-xl overflow-hidden" + (item.link ? " cursor-pointer" : "");
 
     return (
         <motion.article
-            layout
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.3 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
             className={cardClassName}
         >
             {item.link ? (
@@ -172,86 +182,103 @@ const LogoTicker = () => {
 // --- Main Component ---
 
 export default function DepartmentNewsSection() {
-    const [activeYear, setActiveYear] = useState("2024");
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+    // Get all news items sorted chronologically (most recent first)
+    const allNews = getAllNews().sort((a, b) => {
+        // Simple date comparison - adjust if needed for more complex date formats
+        const dateA = new Date(a.date);
+        const dateB = new Date(b.date);
+        return dateB.getTime() - dateA.getTime();
+    });
+
+    const scroll = (direction: 'left' | 'right') => {
+        if (scrollContainerRef.current) {
+            const scrollAmount = 400;
+            scrollContainerRef.current.scrollBy({
+                left: direction === 'left' ? -scrollAmount : scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    };
 
     return (
-        <section className="py-10 md:py-16 bg-white text-[#2d2f31]" aria-labelledby="news-heading">
-            <div className="max-w-[1400px] mx-auto px-4 md:px-6">
+        <section className="py-12 md:py-16 bg-linear-to-b from-white to-gray-50 text-[#2d2f31]" aria-labelledby="news-heading">
+            <div className="max-w-[1600px] mx-auto px-4 md:px-6">
 
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mb-6 md:mb-8"
+                    className="mb-8 md:mb-10 flex items-end justify-between"
                 >
-                    <h2 id="news-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 md:mb-3 font-serif tracking-tight text-gray-900">
-                        Department News & Achievements
-                    </h2>
-                    <p className="text-base md:text-lg text-gray-600 max-w-2xl">
-                        Celebrating the grants, awards, and groundbreaking research of our faculty and students.
-                    </p>
+                    <div>
+                        <h2 id="news-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 font-serif tracking-tight text-gray-900">
+                            Department News & Achievements
+                        </h2>
+                        <p className="text-base md:text-lg text-gray-600 max-w-3xl">
+                            Celebrating the grants, awards, and groundbreaking research of our faculty and students across the years.
+                        </p>
+                    </div>
+
+                    {/* Scroll Controls - Desktop */}
+                    <div className="hidden md:flex items-center gap-2">
+                        <button
+                            onClick={() => scroll('left')}
+                            className="p-3 rounded-full bg-white border border-gray-200 hover:border-[#0369A1] hover:bg-[#0369A1] hover:text-white transition-all shadow-sm"
+                            aria-label="Scroll timeline left"
+                        >
+                            <ChevronLeft size={20} />
+                        </button>
+                        <button
+                            onClick={() => scroll('right')}
+                            className="p-3 rounded-full bg-white border border-gray-200 hover:border-[#0369A1] hover:bg-[#0369A1] hover:text-white transition-all shadow-sm"
+                            aria-label="Scroll timeline right"
+                        >
+                            <ChevronRight size={20} />
+                        </button>
+                    </div>
                 </motion.div>
 
-                {/* Tabs (Years) */}
-                <div className="mb-6 md:mb-8 border-b border-gray-200" role="tablist" aria-label="News by year">
-                    <div className="flex space-x-4 md:space-x-6 overflow-x-auto pb-1 no-scrollbar">
-                        {newsYears.map((year) => (
-                            <button
-                                key={year}
-                                role="tab"
-                                aria-selected={activeYear === year}
-                                aria-controls={`news-panel-${year}`}
-                                id={`news-tab-${year}`}
-                                onClick={() => setActiveYear(year)}
-                                className={`text-base md:text-lg font-bold whitespace-nowrap pb-2 px-1 min-h-11 transition-all relative ${activeYear === year
-                                    ? "text-black"
-                                    : "text-gray-500 hover:text-gray-800"
-                                    }`}
+                {/* Horizontal Scrollable Timeline */}
+                <div className="relative">
+                    {/* Timeline Container */}
+                    <div
+                        ref={scrollContainerRef}
+                        className="flex gap-6 overflow-x-auto pb-6 scroll-smooth snap-x snap-mandatory"
+                        style={{
+                            scrollbarWidth: 'thin',
+                            scrollbarColor: '#0369A1 #f1f5f9'
+                        }}
+                    >
+                        {allNews.map((item, index) => (
+                            <div
+                                key={item.id}
+                                className="shrink-0 w-[320px] sm:w-[360px] snap-start"
                             >
-                                {year}
-                                {activeYear === year && (
-                                    <motion.div
-                                        layoutId="activeTab"
-                                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-black"
-                                    />
-                                )}
-                            </button>
+                                <TimelineCard item={item} index={index} />
+                            </div>
                         ))}
                     </div>
+
+                    {/* Gradient Overlays for visual depth */}
+                    <div className="absolute top-0 left-0 bottom-6 w-12 bg-linear-to-r from-white/60 via-white/30 to-transparent pointer-events-none" />
+                    <div className="absolute top-0 right-0 bottom-6 w-12 bg-linear-to-l from-gray-50/60 via-gray-50/30 to-transparent pointer-events-none" />
                 </div>
 
-                {/* Content Grid */}
-                <div
-                    className="min-h-[300px] md:min-h-[400px]"
-                    role="tabpanel"
-                    id={`news-panel-${activeYear}`}
-                    aria-labelledby={`news-tab-${activeYear}`}
+                {/* Mobile Scroll Hint */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="md:hidden mt-4 text-center text-sm text-gray-500"
                 >
-                    <motion.div
-                        layout
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
-                    >
-                        <AnimatePresence mode='popLayout'>
-                            {newsData[activeYear] ? (
-                                newsData[activeYear].map((item) => (
-                                    <NewsCard key={item.id} item={item} />
-                                ))
-                            ) : (
-                                <div className="col-span-full py-20 text-center text-gray-400 italic">
-                                    No news archives available for this period.
-                                </div>
-                            )}
-                        </AnimatePresence>
-                    </motion.div>
-
-                    {/* "Show all" Link */}
-                    <div className="mt-6 md:mt-8">
-                        <a href="#" className="inline-flex items-center text-blue-600 font-bold border border-blue-600 px-4 py-2 min-h-11 hover:bg-blue-50 transition-colors rounded-md">
-                            View all archives <ArrowRight size={16} className="ml-2" aria-hidden="true" />
-                        </a>
-                    </div>
-                </div>
+                    <span className="inline-flex items-center gap-2">
+                        <ArrowRight size={14} className="animate-pulse" />
+                        Scroll to explore more
+                    </span>
+                </motion.div>
 
             </div>
 

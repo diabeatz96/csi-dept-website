@@ -102,7 +102,7 @@ export const About3 = ({
   const defaultTransition = { duration: 0.6, ease: "easeOut" as const };
 
   return (
-    <section className="py-16 md:py-32">
+    <section className="py-8 md:py-12">
       <div className="container mx-auto px-4">
         <motion.div
           className="mb-8 md:mb-14 grid gap-4 md:gap-5 text-center md:grid-cols-2 md:text-left"

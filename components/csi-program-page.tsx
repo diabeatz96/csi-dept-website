@@ -122,7 +122,7 @@ const getDegreeHref = (degreeName: string): string => {
 
 const DegreeListSection = () => {
     return (
-        <section className="py-12 md:py-16">
+        <section className="py-6 md:py-8">
             <div className="max-w-7xl mx-auto">
 
                 {/* Section Header - CSI Style */}
@@ -130,7 +130,7 @@ const DegreeListSection = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mb-10 md:mb-14"
+                    className="mb-6 md:mb-8"
                 >
                     <div className="flex items-center gap-3 mb-4">
                         <Image
@@ -221,7 +221,7 @@ const DegreeListSection = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.4 }}
-                    className="mt-8 md:mt-10 bg-linear-to-r from-[#F0F9FF] to-[#E0F2FE] rounded-2xl p-5 md:p-6 border border-[#0369A1]/20"
+                    className="mt-4 md:mt-6 bg-linear-to-r from-[#F0F9FF] to-[#E0F2FE] rounded-2xl p-4 md:p-5 border border-[#0369A1]/20"
                 >
                     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                         <div className="p-3 rounded-xl bg-white shadow-sm border border-[#0369A1]/20">
@@ -438,7 +438,6 @@ export default function CSIProgramsPage() {
         <div className="bg-white font-sans text-slate-800">
             <div className='max-w-8xl mx-auto px-6'>
                 <DegreeListSection />
-                <SpotlightCarousel />
             </div>
         </div>
     );

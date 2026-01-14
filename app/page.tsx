@@ -9,9 +9,6 @@ import {
   Users,
   BookOpen,
   Award,
-  MapPin,
-  Phone,
-  Mail,
   ArrowRight,
   CheckCircle2,
   Clock,
@@ -20,7 +17,6 @@ import {
 import { About3 } from '@/components/ui/about-3';
 import { LinkPreview } from '@/components/ui/link-preview';
 import CSIProgramsPage from '@/components/csi-program-page';
-import DepartmentHeadSection from '@/components/deparment-head';
 import DepartmentNewsSection from '@/components/news';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -113,7 +109,7 @@ const HeroSection = () => {
   }, [heroImages.length, isPaused, shouldReduceMotion]);
 
   return (
-    <section className="relative w-full max-w-[1600px] mx-auto px-4 md:px-6 mb-6" aria-label="Hero slideshow">
+    <section className="relative w-full max-w-[1600px] mx-auto px-4 md:px-6 mb-4 md:mb-6" aria-label="Hero slideshow">
       {/* Main Banner */}
       <div className="relative w-full min-h-[520px] sm:min-h-[480px] md:min-h-[560px] bg-linear-to-r from-[#8AC2EB] to-cyan-600 overflow-hidden shadow-lg rounded-2xl">
 
@@ -140,7 +136,7 @@ const HeroSection = () => {
               />
             </motion.div>
           </AnimatePresence>
-          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#8AC2EB]/15 via-40% to-[#8AC2EB]/40 pointer-events-none" />
+          <div className="absolute inset-0 bg-linear-to-l from-transparent via-[#8AC2EB]/15 via-40% to-[#8AC2EB]/40 pointer-events-none" />
         </div>
 
         {/* Slideshow Controls - Desktop only */}
@@ -183,7 +179,7 @@ const HeroSection = () => {
             Build Your Future in <span className="text-[#0369A1]">Technology</span>
           </h1>
 
-          <p className="text-slate-600 mb-5 text-sm md:text-base leading-relaxed">
+          <p className="text-slate-900 mb-5 text-sm md:text-base leading-relaxed">
             ABET-accredited programs preparing students for careers in software engineering, AI, cybersecurity, and more.
           </p>
 
@@ -233,19 +229,19 @@ const quickLinks = [
 // --- Quick Links Bar (Below Hero) ---
 const QuickLinksBar = () => {
   return (
-    <section className="max-w-[1600px] mx-auto px-4 md:px-6 mb-12 md:mb-16">
+    <section className="max-w-[1600px] mx-auto px-4 md:px-6 mb-4 md:mb-6">
       {/* Quick Links Grid */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4"
+        className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-3"
       >
         {quickLinks.map((link, idx) => (
           <Link
             key={idx}
             href={link.href}
-            className="group relative bg-white rounded-xl border border-slate-200 p-4 hover:border-[#0369A1] hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+            className="group relative bg-white rounded-xl border border-slate-200 p-3 hover:border-[#0369A1] hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
           >
             <div className="flex flex-col items-center text-center">
               <div className="w-12 h-12 rounded-xl bg-[#0369A1]/10 flex items-center justify-center mb-3 group-hover:bg-[#0369A1] transition-colors">
@@ -261,35 +257,6 @@ const QuickLinksBar = () => {
           </Link>
         ))}
       </motion.div>
-
-      {/* Contact Info Strip */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-        className="mt-4 bg-slate-50 rounded-xl p-3 md:p-4 border border-slate-200"
-      >
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-          <div className="flex flex-wrap items-center gap-4 md:gap-6 text-sm">
-            <div className="flex items-center gap-2 text-slate-600">
-              <MapPin size={14} className="text-[#0369A1] shrink-0" aria-hidden="true" />
-              <span className="text-xs md:text-sm">Building 1N, Room 215</span>
-            </div>
-            <a href="tel:7189822850" className="flex items-center gap-2 text-slate-600 hover:text-[#0369A1] transition-colors min-h-11">
-              <Phone size={14} className="text-[#0369A1] shrink-0" aria-hidden="true" />
-              <span className="text-xs md:text-sm">718.982.2850</span>
-            </a>
-            <a href="mailto:cs@csi.cuny.edu" className="flex items-center gap-2 text-slate-600 hover:text-[#0369A1] transition-colors min-h-11">
-              <Mail size={14} className="text-[#0369A1] shrink-0" aria-hidden="true" />
-              <span className="text-xs md:text-sm">cs@csi.cuny.edu</span>
-            </a>
-          </div>
-          <div className="flex items-center gap-2 text-sm">
-            <Clock size={14} className="text-[#0369A1] shrink-0" aria-hidden="true" />
-            <span className="text-slate-600 text-xs md:text-sm">Mon-Fri: 9AM - 5PM</span>
-          </div>
-        </div>
-      </motion.div>
     </section>
   );
 };
@@ -297,13 +264,13 @@ const QuickLinksBar = () => {
 // --- Featured Programs Section ---
 const FeaturedPrograms = () => {
   return (
-    <section className="max-w-[1600px] mx-auto px-4 md:px-6 mb-16 md:mb-24">
+    <section className="max-w-[1600px] mx-auto px-4 md:px-6 mb-6 md:mb-8">
       {/* Bold Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-10 md:mb-14"
+        className="text-center mb-4 md:mb-6"
       >
         <div className="inline-flex items-center gap-3 mb-4 px-4 py-2 bg-[#0369A1]/10 rounded-full">
           <Image
@@ -321,13 +288,13 @@ const FeaturedPrograms = () => {
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#5F6368] mb-4">
           Launch Your Career in <span className="text-[#0369A1]">Technology</span>
         </h2>
-        <p className="text-slate-600 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
+        <p className="text-slate-900 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
           From foundational undergraduate courses to advanced doctoral research, our programs prepare you for success in the ever-evolving tech industry.
         </p>
       </motion.div>
 
       {/* Programs Grid - Large Prominent Cards */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
         {programHighlights.map((program, idx) => (
           <motion.div
             key={idx}
@@ -372,7 +339,7 @@ const FeaturedPrograms = () => {
                 </div>
 
                 {/* Content */}
-                <div className="p-6 md:p-8">
+                <div className="p-4 md:p-6">
                   {/* Title */}
                   <h3 className="text-2xl md:text-2xl font-bold text-[#5F6368] mb-1 group-hover:text-[#0369A1] transition-colors">
                     {program.title}
@@ -380,7 +347,7 @@ const FeaturedPrograms = () => {
                   <p className="text-sm text-slate-500 mb-4 font-medium">{program.subtitle}</p>
 
                   {/* Description */}
-                  <p className="text-sm text-slate-600 mb-5 leading-relaxed">
+                  <p className="text-sm text-slate-900 mb-5 leading-relaxed">
                     {program.description}
                   </p>
 
@@ -417,7 +384,7 @@ const FeaturedPrograms = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mt-10 md:mt-12"
+        className="text-center mt-4 md:mt-6"
       >
         <Link
           href="/courses"
@@ -434,9 +401,9 @@ const FeaturedPrograms = () => {
 // --- Why Choose Us Section ---
 const WhyChooseUsSection = () => {
   return (
-    <section className="max-w-[1600px] mx-auto px-4 md:px-6 mb-12 md:mb-16">
-      <div className="bg-linear-to-br from-slate-50 to-slate-100 rounded-2xl p-6 md:p-10 border border-slate-200">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+    <section className="max-w-[1600px] mx-auto px-4 md:px-6 mb-4">
+      <div className="bg-linear-to-br from-slate-50 to-slate-100 rounded-2xl p-4 md:p-6 border border-slate-200">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
           {/* Left Content */}
           <div className="lg:w-1/2">
             <motion.div
@@ -460,7 +427,7 @@ const WhyChooseUsSection = () => {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#5F6368] mb-4">
                 Why Choose <span className="text-[#0369A1]">Our Department?</span>
               </h2>
-              <p className="text-slate-600 text-base md:text-lg mb-6 leading-relaxed">
+              <p className="text-slate-900 text-base md:text-lg mb-6 leading-relaxed">
                 Join a community of learners and innovators at one of CUNY's premier computer science programs.
               </p>
 
@@ -476,7 +443,7 @@ const WhyChooseUsSection = () => {
                     className="flex items-start gap-3"
                   >
                     <CheckCircle2 size={20} className="text-emerald-500 shrink-0 mt-0.5" aria-hidden="true" />
-                    <span className="text-slate-700 text-sm md:text-base">{item}</span>
+                    <span className="text-slate-900 text-sm md:text-base">{item}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -500,7 +467,7 @@ const WhyChooseUsSection = () => {
                 >
                   <div className="flex items-center gap-3">
                     <Calendar size={20} className="text-[#0369A1]" aria-hidden="true" />
-                    <span className="font-medium text-slate-700 group-hover:text-[#0369A1]">Apply for Admission</span>
+                    <span className="font-medium text-slate-900 group-hover:text-[#0369A1]">Apply for Admission</span>
                   </div>
                   <ArrowRight size={16} className="text-slate-400 group-hover:text-[#0369A1]" aria-hidden="true" />
                 </Link>
@@ -510,7 +477,7 @@ const WhyChooseUsSection = () => {
                 >
                   <div className="flex items-center gap-3">
                     <BookOpen size={20} className="text-[#0369A1]" aria-hidden="true" />
-                    <span className="font-medium text-slate-700 group-hover:text-[#0369A1]">Undergraduate Programs</span>
+                    <span className="font-medium text-slate-900 group-hover:text-[#0369A1]">Undergraduate Programs</span>
                   </div>
                   <ArrowRight size={16} className="text-slate-400 group-hover:text-[#0369A1]" aria-hidden="true" />
                 </Link>
@@ -520,7 +487,7 @@ const WhyChooseUsSection = () => {
                 >
                   <div className="flex items-center gap-3">
                     <GraduationCap size={20} className="text-[#0369A1]" aria-hidden="true" />
-                    <span className="font-medium text-slate-700 group-hover:text-[#0369A1]">Graduate Programs</span>
+                    <span className="font-medium text-slate-900 group-hover:text-[#0369A1]">Graduate Programs</span>
                   </div>
                   <ArrowRight size={16} className="text-slate-400 group-hover:text-[#0369A1]" aria-hidden="true" />
                 </Link>
@@ -530,7 +497,7 @@ const WhyChooseUsSection = () => {
                 >
                   <div className="flex items-center gap-3">
                     <Users size={20} className="text-[#0369A1]" aria-hidden="true" />
-                    <span className="font-medium text-slate-700 group-hover:text-[#0369A1]">Meet Our Faculty</span>
+                    <span className="font-medium text-slate-900 group-hover:text-[#0369A1]">Meet Our Faculty</span>
                   </div>
                   <ArrowRight size={16} className="text-slate-400 group-hover:text-[#0369A1]" aria-hidden="true" />
                 </Link>
@@ -540,7 +507,7 @@ const WhyChooseUsSection = () => {
                 >
                   <div className="flex items-center gap-3">
                     <BookOpen size={20} className="text-[#0369A1]" aria-hidden="true" />
-                    <span className="font-medium text-slate-700 group-hover:text-[#0369A1]">Student Resources</span>
+                    <span className="font-medium text-slate-900 group-hover:text-[#0369A1]">Student Resources</span>
                   </div>
                   <ArrowRight size={16} className="text-slate-400 group-hover:text-[#0369A1]" aria-hidden="true" />
                 </Link>
@@ -567,20 +534,8 @@ export default function CSIDepartmentPage() {
         {/* 3. Featured Programs - Most Important for Prospective Students */}
         <FeaturedPrograms />
 
-        {/* 4. Why Choose Us - Value Proposition */}
-        <WhyChooseUsSection />
-
-        {/* 5. All Programs Detail */}
-        <CSIProgramsPage />
-
-        {/* 6. Department Leadership - Credibility */}
-        <div className='my-12'><DepartmentHeadSection /></div>
-
-        {/* 7. News - Current Happenings */}
-        <DepartmentNewsSection />
-
-        {/* 8. About Section - Additional Context (moved lower) */}
-        <section className='max-w-8xl mx-auto px-6'>
+        {/* 4. About Section - Department Overview */}
+        <section className='max-w-8xl mx-auto px-6 mb-6 md:mb-8'>
           <About3
             title="About Us"
             description={
@@ -616,6 +571,15 @@ export default function CSIDepartmentPage() {
             ]}
           />
         </section>
+
+        {/* 5. Why Choose Us - Value Proposition */}
+        <WhyChooseUsSection />
+
+        {/* 6. All Programs Detail (without specializations) */}
+        <CSIProgramsPage />
+
+        {/* 7. News - Current Happenings */}
+        <DepartmentNewsSection />
       </div>
     </div>
   );

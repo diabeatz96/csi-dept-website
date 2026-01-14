@@ -13,6 +13,7 @@ import {
 import Link from 'next/link';
 import Image from 'next/image';
 import DepartmentStaff from '@/components/staff-directory';
+import DepartmentHeadSection from '@/components/deparment-head';
 import { faculty } from '@/data/people';
 import type { FacultyMember } from '@/data/types';
 
@@ -144,7 +145,12 @@ const FacultyCard = ({ member, index }: { member: FacultyMember, index: number }
 export default function FacultyDirectory() {
     return (
         <div className='max-w-8xl mx-auto'>
-            <section id="professors" className="bg-slate-50 pt-28 md:pt-32 pb-16 md:pb-24 min-h-screen">
+            {/* Department Leadership Section */}
+            <div className="pt-12 md:pt-16">
+                <DepartmentHeadSection />
+            </div>
+
+            <section id="professors" className="bg-slate-50 pt-8 md:pt-12 pb-12 md:pb-16 min-h-screen">
                 <div className="max-w-7xl mx-auto px-4 md:px-6">
 
                     {/* Header */}

@@ -179,7 +179,7 @@ function CoursesPageContent() {
             <h1 className="sr-only">Computer Science Course Catalog - CSI</h1>
 
             {/* --- Quick Links Section --- */}
-            <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-cyan-700 text-white pb-12 md:pb-16 pt-32">
+            <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-cyan-700 text-white pb-8 md:pb-12 pt-18">
                 <div className="max-w-[1600px] mx-auto px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -395,7 +395,7 @@ function CoursesPageContent() {
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="py-32 text-center flex flex-col items-center justify-center"
+                        className="py-16 text-center flex flex-col items-center justify-center"
                     >
                         <div className="inline-flex p-6 bg-slate-100 rounded-full mb-6 text-slate-300 shadow-inner">
                             <BookOpen size={64} strokeWidth={1.5} />

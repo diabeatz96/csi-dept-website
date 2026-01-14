@@ -123,15 +123,25 @@ export default function DegreePathHero() {
     const ref = React.useRef<HTMLDivElement>(null);
     const mouseX = React.useRef(0);
     const mouseY = React.useRef(0);
+    const [activeTab, setActiveTab] = React.useState('bachelors');
 
     const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
         mouseX.current = event.clientX;
         mouseY.current = event.clientY;
     };
+
+    const programTabs = [
+        { id: 'associate', label: 'Associate Degrees', href: '#associate-degrees' },
+        { id: 'bachelors', label: "Bachelor's Degrees", href: '#bachelors-degrees' },
+        { id: 'minors', label: 'Minors', href: '#minors-certificates' },
+        { id: 'career', label: 'Career Path', href: '#career-milestones' }
+    ];
+
     return (
-        <div className='max-w-8xl mx-auto px-6 pt-20 md:pt-24'>
+        <div className='max-w-8xl mx-auto px-6 xl:pl-72 pt-12 md:pt-14'>
             <NotchTwo />
-            <section className="bg-white min-h-screen flex items-center justify-center overflow-hidden relative" ref={ref} onMouseMove={handleMouseMove}>
+
+            <section className="bg-white min-h-[600px] flex items-center justify-center overflow-hidden relative py-8 md:py-12" ref={ref} onMouseMove={handleMouseMove}>
 
                 {/* Background Decor (Subtle Academic Pattern) */}
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03]"></div>
@@ -144,7 +154,7 @@ export default function DegreePathHero() {
                         initial={{ opacity: 0, x: -30 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="max-w-xl z-20"
+                        className="max-w-xl relative z-0"
                     >
                         {/* Pill Badge */}
                         <div className="inline-flex items-center gap-2 bg-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold px-4 py-1.5 rounded-full mb-8 cursor-pointer hover:bg-white hover:border-blue-300 transition-colors group">
@@ -160,12 +170,12 @@ export default function DegreePathHero() {
                         </h1>
 
                         {/* Subheadline */}
-                        <p className="text-lg text-slate-600 leading-relaxed mb-10 max-w-lg text-justify">
+                        <p className="text-lg text-slate-900 leading-relaxed mb-10 max-w-lg">
                             The Department of Computer Science at CSI offers a rigorous, ABET-accredited curriculum designed to equip students with theoretical foundations and practical expertise. From algorithm analysis to intelligent systems, we prepare the next generation of innovators.
                         </p>
 
                         {/* Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-4">
+                        <div className="flex flex-col sm:flex-row gap-4 mb-8">
                             {/* <button className="px-8 py-4 bg-[#0f172a] text-white text-sm font-bold tracking-wide uppercase rounded-md hover:bg-blue-800 transition-all shadow-lg hover:shadow-xl">
                                 Apply to Program
                             </button> */}
@@ -175,7 +185,36 @@ export default function DegreePathHero() {
                             </Link>
                         </div>
 
-                        <div className="mt-12 pt-8 border-t border-slate-100 flex items-center gap-8 text-xs font-semibold text-slate-400 uppercase tracking-widest">
+                        {/* Program Tabs - Integrated */}
+                        <div className="mb-8">
+                            <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Explore Programs</p>
+                            <div className="flex flex-wrap gap-2">
+                                {programTabs.map((tab) => (
+                                    <a
+                                        key={tab.id}
+                                        href={tab.href}
+                                        onClick={(e) => {
+                                            setActiveTab(tab.id);
+                                            // Smooth scroll to section
+                                            e.preventDefault();
+                                            const element = document.querySelector(tab.href);
+                                            if (element) {
+                                                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                            }
+                                        }}
+                                        className={`px-5 py-2.5 rounded-lg text-sm font-bold whitespace-nowrap transition-all ${
+                                            activeTab === tab.id
+                                                ? 'bg-[#0369A1] text-white shadow-md'
+                                                : 'bg-slate-100 text-slate-700 hover:bg-slate-200 hover:shadow-sm'
+                                        }`}
+                                    >
+                                        {tab.label}
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="pt-6 border-t border-slate-100 flex items-center gap-8 text-xs font-semibold text-slate-400 uppercase tracking-widest">
                             <span>Excellence in Research</span>
                             <span>•</span>
                             <span>Student Success</span>
@@ -386,56 +425,133 @@ export default function DegreePathHero() {
                 <div className="absolute inset-0 bg-white/60 pointer-events-none" />
 
                 {/* Content that scrolls over the background */}
-                <div className="relative z-10">
-                    <ResourcesAccordion />
+                <div className="relative z-10 flex">
+                    {/* Side Navigation - Desktop Only */}
+                    <aside className="hidden xl:block fixed left-6 top-32 w-52 h-[calc(100vh-10rem)] overflow-y-auto z-[100]">
+                        <nav className="bg-white/95 backdrop-blur-md rounded-xl border border-slate-200 p-3 shadow-lg sticky top-32">
+                            <h3 className="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-2">Sections</h3>
+                            <ul className="space-y-0.5 text-xs">
+                                {[
+                                    { id: 'associate-degrees', label: 'Associate Degrees' },
+                                    { id: 'bachelors-degrees', label: "Bachelor's Degrees" },
+                                    { id: 'career-milestones', label: 'Career Milestones' },
+                                    { id: 'minors-certificates', label: 'Minors & Certificates' },
+                                    { id: 'graduate-with-honors', label: 'Graduate with Honors' },
+                                    { id: 'abet-accreditation', label: 'ABET Accreditation' }
+                                ].map((section) => (
+                                    <li key={section.id}>
+                                        <a
+                                            href={`#${section.id}`}
+                                            className="block py-1.5 px-2.5 rounded-md text-slate-700 hover:bg-[#0369A1]/10 hover:text-[#0369A1] transition-colors font-medium border-l-2 border-transparent hover:border-[#0369A1]"
+                                        >
+                                            {section.label}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </nav>
+                    </aside>
 
-                    <div id="aas-computer-technology">
-                        <AASProgramSection />
-                    </div>
-                    <div id="bs-computer-science">
-                        <BSComputerScienceSection />
-                    </div>
-                    <div id="specializations">
-                        <SpecializationsAccordion />
-                    </div>
+                    {/* Main Content */}
+                    <div className="flex-1">
+                        <ResourcesAccordion />
+
+                    {/* Associate Degrees Section */}
+                    <section id="associate-degrees" className="py-8 md:py-12 bg-white">
+                        <div className="max-w-8xl mx-auto px-6">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                className="mb-8"
+                            >
+                                <span className="text-[#0369A1] font-bold tracking-widest uppercase text-xs mb-2 block">
+                                    Two-Year Degree Programs
+                                </span>
+                                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+                                    Associate Degrees
+                                </h2>
+                                <p className="text-slate-900 max-w-3xl text-sm md:text-base">
+                                    Start your computer science journey with our associate degree program, designed to provide foundational skills and seamless transfer opportunities to bachelor's programs.
+                                </p>
+                            </motion.div>
+                            <AASProgramSection />
+                        </div>
+                    </section>
+
+                    {/* Bachelor's Degrees Section - All combined */}
+                    <section id="bachelors-degrees" className="py-8 md:py-12 bg-slate-50">
+                        <div className="max-w-8xl mx-auto px-6">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                className="mb-8"
+                            >
+                                <span className="text-[#0369A1] font-bold tracking-widest uppercase text-xs mb-2 block">
+                                    Four-Year Degree Programs
+                                </span>
+                                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+                                    Bachelor's Degrees
+                                </h2>
+                                <p className="text-slate-900 max-w-3xl text-sm md:text-base mb-8">
+                                    Our ABET-accredited bachelor's programs provide comprehensive education in computer science, preparing you for careers in software development, research, data science, and more.
+                                </p>
+                            </motion.div>
+
+                            {/* BS Computer Science */}
+                            <BSComputerScienceSection />
+
+                            {/* Specializations within BS CS */}
+                            <div className="mt-8">
+                                <SpecializationsAccordion />
+                            </div>
+
+                            {/* BS Computer Science-Mathematics */}
+                            <div className="mt-8">
+                                <BSMathematicsSection />
+                            </div>
+
+                            {/* BS Information Systems and Informatics */}
+                            <div className="mt-8">
+                                <BSInformaticsSection />
+                            </div>
+                        </div>
+                    </section>
+
                     <div id="career-milestones">
                         <CareerMilestones />
                     </div>
-                    <div id="additional-degrees">
-                        <BSMathematicsSection />
-                    </div>
-                    <div id="bs-information-systems-and-informatics">
-                        <BSInformaticsSection />
-                    </div>
+
                     <div id="minors-certificates">
                         <MinorsAccordion />
                     </div>
+
                     <div id="double-counting-policy">
                         <DoubleCountingPolicy />
                     </div>
-                    {/* Graduate with Honors Section */}
-                    <section id="graduate-with-honors" className="py-16 bg-white">
-                        <div className="max-w-4xl mx-auto px-6">
+                    {/* Graduate with Honors Section - Compact */}
+                    <section id="graduate-with-honors" className="py-8 bg-white">
+                        <div className="max-w-6xl mx-auto px-6">
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6 }}
-                                className="bg-gradient-to-br from-teal-50 to-blue-50 rounded-2xl p-8 md:p-12 border border-teal-100 shadow-sm"
+                                className="bg-linear-to-r from-teal-50 to-blue-50 rounded-xl p-6 border border-teal-100 shadow-sm"
                             >
-                                <div className="flex items-center gap-3 mb-6">
-                                    <div className="p-3 bg-teal-600 rounded-xl text-white">
-                                        <GraduationCap size={28} />
+                                <div className="flex items-start gap-4">
+                                    <div className="p-2 bg-teal-600 rounded-lg text-white shrink-0">
+                                        <GraduationCap size={24} />
                                     </div>
-                                    <h2 className="text-3xl md:text-4xl font-bold text-teal-900">
-                                        Graduate with Honors
-                                    </h2>
-                                </div>
-
-                                <div className="prose prose-slate max-w-none">
-                                    <p className="text-slate-700 leading-relaxed text-lg">
-                                        Students may graduate with honors in Computer Science. To receive honors, the student must have at least a <strong className="text-teal-900">3.5 grade point average</strong> in courses taken in the major. The student must also complete an honors project by taking <strong className="text-teal-900">CSC 450</strong>, where the student works closely with a faculty member to define the project, carry out the research and investigation, and write the final report. The project must be approved by the department Chairperson. Students will receive credit through CSC 450 for their work on an honors project. <strong className="text-teal-900">CSC 450 cannot substitute for an elective course.</strong>
-                                    </p>
+                                    <div>
+                                        <h2 className="text-2xl md:text-3xl font-bold text-teal-900 mb-3">
+                                            Graduate with Honors
+                                        </h2>
+                                        <p className="text-slate-900 leading-relaxed text-sm md:text-base">
+                                            Students may graduate with honors in Computer Science. To receive honors, the student must have at least a <strong className="text-teal-900">3.5 GPA</strong> in major courses and complete an honors project via <strong className="text-teal-900">CSC 450</strong>, working closely with a faculty member. The project requires department Chairperson approval. <strong className="text-teal-900">CSC 450 cannot substitute for an elective course.</strong>
+                                        </p>
+                                    </div>
                                 </div>
                             </motion.div>
                         </div>
@@ -444,7 +560,8 @@ export default function DegreePathHero() {
                         <ABETAccreditation />
                     </div>
 
-                </div>
+                    </div> {/* End Main Content */}
+                </div> {/* End Flex Container */}
             </section>
         </div>
     );

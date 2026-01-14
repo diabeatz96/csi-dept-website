@@ -238,11 +238,13 @@ export function BSMathematicsSection() {
   const mathCSData = {
     category: "Joint Degree Program",
     title: "Bachelor of Science (BS) in Computer Science-Mathematics",
-    description: "This joint degree program provides a balance between Computer Science and Mathematics with an emphasis on their applied aspects and their relationship to each other. A grade of C or above in CSC 126 is required for admission. This program is ideal for students interested in algorithms, theoretical computing, and scientific modeling.",
+    description: "This interdisciplinary program seamlessly integrates Computer Science and Mathematics, emphasizing their applied aspects and interconnections. Students gain deep theoretical knowledge in algorithms, computational theory, and mathematical modeling while developing practical programming skills. The curriculum prepares graduates for careers in scientific computing, algorithm design, quantitative analysis, cryptography, and graduate study in CS or Applied Mathematics. Admission requires a grade of C or above in CSC 126. This program is ideal for students interested in the mathematical foundations of computing, data science research, artificial intelligence, and computational science.",
     image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2670&auto=format&fit=crop", // Math/Abstract image
     links: [
       { label: "Degree Checklist", href: "https://www.cs.csi.cuny.edu/content/CSMTHchecklist.pdf", type: "checklist" as const },
       { label: "Degree Requirements", href: "https://csi-undergraduate.catalog.cuny.edu/programs/CSCMTH-BS", type: "link" as const },
+      { label: "Prerequisite Flowchart", href: "https://www.cs.csi.cuny.edu/content/CSC_BS_PreRequisite_Flow_Chart_2023-24_major_catalog.pdf", type: "flowchart" as const },
+      { label: "Sample 4-Year Plan", href: "https://www.cs.csi.cuny.edu/content/Sample_cs_4_yr_degree-career-map.pdf", type: "pdf" as const },
     ]
   };
 

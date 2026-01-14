@@ -86,13 +86,13 @@ const ResourceCard = ({ category, index }: { category: ResourceCategory, index: 
 
 export default function StudentResources() {
     return (
-        <div className='bg-white pt-28 md:pt-32'>
+        <div className='bg-white pt-16 md:pt-18'>
             {/* Visually hidden H1 for accessibility */}
             <h1 className="sr-only">Student Resources - CSI Computer Science</h1>
 
             {/* Student Spotlights section hidden for now - may move to different page */}
             {/* <div className='' id='student-spotlights'><StudentSpotlights /></div> */}
-            <section className="py-24 bg-slate-50" id='resources-tools'>
+            <section className="py-12 bg-slate-50" id='resources-tools'>
                 <div className="max-w-7xl mx-auto px-6">
 
                     {/* Header */}
