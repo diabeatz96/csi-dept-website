@@ -51,10 +51,10 @@ export default function NavbarEdu() {
                                 aria-hidden="true"
                             />
                             <div className="flex flex-col">
-                                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
+                                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">
                                     Department of
                                 </span>
-                                <span className="text-sm font-bold leading-tight text-slate-900">
+                                <span className="text-base font-bold leading-tight text-slate-900">
                                     Computer Science
                                 </span>
                             </div>
