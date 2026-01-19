@@ -70,7 +70,8 @@ export default function NavbarEdu() {
                                     <Link
                                         key={item.id}
                                         href={item.href}
-                                        className={`px-3 py-1.5 rounded-lg text-sm font-semibold transition-colors whitespace-nowrap ${
+                                        className={`px-3 py-1.5 rounded-lg text-base
+                                             font-semibold transition-colors whitespace-nowrap ${
                                             isCurrentPage
                                                 ? "bg-[#0369A1] text-white"
                                                 : "text-slate-900 hover:bg-slate-100"
@@ -85,19 +86,19 @@ export default function NavbarEdu() {
                         {/* Right: Contact Info + Search */}
                         <div className="flex items-center gap-2">
                             {/* Compact Contact Info - Desktop only */}
-                            <div className="hidden xl:flex items-center gap-2 bg-[#0369A1] text-white px-2 py-1 rounded-lg text-[10px]">
+                            <div className="hidden xl:flex items-center gap-2 bg-[#0369A1] text-white px-2 py-1 rounded-lg text-[13px]">
                                 <div className="flex items-center gap-1">
-                                    <MapPin size={10} className="shrink-0" aria-hidden="true" />
+                                    <MapPin size={23} className="shrink-0" aria-hidden="true" />
                                     <span className="font-medium">1N-215</span>
                                 </div>
                                 <div className="h-3 w-px bg-white/30" />
                                 <a href="tel:7189822850" className="flex items-center gap-1 hover:text-blue-100">
-                                    <Phone size={10} className="shrink-0" aria-hidden="true" />
+                                    <Phone size={23} className="shrink-0" aria-hidden="true" />
                                     <span className="font-medium">718.982.2850</span>
                                 </a>
                                 <div className="h-3 w-px bg-white/30" />
                                 <a href="mailto:cs@csi.cuny.edu" className="flex items-center gap-1 hover:text-blue-100">
-                                    <Mail size={10} className="shrink-0" aria-hidden="true" />
+                                    <Mail size={23} className="shrink-0" aria-hidden="true" />
                                     <span className="font-medium">cs@csi.cuny.edu</span>
                                 </a>
                             </div>
@@ -123,7 +124,7 @@ export default function NavbarEdu() {
                                 <Link
                                     key={item.id}
                                     href={item.href}
-                                    className={`px-2 py-1 rounded-lg text-xs font-semibold transition-colors whitespace-nowrap ${
+                                    className={`px-2 py-1 rounded-lg text-sm font-semibold transition-colors whitespace-nowrap ${
                                         isCurrentPage
                                             ? "bg-[#0369A1] text-white"
                                             : "text-slate-900 hover:bg-slate-100"
@@ -136,18 +137,18 @@ export default function NavbarEdu() {
                     </div>
 
                     {/* Mobile Contact Info */}
-                    <div className="xl:hidden mt-2 bg-[#0369A1] text-white px-2 py-1.5 rounded-lg text-[10px]">
+                    <div className="xl:hidden mt-2 bg-[#0369A1] text-white px-2 py-1.5 rounded-lg text-[14px]">
                         <div className="flex items-center justify-between gap-2">
                             <div className="flex items-center gap-1.5">
-                                <MapPin size={10} className="shrink-0" aria-hidden="true" />
+                                <MapPin size={20} className="shrink-0" aria-hidden="true" />
                                 <span className="font-medium">1N-215</span>
                             </div>
                             <a href="tel:7189822850" className="flex items-center gap-1 hover:text-blue-100">
-                                <Phone size={10} className="shrink-0" aria-hidden="true" />
+                                <Phone size={20} className="shrink-0" aria-hidden="true" />
                                 <span className="font-medium">718.982.2850</span>
                             </a>
                             <a href="mailto:cs@csi.cuny.edu" className="flex items-center gap-1 hover:text-blue-100">
-                                <Mail size={10} className="shrink-0" aria-hidden="true" />
+                                <Mail size={20} className="shrink-0" aria-hidden="true" />
                                 <span className="font-medium">cs@csi.cuny.edu</span>
                             </a>
                         </div>
