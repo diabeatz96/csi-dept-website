@@ -282,14 +282,14 @@ const FeaturedPrograms = () => {
             className="h-7 w-auto object-contain"
             aria-hidden="true"
           />
-          <span className="text-xs font-bold uppercase tracking-widest text-[#0369A1]">
+          <span className="text-small font-bold uppercase tracking-widest text-[#0369A1]">
             Academic Programs
           </span>
         </div>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#5F6368] mb-4">
           Launch Your Career in <span className="text-[#0369A1]">Technology</span>
         </h2>
-        <p className="text-slate-900 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
+        <p className="text-slate-900 text-large md:text-xl max-w-3xl mx-auto leading-relaxed">
           From foundational undergraduate courses to advanced doctoral research, our programs prepare you for success in the ever-evolving tech industry.
         </p>
       </motion.div>
@@ -320,7 +320,7 @@ const FeaturedPrograms = () => {
 
                   {/* Badge on Image */}
                   <div className="absolute top-4 left-4">
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-sm text-[#5F6368] text-xs font-bold shadow-lg">
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-sm text-slate-900 text-sm font-bold shadow-lg">
                       <GraduationCap size={14} aria-hidden="true" />
                       {program.badge}
                     </div>
@@ -328,11 +328,11 @@ const FeaturedPrograms = () => {
 
                   {/* Stats on Image */}
                   <div className="absolute bottom-4 left-4 right-4 flex gap-3">
-                    <div className="px-3 py-1.5 bg-black/40 backdrop-blur-md rounded-lg text-white text-xs font-semibold">
+                    <div className="px-3 py-1.5 bg-black/40 backdrop-blur-md rounded-lg text-white text-sm font-semibold">
                       <Clock size={12} className="inline mr-1.5" aria-hidden="true" />
                       {program.stats.duration}
                     </div>
-                    <div className="px-3 py-1.5 bg-black/40 backdrop-blur-md rounded-lg text-white text-xs font-semibold">
+                    <div className="px-3 py-1.5 bg-black/40 backdrop-blur-md rounded-lg text-white text-sm font-semibold">
                       <BookOpen size={12} className="inline mr-1.5" aria-hidden="true" />
                       {program.stats.credits}
                     </div>
@@ -345,10 +345,10 @@ const FeaturedPrograms = () => {
                   <h3 className="text-2xl md:text-2xl font-bold text-[#5F6368] mb-1 group-hover:text-[#0369A1] transition-colors">
                     {program.title}
                   </h3>
-                  <p className="text-sm text-slate-500 mb-4 font-medium">{program.subtitle}</p>
+                  <p className="text-base text-slate-500 mb-4 font-medium">{program.subtitle}</p>
 
                   {/* Description */}
-                  <p className="text-sm text-slate-900 mb-5 leading-relaxed">
+                  <p className="text-base text-slate-900 mb-5 leading-relaxed">
                     {program.description}
                   </p>
 
@@ -357,7 +357,7 @@ const FeaturedPrograms = () => {
                     {program.highlights.map((highlight, i) => (
                       <span
                         key={i}
-                        className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-full group-hover:bg-[#0369A1]/10 group-hover:text-[#0369A1] transition-colors"
+                        className="px-3 py-1 bg-slate-100 text-slate-600 text-sm font-medium rounded-full group-hover:bg-[#0369A1]/10 group-hover:text-[#0369A1] transition-colors"
                       >
                         {highlight}
                       </span>
@@ -366,7 +366,7 @@ const FeaturedPrograms = () => {
 
                   {/* CTA */}
                   <div className="flex items-center justify-between pt-4 border-t border-slate-100">
-                    <span className="text-[#0369A1] font-bold text-sm group-hover:text-[#025a8a] transition-colors">
+                    <span className="text-[#0369A1] font-bold text-small group-hover:text-[#025a8a] transition-colors">
                       Explore Program
                     </span>
                     <div className="w-10 h-10 rounded-full bg-[#0369A1]/10 flex items-center justify-center group-hover:bg-[#0369A1] transition-colors">
