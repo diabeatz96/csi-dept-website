@@ -227,10 +227,11 @@ const quickLinks = [
 ];
 
 // --- Quick Links Bar (Below Hero) ---
+/*
 const QuickLinksBar = () => {
   return (
     <section className="max-w-[1600px] mx-auto px-4 md:px-6 mb-4 md:mb-6">
-      {/* Quick Links Grid */}
+      {/* Quick Links Grid }
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -260,7 +261,7 @@ const QuickLinksBar = () => {
     </section>
   );
 };
-
+*/
 // --- Featured Programs Section ---
 const FeaturedPrograms = () => {
   return (
@@ -529,57 +530,23 @@ export default function CSIDepartmentPage() {
         <HeroSection />
 
         {/* 2. Quick Links & Contact - Essential Navigation */}
-        <QuickLinksBar />
+        {/* <QuickLinksBar /> */}
 
         {/* 3. Featured Programs - Most Important for Prospective Students */}
         <FeaturedPrograms />
 
         {/* 4. About Section - Department Overview */}
-        <section className='max-w-8xl mx-auto px-6 mb-6 md:mb-8'>
-          <About3
-            title="About Us"
-            description={
-              <>
-                The Computer Science Department offers programs that prepare students for careers as computer professionals and/or for continued study. The major provides a broad-based background in computer science and includes courses in computer software, computer systems, mathematics, network security, and computer hardware. We are committed to offering courses that stay current with changing technologies. Our BS in Computer Science degree is accredited by the Computing Accreditation Commission of <strong><LinkPreview url="http://www.abet.org" className="underline">ABET</LinkPreview></strong>.
-              </>
-            }
-            mainImage={{
-              src: "/csi1n.png",
-              alt: "CSI Computer Science building and facilities",
-            }}
-            secondaryImage={{
-              src: "/csi-graduation.jpg",
-              alt: "CSI Computer Science students at graduation ceremony",
-            }}
-            breakout={{
-              src: "/csi-blue-logo.png",
-              alt: "CUNY College of Staten Island Logo",
-              title: "ABET-Accredited Computer Science Programs",
-              description:
-                "Our Bachelor of Science in Computer Science is accredited by ABET, ensuring the highest standards in computer science education. Join a program that prepares you for successful careers in technology, research, and innovation.",
-              buttonText: "Explore Our Programs",
-              buttonUrl: "/undergraduate",
-            }}
-            companiesTitle="Our students go on to work at top companies"
-            companies={[]}
-            achievementsTitle="Where Our Students Build Their Careers"
-            achievementsDescription="Our graduates are highly sought after by leading technology companies, securing positions at Fortune 500 firms, innovative startups, and cutting-edge research institutions."
-            achievements={[
-              { label: "Graduates Hired", value: "95%" },
-              { label: "Top Companies", value: "200+" },
-              { label: "Average Starting Salary", value: "$85K+" },
-            ]}
-          />
-        </section>
-
+      
+        <About3/>
+     
         {/* 5. Why Choose Us - Value Proposition */}
         <WhyChooseUsSection />
 
         {/* 6. All Programs Detail (without specializations) */}
-        <CSIProgramsPage />
+        {/*<CSIProgramsPage />*/}
 
         {/* 7. News - Current Happenings */}
-        <DepartmentNewsSection />
+         <DepartmentNewsSection /> 
       </div>
     </div>
   );

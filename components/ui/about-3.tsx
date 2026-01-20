@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import React from "react";
+import { LinkPreview } from "@/components/ui/link-preview";
 import { motion } from "framer-motion";
 import { CompaniesMarquee } from "../companies-marquee";
 import Image from "next/image";
@@ -38,65 +39,40 @@ interface About3Props {
   }>;
 }
 
-const defaultCompanies = [
-  {
-    src: "https://shadcnblocks.com/images/block/logos/company/fictional-company-logo-1.svg",
-    alt: "Arc",
-  },
-  {
-    src: "https://shadcnblocks.com/images/block/logos/company/fictional-company-logo-2.svg",
-    alt: "Descript",
-  },
-  {
-    src: "https://shadcnblocks.com/images/block/logos/company/fictional-company-logo-3.svg",
-    alt: "Mercury",
-  },
-  {
-    src: "https://shadcnblocks.com/images/block/logos/company/fictional-company-logo-4.svg",
-    alt: "Ramp",
-  },
-  {
-    src: "https://shadcnblocks.com/images/block/logos/company/fictional-company-logo-5.svg",
-    alt: "Retool",
-  },
-  {
-    src: "https://shadcnblocks.com/images/block/logos/company/fictional-company-logo-6.svg",
-    alt: "Watershed",
-  },
-];
-
-const defaultAchievements = [
-  { label: "Companies Supported", value: "300+" },
-  { label: "Projects Finalized", value: "800+" },
-  { label: "Happy Customers", value: "99%" },
-  { label: "Recognized Awards", value: "10+" },
-];
 
 export const About3 = ({
-  title = "About Us",
-  description = "Shadcnblocks is a passionate team dedicated to creating innovative solutions that empower businesses to thrive in the digital age.",
+title = "About Us",
+  description = (
+    <>The Computer Science Department offers programs that prepare students for careers as computer professionals and/or for continued study. The major
+      provides a broad-based background in computer science and includes courses in computer software, computer systems, mathematics, network security, and
+      computer hardware. We are committed to offering courses that stay current with changing technologies. Our BS in Computer Science degree is
+      accredited by the Computing Accreditation Commission of{" "}
+      <strong> <LinkPreview url="http://www.abet.org" className="underline">ABET</LinkPreview></strong>.</>
+  ),
   mainImage = {
-    src: "https://shadcnblocks.com/images/block/placeholder-1.svg",
-    alt: "placeholder",
+    src: "/csi1n.png",
+    alt: "CSI Computer Science building and facilities",
   },
   secondaryImage = {
-    src: "https://shadcnblocks.com/images/block/placeholder-2.svg",
-    alt: "placeholder",
+    src: "/csi-graduation.jpg",
+    alt: "CSI Computer Science students at graduation ceremony",
   },
   breakout = {
-    src: "https://shadcnblocks.com/images/block/block-1.svg",
-    alt: "logo",
-    title: "Hundreds of blocks at Shadcnblocks.com",
+    src: "/csi-blue-logo.png",
+    alt: "CUNY College of Staten Island Logo",
+    title: "ABET-Accredited Computer Science Programs",
     description:
-      "Providing businesses with effective tools to improve workflows, boost efficiency, and encourage growth.",
-    buttonText: "Discover more",
-    buttonUrl: "https://shadcnblocks.com",
+      "Our Bachelor of Science in Computer Science is accredited by ABET, ensuring the highest standards in computer science education. Join a program that prepares you for successful careers in technology, research, and innovation.",
+    buttonText: "Explore Our Programs",
+    buttonUrl: "/undergraduate",
   },
-  companiesTitle = "Valued by clients worldwide",
-  companies = defaultCompanies,
-  achievementsTitle = "Our Achievements in Numbers",
-  achievementsDescription = "Providing businesses with effective tools to improve workflows, boost efficiency, and encourage growth.",
-  achievements = defaultAchievements,
+  achievementsTitle = "Where Our Students Build Their Careers",
+  achievementsDescription = "Our graduates are highly sought after by leading technology companies, securing positions at Fortune 500 firms, innovative startups, and cutting-edge research institutions.",
+  achievements = [
+    { label: "Graduates Hired", value: "95%" },
+    { label: "Top Companies", value: "200+" },
+    { label: "Average Starting Salary", value: "$85K+" },
+  ],
 }: About3Props = {}) => {
   const viewportOptions = { once: true, margin: "-100px" };
   const defaultTransition = { duration: 0.6, ease: "easeOut" as const };
@@ -105,14 +81,10 @@ export const About3 = ({
     <section className="py-8 md:py-12">
       <div className="container mx-auto px-4">
         <motion.div
-          className="mb-8 md:mb-14 grid gap-4 md:gap-5 text-center md:grid-cols-2 md:text-left"
+          className="mb-8 md:mb-10 grid gap-4 md:gap-3 text-center grid-cols-[1fr_2fr] md:text-left"
           initial="initial"
           whileInView="whileInView"
           viewport={{ once: true, margin: "-100px" }}
-          variants={{
-            initial: {},
-            whileInView: {},
-          }}
         >
           <motion.h2
             className="text-3xl sm:text-4xl md:text-5xl font-semibold"
@@ -124,7 +96,7 @@ export const About3 = ({
             {title}
           </motion.h2>
           <motion.div
-            className="text-sm md:text-base text-muted-foreground"
+            className="text-lg md:text-xl text-slate-1000 "
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={viewportOptions}
@@ -133,10 +105,10 @@ export const About3 = ({
             {description}
           </motion.div>
         </motion.div>
-
-        <div className="grid gap-4 md:gap-7 lg:grid-cols-3">
+        {/* Images & Breakout Grid */}
+        <div className="grid gap-4 md:gap-7 lg:grid-cols-[1.3fr_1fr]">
           <motion.div
-            className="relative w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[620px] rounded-xl overflow-hidden lg:col-span-2"
+            className="relative w-full aspect-[3/2] rounded-xl overflow-hidden"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={viewportOptions}
@@ -175,9 +147,9 @@ export const About3 = ({
               </motion.div>
               <div>
                 <p className="mb-2 text-base md:text-lg font-semibold">{breakout.title}</p>
-                <p className="text-sm md:text-base text-muted-foreground">{breakout.description}</p>
+                <p className="text-base md:text-lg text-slate-800">{breakout.description}</p>
               </div>
-              <Button variant="outline" className="mr-auto" asChild>
+              <Button variant="outline" className="mr-auto bg-[#0369A1] hover:bg-[#025a8a] text-white px-8 py-6 text-lg transition-colors" asChild >
                 <a href={breakout.buttonUrl} target="_blank" rel="noopener noreferrer">
                   {breakout.buttonText}
                 </a>
@@ -218,7 +190,7 @@ export const About3 = ({
           >
             <div className="text-start md:w-1/2">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-3 md:mb-4">{achievementsTitle}</h2>
-              <p className="text-base md:text-lg text-muted-foreground mb-4 md:mb-6">
+              <p className="text-base md:text-lg text-slate-900 mb-4 md:mb-6">
                 {achievementsDescription}
               </p>
               <motion.div
@@ -238,7 +210,7 @@ export const About3 = ({
                     transition={{ duration: 0.5, ease: "easeOut" as const, delay: idx * 0.1 }}
                     whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                   >
-                    <p className="text-xs md:text-sm text-muted-foreground">{item.label}</p>
+                    <p className="text-small md:text-base text-slate-700">{item.label}</p>
                     <motion.span
                       className="text-2xl sm:text-3xl md:text-4xl font-semibold"
                       initial={{ opacity: 0, scale: 0.5 }}
@@ -260,7 +232,7 @@ export const About3 = ({
             <div className="md:w-1/2 flex items-center justify-center">
               <div className="w-full">
                 <motion.p
-                  className="text-center text-xs md:text-sm font-medium text-muted-foreground mb-4"
+                  className="text-center text-small md:text-base font-medium text-slate-800 mb-4"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
@@ -272,7 +244,9 @@ export const About3 = ({
               </div>
             </div>
           </motion.div>
-          <div className="pointer-events-none absolute -top-1 right-1 z-10 hidden h-full w-full bg-[linear-gradient(to_right,hsl(var(--muted-foreground))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--muted-foreground))_1px,transparent_1px)] bg-[size:80px_80px] opacity-15 [mask-image:linear-gradient(to_bottom_right,#000,transparent,transparent)] md:block"></div>
+          <div className="pointer-events-none absolute -top-1 right-1 z-10 hidden h-full w-full 
+          bg-[linear-gradient(to_right,hsl(var(--muted-foreground))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--muted-foreground))_1px,transparent_1px)]
+          bg-[size:80px_80px] opacity-15 [mask-image:linear-gradient(to_bottom_right,#000,transparent,transparent)] md:block"></div>
         </motion.div>
       </div>
     </section>

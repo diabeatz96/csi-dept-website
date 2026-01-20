@@ -217,7 +217,7 @@ export default function DepartmentNewsSection() {
                         <h2 id="news-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 font-serif tracking-tight text-gray-900">
                             Department News & Achievements
                         </h2>
-                        <p className="text-base md:text-lg text-gray-600 max-w-3xl">
+                        <p className="text-lg md:text-xl text-gray-900 max-w-3xl">
                             Celebrating the grants, awards, and groundbreaking research of our faculty and students across the years.
                         </p>
                     </div>
@@ -248,7 +248,7 @@ export default function DepartmentNewsSection() {
                         ref={scrollContainerRef}
                         className="flex gap-6 overflow-x-auto pb-6 scroll-smooth snap-x snap-mandatory"
                         style={{
-                            scrollbarWidth: 'thin',
+                            scrollbarWidth: 'auto',
                             scrollbarColor: '#0369A1 #f1f5f9'
                         }}
                     >
@@ -283,7 +283,7 @@ export default function DepartmentNewsSection() {
             </div>
 
             {/* Bottom Logo Section */}
-            <LogoTicker />
+            {/*<LogoTicker /> */}
         </section>
     );
 }
