@@ -226,42 +226,7 @@ const quickLinks = [
   { label: "Courses", href: "/courses", icon: Calendar, description: "Course Catalog" },
 ];
 
-// --- Quick Links Bar (Below Hero) ---
-/*
-const QuickLinksBar = () => {
-  return (
-    <section className="max-w-[1600px] mx-auto px-4 md:px-6 mb-4 md:mb-6">
-      {/* Quick Links Grid }
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-        className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-3"
-      >
-        {quickLinks.map((link, idx) => (
-          <Link
-            key={idx}
-            href={link.href}
-            className="group relative bg-white rounded-xl border border-slate-200 p-3 hover:border-[#0369A1] hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-          >
-            <div className="flex flex-col items-center text-center">
-              <div className="w-12 h-12 rounded-xl bg-[#0369A1]/10 flex items-center justify-center mb-3 group-hover:bg-[#0369A1] transition-colors">
-                <link.icon size={22} className="text-[#0369A1] group-hover:text-white transition-colors" aria-hidden="true" />
-              </div>
-              <span className="font-bold text-[#5F6368] text-sm group-hover:text-[#0369A1] transition-colors">
-                {link.label}
-              </span>
-              <p className="text-[10px] text-slate-600 mt-0.5 hidden sm:block">
-                {link.description}
-              </p>
-            </div>
-          </Link>
-        ))}
-      </motion.div>
-    </section>
-  );
-};
-*/
+
 // --- Featured Programs Section ---
 const FeaturedPrograms = () => {
   return (
@@ -529,23 +494,20 @@ export default function CSIDepartmentPage() {
         {/* 1. Hero - First Impression */}
         <HeroSection />
 
-        {/* 2. Quick Links & Contact - Essential Navigation */}
-        {/* <QuickLinksBar /> */}
-
-        {/* 3. Featured Programs - Most Important for Prospective Students */}
+        {/* 2. Featured Programs - Most Important for Prospective Students */}
         <FeaturedPrograms />
 
-        {/* 4. About Section - Department Overview */}
+        {/* 3. About Section - Department Overview */}
       
         <About3/>
      
-        {/* 5. Why Choose Us - Value Proposition */}
+        {/* 4. Why Choose Us - Value Proposition */}
         <WhyChooseUsSection />
 
         {/* 6. All Programs Detail (without specializations) */}
         {/*<CSIProgramsPage />*/}
 
-        {/* 7. News - Current Happenings */}
+        {/* 5. News - Current Happenings */}
          <DepartmentNewsSection /> 
       </div>
     </div>

@@ -69,6 +69,8 @@ export interface Course {
   description?: string;
   prerequisites?: string[];
   href: string;
+  isStudentProject?: boolean;
+  projectHref?: string;
 }
 
 // Program Types

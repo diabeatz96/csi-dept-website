@@ -18,7 +18,7 @@ export const level200Courses: Course[] = [
   { code: "CSC 220", title: "Computer Organization", level: "200", type: "undergraduate", href: "https://csi-undergraduate.catalog.cuny.edu/courses/0626651" },
   { code: "CSC 221", title: "Networking and Security", level: "200", type: "undergraduate", href: "https://csi-undergraduate.catalog.cuny.edu/courses/1545761" },
   { code: "CSC 223", title: "Cybersecurity Fundamentals", level: "200", type: "undergraduate", href: "https://csi-undergraduate.catalog.cuny.edu/courses/0626661" },
-  { code: "CSC 225", title: "Intro to Web Development and the Internet", level: "200", type: "undergraduate", href: "https://csi-undergraduate.catalog.cuny.edu/courses/0626681" },
+  { code: "CSC 225", title: "Intro to Web Development and the Internet", level: "200", type: "undergraduate", href: "https://csi-undergraduate.catalog.cuny.edu/courses/0626681",isStudentProject: true,projectHref: "https://cs.csi.cuny.edu/courses/CSC225/CSC225.html"  },
   { code: "CSC 226", title: "Web Database Applications", level: "200", type: "undergraduate", href: "https://csi-undergraduate.catalog.cuny.edu/courses/0626691" },
   { code: "CSC 227", title: "Introductory Computer Game Programming", level: "200", type: "undergraduate", href: "https://csi-undergraduate.catalog.cuny.edu/courses/0626701" },
   { code: "CSC 228", title: "Discrete Mathematical Structures for Computer Science", level: "200", type: "undergraduate", href: "https://csi-undergraduate.catalog.cuny.edu/courses/0626711" },

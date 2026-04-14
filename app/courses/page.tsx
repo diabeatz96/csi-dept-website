@@ -21,18 +21,12 @@ const CourseCard = ({ course }: { course: Course }) => {
 
     const CardContent = (
         <>
-            {/* Card Container */}
+            {/* Card Container - */}
             <div className={`relative aspect-video rounded-xl overflow-hidden shadow-md border border-slate-200/60 group-hover:shadow-2xl group-hover:border-blue-500/30 transition-all duration-300`}>
-
-                {/* Linear Gradient Background */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${getGradient()} opacity-95 transition-opacity duration-500`}></div>
-
-                {/* Decorative Pattern Overlay */}
                 <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')] mix-blend-overlay"></div>
 
-                {/* Content Centered in Card */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-4 z-10 text-center">
-                    {/* Course Code Typography */}
                     <div className="flex flex-col items-center">
                         <span className="text-lg font-medium text-blue-200/80 tracking-widest uppercase mb-1">
                             {course.code.split(" ")[0]}
@@ -42,26 +36,41 @@ const CourseCard = ({ course }: { course: Course }) => {
                         </span>
                     </div>
 
-                    {/* Badge Pill */}
                     <div className="mt-4 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-[10px] font-bold text-white uppercase tracking-widest shadow-sm group-hover:bg-white/20 transition-colors">
                         {course.level === 'ISI' ? 'Information Systems' : course.level === 'PhD' ? 'Doctoral' : `${course.level} Level`}
                     </div>
                 </div>
 
-                {/* Hover Shine Effect */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform"></div>
             </div>
 
             {/* Title Under Card */}
-            <div className="mt-4 px-1">
+            <div className="mt-4 px-1 flex flex-col flex-grow">
                 <h4 className="font-bold text-slate-800 text-sm leading-snug group-hover:text-blue-700 transition-colors line-clamp-2">
                     {course.title}
                 </h4>
-                <div className="flex items-center gap-2 mt-1.5">
-                    <div className={`w-1.5 h-1.5 rounded-full ${course.type === 'graduate' ? 'bg-purple-500' : 'bg-blue-500'}`}></div>
-                    <p className="text-xs text-slate-500 font-medium capitalize">
-                        {course.type}
-                    </p>
+                
+                <div className="flex items-center justify-between mt-auto pt-2">
+                    <div className="flex items-center gap-2">
+                        <div className={`w-1.5 h-1.5 rounded-full ${course.type === 'graduate' ? 'bg-purple-500' : 'bg-blue-500'}`}></div>
+                        <p className="text-xs text-slate-500 font-medium capitalize">
+                            {course.type}
+                        </p>
+                    </div>
+
+                    {/* Student Work link */}
+                    {course.projectHref && (
+                        <button
+                            onClick={(e) => {
+                                e.preventDefault(); 
+                                e.stopPropagation(); 
+                                window.open(course.projectHref, '_blank');
+                            }}
+                            className="text-[10px] font-bold text-blue-600 hover:text-blue-800 bg-blue-50 px-2 py-1 rounded border border-blue-100 hover:bg-blue-100 transition-colors"
+                        >
+                            STUDENT WORK ↗
+                        </button>
+                    )}
                 </div>
             </div>
         </>
@@ -110,7 +119,7 @@ function CoursesPageContent() {
         : 'all';
 
     // State
-    const [mainFilter, setMainFilter] = useState<'all' | 'undergraduate' | 'graduate'>(initialFilter);
+    const [mainFilter, setMainFilter] = useState<'all' | 'undergraduate' | 'graduate' | 'student project'>(initialFilter);
     const [subFilter, setSubFilter] = useState<string>('all');
     const [searchQuery, setSearchQuery] = useState('');
     const [isScrolled, setIsScrolled] = useState(false);
@@ -139,9 +148,12 @@ function CoursesPageContent() {
     // Filter Logic
     const filteredCourses = useMemo(() => {
         return allCourses.filter(course => {
-            // 1. Main Category
-            if (mainFilter !== 'all' && course.type !== mainFilter) return false;
-
+            // 1. Main Category 
+            if (mainFilter === 'student project') {
+            if (!course.isStudentProject) return false;
+            } else if (mainFilter !== 'all' && course.type !== mainFilter) {
+            return false;
+            }
             // 2. Sub Category
             if (subFilter !== 'all') {
                 if (subFilter === 'ISI' && course.level !== 'ISI') return false;
@@ -212,17 +224,17 @@ function CoursesPageContent() {
                                 <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                                 <div className="relative z-10 flex items-start gap-4">
-                                    <div className="p-3 bg-white/20 rounded-lg group-hover:bg-white/30 transition-colors shrink-0">
+                                    <div className="p-3 bg-white/20 rounded-xl group-hover:bg-white/30 transition-colors shrink-0">
                                         <Calendar size={24} className="text-white" aria-hidden="true" />
                                     </div>
                                     <div className="flex-1 min-w-0">
-                                        <h3 className="font-bold text-lg mb-2 group-hover:text-blue-100 transition-colors">
+                                        <h3 className="font-bold text-xl mb-2 group-hover:text-blue-100 transition-colors">
                                             Computer Science Course Schedule
                                         </h3>
-                                        <p className="text-sm text-blue-100/80 mb-3">
+                                        <p className="text-lg text-blue-100 mb-3">
                                             Search for courses across CUNY using Global Search Tool
                                         </p>
-                                        <div className="flex items-center gap-2 text-sm font-medium text-white/90 group-hover:text-white transition-colors">
+                                        <div className="flex items-center gap-2 text-large font-medium text-white/90 group-hover:text-white transition-colors">
                                             <span>View Schedule</span>
                                             <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                                         </div>
@@ -248,17 +260,17 @@ function CoursesPageContent() {
                                 <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                                 <div className="relative z-10 flex items-start gap-4">
-                                    <div className="p-3 bg-white/20 rounded-lg group-hover:bg-white/30 transition-colors shrink-0">
+                                    <div className="p-3 bg-white/20 rounded-xl group-hover:bg-white/30 transition-colors shrink-0">
                                         <FileText size={24} className="text-white" aria-hidden="true" />
                                     </div>
                                     <div className="flex-1 min-w-0">
-                                        <h3 className="font-bold text-lg mb-2 group-hover:text-blue-100 transition-colors">
+                                        <h3 className="font-bold text-xl mb-2 group-hover:text-blue-100 transition-colors">
                                             Waitlist and Overtally Policy
                                         </h3>
-                                        <p className="text-sm text-blue-100/80 mb-3">
+                                        <p className="text-lg text-blue-100 mb-3">
                                             Review the department's policy for waitlists and course overtally requests
                                         </p>
-                                        <div className="flex items-center gap-2 text-sm font-medium text-white/90 group-hover:text-white transition-colors">
+                                        <div className="flex items-center gap-2 text-lg font-medium text-white/90 group-hover:text-white transition-colors">
                                             <span>View Policy</span>
                                             <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                                         </div>
@@ -284,12 +296,12 @@ function CoursesPageContent() {
                         
                                 {/* Main Filter Tabs */}
                                 <div className="flex p-1.5 bg-slate-100 rounded-xl w-fit border border-slate-200" role="group" aria-label="Filter courses by program type">
-                                    {['all', 'undergraduate', 'graduate'].map((filter) => (
+                                    {['all', 'undergraduate', 'graduate','student project'].map((filter) => (
                                         <button
                                             key={filter}
                                             onClick={() => setMainFilter(filter as any)}
                                             aria-pressed={mainFilter === filter}
-                                            className={`px-5 py-2 rounded-lg text-sm font-bold capitalize transition-all duration-300 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 ${mainFilter === filter
+                                            className={`px-5 py-2 rounded-lg text-medium font-bold capitalize transition-all duration-300 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 ${mainFilter === filter
                                                 ? 'bg-white text-slate-900 shadow-sm ring-1 ring-black/5'
                                                 : 'text-slate-500 hover:text-slate-700 hover:bg-slate-200/50'
                                                 }`}
