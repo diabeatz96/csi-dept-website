@@ -10,18 +10,20 @@ import type { Course } from '@/data/types';
 
 // --- Components ---
 
-const CourseCard = ({ course }: { course: Course }) => {
-    // Generate a subtle gradient based on the level/type
+const CourseCard = ({ course, isProjectMode }: { course: Course, isProjectMode: boolean }) => {
+    
+    const targetLink = (isProjectMode && course.projectHref) ? course.projectHref : course.href;
+
     const getGradient = () => {
         if (course.level === "PhD") return "from-purple-900 to-slate-900";
         if (course.type === "graduate") return "from-slate-800 to-slate-950";
         if (course.level === "ISI") return "from-teal-900 to-slate-900";
-        return "from-blue-900 to-slate-900"; // Default Undergraduate
+        return "from-blue-900 to-slate-900";
     };
 
     const CardContent = (
         <>
-            {/* Card Container - */}
+            {/* Card Container */}
             <div className={`relative aspect-video rounded-xl overflow-hidden shadow-md border border-slate-200/60 group-hover:shadow-2xl group-hover:border-blue-500/30 transition-all duration-300`}>
                 <div className={`absolute inset-0 bg-gradient-to-br ${getGradient()} opacity-95 transition-opacity duration-500`}></div>
                 <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')] mix-blend-overlay"></div>
@@ -57,27 +59,13 @@ const CourseCard = ({ course }: { course: Course }) => {
                             {course.type}
                         </p>
                     </div>
-
-                    {/* Student Work link */}
-                    {course.projectHref && (
-                        <button
-                            onClick={(e) => {
-                                e.preventDefault(); 
-                                e.stopPropagation(); 
-                                window.open(course.projectHref, '_blank');
-                            }}
-                            className="text-[10px] font-bold text-blue-600 hover:text-blue-800 bg-blue-50 px-2 py-1 rounded border border-blue-100 hover:bg-blue-100 transition-colors"
-                        >
-                            STUDENT WORK ↗
-                        </button>
-                    )}
                 </div>
             </div>
         </>
     );
 
     return (
-        <Link href={course.href} target="_blank" rel="noopener noreferrer">
+        <Link href={targetLink} target="_blank" rel="noopener noreferrer">
             <motion.div
                 layout
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -344,34 +332,35 @@ function CoursesPageContent() {
 
                         {/* Bottom Row: Dynamic Sub-Filters (Level/Dept) */}
                         {/* Now always visible or animated, showing relevant pills */}
-                        <motion.div
-                            layout
-                            className="overflow-x-auto pb-1 no-scrollbar"
-                        >
-                            <div className="flex flex-nowrap items-center gap-3">
-                                <span className="text-xs font-extrabold text-slate-400 uppercase tracking-widest mr-2 flex items-center gap-1 shrink-0 py-1">
-                                    <Filter size={12} aria-hidden="true" /> Section:
-                                </span>
+                        {mainFilter !== 'student project' && (
+                            <motion.div
+                                layout
+                                className="overflow-x-auto pb-1 no-scrollbar"
+                            >
+                                <div className="flex flex-nowrap items-center gap-3">
+                                    <span className="text-xs font-extrabold text-slate-400 uppercase tracking-widest mr-2 flex items-center gap-1 shrink-0 py-1">
+                                        <Filter size={12} aria-hidden="true" /> Section:
+                                    </span>
 
-                                <FilterPill
-                                    label="View All"
-                                    isActive={subFilter === 'all'}
-                                    onClick={() => setSubFilter('all')}
-                                />
-
-                                <div className="w-px h-6 bg-slate-200 mx-1 shrink-0"></div>
-
-                                {getSubFilters().map((lvl) => (
                                     <FilterPill
-                                        key={lvl}
-                                        label={lvl === 'ISI' ? 'ISI Dept' : lvl === 'PhD' ? 'PhD' : `${lvl} Level`}
-                                        isActive={subFilter === lvl}
-                                        onClick={() => setSubFilter(lvl)}
+                                        label="View All"
+                                        isActive={subFilter === 'all'}
+                                        onClick={() => setSubFilter('all')}
                                     />
-                                ))}
-                            </div>
-                        </motion.div>
 
+                                    <div className="w-px h-6 bg-slate-200 mx-1 shrink-0"></div>
+
+                                    {getSubFilters().map((lvl) => (
+                                        <FilterPill
+                                            key={lvl}
+                                            label={lvl === 'ISI' ? 'ISI Dept' : lvl === 'PhD' ? 'PhD' : `${lvl} Level`}
+                                            isActive={subFilter === lvl}
+                                            onClick={() => setSubFilter(lvl)}
+                                        />
+                                    ))}
+                                </div>
+                            </motion.div>
+                        )}
                     </div>
                 </div>
             </div>
@@ -399,7 +388,11 @@ function CoursesPageContent() {
                     >
                         <AnimatePresence mode='popLayout'>
                             {filteredCourses.map((course) => (
-                                <CourseCard key={course.code} course={course} />
+                                <CourseCard 
+                                    key={course.code} 
+                                    course={course} 
+                                    isProjectMode={mainFilter === 'student project'} 
+                                />
                             ))}
                         </AnimatePresence>
                     </motion.div>
