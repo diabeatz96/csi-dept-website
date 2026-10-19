@@ -163,7 +163,7 @@ const HeroSection = () => {
           <div className="flex items-center gap-2 mb-4">
             <Image
               src="/csi-blue-logo.png"
-              alt=""
+              alt="CSI Logo"
               width={36}
               height={36}
               className="h-8 w-auto object-contain"

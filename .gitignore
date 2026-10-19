@@ -41,5 +41,9 @@ yarn-error.log*
 next-env.d.ts
 .claude/settings.local.json
 .claude/
+CLAUDE.md
 .grok/
 .chat/
+
+notes.md
+tasks.md
