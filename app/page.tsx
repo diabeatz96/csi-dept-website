@@ -21,10 +21,7 @@ export default function CSIDepartmentPage() {
         {/* 4. Why Choose Us - Value Proposition */}
         <WhyChooseUsSection />
 
-        {/* All Programs Detail (without specializations) */}
-        {/* May be repetitive from featured programs and dedicated pages have more info on this */}
-        {/* To restore: import CSIProgramsPage from '@/components/csi-program-page'; */}
-        {/* <CSIProgramsPage /> */}
+
 
         {/* 5. News - Current Happenings */}
         <DepartmentNewsSection />
