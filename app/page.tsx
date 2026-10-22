@@ -29,72 +29,27 @@ const quickStats = [
   { icon: BookOpen, value: "40+", label: "Courses", color: "text-orange-600" },
 ];
 
-// --- Program Highlights ---
-const programHighlights = [
-  {
-    title: "Bachelor of Science",
-    subtitle: "in Computer Science",
-    description: "ABET-accredited program with specializations in Game Development, Security, HPC, and Data Science.",
-    href: "/undergraduate#bs-computer-science",
-    badge: "Undergraduate",
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2670&auto=format&fit=crop",
-    color: "from-blue-600 to-cyan-500",
-    stats: { duration: "4 Years", credits: "120 Credits" },
-    highlights: ["ABET Accredited", "4 Specializations", "Internship Ready"],
-  },
-  {
-    title: "Master of Science",
-    subtitle: "in Computer Science",
-    description: "Advanced study with tracks in AI, Cloud Computing, and Cybersecurity.",
-    href: "/graduate#ms-computer-science",
-    badge: "Graduate",
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2670&auto=format&fit=crop",
-    color: "from-purple-600 to-pink-500",
-    stats: { duration: "2 Years", credits: "30 Credits" },
-    highlights: ["3 Specializations", "Research Focus", "Industry Partners"],
-  },
-  {
-    title: "Ph.D. Program",
-    subtitle: "via CUNY Graduate Center",
-    description: "Research-focused doctoral program in partnership with the CUNY Graduate Center.",
-    href: "/graduate#phd-computer-science",
-    badge: "Doctoral",
-    image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2670&auto=format&fit=crop",
-    color: "from-amber-500 to-orange-600",
-    stats: { duration: "4-5 Years", credits: "Research" },
-    highlights: ["CUNY Partnership", "Faculty Mentorship", "Publication Support"],
-  },
+
+// revolving images for hero section
+const heroImages = [
+  { src: '/home-hero/csi-home-0.jpg', alt: 'CSI campus building exterior' },
+  { src: '/home-hero/csi-home-1.jpg', alt: 'Students walking on CSI campus' },
+  { src: '/home-hero/csi-home-2.png', alt: 'CSI computer science students in lab' },
+  { src: '/home-hero/csi-home-3.jpg', alt: 'CSI campus green spaces' },
+  { src: '/home-hero/csi-home-4.jpg', alt: 'Students studying together' },
+  { src: '/home-hero/csi-home-5.jpg', alt: 'CSI library and study areas' },
+  { src: '/home-hero/csi-home-6.jpg', alt: 'Campus life at CSI' },
+  { src: '/home-hero/csi-home-7.jpg', alt: 'CSI academic buildings' },
+  { src: '/home-hero/csi-home-8.jpg', alt: 'Students in classroom' },
+  { src: '/home-hero/csi-home-9.jpg', alt: 'CSI technology facilities' },
+  { src: '/home-hero/csi-home-11.jpg', alt: 'Campus aerial view' },
+  { src: '/home-hero/csi-home-12.jpg', alt: 'Student graduation ceremony' },
+  { src: '/home-hero/csi-home-13.jpg', alt: 'Research facilities at CSI' },
+  { src: '/home-hero/csi-home-14.jpg', alt: 'CSI campus entrance' },
 ];
 
-// --- Key Differentiators ---
-const whyChooseUs = [
-  "ABET-accredited BS in Computer Science",
-  "Small class sizes with personalized attention",
-  "Hands-on research opportunities with faculty",
-  "95% job placement rate for graduates",
-  "Affordable CUNY tuition rates",
-  "Located on NYC's largest campus (204 acres)",
-];
-
-// --- Components ---
-
+// --- Hero Section Components ---
 const HeroSection = () => {
-  const heroImages = [
-    { src: '/home-hero/csi-home-0.jpg', alt: 'CSI campus building exterior' },
-    { src: '/home-hero/csi-home-1.jpg', alt: 'Students walking on CSI campus' },
-    { src: '/home-hero/csi-home-2.png', alt: 'CSI computer science students in lab' },
-    { src: '/home-hero/csi-home-3.jpg', alt: 'CSI campus green spaces' },
-    { src: '/home-hero/csi-home-4.jpg', alt: 'Students studying together' },
-    { src: '/home-hero/csi-home-5.jpg', alt: 'CSI library and study areas' },
-    { src: '/home-hero/csi-home-6.jpg', alt: 'Campus life at CSI' },
-    { src: '/home-hero/csi-home-7.jpg', alt: 'CSI academic buildings' },
-    { src: '/home-hero/csi-home-8.jpg', alt: 'Students in classroom' },
-    { src: '/home-hero/csi-home-9.jpg', alt: 'CSI technology facilities' },
-    { src: '/home-hero/csi-home-11.jpg', alt: 'Campus aerial view' },
-    { src: '/home-hero/csi-home-12.jpg', alt: 'Student graduation ceremony' },
-    { src: '/home-hero/csi-home-13.jpg', alt: 'Research facilities at CSI' },
-    { src: '/home-hero/csi-home-14.jpg', alt: 'CSI campus entrance' },
-  ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -216,16 +171,42 @@ const HeroSection = () => {
   );
 };
 
-// --- Quick Links Data ---
-const quickLinks = [
-  { label: "Undergraduate", href: "/undergraduate", icon: BookOpen, description: "BS & AAS Programs" },
-  { label: "Graduate", href: "/graduate", icon: GraduationCap, description: "MS & PhD Programs" },
-  { label: "Faculty", href: "/people", icon: Users, description: "Meet Our Team" },
-  { label: "Research", href: "/research", icon: Award, description: "Projects & Labs" },
-  { label: "Resources", href: "/resources", icon: BookOpen, description: "Student Support" },
-  { label: "Courses", href: "/courses", icon: Calendar, description: "Course Catalog" },
+// --- Program Highlights ---
+const programHighlights = [
+  {
+    title: "Bachelor of Science",
+    subtitle: "in Computer Science",
+    description: "ABET-accredited program with specializations in Game Development, Security, HPC, and Data Science.",
+    href: "/undergraduate#bs-computer-science",
+    badge: "Undergraduate",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2670&auto=format&fit=crop",
+    color: "from-blue-600 to-cyan-500",
+    stats: { duration: "4 Years", credits: "120 Credits" },
+    highlights: ["ABET Accredited", "4 Specializations", "Internship Ready"],
+  },
+  {
+    title: "Master of Science",
+    subtitle: "in Computer Science",
+    description: "Advanced study with tracks in AI, Cloud Computing, and Cybersecurity.",
+    href: "/graduate#ms-computer-science",
+    badge: "Graduate",
+    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2670&auto=format&fit=crop",
+    color: "from-purple-600 to-pink-500",
+    stats: { duration: "2 Years", credits: "30 Credits" },
+    highlights: ["3 Specializations", "Research Focus", "Industry Partners"],
+  },
+  {
+    title: "Ph.D. Program",
+    subtitle: "via CUNY Graduate Center",
+    description: "Research-focused doctoral program in partnership with the CUNY Graduate Center.",
+    href: "/graduate#phd-computer-science",
+    badge: "Doctoral",
+    image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2670&auto=format&fit=crop",
+    color: "from-amber-500 to-orange-600",
+    stats: { duration: "4-5 Years", credits: "Research" },
+    highlights: ["CUNY Partnership", "Faculty Mentorship", "Publication Support"],
+  },
 ];
-
 
 // --- Featured Programs Section ---
 const FeaturedPrograms = () => {
@@ -363,6 +344,16 @@ const FeaturedPrograms = () => {
     </section>
   );
 };
+
+// --- Key Differentiators ---
+const whyChooseUs = [
+  "ABET-accredited BS in Computer Science",
+  "Small class sizes with personalized attention",
+  "Hands-on research opportunities with faculty",
+  "95% job placement rate for graduates",
+  "Affordable CUNY tuition rates",
+  "Located on NYC's largest campus (204 acres)",
+];
 
 // --- Why Choose Us Section ---
 const WhyChooseUsSection = () => {
