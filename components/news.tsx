@@ -1,11 +1,10 @@
 'use client';
 
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Calendar, ArrowRight, Users, ChevronLeft, ChevronRight, Award } from 'lucide-react';
 import Image from 'next/image';
-import { allIcons } from './floating-icons';
+import { Calendar, ArrowRight, Users, ChevronLeft, ChevronRight} from 'lucide-react';
 import { getAllNews, type NewsItem } from '@/data/news';
 
 // --- Components ---
@@ -97,85 +96,6 @@ const TimelineCard = ({ item, index }: { item: NewsItem; index: number }) => {
                 cardContent
             )}
         </motion.article>
-    );
-};
-
-const LogoTicker = () => {
-    // Get Google and AWS icons from allIcons
-    const googleIconData = allIcons.find(icon => icon.id === 1);
-    const awsIconData = allIcons.find(icon => icon.id === 16);
-    const IconGoogle = googleIconData?.icon;
-    const IconAWS = awsIconData?.icon;
-
-    const partners = [
-        {
-            name: "NSF",
-            label: "National Science Foundation",
-            type: "image",
-            src: "/nsf.png"
-        },
-        {
-            name: "Google",
-            label: "Google CyberNYC",
-            type: "icon",
-            icon: IconGoogle
-        },
-        {
-            name: "Amazon",
-            label: "Amazon Web Services",
-            type: "icon",
-            icon: IconAWS
-        },
-        {
-            name: "CUNY",
-            label: "City University of New York",
-            type: "image",
-            src: "/cuny.png"
-        },
-
-    ];
-
-    return (
-        <div className="bg-gray-50 py-10 mt-16 border-t border-gray-200">
-            <div className="max-w-7xl mx-auto px-6">
-                <p className="text-center text-gray-500 text-sm font-semibold mb-8 uppercase tracking-widest">
-                    Research Partners & Sponsors
-                </p>
-                <div className="flex flex-wrap justify-center gap-8 md:gap-16 items-center">
-                    {partners.map((p, i) => (
-                        <div
-                            key={i}
-                            className="flex items-center justify-center h-20 w-40 md:h-24 md:w-48 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500 group"
-                            title={p.label}
-                        >
-                            {p.type === "image" && p.src ? (
-                                <div className="relative w-full h-full">
-                                    <Image
-                                        src={p.src}
-                                        alt={p.label}
-                                        fill
-                                        className="object-contain"
-                                        sizes="(max-width: 768px) 160px, 192px"
-                                    />
-                                </div>
-                            ) : p.type === "icon" && p.icon ? (
-                                <div className="flex items-center justify-center h-20 w-20">
-                                    {React.createElement(p.icon, {
-                                        className: " text-gray-400 group-hover:text-gray-600 transition-colors",
-                                        style: { fill: 'currentColor' }
-                                    })}
-                                </div>
-                            ) : (
-                                <div className="text-xl md:text-2xl font-bold text-gray-400 font-serif flex items-center gap-2">
-                                    <Award size={24} />
-                                    <span>{p.name}</span>
-                                </div>
-                            )}
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </div>
     );
 };
 
@@ -281,9 +201,6 @@ export default function DepartmentNewsSection() {
                 </motion.div>
 
             </div>
-
-            {/* Bottom Logo Section */}
-            {/*<LogoTicker /> */}
         </section>
     );
 }

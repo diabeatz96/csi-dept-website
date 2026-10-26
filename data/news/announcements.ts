@@ -114,41 +114,6 @@ export const newsData: Record<string, NewsItem[]> = {
 // Available years for filtering
 export const newsYears: string[] = ["2024", "2023", "2022", "2021"];
 
-// Research partners for the logo ticker
-export interface ResearchPartner {
-  name: string;
-  label: string;
-  type: "image" | "icon";
-  src?: string;
-  iconId?: number;
-}
-
-export const researchPartners: ResearchPartner[] = [
-  {
-    name: "NSF",
-    label: "National Science Foundation",
-    type: "image",
-    src: "/nsf.png",
-  },
-  {
-    name: "Google",
-    label: "Google CyberNYC",
-    type: "icon",
-    iconId: 1, // Google icon ID from floating-icons
-  },
-  {
-    name: "Amazon",
-    label: "Amazon Web Services",
-    type: "icon",
-    iconId: 16, // AWS icon ID from floating-icons
-  },
-  {
-    name: "CUNY",
-    label: "City University of New York",
-    type: "image",
-    src: "/cuny.png",
-  },
-];
 
 // Helper functions
 export const getNewsByYear = (year: string): NewsItem[] => {

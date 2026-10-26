@@ -12,6 +12,9 @@ export default function CSIDepartmentPage() {
         {/* 1. Hero - First Impression */}
         <HeroSection />
 
+        {/* 5. News - Current Happenings */}
+        <DepartmentNewsSection />
+        
         {/* 2. Featured Programs - Most Important for Prospective Students */}
         <FeaturedPrograms />
 
@@ -21,10 +24,6 @@ export default function CSIDepartmentPage() {
         {/* 4. Why Choose Us - Value Proposition */}
         <WhyChooseUsSection />
 
-
-
-        {/* 5. News - Current Happenings */}
-        <DepartmentNewsSection />
       </div>
     </div>
   );
