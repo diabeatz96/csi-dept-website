@@ -2,6 +2,16 @@ import type { FacultyMember } from "../types";
 
 export const faculty: FacultyMember[] = [
   {
+    id: "shuqun-zhang",
+    name: "Shuqun Zhang",
+    title: "Professor, Chairperson",
+    email: "shuqun.zhang@csi.cuny.edu",
+    office: "1N-204",
+    phone: "718-982-2852",
+    image: "/shuquan-zhang.png",
+    website: "https://www.cs.csi.cuny.edu/~zhangs/",
+  },
+  {
     id: "sos-agaian",
     name: "Sos Agaian",
     title: "Distinguished Professor",
@@ -9,6 +19,7 @@ export const faculty: FacultyMember[] = [
     office: "1N-203",
     phone: "718-982-2843",
     website: "https://www.csi.cuny.edu/campus-directory/sos-agaian",
+    image: "/faculty-headshot/sos.jpg",
   },
   {
     id: "tatiana-anderson",
@@ -44,6 +55,7 @@ export const faculty: FacultyMember[] = [
     office: "1N-201",
     phone: "718-982-2847",
     website: "https://www.cs.csi.cuny.edu/~gu/",
+    image: "/faculty-headshot/feng.jpg",
   },
   {
     id: "yumei-huo",
@@ -70,6 +82,7 @@ export const faculty: FacultyMember[] = [
     office: "1N-211",
     phone: "718-982-2844",
     website: "https://www.cs.csi.cuny.edu/~petingi/",
+    image: "/faculty-headshot/louis.jpg",
   },
   {
     id: "jun-rao",
@@ -98,21 +111,13 @@ export const faculty: FacultyMember[] = [
     website: "https://www.cs.csi.cuny.edu/~zelikovi/",
   },
   {
-    id: "shuqun-zhang",
-    name: "Shuqun Zhang",
-    title: "Professor, Chairperson",
-    email: "shuqun.zhang@csi.cuny.edu",
-    office: "1N-204",
-    phone: "718-982-2852",
-    website: "https://www.cs.csi.cuny.edu/~zhangs/",
-  },
-  {
     id: "tianxiao-zhang",
     name: "Tianxiao Zhang",
     title: "Assistant Professor",
     email: "tianxiao.zhang@csi.cuny.edu",
     office: "1N-205",
     phone: "718-982-3288",
+    image: "/faculty-headshot/tianxiao.jpg",
   },
   {
     id: "xiaowen-zhang",
@@ -122,6 +127,7 @@ export const faculty: FacultyMember[] = [
     office: "1N-213",
     phone: "718-982-3262",
     website: "https://www.cs.csi.cuny.edu/~zhangx/",
+    image: "/faculty-headshot/xiaowen.jpg",
   },
   {
     id: "zhanyang-zhang",
@@ -131,6 +137,16 @@ export const faculty: FacultyMember[] = [
     office: "1N-206",
     phone: "718-982-3175",
     website: "https://www.cs.csi.cuny.edu/~zhangz/",
+    image: "/faculty-headshot/zhanyang.jpg",
+  },
+  {
+    id: "yuji-zhang",
+    name: "Yuji Zhang",
+    title: "Assistant Professor",
+    email: "yuji.zhang@csi.cuny.edu",
+    office: "1N-207",
+    phone: "718-982-2848",
+    website: "https://celestinezyj.github.io/",
   },
 ];
 

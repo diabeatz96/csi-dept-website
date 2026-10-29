@@ -61,16 +61,18 @@ const CardContent = ({ member, isInsideLink }: { member: FacultyMember, isInside
         {/* Avatar Section */}
         <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden bg-slate-100 border-b border-slate-100">
             {member.image ? (
-                <>
-                    <Image
-                        src={member.image}
-                        alt={member.name}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-linear-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </>
+                // Portrait frame so headshots fit instead of being cropped by the wide card
+                <div className="w-full h-full flex items-center justify-center py-4 md:py-5 group-hover:bg-blue-50 transition-colors">
+                    <div className="relative h-full aspect-4/5 rounded-xl overflow-hidden shadow-md border-4 border-white">
+                        <Image
+                            src={member.image}
+                            alt={member.name}
+                            fill
+                            sizes="200px"
+                            className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                        />
+                    </div>
+                </div>
             ) : (
                 <div className="w-full h-full flex items-center justify-center bg-slate-50 group-hover:bg-blue-50 transition-colors">
                     <User size={48} className="text-slate-300 group-hover:text-blue-300 transition-colors sm:w-16 sm:h-16" />

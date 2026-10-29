@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import { Phone, MapPin, Printer, Mail, Award, Users, BookOpen, GraduationCap } from 'lucide-react';
 import Image from 'next/image';
 
+// no longer in used removed as per request form chair, hardcoded information might not be correct.
+
 const DepartmentHeadSection = () => {
   const profile = {
     name: "Professor Shuqun Zhang",
