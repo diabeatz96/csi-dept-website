@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { motion, MotionConfig } from 'framer-motion';
-import DepartmentHeadSection from '@/components/people/department-head';
 import FacultyCard from '@/components/people/faculty-card';
 import DepartmentStaff from '@/components/people/staff-directory';
 import { faculty } from '@/data/people';
@@ -14,12 +13,8 @@ export default function FacultyDirectory() {
             <div>
                 <h1 className="sr-only">Faculty & Staff</h1>
 
-                {/* Department Leadership Section */}
-                <div className="pt-12 md:pt-16">
-                    <DepartmentHeadSection />
-                </div>
-
-                <section id="professors" className="bg-slate-50 pt-8 md:pt-12 pb-12 md:pb-16 min-h-screen">
+                {/* Top padding includes space for the fixed navbar (pt-16 md:pt-18 like other pages) */}
+                <section id="professors" className="bg-slate-50 pt-24 md:pt-30 pb-12 md:pb-16 min-h-screen">
                     <div className="max-w-7xl mx-auto px-4 md:px-6">
 
                         {/* Header */}
