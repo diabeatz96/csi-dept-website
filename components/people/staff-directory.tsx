@@ -9,7 +9,8 @@ import {
   MapPin,
   Briefcase,
   Users,
-  Award
+  Award,
+  type LucideIcon
 } from 'lucide-react';
 import {
   emeritusFacultyNames,
@@ -17,10 +18,11 @@ import {
   officeStaff,
   technicalStaff,
 } from '@/data/people';
+import type { StaffMember } from '@/data/types';
 
 // --- Components ---
 
-const StaffCard = ({ member, index }: { member: any, index: number }) => (
+const StaffCard = ({ member, index }: { member: StaffMember, index: number }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -46,19 +48,23 @@ const StaffCard = ({ member, index }: { member: any, index: number }) => (
           {member.email}
         </a>
       </div>
-      <div className="flex items-center gap-3">
-        <MapPin size={16} className="text-slate-400" />
-        <span>Office: {member.office}</span>
-      </div>
-      <div className="flex items-center gap-3">
-        <Phone size={16} className="text-slate-400" />
-        <span>{member.phone}</span>
-      </div>
+      {member.office && (
+        <div className="flex items-center gap-3">
+          <MapPin size={16} className="text-slate-400" />
+          <span>Office: {member.office}</span>
+        </div>
+      )}
+      {member.phone && (
+        <div className="flex items-center gap-3">
+          <Phone size={16} className="text-slate-400" />
+          <span>{member.phone}</span>
+        </div>
+      )}
     </div>
   </motion.div>
 );
 
-const NameListSection = ({ title, names, icon: Icon }: { title: string, names: string[], icon: any }) => (
+const NameListSection = ({ title, names, icon: Icon }: { title: string, names: string[], icon: LucideIcon }) => (
   <div className="mb-20">
     <motion.div
       initial={{ opacity: 0, x: -20 }}
@@ -75,7 +81,7 @@ const NameListSection = ({ title, names, icon: Icon }: { title: string, names: s
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {names.map((name, idx) => (
         <motion.div
-          key={idx}
+          key={name}
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -105,10 +111,10 @@ export default function DepartmentStaff() {
           className="text-center max-w-3xl mx-auto mb-20"
         >
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">
-            Department Staff
+            Department Faculty & Staff
           </h2>
           <p className="text-lg text-slate-600">
-            The dedicated team supporting the Computer Science department's academic and operational excellence.
+            Our emeritus and adjunct faculty, and the dedicated team supporting the department&apos;s academic and operational excellence.
           </p>
         </motion.div>
 
@@ -143,12 +149,12 @@ export default function DepartmentStaff() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Office Staff */}
             {officeStaff.map((staff, idx) => (
-              <StaffCard key={staff.name} member={staff} index={idx} />
+              <StaffCard key={staff.id} member={staff} index={idx} />
             ))}
 
             {/* Technical Staff */}
             {technicalStaff.map((staff, idx) => (
-              <StaffCard key={staff.name} member={staff} index={idx + officeStaff.length} />
+              <StaffCard key={staff.id} member={staff} index={idx + officeStaff.length} />
             ))}
           </div>
         </div>
