@@ -2,14 +2,6 @@ import type { StaffMember } from "../types";
 
 export const officeStaff: StaffMember[] = [
   {
-    id: "joanne-morris",
-    name: "Joanne Morris",
-    title: "CUNY Administrative Assistant",
-    email: "joanne.morris@csi.cuny.edu",
-    office: "1N-215",
-    phone: "718-982-2850",
-  },
-  {
     id: "laurie-guido",
     name: "Laurie Guido",
     title: "College Assistant",
@@ -37,28 +29,12 @@ export const officeStaff: StaffMember[] = [
 
 export const technicalStaff: StaffMember[] = [
   {
-    id: "chang-guo",
-    name: "Chang Guo",
-    title: "Senior College Lab Technician",
-    email: "chang.guo@csi.cuny.edu",
-    office: "1N-219",
-    phone: "718-982-2857",
-  },
-  {
     id: "orit-gruber",
     name: "Orit D. Gruber",
     title: "Chief College Lab Technician",
     email: "orit.gruber@csi.cuny.edu",
     office: "1N-218",
     phone: "718-982-3015",
-  },
-  {
-    id: "adam-kostandy",
-    name: "Adam Kostandy",
-    title: "Adjunct Faculty / Lab Technician",
-    email: "adam.kostandy@csi.cuny.edu",
-    phone: "718-982-2857",
-    office: "1N-219",
   },
   {
     id: "zhongcai-jiang",

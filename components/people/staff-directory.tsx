@@ -86,8 +86,8 @@ const NameListSection = ({ title, names, icon: Icon }: { title: string, names: s
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ delay: idx * 0.02 }}
-          whileHover={{ x: 5, backgroundColor: "#eff6ff" }} // blue-50
-          className="p-3 rounded-lg border border-slate-100 bg-white text-slate-700 text-sm font-medium cursor-default hover:border-blue-100 hover:text-blue-700 transition-all"
+          whileHover={{ y: -2, backgroundColor: "#eff6ff" }} // blue-50
+          className="p-3 rounded-lg border border-slate-200 bg-white text-slate-700 text-sm font-medium text-center shadow-sm cursor-default hover:border-blue-300 hover:text-blue-700 transition-all"
         >
           {name}
         </motion.div>
@@ -100,7 +100,7 @@ const NameListSection = ({ title, names, icon: Icon }: { title: string, names: s
 
 export default function DepartmentStaff() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-11 bg-white">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Page Header */}
@@ -119,7 +119,7 @@ export default function DepartmentStaff() {
         </motion.div>
 
         {/* Emeritus & Adjuncts Lists */}
-        <div className="border-b border-slate-100 mb-20">
+        <div className="border-b border-slate-100 mb-5">
           <NameListSection
             title="Emeritus Faculty"
             names={emeritusFacultyNames}
