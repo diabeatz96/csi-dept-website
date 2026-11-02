@@ -15,7 +15,8 @@ export default function FacultyDirectory() {
 
                 {/* Top padding includes space for the fixed navbar (pt-16 md:pt-18 like other pages) */}
                 <section id="professors" className="bg-slate-50 pt-24 md:pt-30 pb-12 md:pb-16 min-h-screen">
-                    <div className="max-w-7xl mx-auto px-4 md:px-6">
+                    {/* Wider container on 2xl+ screens so cards grow instead of leaving empty side margins */}
+                    <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 md:px-6">
 
                         {/* Header */}
                         <motion.div

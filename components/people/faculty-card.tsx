@@ -23,9 +23,9 @@ const EmailText = ({ email }: { email: string }) => {
 // Contact info - uses spans when the card is a link (to avoid nested <a> tags)
 const ContactInfo = ({ member, isInsideLink }: { member: FacultyMember, isInsideLink: boolean }) => (
     // xl:text-sm keeps long emails fitting in the narrower 4-column cards
-    <div className="space-y-2 sm:space-y-3 text-sm sm:text-base xl:text-sm text-slate-700 mt-auto grow">
+    <div className="space-y-2 text-sm sm:text-base xl:text-sm text-slate-700 mt-auto">
         {isInsideLink ? (
-            <div className="flex items-center gap-2 sm:gap-3 xl:gap-2 min-h-11">
+            <div className="flex items-center gap-2 sm:gap-3 xl:gap-2">
                 <div className="p-1.5 rounded-md bg-slate-50 text-slate-500 shrink-0">
                     <Mail size={14} />
                 </div>
@@ -34,7 +34,7 @@ const ContactInfo = ({ member, isInsideLink }: { member: FacultyMember, isInside
         ) : (
             <a
                 href={`mailto:${member.email}`}
-                className="flex items-center gap-2 sm:gap-3 xl:gap-2 hover:text-[#0369A1] transition-colors group/link min-h-11"
+                className="flex items-center gap-2 sm:gap-3 xl:gap-2 hover:text-[#0369A1] transition-colors group/link"
             >
                 <div className="p-1.5 rounded-md bg-slate-50 text-slate-500 group-hover/link:bg-blue-100 group-hover/link:text-[#0369A1] transition-colors shrink-0">
                     <Mail size={14} />
@@ -66,14 +66,14 @@ const ContactInfo = ({ member, isInsideLink }: { member: FacultyMember, isInside
 const CardContent = ({ member, isInsideLink }: { member: FacultyMember, isInsideLink: boolean }) => (
     <>
         {/* Avatar Section */}
-        {/* Same 4:5 box for every card so heights match; object-top keeps faces in view when cropping */}
-        <div className="relative aspect-4/5 overflow-hidden bg-slate-100 border-b border-slate-100">
+        {/* Same square box for every card so heights match; object-top keeps faces in view when cropping */}
+        <div className="relative aspect-square overflow-hidden bg-slate-100 border-b border-slate-100">
             {member.image ? (
                 <Image
                     src={member.image}
                     alt={member.name}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 290px"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 450px"
                     className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
             ) : (
@@ -94,7 +94,7 @@ const CardContent = ({ member, isInsideLink }: { member: FacultyMember, isInside
 
         {/* Info Section */}
         <div className="p-4 sm:p-5 md:p-6 xl:p-5 flex flex-col grow">
-            <div className="mb-3 md:mb-4">
+            <div className="mb-3">
                 <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors mb-1">
                     {member.name}
                     {isInsideLink && <span className="sr-only"> (opens in new tab)</span>}
@@ -104,7 +104,6 @@ const CardContent = ({ member, isInsideLink }: { member: FacultyMember, isInside
                     {member.title}
                 </div>
             </div>
-
             {/* Contact Grid */}
             <ContactInfo member={member} isInsideLink={isInsideLink} />
         </div>
