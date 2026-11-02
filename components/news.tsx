@@ -72,8 +72,8 @@ const TimelineCard = ({ item, index }: { item: NewsItem; index: number }) => {
         <motion.article
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            viewport={{ once: true, margin: "0px" }}
+            transition={{ duration: 0.3, delay: 0.1}}
             className={cardClassName}
         >
             {item.link ? (
@@ -164,9 +164,11 @@ export default function DepartmentNewsSection() {
                 {/* Horizontal Scrollable Timeline */}
                 <div className="relative">
                     {/* Timeline Container */}
+                    {/* relative makes this the containing block for the cards' absolutely-positioned sr-only text,
+                        so overflow-x-auto clips it; without it that text escapes and widens the whole page */}
                     <div
                         ref={scrollContainerRef}
-                        className="flex gap-6 overflow-x-auto pb-6 scroll-smooth snap-x snap-mandatory"
+                        className="relative flex gap-6 overflow-x-auto pb-6 scroll-smooth snap-x snap-mandatory"
                         style={{
                             scrollbarWidth: 'auto',
                             scrollbarColor: '#0369A1 #f1f5f9'
