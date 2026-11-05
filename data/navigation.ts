@@ -90,11 +90,11 @@ export const navItems: NavItem[] = [
       "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2670&auto=format&fit=crop",
     description: "Tools and support for student success.",
     subLinks: [
-      { name: "Student Spotlights", href: "/resources#student-spotlights" },
-      { name: "Internships & Jobs", href: "/resources#resources-tools" },
-      { name: "Tutoring Services", href: "/resources#resources-tools" },
-      { name: "Scholarships", href: "/resources#resources-tools" },
-      { name: "CUNY 2x Tech", href: "/resources#resources-tools" },
+      { name: "Advising & Registration", href: "/resources#advising" },
+      { name: "Internships & Jobs", href: "/resources#careers" },
+      { name: "Tutoring Services", href: "/resources#tutoring" },
+      { name: "Scholarships", href: "/resources#careers" },
+      { name: "CUNY 2x Tech", href: "/resources#contacts" },
     ],
   },
 ];

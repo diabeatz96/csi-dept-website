@@ -156,28 +156,6 @@ export interface StudentSpotlight {
   icon?: string; // Icon name from lucide-react
 }
 
-// Resource Types
-// ============================================
-
-export type ResourceCategory = "advisement" | "tutoring" | "career" | "technical";
-
-export interface ResourceContact {
-  name?: string;
-  email?: string;
-  phone?: string;
-  location?: string;
-}
-
-export interface Resource {
-  id: string;
-  title: string;
-  description: string;
-  category: ResourceCategory;
-  contact?: ResourceContact;
-  hours?: string;
-  link?: string;
-}
-
 // Career Milestone Types
 // ============================================
 

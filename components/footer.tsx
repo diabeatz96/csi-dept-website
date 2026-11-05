@@ -26,8 +26,8 @@ export default function Footer() {
         resources: [
             { name: 'People', href: '/people' },
             { name: 'Resources', href: '/resources' },
-            { name: 'Student Spotlights', href: '/resources#student-spotlights' },
-            { name: 'Career Services', href: '/resources#resources-tools' },
+            { name: 'Tutoring', href: '/resources#tutoring' },
+            { name: 'Career Services', href: '/resources#careers' },
         ],
         quickLinks: [
             { name: 'CUNY First', href: 'https://www.cuny.edu/about/administration/offices/cis/cunyfirst/', external: true },
