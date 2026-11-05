@@ -35,18 +35,27 @@ export interface ResourceItem {
   href?: string; // Leave out until the real URL is known; the item renders without a link
   iconName?: string; // Key of the icon map in components/resources/resource-icon.tsx
   ctaLabel?: string;
+  starred?: boolean; // Shows a gold star on each side of the title on featured career cards
 }
 
 export interface ResourceLink extends ResourceItem {
   href: string;
 }
 
+export interface FeaturedCareerLink extends ResourceLink {
+  image?: string; // Logo path under public/; replaces the icon when set
+}
+
 export interface CareerLink extends ResourceLink {
   image: string; // Path under public/ or a URL on a host allowed in next.config.ts
 }
 
+// `href` is the club's CSI Connect page; the link is hidden until it's set
 export interface Club extends ResourceItem {
-  image: string; // Path under public/ or a URL on a host allowed in next.config.ts
+  meetingTime: string;
+  location: string;
+  email?: string; // Membership contact
+  image?: string; // Logo or photo under public/; replaces the icon when set
 }
 
 export interface TutoringLab extends ResourceLink {

@@ -1,9 +1,20 @@
 import Image from 'next/image';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Star } from 'lucide-react';
+import { cn } from '@/lib/utils';
 import { careerLinks, featuredCareerLinks, resourceSections } from '@/data/resources';
 import ExternalLink from './external-link';
 import ResourceIcon from './resource-icon';
 import ResourceSection from './resource-section';
+
+function TitleStar({ className }: { className: string }) {
+  return (
+    <Star
+      aria-hidden="true"
+      size={20}
+      className={cn('inline-block align-[-2px] fill-amber-400 text-amber-400', className)}
+    />
+  );
+}
 
 export default function CareersSection() {
   return (
@@ -16,11 +27,25 @@ export default function CareersSection() {
             className="col-span-full flex flex-wrap items-center justify-between gap-5 rounded-3xl bg-slate-900 px-8 py-7 text-white shadow-2xl shadow-slate-900/30"
           >
             <div className="flex flex-[1_1_360px] items-center gap-5">
-              <span className="flex rounded-2xl bg-white/10 p-3.5 text-blue-300">
-                <ResourceIcon name={link.iconName} size={28} />
-              </span>
+              {link.image ? (
+                <Image
+                  src={link.image}
+                  alt=""
+                  width={56}
+                  height={56}
+                  className="size-14 flex-none rounded-2xl object-cover"
+                />
+              ) : (
+                <span className="flex flex-none rounded-2xl bg-white/10 p-3.5 text-blue-300">
+                  <ResourceIcon name={link.iconName} size={28} />
+                </span>
+              )}
               <div>
-                <p className="mb-1 text-[22px] font-bold">{link.title}</p>
+                <p className="mb-1 text-[22px] font-bold">
+                  {link.starred && <TitleStar className="mr-2" />}
+                  {link.title}
+                  {link.starred && <TitleStar className="ml-2" />}
+                </p>
                 <p className="text-sm leading-normal text-slate-300">{link.description}</p>
               </div>
             </div>

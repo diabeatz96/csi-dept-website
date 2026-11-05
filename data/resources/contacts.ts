@@ -25,6 +25,7 @@ export const csAdvisor: ResourceAdvisor = {
   description: "Advising for AAS, BS Computer Science and BS CS-Math students.",
   linkedinHref: "https://www.linkedin.com/in/kristibrescia/",
   ctaLabel: "Email Kristi",
+  image: "/faculty-headshot/kristi.jpeg",
 };
 
 export const departmentContacts: ResourceContact[] = [

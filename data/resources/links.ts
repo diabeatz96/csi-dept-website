@@ -1,23 +1,21 @@
 // Resources page links, grouped by section
 
-import type { CareerLink, Club, ResourceLink, TutoringLab } from "./types";
+import type {
+  CareerLink,
+  Club,
+  FeaturedCareerLink,
+  ResourceLink,
+  TutoringLab,
+} from "./types";
 
 export const degreeLinks: ResourceLink[] = [
   {
     id: "degree-map",
     title: "CS BS Career Degree Map",
     description:
-      "Semester-by-semester plan for the BS in Computer Science (PDF).",
-    href: "https://www.csi.cuny.edu/sites/default/files/pdf/academciadvisement/PathwaysAcadPlans/ComputerScienceBS_DegreeMap.pdf",
+      "Semester-by-semester plan for the BS in Computer Science",
+    href: "https://csi-cs-department.gitbook.io/cs-internship-handbook/college-of-staten-island-computer-science-department/college-of-staten-island-computer-science-department",
     iconName: "FileText",
-  },
-  {
-    id: "cs-flowchart",
-    title: "CS Flowchart",
-    description:
-      "Semester-by-semester course map and prerequisites for each CS program.",
-    href: "http://www.cs.csi.cuny.edu/~flowchart/",
-    iconName: "GitFork",
   },
   {
     id: "degreeworks",
@@ -26,6 +24,14 @@ export const degreeLinks: ResourceLink[] = [
       "Run your degree audit to see completed and remaining requirements.",
     href: "https://degreeworks.cuny.edu/",
     iconName: "ListChecks",
+  },
+  {
+    id: "cs-flowchart",
+    title: "CS Flowchart",
+    description:
+      "Semester-by-semester course map and prerequisites for each CS program.",
+    href: "http://www.cs.csi.cuny.edu/~flowchart/",
+    iconName: "GitFork",
   },
   {
     id: "global-search",
@@ -77,14 +83,15 @@ export const academicSupportOffice: ResourceLink = {
   ctaLabel: "Visit site",
 };
 
-export const featuredCareerLinks: ResourceLink[] = [
+export const featuredCareerLinks: FeaturedCareerLink[] = [
   {
     id: "internship-prep-book",
     title: "Internship Prep Book",
-    description: "Guide to finding and preparing for CS internships.",
+    description: "Comprehensive guide to finding and preparing for CS internships.",
     href: "https://csi-cs-department.gitbook.io/cs-internship-handbook",
     iconName: "BookOpenCheck",
     ctaLabel: "Read the guide",
+    starred: true,
   },
   {
     id: "handshake",
@@ -92,13 +99,31 @@ export const featuredCareerLinks: ResourceLink[] = [
     description:
       "Internship and job listings for CSI students. Sign in with your CUNY login.",
     href: "https://joinhandshake.com/",
-    iconName: "Briefcase",
+    image: "/logos/handshake logo.jpeg",
     ctaLabel: "Open Handshake",
   },
 ];
 
 // Stock photos for now; replace with real program photos as they become available
 export const careerLinks: CareerLink[] = [
+  {
+    id: "freshmen-start-up-guide",
+    title: "Freshmen Start-up Guide",
+    description:
+      "Set up LinkedIn and GitHub, build a first-year resume and get involved on campus.",
+    href: "https://csi-cs-department.gitbook.io/cs-internship-handbook/internship-and-research/freshmen-start-up-guide",
+    image:
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop",
+  },
+  {
+    id: "internship-hiring-cycle",
+    title: "Internship Hiring Cycle",
+    description:
+      "When internship applications open and close, and how the tech hiring process works.",
+    href: "https://csi-cs-department.gitbook.io/cs-internship-handbook/internship-and-research/internship-hiring-cycle",
+    image:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop",
+  },
   {
     id: "cuny-tech-prep",
     title: "CUNY Tech Prep",
@@ -111,10 +136,55 @@ export const careerLinks: CareerLink[] = [
     id: "codepath",
     title: "CodePath",
     description:
-      "Free courses in technical interview prep and software engineering.",
+      "Free courses in technical interview prep, software engineering, and more.",
     href: "https://www.codepath.org/courses",
     image:
       "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop",
+  },
+  {
+    id: "break-through-tech",
+    title: "Break Through Tech",
+    description:
+      "Paid micro-internships and an AI program connecting undergraduates to tech careers.",
+    href: "https://www.breakthroughtech.org/",
+    image:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop",
+  },
+  {
+    id: "colorstack",
+    title: "ColorStack",
+    description:
+      "National community helping Black and Latinx CS students get degreed and hired.",
+    href: "https://www.colorstack.org/",
+    image:
+      "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop",
+  },
+  {
+    id: "rewriting-the-code",
+    title: "Rewriting the Code",
+    description:
+      "Free community centered on women in tech, from university through early career.",
+    href: "https://rewritingthecode.org/",
+    image:
+      "https://images.unsplash.com/photo-1596495578065-6e0763fa1178?q=80&w=800&auto=format&fit=crop",
+  },
+  {
+    id: "develop-for-good",
+    title: "Develop for Good",
+    description:
+      "Free volunteer program where student teams build software for nonprofits.",
+    href: "https://www.developforgood.org/",
+    image:
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
+  },
+  {
+    id: "cuny-paid-internships",
+    title: "CUNY Paid Internships",
+    description:
+      "Paid internship programs for CUNY students on all campuses, grouped by field.",
+    href: "https://www.cuny.edu/about/administration/offices/ocip/faculty/paid-internship-opportunities/",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
   },
   {
     id: "career-development",
@@ -159,30 +229,58 @@ export const careerLinks: CareerLink[] = [
   },
 ];
 
-// Stock photos for now; replace with each club's logo. Add `href` once a club's URL is known.
 export const clubs: Club[] = [
   {
-    id: "acm-student-chapter",
-    title: "ACM Student Chapter",
-    description: "Coding nights, talks and hackathons",
-    image:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=200&auto=format&fit=crop",
+    id: "women-in-technology",
+    title: "Women In Technology Club",
+    description:
+      "A supportive community for women pursuing STEM degrees and tech careers, with skill-sharing, networking and team-building events.",
+    href: "https://connect.csi.cuny.edu/feeds?type=club&type_id=35519&tab=about",
+    iconName: "HeartHandshake",
+    image: "/logos/WomenInTechLogo.png",
+    meetingTime: "Tuesdays, 2:30–4:30 PM",
+    location: "1N-114",
+    email: "wit.club.csi@gmail.com",
   },
   {
-    id: "women-in-tech",
-    title: "Women in Tech",
-    description: "Community and mentorship",
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=200&auto=format&fit=crop",
+    id: "computer-science-club",
+    title: "Computer Science Club",
+    description:
+      "An inclusive space to explore CS projects, compete and meet like-minded students.",
+    href: "https://connect.csi.cuny.edu/feeds?type=club&type_id=35483&tab=about",
+    iconName: "Code2",
+    image: "/logos/CSClubLogo.jpeg",
+    meetingTime: "Thursdays, 2:30–4:30 PM",
+    location: "1N-114",
+    email: "hackaprojectcsi@gmail.com",
   },
   {
-    id: "csi-connect",
-    title: "CSI Connect",
-    description: "Browse every CSI club and event",
-    image:
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=200&auto=format&fit=crop",
+    id: "color-stack",
+    title: "Color Stack Club",
+    description:
+      "Supporting and growing the number of Black and Latinx students in computer science.",
+    href: "https://connect.csi.cuny.edu/feeds?type=club&type_id=35482&tab=about",
+    iconName: "Users",
+    image: "/logos/colorStackLogo.png",
+    meetingTime: "Thursdays, 2:30–4:30 PM",
+    location: "1N-111",
+    email: "colorstackcsi@outlook.com",
+  },
+  {
+    id: "video-game-development",
+    title: "Video Game Development Club",
+    description:
+      "Explore game development and build skills through projects and friendly competitions.",
+    href: "https://connect.csi.cuny.edu/feeds?type=club&type_id=35517&tab=about",
+    iconName: "Gamepad2",
+    image: "/logos/VideoGameDevClub.jpg",
+    meetingTime: "Tuesdays, 2:30–4:30 PM",
+    location: "1N-111",
   },
 ];
+
+export const clubJoinNote =
+  "To join, email the club with your full name, CUNY email address and EMPLID.";
 
 export const campusLinks: ResourceLink[] = [
   {

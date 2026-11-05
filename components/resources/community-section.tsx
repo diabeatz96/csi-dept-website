@@ -1,52 +1,74 @@
 import Image from 'next/image';
-import { ArrowUpRight } from 'lucide-react';
-import { clubs, resourceSections } from '@/data/resources';
-import type { Club } from '@/data/resources';
+import { ArrowUpRight, Clock, Mail, MapPin } from 'lucide-react';
+import { clubJoinNote, clubs, resourceSections } from '@/data/resources';
 import ExternalLink from './external-link';
+import ResourceIcon from './resource-icon';
 import ResourceSection from './resource-section';
-
-const cardClass =
-  'flex items-center gap-4 rounded-2xl border border-slate-100 bg-white p-5 text-slate-900';
-
-function ClubContent({ club }: { club: Club }) {
-  return (
-    <>
-      <Image
-        src={club.image}
-        alt=""
-        width={52}
-        height={52}
-        className="size-[52px] flex-none rounded-xl object-cover"
-      />
-      <div className="min-w-0 flex-1">
-        <p className="font-bold">{club.title}</p>
-        <p className="mt-0.5 text-[13px] text-slate-500">{club.description}</p>
-      </div>
-    </>
-  );
-}
 
 export default function CommunitySection() {
   return (
     <ResourceSection section={resourceSections.community}>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-4">
-        {clubs.map((club) =>
-          club.href ? (
-            <ExternalLink
-              key={club.id}
-              href={club.href}
-              className={`${cardClass} transition-all duration-300 hover:border-blue-100 hover:shadow-xl`}
-            >
-              <ClubContent club={club} />
-              <ArrowUpRight aria-hidden="true" size={16} className="flex-none text-blue-400" />
-            </ExternalLink>
-          ) : (
-            <div key={club.id} className={cardClass}>
-              <ClubContent club={club} />
+      <div className="grid gap-4 md:grid-cols-2">
+        {clubs.map((club) => (
+          <div
+            key={club.id}
+            className="flex flex-col gap-5 rounded-2xl border border-slate-100 bg-white p-6 text-slate-900"
+          >
+            <div className="flex items-start gap-4">
+              {club.image ? (
+                <Image
+                  src={club.image}
+                  alt=""
+                  width={56}
+                  height={56}
+                  className="size-14 flex-none rounded-xl object-cover"
+                />
+              ) : (
+                <span className="flex flex-none rounded-xl bg-slate-50 p-4 text-slate-600">
+                  <ResourceIcon name={club.iconName} size={24} />
+                </span>
+              )}
+              <div className="min-w-0">
+                <h3 className="text-xl font-bold leading-tight">{club.title}</h3>
+                <p className="mt-1.5 text-pretty text-sm leading-normal text-slate-600">
+                  {club.description}
+                </p>
+              </div>
             </div>
-          ),
-        )}
+
+            <div className="flex flex-1 flex-col items-center justify-center gap-2 border-t border-slate-100 pt-4 text-center text-sm text-slate-600">
+              <span className="flex items-center gap-2">
+                <Clock aria-hidden="true" size={15} className="flex-none text-[#0369A1]" />
+                {club.meetingTime}
+              </span>
+              <span className="flex items-center gap-2">
+                <MapPin aria-hidden="true" size={15} className="flex-none text-[#0369A1]" />
+                {club.location}
+              </span>
+              {club.email && (
+                <a
+                  href={`mailto:${club.email}`}
+                  className="flex items-center gap-2 break-all font-medium text-[#0369A1]"
+                >
+                  <Mail aria-hidden="true" size={15} className="flex-none" />
+                  {club.email}
+                </a>
+              )}
+              {club.href && (
+                <ExternalLink
+                  href={club.href}
+                  className="flex items-center gap-2 font-medium text-[#0369A1]"
+                >
+                  View on CSI Connect
+                  <ArrowUpRight aria-hidden="true" size={15} className="flex-none" />
+                </ExternalLink>
+              )}
+            </div>
+          </div>
+        ))}
       </div>
+
+      <p className="text-sm text-slate-600">{clubJoinNote}</p>
     </ResourceSection>
   );
 }

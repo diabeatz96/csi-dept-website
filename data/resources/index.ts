@@ -10,6 +10,7 @@ export {
   featuredCareerLinks,
   careerLinks,
   clubs,
+  clubJoinNote,
   campusLinks,
 } from "./links";
 
@@ -21,6 +22,7 @@ export type {
   ResourceSection,
   ResourceItem,
   ResourceLink,
+  FeaturedCareerLink,
   CareerLink,
   Club,
   TutoringLab,
