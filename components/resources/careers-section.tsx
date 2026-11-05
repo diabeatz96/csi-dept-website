@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
-import { cn } from '@/lib/utils';
 import { careerLinks, featuredCareerLinks, resourceSections } from '@/data/resources';
 import ExternalLink from './external-link';
 import ResourceIcon from './resource-icon';
@@ -36,22 +35,17 @@ export default function CareersSection() {
           <ExternalLink
             key={link.id}
             href={link.href}
-            className={cn(
-              'flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white pb-[22px] text-slate-900 transition-all duration-300 hover:border-blue-100 hover:shadow-xl',
-              !link.image && 'pt-[22px]',
-            )}
+            className="flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white pb-[22px] text-slate-900 transition-all duration-300 hover:border-blue-100 hover:shadow-xl"
           >
-            {link.image && (
-              <div className="relative mb-[18px] h-[150px] bg-slate-100">
-                <Image
-                  src={link.image}
-                  alt=""
-                  fill
-                  sizes="(min-width: 1024px) 400px, 100vw"
-                  className="object-cover"
-                />
-              </div>
-            )}
+            <div className="relative mb-[18px] h-[150px] bg-slate-100">
+              <Image
+                src={link.image}
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 400px, 100vw"
+                className="object-cover"
+              />
+            </div>
             <div className="flex flex-col gap-1.5 px-[22px]">
               <div className="flex justify-between gap-3">
                 <h3 className="text-[17px] font-bold">{link.title}</h3>

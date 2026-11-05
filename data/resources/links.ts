@@ -1,6 +1,6 @@
 // Resources page links, grouped by section
 
-import type { ResourceItem, ResourceLink, TutoringLab } from "./types";
+import type { CareerLink, Club, ResourceLink, TutoringLab } from "./types";
 
 export const degreeLinks: ResourceLink[] = [
   {
@@ -97,13 +97,15 @@ export const featuredCareerLinks: ResourceLink[] = [
   },
 ];
 
-// Add an `image` path to show a photo at the top of a card
-export const careerLinks: ResourceLink[] = [
+// Stock photos for now; replace with real program photos as they become available
+export const careerLinks: CareerLink[] = [
   {
     id: "cuny-tech-prep",
     title: "CUNY Tech Prep",
     description: "Year-long program building technical projects in teams.",
     href: "https://cunytechprep.org/",
+    image:
+      "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop",
   },
   {
     id: "codepath",
@@ -111,18 +113,24 @@ export const careerLinks: ResourceLink[] = [
     description:
       "Free courses in technical interview prep and software engineering.",
     href: "https://www.codepath.org/courses",
+    image:
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop",
   },
   {
     id: "career-development",
     title: "Career & Professional Development",
     description: "Resume reviews, mock interviews and career counseling.",
     href: "http://www.csi.cuny.edu/career/",
+    image:
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop",
   },
   {
     id: "forage",
     title: "Virtual Work Experiences (Forage)",
     description: "Free, self-paced job simulations from real companies.",
     href: "https://enterprise.theforage.com/landing/CUNY%20College%20of%20Staten%20Island/W2hMDdhcqPytgs3Nk/CUNY%20CSI%20Computer%20Science",
+    image:
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=800&auto=format&fit=crop",
   },
   {
     id: "nyc-tech-resources",
@@ -130,37 +138,49 @@ export const careerLinks: ResourceLink[] = [
     description:
       "Programs and organizations for NYC tech jobs and internships.",
     href: "http://www.cs.csi.cuny.edu/content/NYC-Tech-Resources.pdf",
+    image:
+      "https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=800&auto=format&fit=crop",
   },
   {
     id: "cs-scholarships",
     title: "Scholarships for CS Students (PDF)",
     description: "Scholarships open to computer science majors.",
     href: "http://www.cs.csi.cuny.edu/content/ComputerScholarships.pdf",
+    image:
+      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop",
   },
   {
     id: "women-in-cs-scholarships",
     title: "Scholarships for Women in CS",
     description: "Funding opportunities for women studying computer science.",
     href: "https://www.computerscience.org/scholarships-women/",
+    image:
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop",
   },
 ];
 
-// Add `href` and `image` (logo) as they become available
-export const clubs: ResourceItem[] = [
+// Stock photos for now; replace with each club's logo. Add `href` once a club's URL is known.
+export const clubs: Club[] = [
   {
     id: "acm-student-chapter",
     title: "ACM Student Chapter",
     description: "Coding nights, talks and hackathons",
+    image:
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=200&auto=format&fit=crop",
   },
   {
     id: "women-in-tech",
     title: "Women in Tech",
     description: "Community and mentorship",
+    image:
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=200&auto=format&fit=crop",
   },
   {
     id: "csi-connect",
     title: "CSI Connect",
     description: "Browse every CSI club and event",
+    image:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=200&auto=format&fit=crop",
   },
 ];
 

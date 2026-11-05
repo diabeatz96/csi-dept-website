@@ -21,6 +21,8 @@ export type {
   ResourceSection,
   ResourceItem,
   ResourceLink,
+  CareerLink,
+  Club,
   TutoringLab,
   ResourceContact,
   ResourceAdvisor,

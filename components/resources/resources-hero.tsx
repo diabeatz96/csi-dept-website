@@ -35,13 +35,14 @@ export default function ResourcesHero() {
           aria-label="Jump to a resource section"
           className="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-3"
         >
-          {Object.values(resourceSections).map(({ id, tile }) => (
+          {Object.values(resourceSections).map(({ id, tile }, index) => (
             <Link
               key={id}
               href={`#${id}`}
               className="flex flex-col gap-3.5 rounded-2xl border border-slate-100 bg-white p-[18px] text-slate-900 transition-all duration-300 hover:border-blue-100 hover:shadow-xl"
             >
-              <div className="flex items-start justify-between">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold tracking-widest text-[#0369A1]">{index + 1}</span>
                 <span className="flex rounded-xl bg-slate-50 p-2.5 text-slate-600">
                   <ResourceIcon name={tile.iconName} size={22} />
                 </span>

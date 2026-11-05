@@ -1,29 +1,23 @@
 import Image from 'next/image';
-import { ArrowUpRight, Users } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { clubs, resourceSections } from '@/data/resources';
-import type { ResourceItem } from '@/data/resources';
+import type { Club } from '@/data/resources';
 import ExternalLink from './external-link';
 import ResourceSection from './resource-section';
 
 const cardClass =
   'flex items-center gap-4 rounded-2xl border border-slate-100 bg-white p-5 text-slate-900';
 
-function ClubContent({ club }: { club: ResourceItem }) {
+function ClubContent({ club }: { club: Club }) {
   return (
     <>
-      {club.image ? (
-        <Image
-          src={club.image}
-          alt=""
-          width={52}
-          height={52}
-          className="size-[52px] flex-none rounded-xl object-contain"
-        />
-      ) : (
-        <span className="flex size-[52px] flex-none items-center justify-center rounded-xl bg-slate-50 text-slate-600">
-          <Users aria-hidden="true" size={24} />
-        </span>
-      )}
+      <Image
+        src={club.image}
+        alt=""
+        width={52}
+        height={52}
+        className="size-[52px] flex-none rounded-xl object-cover"
+      />
       <div className="min-w-0 flex-1">
         <p className="font-bold">{club.title}</p>
         <p className="mt-0.5 text-[13px] text-slate-500">{club.description}</p>

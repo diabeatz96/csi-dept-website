@@ -34,12 +34,19 @@ export interface ResourceItem {
   description: string;
   href?: string; // Leave out until the real URL is known; the item renders without a link
   iconName?: string; // Key of the icon map in components/resources/resource-icon.tsx
-  image?: string; // Path under public/
   ctaLabel?: string;
 }
 
 export interface ResourceLink extends ResourceItem {
   href: string;
+}
+
+export interface CareerLink extends ResourceLink {
+  image: string; // Path under public/ or a URL on a host allowed in next.config.ts
+}
+
+export interface Club extends ResourceItem {
+  image: string; // Path under public/ or a URL on a host allowed in next.config.ts
 }
 
 export interface TutoringLab extends ResourceLink {
