@@ -5,7 +5,7 @@ import CalendarSection from '@/components/resources/calendar-section';
 import TutoringSection from '@/components/resources/tutoring-section';
 import CareersSection from '@/components/resources/careers-section';
 import CommunitySection from '@/components/resources/community-section';
-import ContactsSection from '@/components/resources/contacts-section';
+import SupportSection from '@/components/resources/support-section';
 
 export default function StudentResources() {
     return (
@@ -21,7 +21,7 @@ export default function StudentResources() {
             <TutoringSection />
             <CareersSection />
             <CommunitySection />
-            <ContactsSection />
+            <SupportSection />
         </div>
     );
 }

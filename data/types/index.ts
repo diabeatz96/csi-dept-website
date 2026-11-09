@@ -5,19 +5,10 @@
 // Navigation Types
 // ============================================
 
-export interface SubLink {
-  name: string;
-  href: string;
-  description?: string;
-}
-
 export interface NavItem {
   id: string;
   label: string;
   href: string;
-  image?: string;
-  description?: string;
-  subLinks?: SubLink[];
 }
 
 // People Types

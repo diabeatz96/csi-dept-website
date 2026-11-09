@@ -28,22 +28,6 @@ export const csAdvisor: ResourceAdvisor = {
   image: "/faculty-headshot/kristi.jpeg",
 };
 
-export const departmentContacts: ResourceContact[] = [
-  {
-    role: "General questions & forms",
-    name: "Department Office",
-    title: "Laurie Guido, College Assistant",
-    email: "cs@csi.cuny.edu",
-    emailHref: "mailto:cs@csi.cuny.edu",
-    office: "1N-215",
-    phone: "718-982-2850",
-    phoneHref: "tel:7189822850",
-  },
-  contactFromStaff("kristi-brescia", "Advising & registration"),
-  contactFromStaff("fred-loweff", "Internships & CUNY 2X"),
-  contactFromStaff("orit-gruber", "Labs & software"),
-];
-
 // Add `href` once the help desk URL is known; the button stays hidden until then
 export const helpDesk: ResourceItem = {
   id: "student-technology-help-desk",

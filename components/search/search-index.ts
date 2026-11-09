@@ -265,7 +265,7 @@ export function buildSearchIndex(): SearchableItem[] {
     { section: resourceSections.tutoring, links: [tutoringLab, academicSupportOffice] },
     { section: resourceSections.careers, links: [...featuredCareerLinks, ...careerLinks] },
     { section: resourceSections.community, links: clubs },
-    { section: resourceSections.contacts, links: [...campusLinks, helpDesk] },
+    { section: resourceSections.support, links: [...campusLinks, helpDesk] },
   ];
 
   resourceLinkGroups.forEach(({ section, links }) => {

@@ -14,7 +14,7 @@ export {
   campusLinks,
 } from "./links";
 
-export { csAdvisor, departmentContacts, helpDesk } from "./contacts";
+export { csAdvisor, helpDesk } from "./contacts";
 
 export type {
   ResourceSectionId,

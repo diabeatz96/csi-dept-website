@@ -7,7 +7,7 @@ export type ResourceSectionId =
   | "tutoring"
   | "careers"
   | "community"
-  | "contacts";
+  | "support";
 
 export interface ResourcesIntro {
   eyebrow: string;

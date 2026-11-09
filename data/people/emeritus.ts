@@ -1,6 +1,7 @@
 import type { EmeritusFaculty } from "../types";
+import { sortByName } from "./sort";
 
-export const emeritusFaculty: EmeritusFaculty[] = [
+export const emeritusFaculty: EmeritusFaculty[] = sortByName([
   { name: "Emile Chi" },
   { name: "Bernard Domanski" },
   { name: "Natacha Gueorguieva" },
@@ -11,7 +12,7 @@ export const emeritusFaculty: EmeritusFaculty[] = [
   { name: "Herbert Schanker" },
   { name: "Miriam Tausner" },
   { name: "Deborah Sturm" },
-];
+]);
 
 // Helper to get just the names as strings (for backward compatibility)
 export const emeritusFacultyNames: string[] = emeritusFaculty.map((f) => f.name);

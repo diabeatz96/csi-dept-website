@@ -1,6 +1,7 @@
 import type { FacultyMember } from "../types";
+import { sortByTitleThenName } from "./sort";
 
-export const faculty: FacultyMember[] = [
+export const faculty: FacultyMember[] = sortByTitleThenName([
   {
     id: "shuqun-zhang",
     name: "Shuqun Zhang",
@@ -148,7 +149,7 @@ export const faculty: FacultyMember[] = [
     phone: "718-982-2848",
     website: "https://celestinezyj.github.io/",
   },
-];
+]);
 
 // Helper functions
 export const getFacultyById = (id: string): FacultyMember | undefined => {

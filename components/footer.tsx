@@ -9,6 +9,7 @@ import {
     Printer,
     MapPin,
     Facebook,
+    Linkedin,
     ExternalLink,
     GraduationCap,
     ArrowRight
@@ -65,7 +66,7 @@ export default function Footer() {
                         <address className="space-y-1 md:space-y-2 not-italic">
                             <div className="flex items-center gap-2 md:gap-3 text-xs md:text-sm text-slate-300">
                                 <MapPin size={14} className="text-[#0369A1] shrink-0" aria-hidden="true" />
-                                <span className="min-h-6 flex items-center">2800 Victory Blvd, Staten Island, NY 10314</span>
+                                <span className="min-h-6 flex items-center">2800 Victory Blvd, Staten Island, NY 10314, Room 1N-215</span>
                             </div>
                             <div className="flex items-center gap-2 md:gap-3 text-xs md:text-sm text-slate-300">
                                 <Phone size={14} className="text-[#0369A1] shrink-0" aria-hidden="true" />
@@ -177,6 +178,15 @@ export default function Footer() {
                                 aria-label="Visit our Facebook page (opens in new tab)"
                             >
                                 <Facebook size={18} className="group-hover:scale-110 transition-transform" aria-hidden="true" />
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/school/collegeofstatenisland/posts/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-11 h-11 rounded-full bg-slate-800 hover:bg-[#0369A1] flex items-center justify-center text-slate-300 hover:text-white transition-all duration-300 group"
+                                aria-label="Visit our LinkedIn page (opens in new tab)"
+                            >
+                                <Linkedin size={18} className="group-hover:scale-110 transition-transform" aria-hidden="true" />
                             </a>
                             <a
                                 href="https://www.csi.cuny.edu"

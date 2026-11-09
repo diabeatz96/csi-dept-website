@@ -82,16 +82,16 @@ export const resourceSections: Record<ResourceSectionId, ResourceSection> = {
       iconName: "Users",
     },
   },
-  contacts: {
-    id: "contacts",
-    eyebrow: "7 · Contact Us",
-    title: "Department Contacts",
+  support: {
+    id: "support",
+    eyebrow: "7 · Get Support",
+    title: "Campus Support",
     description:
-      "Not sure who to ask? Start with the department office in 1N-215.",
+      "Counseling, accessibility, financial aid and other campus offices.",
     tile: {
-      label: "Contact us",
-      subtitle: "Who to ask for what",
-      iconName: "Phone",
+      label: "Get support",
+      subtitle: "Campus offices & help desk",
+      iconName: "HeartHandshake",
     },
   },
 };

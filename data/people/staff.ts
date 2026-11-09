@@ -1,6 +1,7 @@
 import type { StaffMember } from "../types";
+import { sortByName } from "./sort";
 
-export const officeStaff: StaffMember[] = [
+export const officeStaff: StaffMember[] = sortByName([
   {
     id: "laurie-guido",
     name: "Laurie Guido",
@@ -25,9 +26,9 @@ export const officeStaff: StaffMember[] = [
     office: "1N-214",
     phone: "718-982-3178",
   },
-];
+]);
 
-export const technicalStaff: StaffMember[] = [
+export const technicalStaff: StaffMember[] = sortByName([
   {
     id: "orit-gruber",
     name: "Orit D. Gruber",
@@ -44,7 +45,7 @@ export const technicalStaff: StaffMember[] = [
     phone: "718-982-2857",
     office: "1N-219",
   }
-];
+]);
 
 // Combined staff list
 export const allStaff: StaffMember[] = [...officeStaff, ...technicalStaff];
