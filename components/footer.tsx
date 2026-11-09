@@ -6,6 +6,7 @@ import Image from 'next/image';
 import {
     Mail,
     Phone,
+    Printer,
     MapPin,
     Facebook,
     ExternalLink,
@@ -61,20 +62,24 @@ export default function Footer() {
                             Advancing the frontiers of computing through excellence in education, research, and innovation.
                         </p>
                         {/* Contact Info */}
-                        <address className="space-y-2 md:space-y-3 not-italic">
-                            <div className="flex items-start gap-2 md:gap-3 text-xs md:text-sm text-slate-300">
-                                <MapPin size={14} className="text-[#0369A1] mt-0.5 shrink-0" aria-hidden="true" />
-                                <span>2800 Victory Blvd, Staten Island, NY 10314</span>
+                        <address className="space-y-1 md:space-y-2 not-italic">
+                            <div className="flex items-center gap-2 md:gap-3 text-xs md:text-sm text-slate-300">
+                                <MapPin size={14} className="text-[#0369A1] shrink-0" aria-hidden="true" />
+                                <span className="min-h-6 flex items-center">2800 Victory Blvd, Staten Island, NY 10314</span>
                             </div>
                             <div className="flex items-center gap-2 md:gap-3 text-xs md:text-sm text-slate-300">
                                 <Phone size={14} className="text-[#0369A1] shrink-0" aria-hidden="true" />
-                                <a href="tel:+17189822800" className="hover:text-[#0369A1] transition-colors min-h-11 flex items-center" aria-label="Call us at (718) 982-2800">
-                                    (718) 982-2800
+                                <a href="tel:+17189822850" className="hover:text-[#0369A1] transition-colors min-h-6 flex items-center" aria-label="Call us at (718) 982-2850">
+                                    (718) 982-2850
                                 </a>
                             </div>
                             <div className="flex items-center gap-2 md:gap-3 text-xs md:text-sm text-slate-300">
+                                <Printer size={14} className="text-[#0369A1] shrink-0" aria-hidden="true" />
+                                <span className="min-h-6 flex items-center">Fax: (718) 982-2856</span>
+                            </div>
+                            <div className="flex items-center gap-2 md:gap-3 text-xs md:text-sm text-slate-300">
                                 <Mail size={14} className="text-[#0369A1] shrink-0" aria-hidden="true" />
-                                <a href="mailto:cs@csi.cuny.edu" className="hover:text-[#0369A1] transition-colors min-h-11 flex items-center" aria-label="Email us at cs@csi.cuny.edu">
+                                <a href="mailto:cs@csi.cuny.edu" className="hover:text-[#0369A1] transition-colors min-h-6 flex items-center" aria-label="Email us at cs@csi.cuny.edu">
                                     cs@csi.cuny.edu
                                 </a>
                             </div>
