@@ -68,7 +68,7 @@ export default function CareersSection() {
                 alt=""
                 fill
                 sizes="(min-width: 1024px) 400px, 100vw"
-                className="object-cover"
+                className={link.image.startsWith('/logos/') ? 'object-contain' : 'object-cover'}
               />
             </div>
             <div className="flex flex-col gap-1.5 px-[22px]">

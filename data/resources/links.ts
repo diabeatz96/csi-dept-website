@@ -104,7 +104,7 @@ export const featuredCareerLinks: FeaturedCareerLink[] = [
   },
 ];
 
-// Stock photos for now; replace with real program photos as they become available
+// Program logos live in public/logos and are shown uncropped; other entries use stock photos for now
 export const careerLinks: CareerLink[] = [
   {
     id: "freshmen-start-up-guide",
@@ -129,8 +129,7 @@ export const careerLinks: CareerLink[] = [
     title: "CUNY Tech Prep",
     description: "Year-long program building technical projects in teams.",
     href: "https://cunytechprep.org/",
-    image:
-      "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop",
+    image: "/logos/CunyTechPrep.png",
   },
   {
     id: "codepath",
@@ -138,8 +137,7 @@ export const careerLinks: CareerLink[] = [
     description:
       "Free courses in technical interview prep, software engineering, and more.",
     href: "https://www.codepath.org/courses",
-    image:
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop",
+    image: "/logos/codpath.png",
   },
   {
     id: "break-through-tech",
@@ -147,8 +145,7 @@ export const careerLinks: CareerLink[] = [
     description:
       "Paid micro-internships and an AI program connecting undergraduates to tech careers.",
     href: "https://www.breakthroughtech.org/",
-    image:
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop",
+    image: "/logos/BreakThroughTech.jpg",
   },
   {
     id: "colorstack",
@@ -156,8 +153,7 @@ export const careerLinks: CareerLink[] = [
     description:
       "National community helping Black and Latinx CS students get degreed and hired.",
     href: "https://www.colorstack.org/",
-    image:
-      "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop",
+    image: "/logos/Colorstack.png",
   },
   {
     id: "rewriting-the-code",
@@ -165,8 +161,7 @@ export const careerLinks: CareerLink[] = [
     description:
       "Free community centered on women in tech, from university through early career.",
     href: "https://rewritingthecode.org/",
-    image:
-      "https://images.unsplash.com/photo-1596495578065-6e0763fa1178?q=80&w=800&auto=format&fit=crop",
+    image: "/logos/RewritingTheCode.jpg",
   },
   {
     id: "develop-for-good",
@@ -174,8 +169,7 @@ export const careerLinks: CareerLink[] = [
     description:
       "Free volunteer program where student teams build software for nonprofits.",
     href: "https://www.developforgood.org/",
-    image:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
+    image: "/logos/developForGood.jpeg",
   },
   {
     id: "cuny-paid-internships",
@@ -183,24 +177,14 @@ export const careerLinks: CareerLink[] = [
     description:
       "Paid internship programs for CUNY students on all campuses, grouped by field.",
     href: "https://www.cuny.edu/about/administration/offices/ocip/faculty/paid-internship-opportunities/",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    id: "career-development",
-    title: "Career & Professional Development",
-    description: "Resume reviews, mock interviews and career counseling.",
-    href: "http://www.csi.cuny.edu/career/",
-    image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop",
+    image: "/logos/CUNY.jpeg",
   },
   {
     id: "forage",
     title: "Virtual Work Experiences (Forage)",
     description: "Free, self-paced job simulations from real companies.",
     href: "https://enterprise.theforage.com/landing/CUNY%20College%20of%20Staten%20Island/W2hMDdhcqPytgs3Nk/CUNY%20CSI%20Computer%20Science",
-    image:
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=800&auto=format&fit=crop",
+    image: "/logos/Forage.png",
   },
   {
     id: "nyc-tech-resources",
@@ -217,7 +201,7 @@ export const careerLinks: CareerLink[] = [
     description: "Scholarships open to computer science majors.",
     href: "http://www.cs.csi.cuny.edu/content/ComputerScholarships.pdf",
     image:
-      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop",
   },
   {
     id: "women-in-cs-scholarships",
@@ -225,7 +209,7 @@ export const careerLinks: CareerLink[] = [
     description: "Funding opportunities for women studying computer science.",
     href: "https://www.computerscience.org/scholarships-women/",
     image:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1596495578065-6e0763fa1178?q=80&w=800&auto=format&fit=crop",
   },
 ];
 
