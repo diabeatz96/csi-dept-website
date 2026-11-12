@@ -12,7 +12,7 @@ export default function DegreeSection() {
           <ExternalLink
             key={link.id}
             href={link.href}
-            className="flex flex-col gap-3 rounded-2xl border border-slate-100 bg-white p-6 text-slate-900 transition-all duration-300 hover:border-blue-100 hover:shadow-xl"
+            className="flex flex-col gap-3 rounded-2xl border border-slate-300 bg-white p-6 text-slate-900 transition-all duration-300 hover:border-blue-100 hover:shadow-xl"
           >
             <div className="flex items-start justify-between">
               <span className="flex rounded-xl bg-slate-50 p-3 text-slate-600">

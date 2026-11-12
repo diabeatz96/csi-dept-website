@@ -39,7 +39,7 @@ export default function TutoringSection() {
 
         <ExternalLink
           href={academicSupportOffice.href}
-          className="flex flex-[1_1_280px] flex-col justify-between gap-6 rounded-3xl border border-slate-100 bg-white p-8 text-slate-900 transition-all duration-300 hover:border-blue-100 hover:shadow-xl"
+          className="flex flex-[1_1_280px] flex-col justify-between gap-6 rounded-3xl border border-slate-300 bg-white p-8 text-slate-900 transition-all duration-300 hover:border-blue-100 hover:shadow-xl"
         >
           <div className="flex flex-col gap-3.5">
             <span className="flex self-start rounded-xl bg-slate-50 p-3 text-slate-600">

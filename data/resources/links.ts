@@ -102,6 +102,15 @@ export const featuredCareerLinks: FeaturedCareerLink[] = [
     image: "/logos/handshake logo.jpeg",
     ctaLabel: "Open Handshake",
   },
+  {
+    id: "career-center",
+    title: "Center for Career & Professional Development",
+    description:
+      "CSI's career office: resume reviews, mock interviews, career advising and job fairs.",
+    href: "https://www.csi.cuny.edu/campus-life/student-services/center-career-and-professional-development",
+    iconName: "Briefcase",
+    ctaLabel: "Visit the center",
+  },
 ];
 
 // Program logos live in public/logos and are shown uncropped; other entries use stock photos for now
