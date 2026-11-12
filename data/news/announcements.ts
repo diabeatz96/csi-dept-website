@@ -14,6 +14,26 @@ export interface NewsItem {
 
 // News organized by year
 export const newsData: Record<string, NewsItem[]> = {
+  "2026": [
+    {
+      id: "26-1",
+      title: "Dr. Sos Agaian: The 2026 SPIE Aden & Marjorie Meinel Technology Achievement Award.",
+      category: "Award",
+      date: "January 2026",
+      image: "/SPIE-Award-Web-Cover-SosAgaian.jpg",
+      author: "Prof. Sos Agaian",
+      link: "https://csitoday.com/2026/01/csi-distinguished-professor-dr-sos-agaian-named-highly-ranked-scholar-by-scholargps/",
+    },
+    {
+      id: "26-2",
+      title: "Dr. Sos Agaian, Distinguished Professor of Computer Science, has been named a ScholarGPS® Highly Ranked Scholar.",
+      category: "Award",
+      date: "January 2026",
+      image: "/Scholar-GPS-SosAgain.jpg",
+      author: "Prof. Sos Agaian",
+      link: "https://csitoday.com/2026/01/distinguished-professor-dr-sos-agaian-named-recipient-of-prestigious-spie-technology-achievement-award/",
+    },
+  ],
   "2024": [
     {
       id: "24-1",
@@ -112,43 +132,8 @@ export const newsData: Record<string, NewsItem[]> = {
 };
 
 // Available years for filtering
-export const newsYears: string[] = ["2024", "2023", "2022", "2021"];
+export const newsYears: string[] = ["2026","2024", "2023", "2022", "2021"];
 
-// Research partners for the logo ticker
-export interface ResearchPartner {
-  name: string;
-  label: string;
-  type: "image" | "icon";
-  src?: string;
-  iconId?: number;
-}
-
-export const researchPartners: ResearchPartner[] = [
-  {
-    name: "NSF",
-    label: "National Science Foundation",
-    type: "image",
-    src: "/nsf.png",
-  },
-  {
-    name: "Google",
-    label: "Google CyberNYC",
-    type: "icon",
-    iconId: 1, // Google icon ID from floating-icons
-  },
-  {
-    name: "Amazon",
-    label: "Amazon Web Services",
-    type: "icon",
-    iconId: 16, // AWS icon ID from floating-icons
-  },
-  {
-    name: "CUNY",
-    label: "City University of New York",
-    type: "image",
-    src: "/cuny.png",
-  },
-];
 
 // Helper functions
 export const getNewsByYear = (year: string): NewsItem[] => {

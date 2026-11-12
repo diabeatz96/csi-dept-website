@@ -1,14 +1,7 @@
 import type { StaffMember } from "../types";
+import { sortByName } from "./sort";
 
-export const officeStaff: StaffMember[] = [
-  {
-    id: "joanne-morris",
-    name: "Joanne Morris",
-    title: "CUNY Administrative Assistant",
-    email: "joanne.morris@csi.cuny.edu",
-    office: "1N-215",
-    phone: "718-982-2850",
-  },
+export const officeStaff: StaffMember[] = sortByName([
   {
     id: "laurie-guido",
     name: "Laurie Guido",
@@ -33,17 +26,9 @@ export const officeStaff: StaffMember[] = [
     office: "1N-214",
     phone: "718-982-3178",
   },
-];
+]);
 
-export const technicalStaff: StaffMember[] = [
-  {
-    id: "chang-guo",
-    name: "Chang Guo",
-    title: "Senior College Lab Technician",
-    email: "chang.guo@csi.cuny.edu",
-    office: "1N-219",
-    phone: "718-982-2857",
-  },
+export const technicalStaff: StaffMember[] = sortByName([
   {
     id: "orit-gruber",
     name: "Orit D. Gruber",
@@ -53,14 +38,6 @@ export const technicalStaff: StaffMember[] = [
     phone: "718-982-3015",
   },
   {
-    id: "adam-kostandy",
-    name: "Adam Kostandy",
-    title: "Adjunct Faculty / Lab Technician",
-    email: "adam.kostandy@csi.cuny.edu",
-    phone: "718-982-2857",
-    office: "1N-219",
-  },
-  {
     id: "zhongcai-jiang",
     name: "Zhongcai Jiang",
     title: "College Lab Technician",
@@ -68,7 +45,7 @@ export const technicalStaff: StaffMember[] = [
     phone: "718-982-2857",
     office: "1N-219",
   }
-];
+]);
 
 // Combined staff list
 export const allStaff: StaffMember[] = [...officeStaff, ...technicalStaff];

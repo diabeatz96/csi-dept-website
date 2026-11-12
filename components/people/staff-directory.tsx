@@ -9,7 +9,9 @@ import {
   MapPin,
   Briefcase,
   Users,
-  Award
+  Award,
+  Wrench,
+  type LucideIcon
 } from 'lucide-react';
 import {
   emeritusFacultyNames,
@@ -17,10 +19,11 @@ import {
   officeStaff,
   technicalStaff,
 } from '@/data/people';
+import type { StaffMember } from '@/data/types';
 
 // --- Components ---
 
-const StaffCard = ({ member, index }: { member: any, index: number }) => (
+const StaffCard = ({ member, index }: { member: StaffMember, index: number }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -46,19 +49,23 @@ const StaffCard = ({ member, index }: { member: any, index: number }) => (
           {member.email}
         </a>
       </div>
-      <div className="flex items-center gap-3">
-        <MapPin size={16} className="text-slate-400" />
-        <span>Office: {member.office}</span>
-      </div>
-      <div className="flex items-center gap-3">
-        <Phone size={16} className="text-slate-400" />
-        <span>{member.phone}</span>
-      </div>
+      {member.office && (
+        <div className="flex items-center gap-3">
+          <MapPin size={16} className="text-slate-400" />
+          <span>Office: {member.office}</span>
+        </div>
+      )}
+      {member.phone && (
+        <div className="flex items-center gap-3">
+          <Phone size={16} className="text-slate-400" />
+          <span>{member.phone}</span>
+        </div>
+      )}
     </div>
   </motion.div>
 );
 
-const NameListSection = ({ title, names, icon: Icon }: { title: string, names: string[], icon: any }) => (
+const NameListSection = ({ title, names, icon: Icon }: { title: string, names: string[], icon: LucideIcon }) => (
   <div className="mb-20">
     <motion.div
       initial={{ opacity: 0, x: -20 }}
@@ -75,16 +82,38 @@ const NameListSection = ({ title, names, icon: Icon }: { title: string, names: s
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {names.map((name, idx) => (
         <motion.div
-          key={idx}
+          key={name}
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ delay: idx * 0.02 }}
-          whileHover={{ x: 5, backgroundColor: "#eff6ff" }} // blue-50
-          className="p-3 rounded-lg border border-slate-100 bg-white text-slate-700 text-sm font-medium cursor-default hover:border-blue-100 hover:text-blue-700 transition-all"
+          whileHover={{ y: -2, backgroundColor: "#eff6ff" }} // blue-50
+          className="p-3 rounded-lg border border-slate-200 bg-white text-slate-700 text-base font-medium text-center shadow-sm cursor-default hover:border-blue-300 hover:text-blue-700 transition-all"
         >
           {name}
         </motion.div>
+      ))}
+    </div>
+  </div>
+);
+
+const StaffSection = ({ title, members, icon: Icon }: { title: string, members: StaffMember[], icon: LucideIcon }) => (
+  <div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="flex items-center gap-3 mb-10"
+    >
+      <div className="p-2 bg-blue-100 text-[#0369A1] rounded-lg">
+        <Icon size={24} />
+      </div>
+      <h3 className="text-2xl font-bold text-slate-900">{title}</h3>
+    </motion.div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {members.map((staff, idx) => (
+        <StaffCard key={staff.id} member={staff} index={idx} />
       ))}
     </div>
   </div>
@@ -94,7 +123,7 @@ const NameListSection = ({ title, names, icon: Icon }: { title: string, names: s
 
 export default function DepartmentStaff() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-11 bg-white">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Page Header */}
@@ -105,15 +134,15 @@ export default function DepartmentStaff() {
           className="text-center max-w-3xl mx-auto mb-20"
         >
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">
-            Department Staff
+            Department Faculty & Staff
           </h2>
           <p className="text-lg text-slate-600">
-            The dedicated team supporting the Computer Science department's academic and operational excellence.
+            Our emeritus and adjunct faculty, and the dedicated team supporting the department&apos;s academic and operational excellence.
           </p>
         </motion.div>
 
         {/* Emeritus & Adjuncts Lists */}
-        <div className="border-b border-slate-100 mb-20">
+        <div className="border-b border-slate-100 mb-5">
           <NameListSection
             title="Emeritus Faculty"
             names={emeritusFacultyNames}
@@ -126,31 +155,18 @@ export default function DepartmentStaff() {
           />
         </div>
 
-        {/* Staff Cards Section */}
-        <div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex items-center gap-3 mb-10"
-          >
-            <div className="p-2 bg-blue-100 text-[#0369A1] rounded-lg">
-              <Briefcase size={24} />
-            </div>
-            <h3 className="text-2xl font-bold text-slate-900">Office & Technical Staff</h3>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Office Staff */}
-            {officeStaff.map((staff, idx) => (
-              <StaffCard key={staff.name} member={staff} index={idx} />
-            ))}
-
-            {/* Technical Staff */}
-            {technicalStaff.map((staff, idx) => (
-              <StaffCard key={staff.name} member={staff} index={idx + officeStaff.length} />
-            ))}
-          </div>
+        {/* Staff Cards Sections */}
+        <div className="space-y-20">
+          <StaffSection
+            title="Office Staff"
+            members={officeStaff}
+            icon={Briefcase}
+          />
+          <StaffSection
+            title="Technical Staff"
+            members={technicalStaff}
+            icon={Wrench}
+          />
         </div>
 
       </div>

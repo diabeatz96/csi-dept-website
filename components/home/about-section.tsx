@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 import React from "react";
 import { LinkPreview } from "@/components/ui/link-preview";
 import { motion } from "framer-motion";
-import { CompaniesMarquee } from "../companies-marquee";
+import { CompaniesMarquee } from "@/components/companies-marquee";
 import Image from "next/image";
 
-interface About3Props {
+interface AboutSectionProps {
   title?: string;
   description?: React.ReactNode;
   mainImage?: {
@@ -40,7 +40,7 @@ interface About3Props {
 }
 
 
-export const About3 = ({
+export const AboutSection = ({
 title = "About Us",
   description = (
     <>The Computer Science Department offers programs that prepare students for careers as computer professionals and/or for continued study. The major
@@ -73,7 +73,7 @@ title = "About Us",
     { label: "Top Companies", value: "200+" },
     { label: "Average Starting Salary", value: "$85K+" },
   ],
-}: About3Props = {}) => {
+}: AboutSectionProps = {}) => {
   const viewportOptions = { once: true, margin: "-100px" };
   const defaultTransition = { duration: 0.6, ease: "easeOut" as const };
 

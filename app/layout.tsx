@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/navbar"; // not used, just another version of the nav bar but more basic.
 import Footer from "@/components/footer";
-import TopBanner from "@/components/top-banner";
+import TopBanner from "@/components/top-banner"; // not used, just info saying Spring 2026 Registration Open Apply by December 15th to secure your spot in the program
 import SmoothScrollHandler from "@/components/smooth-scroll-handler";
-import NavbarEdu from "@/components/navbar-edu";
+import NavbarEdu from "@/components/navbar-edu"; // actual nav bar
 import { SearchProvider, SearchCommand } from "@/components/search";
 
 const geistSans = Geist({

@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import { Phone, MapPin, Printer, Mail, Award, Users, BookOpen, GraduationCap } from 'lucide-react';
 import Image from 'next/image';
 
+// no longer in used removed as per request form chair, hardcoded information might not be correct.
+
 const DepartmentHeadSection = () => {
   const profile = {
     name: "Professor Shuqun Zhang",
@@ -152,7 +154,7 @@ const DepartmentHeadSection = () => {
 
                 {/* Quote - WCAG AA compliant colors */}
                 <div className="relative bg-[#F0F9FF] rounded-xl p-5 border-l-4 border-[#8AC2EB]">
-                  <span className="absolute -top-1 left-4 text-4xl text-[#0369A1]/30 font-serif leading-none" aria-hidden="true">"</span>
+                  <span className="absolute -top-1 left-4 text-4xl text-[#0369A1]/30 font-serif leading-none" aria-hidden="true">&ldquo;</span>
                   <blockquote className="italic text-[#374151] text-sm md:text-base relative z-10 pl-3">
                     {profile.quote}
                   </blockquote>

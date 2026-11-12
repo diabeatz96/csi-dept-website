@@ -5,7 +5,18 @@ import { undergraduatePrograms, undergradSpecializations, minorPrograms, graduat
 import { facultyResearchAreas, studentResearchProjects } from '@/data/research';
 import { newsData } from '@/data/news';
 import { studentSpotlights } from '@/data/spotlights';
-import { resourceCategories } from '@/data/resources';
+import {
+  resourceSections,
+  degreeLinks,
+  academicCalendar,
+  tutoringLab,
+  academicSupportOffice,
+  featuredCareerLinks,
+  careerLinks,
+  clubs,
+  campusLinks,
+  helpDesk,
+} from '@/data/resources';
 
 // Search category types
 export type SearchCategory =
@@ -233,30 +244,41 @@ export function buildSearchIndex(): SearchableItem[] {
     });
   });
 
-  // === RESOURCES: Categories ===
-  resourceCategories.forEach(category => {
+  // === RESOURCES: Sections ===
+  Object.values(resourceSections).forEach(section => {
     items.push({
-      id: `resource-category-${category.id}`,
-      title: category.title,
-      subtitle: 'Resource Category',
-      description: category.description,
+      id: `resource-section-${section.id}`,
+      title: section.title,
+      subtitle: 'Resource Section',
+      description: section.description ?? '',
       category: 'resources',
-      href: '/resources#resources-tools',
-      iconName: category.iconName,
+      href: `/resources#${section.id}`,
+      iconName: section.tile.iconName,
       keywords: ['resource', 'student', 'support'],
     });
+  });
 
-    // === RESOURCES: Individual Links ===
-    category.links.forEach(link => {
+  // === RESOURCES: Individual Links ===
+  const resourceLinkGroups = [
+    { section: resourceSections.degree, links: degreeLinks },
+    { section: resourceSections.calendar, links: [academicCalendar] },
+    { section: resourceSections.tutoring, links: [tutoringLab, academicSupportOffice] },
+    { section: resourceSections.careers, links: [...featuredCareerLinks, ...careerLinks] },
+    { section: resourceSections.community, links: clubs },
+    { section: resourceSections.support, links: [...campusLinks, helpDesk] },
+  ];
+
+  resourceLinkGroups.forEach(({ section, links }) => {
+    links.forEach(link => {
       items.push({
         id: `resource-${link.id}`,
-        title: link.label,
-        subtitle: category.title,
+        title: link.title,
+        subtitle: section.title,
         description: link.description,
         category: 'resources',
-        href: link.url !== '#' ? link.url : '/resources#resources-tools',
-        iconName: category.iconName,
-        keywords: ['resource', category.title.toLowerCase()],
+        href: link.href ?? `/resources#${section.id}`,
+        iconName: link.iconName ?? section.tile.iconName,
+        keywords: ['resource', section.title.toLowerCase()],
       });
     });
   });

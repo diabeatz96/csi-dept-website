@@ -6,8 +6,10 @@ import Image from 'next/image';
 import {
     Mail,
     Phone,
+    Printer,
     MapPin,
     Facebook,
+    Linkedin,
     ExternalLink,
     GraduationCap,
     ArrowRight
@@ -26,8 +28,8 @@ export default function Footer() {
         resources: [
             { name: 'People', href: '/people' },
             { name: 'Resources', href: '/resources' },
-            { name: 'Student Spotlights', href: '/resources#student-spotlights' },
-            { name: 'Career Services', href: '/resources#resources-tools' },
+            { name: 'Tutoring', href: '/resources#tutoring' },
+            { name: 'Career Services', href: '/resources#careers' },
         ],
         quickLinks: [
             { name: 'CUNY First', href: 'https://www.cuny.edu/about/administration/offices/cis/cunyfirst/', external: true },
@@ -61,20 +63,24 @@ export default function Footer() {
                             Advancing the frontiers of computing through excellence in education, research, and innovation.
                         </p>
                         {/* Contact Info */}
-                        <address className="space-y-2 md:space-y-3 not-italic">
-                            <div className="flex items-start gap-2 md:gap-3 text-xs md:text-sm text-slate-300">
-                                <MapPin size={14} className="text-[#0369A1] mt-0.5 shrink-0" aria-hidden="true" />
-                                <span>2800 Victory Blvd, Staten Island, NY 10314</span>
+                        <address className="space-y-1 md:space-y-2 not-italic">
+                            <div className="flex items-center gap-2 md:gap-3 text-xs md:text-sm text-slate-300">
+                                <MapPin size={14} className="text-[#0369A1] shrink-0" aria-hidden="true" />
+                                <span className="min-h-6 flex items-center">2800 Victory Blvd, Staten Island, NY 10314, Room 1N-215</span>
                             </div>
                             <div className="flex items-center gap-2 md:gap-3 text-xs md:text-sm text-slate-300">
                                 <Phone size={14} className="text-[#0369A1] shrink-0" aria-hidden="true" />
-                                <a href="tel:+17189822800" className="hover:text-[#0369A1] transition-colors min-h-11 flex items-center" aria-label="Call us at (718) 982-2800">
-                                    (718) 982-2800
+                                <a href="tel:+17189822850" className="hover:text-[#0369A1] transition-colors min-h-6 flex items-center" aria-label="Call us at (718) 982-2850">
+                                    (718) 982-2850
                                 </a>
                             </div>
                             <div className="flex items-center gap-2 md:gap-3 text-xs md:text-sm text-slate-300">
+                                <Printer size={14} className="text-[#0369A1] shrink-0" aria-hidden="true" />
+                                <span className="min-h-6 flex items-center">Fax: (718) 982-2856</span>
+                            </div>
+                            <div className="flex items-center gap-2 md:gap-3 text-xs md:text-sm text-slate-300">
                                 <Mail size={14} className="text-[#0369A1] shrink-0" aria-hidden="true" />
-                                <a href="mailto:cs@csi.cuny.edu" className="hover:text-[#0369A1] transition-colors min-h-11 flex items-center" aria-label="Email us at cs@csi.cuny.edu">
+                                <a href="mailto:cs@csi.cuny.edu" className="hover:text-[#0369A1] transition-colors min-h-6 flex items-center" aria-label="Email us at cs@csi.cuny.edu">
                                     cs@csi.cuny.edu
                                 </a>
                             </div>
@@ -172,6 +178,15 @@ export default function Footer() {
                                 aria-label="Visit our Facebook page (opens in new tab)"
                             >
                                 <Facebook size={18} className="group-hover:scale-110 transition-transform" aria-hidden="true" />
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/school/collegeofstatenisland/posts/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-11 h-11 rounded-full bg-slate-800 hover:bg-[#0369A1] flex items-center justify-center text-slate-300 hover:text-white transition-all duration-300 group"
+                                aria-label="Visit our LinkedIn page (opens in new tab)"
+                            >
+                                <Linkedin size={18} className="group-hover:scale-110 transition-transform" aria-hidden="true" />
                             </a>
                             <a
                                 href="https://www.csi.cuny.edu"
