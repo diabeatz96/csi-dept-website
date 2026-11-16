@@ -48,7 +48,7 @@ export default function Footer() {
                     <div className="sm:col-span-2 lg:col-span-2">
                         <Link href="/" className="flex items-center gap-3 mb-4 md:mb-6 group">
                             <div className="w-10 h-12 md:w-12 md:h-16 rounded-lg flex items-center justify-center">
-                                <Image src="/cunycsiwhite.png" alt="" width={32} height={41} className="w-8 h-10 md:w-10 md:h-13 object-contain" aria-hidden="true" />
+                                <Image src="/cunycsiwhite.png" alt="" width={32} height={41} className="w-8 h-auto md:w-10 md:h-13 object-contain" aria-hidden="true" />
                             </div>
                             <div className="flex flex-col">
                                 <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-slate-400">

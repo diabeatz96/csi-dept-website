@@ -53,11 +53,11 @@ const FeaturedPrograms = () => {
         viewport={{ once: true }}
         className="text-center mb-4 md:mb-6"
       >
-        <div className="inline-flex items-center gap-3 mb-4 px-4 py-2 bg-[#0369A1]/10 rounded-full">
+        <div className="inline-flex items-center gap-3 mt-4 mb-4 px-4 py-2 bg-[#0369A1]/10 rounded-full">
           <Image
             src="/csi-blue-logo.png"
             alt=""
-            width={28}
+            width={27}
             height={28}
             className="h-7 w-auto object-contain"
             aria-hidden="true"
