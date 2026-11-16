@@ -15,9 +15,20 @@ export const resourcesIntro: ResourcesIntro = {
 
 // Listed in page order, which is also the order of the quick-link tiles
 export const resourceSections: Record<ResourceSectionId, ResourceSection> = {
+  tutoring: {
+    id: "tutoring",
+    eyebrow: "1 · Get Help With a Course",
+    title: "Tutoring",
+    description: "Free tutoring for CS courses and every other subject.",
+    tile: {
+      label: "Get tutoring",
+      subtitle: "Tutoring, labs, software",
+      iconName: "BookOpen",
+    },
+  },
   advising: {
     id: "advising",
-    eyebrow: "1 · Get Advised",
+    eyebrow: "2 · Get Advised",
     title: "Advising & Registration",
     description: "Meet with an advisor before you register each semester.",
     tile: {
@@ -28,7 +39,7 @@ export const resourceSections: Record<ResourceSectionId, ResourceSection> = {
   },
   degree: {
     id: "degree",
-    eyebrow: "2 · Plan My Degree",
+    eyebrow: "3 · Plan My Degree",
     title: "Degree Map & Requirements",
     description:
       "Track what you've completed and what's left, then find open sections.",
@@ -40,23 +51,12 @@ export const resourceSections: Record<ResourceSectionId, ResourceSection> = {
   },
   calendar: {
     id: "calendar",
-    eyebrow: "3 · Key Dates",
+    eyebrow: "4 · Key Dates",
     title: "Semester Calendar",
     tile: {
       label: "Key dates",
       subtitle: "Academic calendar",
       iconName: "CalendarDays",
-    },
-  },
-  tutoring: {
-    id: "tutoring",
-    eyebrow: "4 · Get Help With a Course",
-    title: "Tutoring",
-    description: "Free tutoring for CS courses and every other subject.",
-    tile: {
-      label: "Get tutoring",
-      subtitle: "Tutoring, labs, software",
-      iconName: "BookOpen",
     },
   },
   careers: {

@@ -15,10 +15,10 @@ export default function StudentResources() {
             <h1 className="sr-only">Student Resources - CSI Computer Science</h1>
 
             <ResourcesHero />
+            <TutoringSection />
             <AdvisingSection />
             <DegreeSection />
             <CalendarSection />
-            <TutoringSection />
             <CareersSection />
             <CommunitySection />
             <SupportSection />
