@@ -60,6 +60,11 @@ export interface Club extends ResourceItem {
 
 export interface TutoringLab extends ResourceLink {
   room: string;
+  // Shown as an "In the lab" list beside the description
+  equipment: {
+    label: string;
+    iconName: string; // Key of the icon map in components/resources/resource-icon.tsx
+  }[];
   secondaryLink: {
     label: string;
     href: string;

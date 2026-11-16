@@ -5,7 +5,7 @@ import ExternalLink from './external-link';
 import ResourceSection from './resource-section';
 
 const chipClass =
-  'flex items-center gap-2 rounded-[10px] bg-white/10 px-3 py-2 text-[13px] font-medium text-white';
+  'flex items-center gap-2 rounded-[10px] bg-white/10 px-3.5 py-2.5 text-sm font-medium text-white';
 const chipIconClass = 'text-blue-300';
 
 function getInitials(name: string) {
@@ -37,31 +37,33 @@ export default function AdvisingSection() {
         )}
 
         <div className="flex min-w-0 flex-[1_1_300px] flex-col gap-1.5">
-          <span className="text-[11px] font-bold uppercase tracking-widest text-blue-300">
+          <span className="text-sm font-bold uppercase tracking-widest text-blue-300">
             {csAdvisor.role}
           </span>
           <h3 className="text-[28px] font-bold">{csAdvisor.name}</h3>
-          <p className="text-pretty text-sm leading-normal text-slate-300">{csAdvisor.description}</p>
+          <p className="text-pretty text-base leading-relaxed text-slate-200 md:text-lg">
+            {csAdvisor.description}
+          </p>
 
           <div className="mt-3 flex flex-wrap gap-2">
             {csAdvisor.office && (
               <span className={chipClass}>
-                <MapPin aria-hidden="true" size={15} className={chipIconClass} />
+                <MapPin aria-hidden="true" size={16} className={chipIconClass} />
                 {csAdvisor.office}
               </span>
             )}
             {csAdvisor.phone && (
               <a href={csAdvisor.phoneHref} className={chipClass}>
-                <Phone aria-hidden="true" size={15} className={chipIconClass} />
+                <Phone aria-hidden="true" size={16} className={chipIconClass} />
                 {csAdvisor.phone}
               </a>
             )}
             <a href={csAdvisor.emailHref} className={chipClass}>
-              <Mail aria-hidden="true" size={15} className={chipIconClass} />
+              <Mail aria-hidden="true" size={16} className={chipIconClass} />
               {csAdvisor.email}
             </a>
             <ExternalLink href={csAdvisor.linkedinHref} className={chipClass}>
-              <Linkedin aria-hidden="true" size={15} className={chipIconClass} />
+              <Linkedin aria-hidden="true" size={16} className={chipIconClass} />
               LinkedIn
             </ExternalLink>
           </div>
@@ -69,7 +71,7 @@ export default function AdvisingSection() {
 
         <a
           href={csAdvisor.emailHref}
-          className="flex-none rounded-xl bg-[#0369A1] px-6 py-3 text-[15px] font-bold text-white shadow-lg shadow-blue-900/50 transition-colors hover:bg-blue-700"
+          className="flex-none rounded-xl bg-[#0369A1] px-6 py-3 text-base font-bold text-white shadow-lg shadow-blue-900/50 transition-colors hover:bg-blue-700"
         >
           {csAdvisor.ctaLabel}
         </a>

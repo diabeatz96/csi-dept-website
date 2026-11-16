@@ -12,11 +12,11 @@ export default function SupportSection() {
           <ExternalLink
             key={link.id}
             href={link.href}
-            className="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 transition-colors hover:border-[#0369A1] hover:text-[#0369A1]"
+            className="flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2.5 text-base font-semibold text-slate-800 transition-colors hover:border-[#0369A1] hover:text-[#0369A1]"
           >
-            <ResourceIcon name={link.iconName} size={16} className="text-[#0369A1]" />
+            <ResourceIcon name={link.iconName} size={18} className="text-[#0369A1]" />
             {link.title}
-            <ArrowUpRight aria-hidden="true" size={13} className="text-slate-400" />
+            <ArrowUpRight aria-hidden="true" size={15} className="text-slate-500" />
           </ExternalLink>
         ))}
       </div>
@@ -28,13 +28,13 @@ export default function SupportSection() {
           </div>
           <div>
             <h3 className="mb-1 text-xl font-bold">{helpDesk.title}</h3>
-            <p className="text-sm text-slate-300">{helpDesk.description}</p>
+            <p className="text-base text-slate-200 md:text-lg">{helpDesk.description}</p>
           </div>
         </div>
         {helpDesk.href && (
           <ExternalLink
             href={helpDesk.href}
-            className="whitespace-nowrap rounded-xl bg-[#0369A1] px-6 py-3 text-[15px] font-bold text-white shadow-lg shadow-blue-900/50 transition-colors hover:bg-blue-700"
+            className="whitespace-nowrap rounded-xl bg-[#0369A1] px-6 py-3 text-base font-bold text-white shadow-lg shadow-blue-900/50 transition-colors hover:bg-blue-700"
           >
             {helpDesk.ctaLabel}
           </ExternalLink>

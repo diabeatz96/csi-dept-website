@@ -95,3 +95,4 @@ export const resourceSections: Record<ResourceSectionId, ResourceSection> = {
     },
   },
 };
+

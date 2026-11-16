@@ -63,7 +63,14 @@ export const tutoringLab: TutoringLab = {
   title: "CS Tutoring Lab",
   room: "1N-113",
   description:
-    "Free walk-in tutoring for all CSI students. The lab has computers, a printer, breadboards, Raspberry Pis and FPGA boards. Stop by to get help or work on assignments.",
+    "Free walk-in tutoring for all CSI students. No appointment needed: stop by to get help or work on assignments with the lab's equipment.",
+  equipment: [
+    { label: "Computers", iconName: "Monitor" },
+    { label: "Printer", iconName: "Printer" },
+    { label: "Breadboards", iconName: "CircuitBoard" },
+    { label: "Raspberry Pis", iconName: "Cpu" },
+    { label: "FPGA boards", iconName: "Microchip" },
+  ],
   href: "http://www.cs.csi.cuny.edu/content/tutoring.pdf",
   iconName: "FileText",
   ctaLabel: "View tutoring schedule (PDF)",

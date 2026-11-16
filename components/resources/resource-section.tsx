@@ -16,14 +16,14 @@ export default function ResourceSection({
     <section id={section.id} className={cn('scroll-mt-36 py-8 lg:scroll-mt-20', className)}>
       <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6">
         <div>
-          <span className="mb-2 block text-xs font-bold uppercase tracking-widest text-[#0369A1]">
+          <span className="mb-2 block text-sm font-bold uppercase tracking-widest text-[#0369A1]">
             {section.eyebrow}
           </span>
-          <h2 className="text-[clamp(26px,3vw,32px)] font-bold text-slate-900">
+          <h2 className="text-[clamp(28px,3vw,36px)] font-bold text-slate-900">
             {section.title}
           </h2>
           {section.description && (
-            <p className="mt-2 max-w-2xl text-pretty leading-relaxed text-slate-600">
+            <p className="mt-2 max-w-3xl text-pretty text-lg leading-relaxed text-slate-700">
               {section.description}
             </p>
           )}
