@@ -18,7 +18,7 @@ export interface StudentResearchProject {
 export const studentResearchProjects: StudentResearchProject[] = [
   {
     id: 1,
-    title: "Optimized Tunel Image Enhancement",
+    title: "Optimized Tunnel Image Enhancement",
     category: "Computer Vision",
     icon: "Eye",
     size: "lg",
@@ -119,7 +119,7 @@ export const studentResearchProjects: StudentResearchProject[] = [
     color: "slate",
     description: "A mutual authentication scheme for secure logins.",
     pdfUrl: "https://www.cs.csi.cuny.edu/poster/poster_QRCode.pdf",
-    pdfPreview: "/student-research/qr-otp-auth.png",
+    pdfPreview: "/student-research/qr-code-assisted-op.png",
   },
   {
     id: 10,
@@ -143,7 +143,7 @@ export const studentResearchProjects: StudentResearchProject[] = [
     color: "emerald",
     description: "Designing storage systems that ensure permanent data erasure.",
     pdfUrl: "https://www.cs.csi.cuny.edu/poster/poster_ahmed_filesystem.pdf",
-    pdfPreview: "/student-research/desiging-a-file-system.png",
+    pdfPreview: "/student-research/designing-a-file-system.png",
   },
   {
     id: 12,

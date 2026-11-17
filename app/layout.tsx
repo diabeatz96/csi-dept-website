@@ -135,7 +135,13 @@ export default function RootLayout({
           <SmoothScrollHandler />
           {/* <TopBanner /> */}
           <NavbarEdu />
-          <main id="main-content" tabIndex={-1}>
+          {/* Pages already leave ~64px for the one-row desktop navbar. On narrower screens the
+              fixed navbar grows taller, so add the difference here (--nav-h is set in navbar-edu.tsx). */}
+          <main
+            id="main-content"
+            tabIndex={-1}
+            style={{ paddingTop: "max(0px, calc(var(--nav-h, 64px) - 64px))" }}
+          >
             {children}
           </main>
           <Footer />

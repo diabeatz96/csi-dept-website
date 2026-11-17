@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useMemo, Suspense } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { useSearchParams } from 'next/navigation';
-import { Search, Filter, BookOpen, Hash, X, Calendar, FileText, ExternalLink, ArrowRight } from 'lucide-react';
+import { Search, Filter, BookOpen, Hash, X, Calendar, Map as MapIcon, ExternalLink, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { allCourses } from '@/data/courses';
 import type { Course } from '@/data/types';
@@ -11,61 +11,24 @@ import type { Course } from '@/data/types';
 // --- Components ---
 
 const CourseCard = ({ course, isProjectMode }: { course: Course, isProjectMode: boolean }) => {
-    
+
     const targetLink = (isProjectMode && course.projectHref) ? course.projectHref : course.href;
 
-    const getGradient = () => {
-        if (course.level === "PhD") return "from-purple-900 to-slate-900";
-        if (course.type === "graduate") return "from-slate-800 to-slate-950";
-        if (course.level === "ISI") return "from-teal-900 to-slate-900";
-        return "from-blue-900 to-slate-900";
+    // One solid color per group (white text passes WCAG AA contrast on all four)
+    const getColor = () => {
+        if (course.level === "PhD") return "bg-purple-900";
+        if (course.type === "graduate") return "bg-slate-800";
+        if (course.level === "ISI") return "bg-teal-800";
+        return "bg-sky-900";
     };
 
-    const CardContent = (
-        <>
-            {/* Card Container */}
-            <div className={`relative aspect-video rounded-xl overflow-hidden shadow-md border border-slate-200/60 group-hover:shadow-2xl group-hover:border-blue-500/30 transition-all duration-300`}>
-                <div className={`absolute inset-0 bg-gradient-to-br ${getGradient()} opacity-95 transition-opacity duration-500`}></div>
-                <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')] mix-blend-overlay"></div>
-
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-4 z-10 text-center">
-                    <div className="flex flex-col items-center">
-                        <span className="text-lg font-medium text-blue-200/80 tracking-widest uppercase mb-1">
-                            {course.code.split(" ")[0]}
-                        </span>
-                        <span className="text-4xl md:text-5xl font-black text-white tracking-tighter leading-none group-hover:scale-105 transition-transform duration-300 drop-shadow-lg">
-                            {course.code.split(" ")[1]}
-                        </span>
-                    </div>
-
-                    <div className="mt-4 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-[10px] font-bold text-white uppercase tracking-widest shadow-sm group-hover:bg-white/20 transition-colors">
-                        {course.level === 'ISI' ? 'Information Systems' : course.level === 'PhD' ? 'Doctoral' : `${course.level} Level`}
-                    </div>
-                </div>
-
-                <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform"></div>
-            </div>
-
-            {/* Title Under Card */}
-            <div className="mt-4 px-1 flex flex-col flex-grow">
-                <h4 className="font-bold text-slate-800 text-sm leading-snug group-hover:text-blue-700 transition-colors line-clamp-2">
-                    {course.title}
-                </h4>
-                
-                <div className="flex items-center justify-between mt-auto pt-2">
-                    <div className="flex items-center gap-2">
-                        <div className={`w-1.5 h-1.5 rounded-full ${course.type === 'graduate' ? 'bg-purple-500' : 'bg-blue-500'}`}></div>
-                        <p className="text-xs text-slate-500 font-medium capitalize">
-                            {course.type}
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </>
-    );
-
     return (
-        <Link href={targetLink} target="_blank" rel="noopener noreferrer">
+        <Link
+            href={targetLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block h-full rounded-xl focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+        >
             <motion.div
                 layout
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -73,9 +36,21 @@ const CourseCard = ({ course, isProjectMode }: { course: Course, isProjectMode: 
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.3 }}
                 whileHover={{ y: -8, transition: { duration: 0.2 } }}
-                className="group flex flex-col h-full cursor-pointer"
+                className={`group flex h-full min-h-44 cursor-pointer flex-col items-center gap-2 rounded-xl p-5 text-center shadow-md transition-shadow duration-300 hover:shadow-2xl ${getColor()}`}
             >
-                {CardContent}
+                {/* Line 1: course number */}
+                <span className="text-3xl font-extrabold tracking-wide text-white">
+                    {course.code}
+                </span>
+
+                {/* Middle: course title */}
+                <h4 className="my-auto text-lg font-semibold leading-snug text-white">
+                    {course.title}
+                </h4>
+
+                <p className="text-xs font-medium uppercase tracking-wider text-slate-200">
+                    {course.type}
+                </p>
             </motion.div>
         </Link>
     );
@@ -179,7 +154,7 @@ function CoursesPageContent() {
             <h1 className="sr-only">Computer Science Course Catalog - CSI</h1>
 
             {/* --- Quick Links Section --- */}
-            <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-cyan-700 text-white pb-8 md:pb-12 pt-18">
+            <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-cyan-700 text-white pb-8 md:pb-12 pt-24">
                 <div className="max-w-[1600px] mx-auto px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -187,7 +162,7 @@ function CoursesPageContent() {
                         transition={{ duration: 0.6 }}
                         className="max-w-7xl mx-auto"
                     >
-                        <div className="flex items-center gap-3 mb-8 justify-center md:justify-start">
+                        <div className="flex items-center gap-3 mb-8 justify-center">
                             <div className="p-2 bg-white/20 rounded-lg backdrop-blur-sm">
                                 <BookOpen size={24} aria-hidden="true" />
                             </div>
@@ -220,9 +195,9 @@ function CoursesPageContent() {
                                             Computer Science Course Schedule
                                         </h3>
                                         <p className="text-lg text-blue-100 mb-3">
-                                            Search for courses across CUNY using Global Search Tool
+                                            Search for current semester courses across CUNY using Global Search Tool
                                         </p>
-                                        <div className="flex items-center gap-2 text-large font-medium text-white/90 group-hover:text-white transition-colors">
+                                        <div className="flex items-center gap-2 text-lg font-medium text-white/90 group-hover:text-white transition-colors">
                                             <span>View Schedule</span>
                                             <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                                         </div>
@@ -231,12 +206,12 @@ function CoursesPageContent() {
                                 </div>
                             </motion.a>
 
-                            {/* Overtally Policy Link */}
+                            {/* Sample Degree Milestone Map Link */}
                             <motion.a
-                                href="https://www.cs.csi.cuny.edu/content/overtally.pdf"
+                                href="https://csi-cs-department.gitbook.io/cs-internship-handbook/college-of-staten-island-computer-science-department/college-of-staten-island-computer-science-department"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                aria-label="Waitlist and Overtally Policy PDF (opens in new tab)"
+                                aria-label="Sample Degree Milestone Map (opens in new tab)"
                                 initial={{ opacity: 0, x: 20 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.5, delay: 0.3 }}
@@ -249,17 +224,17 @@ function CoursesPageContent() {
 
                                 <div className="relative z-10 flex items-start gap-4">
                                     <div className="p-3 bg-white/20 rounded-xl group-hover:bg-white/30 transition-colors shrink-0">
-                                        <FileText size={24} className="text-white" aria-hidden="true" />
+                                        <MapIcon size={24} className="text-white" aria-hidden="true" />
                                     </div>
                                     <div className="flex-1 min-w-0">
                                         <h3 className="font-bold text-xl mb-2 group-hover:text-blue-100 transition-colors">
-                                            Waitlist and Overtally Policy
+                                            Sample Degree Milestone Map
                                         </h3>
                                         <p className="text-lg text-blue-100 mb-3">
-                                            Review the department's policy for waitlists and course overtally requests
+                                            A sample roadmap for Computer Science students at CSI
                                         </p>
                                         <div className="flex items-center gap-2 text-lg font-medium text-white/90 group-hover:text-white transition-colors">
-                                            <span>View Policy</span>
+                                            <span>View Map</span>
                                             <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                                         </div>
                                     </div>
@@ -272,7 +247,8 @@ function CoursesPageContent() {
             </section>
 
             {/* --- Sticky Header Section --- */}
-            <div className={`sticky top-4 z-40 bg-white/90 backdrop-blur-xl transition-all duration-300 border-b border-slate-200 ${isScrolled ? 'shadow-sm py-4' : 'py-6'}`}>
+            {/* Sticks just below the fixed navbar: --nav-h is the navbar height (set in navbar-edu.tsx); the navbar is 8px shorter once scrolled */}
+            <div className={`sticky top-[calc(var(--nav-h,64px)-8px)] z-40 bg-white/90 backdrop-blur-xl transition-all duration-300 border-b border-slate-200 ${isScrolled ? 'shadow-sm py-4' : 'py-6'}`}>
                 <div className="max-w-[1600px] mx-auto px-6">
 
                     <div className="flex flex-col gap-5">
@@ -353,7 +329,7 @@ function CoursesPageContent() {
                                     {getSubFilters().map((lvl) => (
                                         <FilterPill
                                             key={lvl}
-                                            label={lvl === 'ISI' ? 'ISI Dept' : lvl === 'PhD' ? 'PhD' : `${lvl} Level`}
+                                            label={lvl === 'ISI' ? 'ISI Courses' : lvl === 'PhD' ? 'PhD' : `${lvl} Level`}
                                             isActive={subFilter === lvl}
                                             onClick={() => setSubFilter(lvl)}
                                         />
@@ -367,6 +343,17 @@ function CoursesPageContent() {
 
             {/* --- Course Grid Section --- */}
             <div className="max-w-[1600px] mx-auto px-6 py-12">
+
+                {/* Explains the Student Project tab (only shown while that tab is selected) */}
+                {mainFilter === 'student project' && (
+                    <div className="mx-auto mb-8 max-w-3xl rounded-xl border border-slate-200 bg-white p-5 text-center shadow-sm">
+                        <h2 className="mb-1.5 text-xl font-bold text-slate-900">Student Projects</h2>
+                        <p className="text-base leading-relaxed text-slate-700">
+                            Students build projects in many of our courses. Select a course below to see a
+                            showcase of projects made in that course. The project list opens on a separate website.
+                        </p>
+                    </div>
+                )}
 
                 {/* Results Header */}
                 <div className="mb-8 flex items-center justify-between">
@@ -384,7 +371,7 @@ function CoursesPageContent() {
                 {filteredCourses.length > 0 ? (
                     <motion.div
                         layout
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-x-6 gap-y-12"
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6"
                     >
                         <AnimatePresence mode='popLayout'>
                             {filteredCourses.map((course) => (

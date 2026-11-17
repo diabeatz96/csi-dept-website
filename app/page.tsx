@@ -1,3 +1,4 @@
+import StudentSpotlights from '@/components/student-spotlight';
 import DepartmentNewsSection from '@/components/news';
 import { AboutSection } from '@/components/home/about-section';
 import FeaturedPrograms from '@/components/home/featured-programs';
@@ -11,6 +12,9 @@ export default function CSIDepartmentPage() {
       <div className='pt-36 lg:pt-16'>
         {/* Visually hidden H1 for accessibility */}
         <h1 className="sr-only">Department of Computer Science - CUNY College of Staten Island</h1>
+
+        {/* Preview: may be merged into News & Achievements */}
+        <StudentSpotlights />
 
         {/* 1. News - Current Happenings */}
         <DepartmentNewsSection />

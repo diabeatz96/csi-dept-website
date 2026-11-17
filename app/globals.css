@@ -95,6 +95,12 @@
   animation-delay: 4s;
 }
 
+/* Estimated height of the fixed navbar before JavaScript measures the real value
+   (see components/navbar-edu.tsx). Avoids a jump on first paint. */
+:root { --nav-h: 148px; }
+@media (min-width: 1024px) { :root { --nav-h: 106px; } }
+@media (min-width: 1280px) { :root { --nav-h: 64px; } }
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);

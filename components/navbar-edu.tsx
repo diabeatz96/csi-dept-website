@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Search, MapPin, Phone, Mail } from "lucide-react";
@@ -26,6 +26,27 @@ export default function NavbarEdu() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    // The navbar is position: fixed, so it floats over the page instead of taking up space.
+    // Its height changes with screen width (the menu and contact strip wrap onto extra rows),
+    // so we measure it and publish it as the CSS variable --nav-h. The root layout uses
+    // that variable to push page content down by the right amount.
+    const innerRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        const inner = innerRef.current;
+        if (!inner) return;
+        const NAV_VERTICAL_PADDING = 25; // py-3 (12px top + 12px bottom) + 1px border
+        const update = () => {
+            document.documentElement.style.setProperty(
+                "--nav-h",
+                `${inner.offsetHeight + NAV_VERTICAL_PADDING}px`
+            );
+        };
+        update();
+        const observer = new ResizeObserver(update);
+        observer.observe(inner);
+        return () => observer.disconnect();
+    }, []);
+
     return (
         <>
             {/* --- Single Line Navbar --- */}
@@ -37,7 +58,7 @@ export default function NavbarEdu() {
                         : "bg-white border-slate-200 py-3"
                 }`}
             >
-                <div className="max-w-[1600px] mx-auto px-4 sm:px-6">
+                <div ref={innerRef} className="max-w-[1600px] mx-auto px-4 sm:px-6">
                     <div className="flex items-center justify-between gap-4">
 
                         {/* Left: Logo */}
