@@ -135,10 +135,10 @@ export default function DepartmentNewsSection() {
                 >
                     <div>
                         <h2 id="news-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 font-serif tracking-tight text-gray-900">
-                            Department News & Achievements
+                            Department News & Student Spotlights
                         </h2>
                         <p className="text-lg md:text-xl text-gray-900 max-w-3xl">
-                            Celebrating the grants, awards, and groundbreaking research of our faculty and students across the years.
+                            Celebrating the grants, awards, research, and career successes of our faculty and students across the years.
                         </p>
                     </div>
 

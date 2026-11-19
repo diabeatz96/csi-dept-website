@@ -132,21 +132,6 @@ export interface NewsItem {
   featured?: boolean;
 }
 
-// Student Spotlight Types
-// ============================================
-
-export interface StudentSpotlight {
-  id: string;
-  title: string;
-  studentName?: string;
-  description: string;
-  date: string;
-  category: string;
-  image?: string;
-  featured?: boolean;
-  icon?: string; // Icon name from lucide-react
-}
-
 // Career Milestone Types
 // ============================================
 

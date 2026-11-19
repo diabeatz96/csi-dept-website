@@ -4,7 +4,6 @@ import { allCourses } from '@/data/courses';
 import { undergraduatePrograms, undergradSpecializations, minorPrograms, graduateSpecializations } from '@/data/programs';
 import { facultyResearchAreas, studentResearchProjects } from '@/data/research';
 import { newsData } from '@/data/news';
-import { studentSpotlights } from '@/data/spotlights';
 import {
   resourceSections,
   degreeLinks,
@@ -227,20 +226,6 @@ export function buildSearchIndex(): SearchableItem[] {
       href: news.link || '/#news',
       iconName: 'Newspaper',
       keywords: [news.category, news.author, news.date].filter(Boolean) as string[],
-    });
-  });
-
-  // === SPOTLIGHTS ===
-  studentSpotlights.forEach(spotlight => {
-    items.push({
-      id: `spotlight-${spotlight.id}`,
-      title: spotlight.title,
-      subtitle: `${spotlight.category} - ${spotlight.date}`,
-      description: spotlight.description,
-      category: 'news',
-      href: '/resources#student-spotlights',
-      iconName: 'Star',
-      keywords: [spotlight.category, spotlight.date],
     });
   });
 
