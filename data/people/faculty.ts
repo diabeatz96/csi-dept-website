@@ -1,7 +1,7 @@
 import type { FacultyMember } from "../types";
-import { sortByTitleThenName } from "./sort";
+import { sortByName } from "./sort";
 
-export const faculty: FacultyMember[] = sortByTitleThenName([
+export const faculty: FacultyMember[] = sortByName([
   {
     id: "shuqun-zhang",
     name: "Shuqun Zhang",

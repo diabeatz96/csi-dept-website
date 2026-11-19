@@ -8,19 +8,47 @@ import Link from 'next/link';
 import { allCourses } from '@/data/courses';
 import type { Course } from '@/data/types';
 
+// Hue steps from green to purple as the level rises (white text passes WCAG AA contrast on all)
+const levelColors: Record<string, string> = {
+    "100": "bg-emerald-800",
+    "200": "bg-teal-800",
+    "300": "bg-cyan-800",
+    "400": "bg-blue-800",
+    "700": "bg-indigo-900",
+    "PhD": "bg-purple-900",
+    // ISI is a separate subject track, so it stays neutral rather than joining the ladder
+    "ISI": "bg-slate-700",
+};
+
+const levelKey = [
+    { label: 'Undergraduate', range: '100–400 & ISI', levels: ['100', '200', '300', '400', 'ISI'] },
+    { label: 'Graduate', range: '700 & PhD', levels: ['700', 'PhD'] },
+];
+
 // --- Components ---
+
+// Explains the card colors, since cards no longer carry an undergraduate/graduate label
+const CourseLevelKey = () => (
+    <dl aria-label="Course level key" className="flex shrink-0 flex-wrap items-center gap-x-5 gap-y-2 text-sm text-slate-600">
+        {levelKey.map((group) => (
+            <div key={group.label} className="flex items-center gap-2">
+                <span className="flex gap-0.5" aria-hidden="true">
+                    {group.levels.map((lvl) => (
+                        <span key={lvl} className={`h-3.5 w-3.5 rounded-sm ${levelColors[lvl]}`} />
+                    ))}
+                </span>
+                <dt className="font-bold text-slate-800">{group.label}</dt>
+                <dd>{group.range}</dd>
+            </div>
+        ))}
+    </dl>
+);
 
 const CourseCard = ({ course, isProjectMode }: { course: Course, isProjectMode: boolean }) => {
 
     const targetLink = (isProjectMode && course.projectHref) ? course.projectHref : course.href;
 
-    // One solid color per group (white text passes WCAG AA contrast on all four)
-    const getColor = () => {
-        if (course.level === "PhD") return "bg-purple-900";
-        if (course.type === "graduate") return "bg-slate-800";
-        if (course.level === "ISI") return "bg-teal-800";
-        return "bg-sky-900";
-    };
+    const getColor = () => levelColors[course.level] ?? "bg-slate-800";
 
     return (
         <Link
@@ -47,10 +75,6 @@ const CourseCard = ({ course, isProjectMode }: { course: Course, isProjectMode: 
                 <h4 className="my-auto text-lg font-semibold leading-snug text-white">
                     {course.title}
                 </h4>
-
-                <p className="text-xs font-medium uppercase tracking-wider text-slate-200">
-                    {course.type}
-                </p>
             </motion.div>
         </Link>
     );
@@ -306,37 +330,43 @@ function CoursesPageContent() {
                             </div>
                         </div>
 
-                        {/* Bottom Row: Dynamic Sub-Filters (Level/Dept) */}
-                        {/* Now always visible or animated, showing relevant pills */}
-                        {mainFilter !== 'student project' && (
-                            <motion.div
-                                layout
-                                className="overflow-x-auto pb-1 no-scrollbar"
-                            >
-                                <div className="flex flex-nowrap items-center gap-3">
-                                    <span className="text-xs font-extrabold text-slate-400 uppercase tracking-widest mr-2 flex items-center gap-1 shrink-0 py-1">
-                                        <Filter size={12} aria-hidden="true" /> Section:
-                                    </span>
+                        {/* Bottom Row: Dynamic Sub-Filters (Level/Dept) on the left, color key on the right */}
+                        <motion.div
+                            layout
+                            className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between"
+                        >
+                            {mainFilter !== 'student project' && (
+                                <div className="min-w-0 overflow-x-auto pb-1 no-scrollbar">
+                                    <div className="flex flex-nowrap items-center gap-3">
+                                        <span className="text-xs font-extrabold text-slate-400 uppercase tracking-widest mr-2 flex items-center gap-1 shrink-0 py-1">
+                                            <Filter size={12} aria-hidden="true" /> Section:
+                                        </span>
 
-                                    <FilterPill
-                                        label="View All"
-                                        isActive={subFilter === 'all'}
-                                        onClick={() => setSubFilter('all')}
-                                    />
-
-                                    <div className="w-px h-6 bg-slate-200 mx-1 shrink-0"></div>
-
-                                    {getSubFilters().map((lvl) => (
                                         <FilterPill
-                                            key={lvl}
-                                            label={lvl === 'ISI' ? 'ISI Courses' : lvl === 'PhD' ? 'PhD' : `${lvl} Level`}
-                                            isActive={subFilter === lvl}
-                                            onClick={() => setSubFilter(lvl)}
+                                            label="View All"
+                                            isActive={subFilter === 'all'}
+                                            onClick={() => setSubFilter('all')}
                                         />
-                                    ))}
+
+                                        <div className="w-px h-6 bg-slate-200 mx-1 shrink-0"></div>
+
+                                        {getSubFilters().map((lvl) => (
+                                            <FilterPill
+                                                key={lvl}
+                                                label={lvl === 'ISI' ? 'ISI Courses' : lvl === 'PhD' ? 'PhD' : `${lvl} Level`}
+                                                isActive={subFilter === lvl}
+                                                onClick={() => setSubFilter(lvl)}
+                                            />
+                                        ))}
+                                    </div>
                                 </div>
-                            </motion.div>
-                        )}
+                            )}
+
+                            {/* ml-auto keeps the key on the right when the Student Project tab hides the pills */}
+                            <div className="lg:ml-auto">
+                                <CourseLevelKey />
+                            </div>
+                        </motion.div>
                     </div>
                 </div>
             </div>
