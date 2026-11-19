@@ -12,11 +12,8 @@ export {
 // Faculty research areas
 export {
   facultyResearchAreas,
-  researchFilters,
   getFacultyResearchById,
-  getFacultyResearchByCategory,
   type FacultyResearchArea,
-  type ResearchCategory,
 } from "./faculty-research";
 
 // Student research projects

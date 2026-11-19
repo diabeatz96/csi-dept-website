@@ -39,11 +39,9 @@ export default function StudentResearch() {
     return (
         <section className="border-t border-slate-200 bg-slate-50 py-12 md:py-16">
             <div className="mx-auto max-w-7xl px-6">
-                <div className="mb-7 max-w-3xl">
+                <div className="mb-7 text-center">
                     <h2 className="mb-1.5 text-3xl font-bold text-slate-900">Student Research</h2>
-                    <p className="text-lg leading-relaxed text-slate-700">
-                        Posters and presentations from undergraduate and graduate student projects. Each opens as a PDF.
-                    </p>
+                    
                 </div>
 
                 <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">

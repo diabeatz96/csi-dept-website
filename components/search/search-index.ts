@@ -197,7 +197,7 @@ export function buildSearchIndex(): SearchableItem[] {
       category: 'research',
       href: '/research#faculty-research',
       iconName: 'Microscope',
-      keywords: [research.category, research.name],
+      keywords: [research.name],
     });
   });
 
